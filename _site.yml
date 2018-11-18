@@ -1,0 +1,25 @@
+name: "Emily C. Zabor"
+output_dir: "."
+navbar:
+  title: "Saurav Sarma"
+  left:
+    - text: "Introduction to the Course"
+      href: intoduction.html
+    - text: "Statistical Computation With R"
+      href: sec.html
+    
+  right:
+    - icon: fa-envelope fa-lg
+      href: contact.html
+    - icon: fa-github fa-lg
+      href: https://github.com/SarmaSaurav/
+    - icon: fa-facebook fa-lg
+      href: https://www.facebook.com/Stats4Everyone
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/saurav-sarma-0044
+    - icon: fa-user fa-lg
+      href: https://www.researchgate.net/profile/Saurav_Sarma3
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
