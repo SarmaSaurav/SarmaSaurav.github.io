@@ -7,10 +7,10 @@ navbar:
       href: intoduction.html
     - text: "Basic Statistical Calculations"
       href: sec.html
-    #- text: "Variables"
-    #  href: variables.html
-    #- text: "Vectors"
-    #  href: vectors.html
+    - text: "Variables"
+      href: variables.html
+    - text: "Vectors"
+      href: vectors.html
   right:
     - icon: fa-envelope fa-lg
       href: contact.html
