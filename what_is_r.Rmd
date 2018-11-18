@@ -1,0 +1,98 @@
+---
+title: Whar is R?
+---
+
+R is a _free-to-use_ and _open-sourced_ programming language that is  widely used  for statistical as well as various Socio-Economical studies.
+  
+In this course we will be using two different applications,
+  
+  + R and
+  + R Studio
+  
+## Setting Up R   
+  R can be downloaded from the following link:  
+  <https://cran.r-project.org/bin/windows/base/>
+  
+  
+  _"RStudio is a set of integrated tools designed to help you be more productive with R. It includes a console, syntax-highlighting editor that supports direct code execution, and a variety of robust tools for plotting, viewing history, debugging and managing your workspace."_
+  
+  R Studio can be downloaded from the following link:  
+  <https://www.rstudio.com/products/rstudio/download/>
+  
+  Though we will use R studio for our calculations, but R is essential for proper functioning of R studio.
+  
+  R Studio by default open 4 different windows.
+  
+  * Script
+  * Console
+  * Plots
+  * History
+  
+  
+```{r, out.width = "600px",echo=FALSE}
+knitr::include_graphics("images/RSetup.png")
+```
+
+The **Script** window can be considered as a notepad where we can write our codes which can be edited according to requirement. Another advantage of writing our code in script is that we can save our script as a text file with `.R` extension. 
+
+The **Console** window is where the actual programming is executed and the outcomes are shown.
+
+We can type `Ctrl + Enter` to run a particular code from the script window without typing it in the console window.
+
+--------
+
+
+
+## An Advance Calculator
+
+R Can be think as an advance calculator which can handle all basic calculations:
+
+```{r,comment=""}
+2+6
+3-1
+2*6
+18/2
+2^4
+```
+
+## Arithmetic operators In R
+
+> `+`   Addition  
+ `-`   Subtraction  
+ `*`   Multiplication  
+ `/`   Division  
+ `^`   to-the-power
+  
+
+There are some pre-defined functions in R that can be used to do some other arithmetic operations. For example:
+
+```{r}
+sum(2,3,4,5,6,8) # will give the sum of all the numbers
+
+factorial(5)  # will give the value of 5!
+
+sqrt(16)      # will give the square root of 16
+
+abs(-5)       # will give the absolute value of the number
+
+exp(5)        # will calculate exponential of 5
+
+log(2)        # log of 2 to the base e
+
+log10(100)    # log of 100 to the base 10
+
+# will round off the number/vector to given number of decimal places.
+round(3.2666666,2)    
+          
+# truncates the decimal part of a number/vector.
+trunc(3.266666)   
+
+letters      # the vector of small letters
+
+LETTERS      # the vector of CAPITAL letters.
+
+letters[1:4] # Selecting the first 4 small letters.
+
+LETTERS[1:4] # Selecting the first four capital letters.
+
+```

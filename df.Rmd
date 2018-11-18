@@ -1,0 +1,167 @@
+---
+title: Data Frame
+---
+
+A data frame is a table or a two-dimensional array-like structure in which each column contains values of one variable and each row contains one set of values from each column.
+
+Following are the characteristics of a data frame.
+
++ The column names should be non-empty.
++ The row names should be unique.
++ The data stored in a data frame can be of numeric, factor or character type.
++ Each column should contain same number of data items.
+
+## Creating a data frame
+
+```{r}
+data=data.frame(
+  enrollment.no=01:10,
+  first.name=c("Biman","Prapti","Dipjyoti","Rashmi","Debojit",
+               "Rocky","Rajesh","Semantika","Dhriti","Priyanka"),
+  last.name=c("Deka","Kakati","Chahariya","Bhuyan","Barua",
+              "Baglary","Bodo","Chakraborty","Chakraborty","Agarwal"),
+  cgpa=c(6.5,7.2,6.1,8.5,6.0,5.2,5.5,9.0,8.75,8.0),
+  gender=c("male","female","male","female","male","male",
+           "male","female","female","female"),
+  stringsAsFactors = FALSE
+)
+print(data)
+```
+The structure of the data frame can be seen by using `str()` function.
+
+```{r}
+str(data)
+```
+
+> Note: By default R consider any variable in a data frame with character values as a factor. To override this we use `stringsAsFactors = FALSE`
+
+The statistical summary and nature of the data can be obtained by applying `summary()` function.
+
+```{r}
+summary(data)
+```
+
+## Extract Data from Data Frame
+
+Extract specific column from a data frame using column name.
+```{r}
+names = data.frame(data$first.name,data$last.name)
+names
+```
+
+Extract rows from a data frame
+
+```{r}
+temp=data[8:10,]
+temp
+```
+
+We can extract both rows and column simultaneously
+
+```{r}
+result=data[8:10,2:3]
+result
+```
+
+## Expand Data Frame
+A data frame can be expanded by adding columns and rows.
+
+## Add Column
+Just add the column vector using a new column name.
+
+```{r}
+data$specialization=c("OR","Demography","OR","OR","Demography",
+                      "Demography","OR","Demography","OR","Demography")
+
+data
+```
+## Add Row
+To add more rows permanently to an existing data frame, we need to bring in the new rows in the same structure as the existing data frame and use the `rbind()` function.
+
+In the example below we create a data frame with new rows and merge it with the existing data frame to create the final data frame.
+
+```{r}
+data1=data.frame(
+  enrollment.no=11:15,
+  first.name=c("Kankan","Reyhan","Simi","Arpita","Chandan"),
+  last.name=c("Sarma","Ali","Mahanta","Ganguly","Deka"),
+  cgpa=c(7.8,6.5,5.0,5.5,5.8),
+  gender=c("male","male","female","female","male"),
+  specialization=c("OR","Demography","OR","OR","Demography"),
+  stringsAsFactors = FALSE
+)
+data=rbind(data,data1)
+print(data)
+```
+
+> in R we use `rbind` and `cbind` to combine two or more vectors row wise or column wise respectively
+
+Another simple way of creating a data frame is:
+
+```{r}
+a=1:10
+b=21:30
+data2=cbind(a,b)
+data2=as.data.frame(data2)
+data2
+data2$total=a+b
+data2$average=(a+b)/2
+data2
+c=c(11,31,11+31,21)
+data2=rbind(data2,c)
+```
+
+# Reading External Files
+
+In R, we can read data from files stored outside the R environment. We can also write data into files which will be stored and accessed by the operating system. R can read and write into various file formats like csv, excel, xml etc.
+
+In this chapter we will learn to read data from a csv file and then write data into a csv file. The file should be present in current working directory so that R can read it. Of course we can also set our own directory and read files from there.
+
+>
+You can check which directory the R workspace is pointing to using the `getwd()` function. You can also set a new working directory using `setwd()` function.
+
+The csv file is a text file in which the values in the columns are separated by a comma. Let's consider the following data present in the file named input.csv.
+
+You can create this file using **Windows Notepad** by copying and pasting this data. Save the file as input.csv using the save As All files(*.*) option in notepad.
+
+```
+id,name,salary,start_date,dept
+1,Rick,623.3,2012-01-01,IT
+2,Dan,515.2,2013-09-23,Operations
+3,Michelle,611,2014-11-15,IT
+4,Ryan,729,2014-05-11,HR
+5,Gary,843.25,2015-03-27,Finance
+6,Nina,578,2013-05-21,IT
+7,Simon,632.8,2013-07-30,Operations
+8,Guru,722.5,2014-06-17,Finance
+```
+
+## Reading a CSV File
+
+Following is a simple example of `read.csv()` function to read a CSV file available in your current working directory −
+
+```{r}
+data3 <- read.csv("files/input.csv")
+data3
+```
+
+By default the read.csv() function gives the output as a data frame. Once we read data in a data frame, we can apply all the functions applicable to data frames.
+
+## Writing into a CSV File
+
+R can create csv file form existing data frame. The write.csv() function is used to create the csv file. This file gets created in the working directory.
+
+```{r}
+output.data=write.csv(data,"Output.csv")
+data4=read.csv("Output.csv")
+data4
+```
+Once the above code is executed, you will see that a new `.csv` file is being created in your default R folder.
+
+Here the column X comes from the data set newper. This can be dropped using additional parameter `row.names = FALSE` while writing the file.
+
+```{r}
+output.data=write.csv(data,"Output.csv",row.names = FALSE)
+data4=read.csv("Output.csv")
+data4
+```

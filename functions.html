@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Functions</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Stats4Every1</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="intoduction.html">
+    <span class="fa fa-home"></span>
+     
+    Introduction to the Course
+  </a>
+</li>
+<li>
+  <a href="what_is_r.html">What is R?</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Variables
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="variables.html">R Variables</a>
+    </li>
+    <li>
+      <a href="vectors.html">Vectors</a>
+    </li>
+    <li>
+      <a href="matrix.html">Matrix</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sec.html">Basic Statistical Calculations</a>
+    </li>
+    <li>
+      <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="loops.html">Loops and Decisions</a>
+    </li>
+    <li>
+      <a href="factors.html">Factors</a>
+    </li>
+    <li>
+      <a href="df.html">Data frame</a>
+    </li>
+    <li>
+      <a href="functions.html">Functions</a>
+    </li>
+    <li>
+      <a href="distribution.html">Probability Distribution</a>
+    </li>
+    <li>
+      <a href="stest.html">Statistical Test</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/SarmaSaurav/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.facebook.com/Stats4Everyone">
+    <span class="fa fa-facebook fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/saurav-sarma-0044">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Functions</h1>
+
+</div>
+
+
+<p>A function is a set of statements organized together to perform a specific task. R has a large number of in-built functions and the user can create their own functions.</p>
+<p>In R, a function is an object so the R interpreter is able to pass control to the function, along with arguments that may be necessary for the function to accomplish the actions.</p>
+<p>The function in turn performs its task and returns control to the interpreter as well as any result which may be stored in other objects.</p>
+<p>An R function is created by using the keyword <code>function</code>. The basic syntax of an R function definition is as follows −</p>
+<pre><code>function_name &lt;- function(arg_1, arg_2, ...) {
+   Function body 
+}</code></pre>
+<p>The different parts of a function are −</p>
+<ul>
+<li><p><code>Function Name</code> − This is the actual name of the function. It is stored in R environment as an object with this name.</p></li>
+<li><p><code>Arguments</code> − An argument is a placeholder. When a function is invoked, you pass a value to the argument. Arguments are optional; that is, a function may contain no arguments. Also arguments can have default values.</p></li>
+<li><p><code>Function Body</code> − The function body contains a collection of statements that defines what the function does.</p></li>
+<li><p><code>Return Value</code> − The return value of a function is the last expression in the function body to be evaluated.</p></li>
+</ul>
+<p>R has many in-built functions which can be directly called in the program without defining them first. We can also create and use our own functions referred as user defined functions.</p>
+<p>We can create user-defined functions in R. They are specific to what a user wants and once created they can be used like the built-in functions. Below is an example of how a function is created and used.</p>
+<div id="create-a-function-to-print-squares-of-numbers-in-sequence." class="section level2">
+<h2>Create a function to print squares of numbers in sequence.</h2>
+<pre class="r"><code>new.function &lt;- function(a) {
+   for(i in 1:a) {
+      b &lt;- i^2
+      print(b)
+   }
+}
+
+# Call the function new.function supplying 6 as an argument.
+new.function(6)</code></pre>
+<pre><code>## [1] 1
+## [1] 4
+## [1] 9
+## [1] 16
+## [1] 25
+## [1] 36</code></pre>
+<p>The arguments to a function call can be supplied in the same sequence as defined in the function or they can be supplied in a different sequence but assigned to the names of the arguments.</p>
+<pre class="r"><code># Create a function with arguments.
+new.function &lt;- function(a,b,c) {
+   result &lt;- a * b + c
+   print(result)
+}
+
+# Call the function by position of arguments.
+new.function(5,3,11)</code></pre>
+<pre><code>## [1] 26</code></pre>
+<pre class="r"><code># Call the function by names of the arguments.
+new.function(a = 11, b = 5, c = 3)</code></pre>
+<pre><code>## [1] 58</code></pre>
+<p>We can define the value of the arguments in the function definition and call the function without supplying any argument to get the default result. But we can also call such functions by supplying new values of the argument and get non default result.</p>
+<pre class="r"><code># Create a function with arguments.
+new.function &lt;- function(a = 3, b = 6) {
+   result &lt;- a * b
+   print(result)
+}
+
+# Call the function without giving any argument.
+new.function()</code></pre>
+<pre><code>## [1] 18</code></pre>
+<pre class="r"><code># Call the function with giving new values of the argument.
+new.function(9,5)</code></pre>
+<pre><code>## [1] 45</code></pre>
+</div>
+<div id="some-user-defined-functions" class="section level2">
+<h2>Some user defined functions</h2>
+<p>Now we will write functions for the following Statistical measurements:</p>
+<ul>
+<li>Mean</li>
+<li>Standard deviation</li>
+<li>Coefficient of variation</li>
+<li>correlation coefficient</li>
+<li>regression coefficient</li>
+<li>t statistics</li>
+</ul>
+<pre class="r"><code># Creating a random sample
+x=sample(20:50,20)
+y=sample(20:50,20)</code></pre>
+<div id="function-for-mean" class="section level3">
+<h3>Function for mean</h3>
+<pre class="r"><code># Function for mean
+
+my.mean=function(x){
+  # getting sum of the observations
+  s=sum(x)
+  # getting number of observations
+  n=length(x)
+  # calculating the mean
+  avg=s/n
+  # rounding of the result to 4 decimal places
+  avg=round(avg,4)   #this step is optional. 
+  # if you are not using the next line then comment this out.
+  
+  #printing the result
+  cat(c(&quot;The arithmetic mean is&quot;,avg,&quot;\n&quot;))   # This step is optional, 
+  #if you want a simple function without any text in the result, 
+  #comment out this step and uncomment the next line.
+  
+  #print(avg)
+  }
+my.mean(x)</code></pre>
+<pre><code>## The arithmetic mean is 34.85</code></pre>
+<pre class="r"><code>my.mean(y)</code></pre>
+<pre><code>## The arithmetic mean is 33.35</code></pre>
+</div>
+<div id="function-for-standard-deviation" class="section level3">
+<h3>Function for standard deviation</h3>
+<pre class="r"><code># Function for Standard Deviation
+
+my.sd=function(x){
+  #mean of x
+  avg=mean(x)
+  # number of observations
+  n=length(x)
+  # the deviation from mean
+  dif=x-avg
+  # square of deviations
+  dif2=dif^2
+  # sum of squares of deviation
+  s=sum(dif2)
+  # the stndard daviation
+  std.dev=sqrt(s/n)
+  #rounding off the number to 2 decimal places
+  std.dev=round(std.dev,2)
+  cat(c(&quot;The Standard deviation is&quot;,std.dev,&quot;\n&quot;))
+}
+my.sd(x)</code></pre>
+<pre><code>## The Standard deviation is 8.91</code></pre>
+<pre class="r"><code>my.sd(y)</code></pre>
+<pre><code>## The Standard deviation is 8.3</code></pre>
+</div>
+<div id="function-for-co-efficient-of-variation" class="section level3">
+<h3>Function for Co-efficient of variation</h3>
+<pre class="r"><code># Function for Co-efficient of variation
+
+my.cv=function(x){
+  #mean of x
+  avg=mean(x)
+  avg=round(avg,2)
+  # number of observations
+  n=length(x)
+  # the deviation from mean
+  dif=x-avg
+  # square of deviations
+  dif2=dif^2
+  # sum of squares of deviation
+  s=sum(dif2)
+  # the stndard daviation
+  std.dev=sqrt(s/n)
+  std.dev=round(std.dev,2)
+  # calculating the coeficient of variation
+  cv=(std.dev/avg)*100
+  cv=round(cv,2)
+  cat(c(&quot;The mean is&quot;,avg,&quot;\n&quot;))
+  cat(c(&quot;The Standard deviation is&quot;,std.dev,&quot;\n&quot;))
+  cat(c(&quot;The Co-efficient of variation (CV) is&quot;,cv,&quot;\n&quot;))
+}
+
+my.cv(x)</code></pre>
+<pre><code>## The mean is 34.85 
+## The Standard deviation is 8.91 
+## The Co-efficient of variation (CV) is 25.57</code></pre>
+<pre class="r"><code>my.cv(y)</code></pre>
+<pre><code>## The mean is 33.35 
+## The Standard deviation is 8.3 
+## The Co-efficient of variation (CV) is 24.89</code></pre>
+</div>
+<div id="function-for-coefficient-of-correlation" class="section level3">
+<h3>Function for Coefficient of correlation</h3>
+<pre class="r"><code># Function for Coefficient of correlation
+
+my.cor=function(x,y){
+  
+  mean.x=mean(x)
+  mean.y=mean(y)
+  s.xy=sum(x*y)
+  n=length(x)
+  cov.xy=(s.xy/n)-mean.x*mean.y
+  dx=(x-mean.x)^2
+  dy=(y-mean.y)^2
+  s.x=sum(dx)
+  s.y=sum(dy)
+  sd.x=sqrt(s.x/n)
+  sd.y=sqrt(s.y/n)
+  cor.xy=cov.xy/(sd.x*sd.y)
+  
+  cat(c(&quot;The Co-efficient of Correlation is&quot;,&quot;\n&quot;))
+  print(cor.xy)
+ 
+}
+my.cor(x,y)</code></pre>
+<pre><code>## The Co-efficient of Correlation is 
+## [1] 0.2191159</code></pre>
+</div>
+<div id="function-for-regression-coefficient" class="section level3">
+<h3>Function for Regression coefficient</h3>
+<pre class="r"><code># Function for Regression coefficient
+
+my.reg=function(x,y){
+  mean.x=mean(x)
+  mean.y=mean(y)
+  s.xy=sum(x*y)
+  n=length(x)
+  cov.xy=(s.xy/n)-mean.x*mean.y
+  dx=(x-mean.x)^2
+  dy=(y-mean.y)^2
+  s.x=sum(dx)
+  s.y=sum(dy)
+  sd.x=sqrt(s.x/n)
+  sd.y=sqrt(s.y/n)
+  cor.xy=cov.xy/(sd.x*sd.y)
+  b.yx=cor.xy*(sd.y/sd.x)
+  b.xy=cor.xy*(sd.x/sd.y)
+  
+  cat(c(&quot;The regression coefficient of Y on X is&quot;,&quot;\n&quot;))
+  print(b.yx)
+  cat(&quot;\n&quot;)
+  cat(c(&quot;The regression coefficient of X on Y is&quot;,&quot;\n&quot;))
+  print(b.xy)
+}
+
+my.reg(x,y)</code></pre>
+<pre><code>## The regression coefficient of Y on X is 
+## [1] 0.2042482
+## 
+## The regression coefficient of X on Y is 
+## [1] 0.2350658</code></pre>
+</div>
+<div id="function-for-t-test-for-single-mean" class="section level3">
+<h3>Function for t-test for single mean</h3>
+<pre class="r"><code># Function for single mean t test
+
+my.t.single=function(x,mu=0,alpha=0.95){
+ mean.x=mean(x)
+ S=sd(x)
+ n=length(x)
+ df=n-1
+ t.cal=(mean.x-mu)/(S/sqrt(n))
+ t.tab=qt(alpha,df)
+ 
+    if(abs(t.cal)&lt;=t.tab){
+      cat(&quot;The null hypothesis should be accepted \n&quot;)
+    }else{
+      cat(&quot;The null hypothesis should be rejected \n&quot;)
+    }
+ cat(&quot;The sample mean is \n&quot;)
+ print(mean.x)
+ cat(&quot;Calculated t statistic \n&quot;)
+ print(t.cal)
+ p.value=2*pt(-abs(t.cal),df)
+ cat(&quot;p-value \n&quot;)
+ print(p.value)
+}
+my.t.single(x,50)</code></pre>
+<pre><code>## The null hypothesis should be rejected 
+## The sample mean is 
+## [1] 34.85
+## Calculated t statistic 
+## [1] -7.414426
+## p-value 
+## [1] 5.085525e-07</code></pre>
+</div>
+<div id="function-for-paired-mean-t-test" class="section level3">
+<h3>Function for paired mean t test</h3>
+<pre class="r"><code># Function for paired mean t test
+
+my.t.paired=function(x,y,alpha=0.95){
+  mean.x=mean(x)
+  mean.y=mean(y)
+  S.x=sd(x)
+  S.y=sd(y)
+  n.x=length(x)
+  n.y=length(y)
+  df=n.x+n.y-2
+  S=sqrt(((n.x-1)*var(x)+(n.y-1)*var(y))/(n.x+n.y-2))
+  t.cal=(mean.x-mean.y)/(S*sqrt((1/n.x)+(1/n.y)))
+  t.tab=qt(alpha,df)
+  
+  if(abs(t.cal)&lt;=t.tab){
+    cat(&quot;The null hypothesis should be accepted \n&quot;)
+  }else{
+    cat(&quot;The null hypothesis should be rejected \n&quot;)
+  }
+  
+  cat(&quot;Calculated t statistic \n&quot;)
+  print(t.cal)
+  p.value=2*pt(-abs(t.cal),df)
+  cat(&quot;p-value \n&quot;)
+  print(p.value)
+}
+my.t.paired(x,y)</code></pre>
+<pre><code>## The null hypothesis should be accepted 
+## Calculated t statistic 
+## [1] 0.5369865
+## p-value 
+## [1] 0.5944074</code></pre>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

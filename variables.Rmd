@@ -2,3 +2,74 @@
 title: Variables
 ---
 
+Generally, while doing programming in any programming language, you need to use various variables to store various information. Variables are nothing but reserved memory locations to store values. This means that, when you create a variable you reserve some space in memory.
+
+You may like to store information of various data types like character, wide character, integer, floating point, double floating point, Boolean etc. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.
+
+In contrast to other programming languages like C and java in R, the variables are not declared as some data type. The variables are assigned with R-Objects and the data type of the R-object becomes the data type of the variable. There are many types of R-objects. The frequently used ones are −
+
+* Vectors
+
+* Lists
+
+* Matrices
+
+* Arrays
+
+* Factors
+
+* Data Frames
+
+We will describe all of them in due time.
+
+While using R for calculation, it is always advisable to store the outcome of a particular calculation against a variable. A variable may be considered as a container which will store the outcome.
+
+The general way of declaring a variable name is 
+
+> variable_name <- (the r calculation)  
+
+For example 
+
+>x<- 2+5
+
+However in general we `<-` and `=` are equivalent and hence it is convenient to use `=` in place of `<-`.
+
+So we can use the code
+```{r, results='hold'}
+x=2+5
+```
+To store the value of 2+5 (=7) against x. We can call the variable at any time to use the value stored against the variable in our  program.
+
+For example:
+
+
+```{r}
+x_square=x^2
+x_square
+```
+
+If we simply type the variable name and press `Enter` it will return the value stored in that variable name. This process is called *calling the variable*.
+
+
+Once some values are stored in a variable name , then we can subject the variables to all arithmetic operations
+
+```{r}
+x=5
+y=10
+x+y
+x-y
+x*y
+y/x
+y^2+x
+2*x+y-15
+
+```
+
+## Naming a variable
+
+There are few points that should be considered while naming a variable in R: 
+
+* The variable name is case sensitive, i.e. **Total** and **total** will be considered as two different variables.  
+* The variable name should be a combination of digits and alphabets.
+* The only special characters allowed in a variable name are `.` and `_`
+* The variable name should not start with a digit. i.e. **`2times`** is not a valid variable name.

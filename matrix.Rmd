@@ -1,0 +1,104 @@
+---
+title: Matrix
+---
+
+Matrices are the R objects in which the elements are arranged in a two-dimensional rectangular layout. They contain elements of the same atomic types. Though we can create a matrix containing only characters or only logical values, they are not of much use. We use matrices containing numeric elements to be used in mathematical calculations.
+
+A Matrix is created using the `matrix()` function.
+
+Matrix are nothing but two dimensional vectors.
+
+Each element of a matrix can be identified by its row and column position.
+
+```{r}
+A=c(1,2,3,4)
+dim(A)=c(2,2)
+A
+```
+
+In the above example, A is a normal vector of size 4. Using the **`dim`** function we have converted the vector into a matrix.
+
+
+```{r}
+matrix1=matrix(c(1,2,3,4),nrow = 2, ncol = 2)
+```
+
+The basic syntax for creating a matrix in R is −
+
+```
+matrix(data, nrow, ncol, byrow, dimnames)
+```
+
+Following is the description of the parameters used −
+
++ `data` is the input vector which becomes the data elements of the matrix.
+
++ `nrow` is the number of rows to be created.
+
++ `ncol` is the number of columns to be created.
+
++ `byrow` is a logical clue. If TRUE then the input vector elements are arranged by row.
+
++ `dimname` is the names assigned to the rows and columns.
+
+Remember that while creating a matrix, by default the observations are entered column wise, i.e. at first we enter all the observations under first column and then we move to 2nd column. If we want to alter this then we set `byrow = TRUE`.
+
+If we want to point to a particular element of the matrix, we can do so by using **`matrix_name[row_number, coloumn_number]`**
+
+For example:
+
+```{r}
+matrix1[1,1]
+matrix1[2,2]
+```
+We can even replace an element of the matrix
+
+```{r}
+matrix1[1,1]=5
+matrix1
+```
+Here the first element of matrix1 is replaces from 1 to 5
+
+### Matrix Calculation:
+
+At first let us create two matrices A and B, and then we will perform some simple arithmetic on the two matrices
+
+```{r}
+A = matrix(c(1,2,3,14,5,6,7,8,9),3,3)
+B = matrix(c(9,8,7,6,15,4,3,2,1),3,3) 
+```
+ The matrices are
+ 
+```{r}
+A
+B
+```
+ 
+Now let us perform some simple arithmetic
+
+```{r}
+A + B   # The corresponding elements of A and B are added
+
+A - B   # The elements of B are subtracted from corresponding elemts of A
+
+A * B   # This will multiply corresponding elemets of A and B
+
+A / B   # This will divide elements of A by corresponding elements of B
+```
+However, in matrix multiplication or division, the process is a bit different. Hence to get actual value we use the following operation
+
+```{r}
+A %*% B   # Matrix multiplication
+```
+
+Some other functions are:
+
+```{r}
+det(A)   # Determinent of A
+
+t(A)     # Transpose of A
+
+solve (A)  # Inverse of A
+
+eigen(A)  # Eigen values and eigen vector
+```

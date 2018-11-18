@@ -11,7 +11,7 @@
 
 
 
-<title>Introduction to the Course</title>
+<title>Factors</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -280,13 +280,77 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Introduction to the Course</h1>
+<h1 class="title toc-ignore">Factors</h1>
 
 </div>
 
 
-<p>In this course we will learn about some basic statistical calculations using R programming language. This course is intended for non-statistical students/researchers. At the end of the course you will be able to carry out some basic mathematical and statistical calculations for your assignments, project works etc.</p>
-<p><em>So, lets get started…</em></p>
+<p>Factors are the data objects which are used to categorize the data and store it as levels. They can store both strings and integers. They are useful in the columns which have a limited number of unique values. Like “Male,”Female&quot; and True, False etc. They are useful in data analysis for statistical modeling.</p>
+<p>Factors are created using the <code>factor ()</code> function by taking a vector as input.</p>
+<pre class="r"><code>data &lt;- c(&quot;East&quot;,&quot;West&quot;,&quot;East&quot;,&quot;North&quot;,&quot;North&quot;,&quot;East&quot;,&quot;West&quot;,
+          &quot;West&quot;,&quot;West&quot;,&quot;East&quot;,&quot;North&quot;)
+factor_data=factor(data)
+factor_data</code></pre>
+<pre><code>##  [1] East  West  East  North North East  West  West  West  East  North
+## Levels: East North West</code></pre>
+<p>By default, the factor function assign the levels alphabetically. We can change this using <code>levels=()</code> command.</p>
+<pre class="r"><code>data &lt;- c(&quot;East&quot;,&quot;West&quot;,&quot;East&quot;,&quot;North&quot;,&quot;North&quot;,&quot;East&quot;,&quot;West&quot;,
+          &quot;West&quot;,&quot;West&quot;,&quot;East&quot;,&quot;North&quot;)
+factor_data=factor(data, levels = c(&quot;North&quot;,&quot;East&quot;,&quot;West&quot;))
+factor_data</code></pre>
+<pre><code>##  [1] East  West  East  North North East  West  West  West  East  North
+## Levels: North East West</code></pre>
+<p>We can also convert a numeric vector into factor:</p>
+<pre class="r"><code>num_data=c(0,0,1,0,1,1,1,0,1,0,1,1,0,1,0,1,1)
+factor_data=factor(num_data, labels = c(&quot;Male&quot;,&quot;Female&quot;))
+factor_data</code></pre>
+<pre><code>##  [1] Male   Male   Female Male   Female Female Female Male   Female Male  
+## [11] Female Female Male   Female Male   Female Female
+## Levels: Male Female</code></pre>
+<div id="generating-factor-levels" class="section level3">
+<h3>Generating Factor Levels</h3>
+<p>We can generate factor levels by using the gl() function. It takes two integers as input which indicates how many levels and how many times each level.</p>
+<pre><code>gl(n, k, labels)</code></pre>
+<p>Following is the description of the parameters used −</p>
+<ul>
+<li><p><strong>n</strong> is a integer giving the number of levels.</p></li>
+<li><p><strong>k</strong> is a integer giving the number of replications.</p></li>
+<li><p><strong>labels</strong> is a vector of labels for the resulting factor levels.</p></li>
+</ul>
+<pre class="r"><code>factor_data=gl(2,8, labels = c(&quot;Male&quot;,&quot;Female&quot;))
+factor_data</code></pre>
+<pre><code>##  [1] Male   Male   Male   Male   Male   Male   Male   Male   Female Female
+## [11] Female Female Female Female Female Female
+## Levels: Male Female</code></pre>
+<p>Another example of Factor is:</p>
+<pre class="r"><code># Generating 100 random numbers between 1 and 100
+data = sample(1:100,100)
+# Generating an empty vector of size 100.
+result=mat.or.vec(100,1)
+for (i in 1:100) {
+  if(data[i]&lt;30){
+    result[i]=0
+    }
+  else if(data[i]&gt;=30 &amp;&amp; data[i]&lt;45){
+    result[i]=1
+  }
+  else if(data[i]&gt;=45 &amp;&amp; data[i]&lt;60){
+    result[i]=2
+  }
+  else {
+    result[i]=3
+    }
+}
+
+f_result=factor(result, labels = c(&quot;Fail&quot;, &quot;Third Div&quot;, &quot;Second Div&quot;, &quot;First Div&quot;))
+str(f_result)</code></pre>
+<pre><code>##  Factor w/ 4 levels &quot;Fail&quot;,&quot;Third Div&quot;,..: 1 2 2 1 4 4 4 4 1 4 ...</code></pre>
+<pre class="r"><code>summary(f_result)</code></pre>
+<pre><code>##       Fail  Third Div Second Div  First Div 
+##         29         15         15         41</code></pre>
+<pre class="r"><code>plot(f_result)</code></pre>
+<p><img src="factors_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
 
 
 

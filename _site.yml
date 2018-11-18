@@ -1,16 +1,41 @@
 name: "Emily C. Zabor"
 output_dir: "."
 navbar:
-  title: "About Me"
+  title: "Stats4Every1"
+  icon: fa-home
   left:
     - text: "Introduction to the Course"
+      icon: fa-home
       href: intoduction.html
-    - text: "Basic Statistical Calculations"
-      href: sec.html
+    - text: "What is R?"
+      href: what_is_r.html
     - text: "Variables"
-      href: variables.html
-    - text: "Vectors"
-      href: vectors.html
+      menu:
+      - text: "R Variables"
+        href: variables.html
+      - text: "Vectors"
+        href: vectors.html
+      - text: "Matrix"
+        href: matrix.html
+    - text: "More"
+      menu:
+      - text: "Basic Statistical Calculations"
+        href: sec.html
+      - text: "Graphics"
+        href: graphics.html
+      - text: "Loops and Decisions"
+        href: loops.html
+      - text: "Factors"
+        href: factors.html
+      - text: "Data frame"
+        href: df.html
+      - text: "Functions"
+        href: functions.html
+      - text: "Probability Distribution"
+        href: distribution.html
+      - text: "Statistical Test"
+        href: stest.html
+      
   right:
     - icon: fa-envelope fa-lg
       href: contact.html
@@ -20,9 +45,8 @@ navbar:
       href: https://www.facebook.com/Stats4Everyone
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/saurav-sarma-0044
-    - icon: fa-user fa-lg
-      href: https://www.researchgate.net/profile/Saurav_Sarma3
+   
 output:
   html_document:
-    theme: paper
+    theme: cerulean
     css: 'styles.css'

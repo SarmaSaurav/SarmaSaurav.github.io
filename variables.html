@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -106,34 +106,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 64px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 
 .section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 </style>
 
@@ -180,15 +180,70 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">About Me</a>
+      <a class="navbar-brand" href="index.html">Stats4Every1</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="intoduction.html">Introduction to the Course</a>
+  <a href="intoduction.html">
+    <span class="fa fa-home"></span>
+     
+    Introduction to the Course
+  </a>
 </li>
 <li>
-  <a href="sec.html">Basic Statistical Calculations</a>
+  <a href="what_is_r.html">What is R?</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Variables
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="variables.html">R Variables</a>
+    </li>
+    <li>
+      <a href="vectors.html">Vectors</a>
+    </li>
+    <li>
+      <a href="matrix.html">Matrix</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sec.html">Basic Statistical Calculations</a>
+    </li>
+    <li>
+      <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="loops.html">Loops and Decisions</a>
+    </li>
+    <li>
+      <a href="factors.html">Factors</a>
+    </li>
+    <li>
+      <a href="df.html">Data frame</a>
+    </li>
+    <li>
+      <a href="functions.html">Functions</a>
+    </li>
+    <li>
+      <a href="distribution.html">Probability Distribution</a>
+    </li>
+    <li>
+      <a href="stest.html">Statistical Test</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -216,12 +271,6 @@ $(document).ready(function () {
      
   </a>
 </li>
-<li>
-  <a href="https://www.researchgate.net/profile/Saurav_Sarma3">
-    <span class="fa fa-user fa-lg"></span>
-     
-  </a>
-</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -236,7 +285,62 @@ $(document).ready(function () {
 </div>
 
 
-
+<p>Generally, while doing programming in any programming language, you need to use various variables to store various information. Variables are nothing but reserved memory locations to store values. This means that, when you create a variable you reserve some space in memory.</p>
+<p>You may like to store information of various data types like character, wide character, integer, floating point, double floating point, Boolean etc. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.</p>
+<p>In contrast to other programming languages like C and java in R, the variables are not declared as some data type. The variables are assigned with R-Objects and the data type of the R-object becomes the data type of the variable. There are many types of R-objects. The frequently used ones are −</p>
+<ul>
+<li><p>Vectors</p></li>
+<li><p>Lists</p></li>
+<li><p>Matrices</p></li>
+<li><p>Arrays</p></li>
+<li><p>Factors</p></li>
+<li><p>Data Frames</p></li>
+</ul>
+<p>We will describe all of them in due time.</p>
+<p>While using R for calculation, it is always advisable to store the outcome of a particular calculation against a variable. A variable may be considered as a container which will store the outcome.</p>
+<p>The general way of declaring a variable name is</p>
+<blockquote>
+<p>variable_name &lt;- (the r calculation)</p>
+</blockquote>
+<p>For example</p>
+<blockquote>
+<p>x&lt;- 2+5</p>
+</blockquote>
+<p>However in general we <code>&lt;-</code> and <code>=</code> are equivalent and hence it is convenient to use <code>=</code> in place of <code>&lt;-</code>.</p>
+<p>So we can use the code</p>
+<pre class="r"><code>x=2+5</code></pre>
+<p>To store the value of 2+5 (=7) against x. We can call the variable at any time to use the value stored against the variable in our program.</p>
+<p>For example:</p>
+<pre class="r"><code>x_square=x^2
+x_square</code></pre>
+<pre><code>## [1] 49</code></pre>
+<p>If we simply type the variable name and press <code>Enter</code> it will return the value stored in that variable name. This process is called <em>calling the variable</em>.</p>
+<p>Once some values are stored in a variable name , then we can subject the variables to all arithmetic operations</p>
+<pre class="r"><code>x=5
+y=10
+x+y</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code>x-y</code></pre>
+<pre><code>## [1] -5</code></pre>
+<pre class="r"><code>x*y</code></pre>
+<pre><code>## [1] 50</code></pre>
+<pre class="r"><code>y/x</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>y^2+x</code></pre>
+<pre><code>## [1] 105</code></pre>
+<pre class="r"><code>2*x+y-15</code></pre>
+<pre><code>## [1] 5</code></pre>
+<div id="naming-a-variable" class="section level2">
+<h2>Naming a variable</h2>
+<p>There are few points that should be considered while naming a variable in R:</p>
+<ul>
+<li>The variable name is case sensitive, i.e. <strong>Total</strong> and <strong>total</strong> will be considered as two different variables.<br />
+</li>
+<li>The variable name should be a combination of digits and alphabets.</li>
+<li>The only special characters allowed in a variable name are <code>.</code> and <code>_</code></li>
+<li>The variable name should not start with a digit. i.e. <strong><code>2times</code></strong> is not a valid variable name.</li>
+</ul>
+</div>
 
 
 

@@ -1,0 +1,116 @@
+---
+title: Basic Statistical Calculations
+---
+
+In this chapter we will learn how to carry out some basic statistical measurements in R.
+The measurements are-
+
++ Mean
++ Variance
++ Median
++ Range
++ Co-variance
++ Correlation
+
+The formula for the measurements are
+
+$$ Mean= \frac{1}{n} \sum_{i=1}^{n} x_i$$
+$$Variance = \frac{1}{n}\sum_{i=1}^{n} (x_i-\bar{x})$$
+$$ Median = l+\dfrac{\frac{N}{2}-f_c}{f}* h$$
+
+$$Range = Maximum \ \   observation - Minimum \ \ \   observation$$
+$$ Covariance = \frac{1}{n}\sum_{i=1}^{n}x_iy_i- \bar{x}\bar{y}$$
+$$ Correlation = \dfrac{Cov(x,y)}{\sqrt{Variance(x)}\sqrt{Variance(y)}}$$
+Let us consider the following data
+```{r}
+weight=c(45,81,47,58,61,76,47,44,66,55)
+height=c(140,165,145,160,166,170,156,161,159,163)
+```
+
+Once the data are being entered in R, we can now perform various statistical calculations:
+
+### Mean
+
+Generally by **`mean`** we calculate **`Arithmetic mean`**. Arithmetic mean gives the center of our data
+
+```{r}
+mean_weight=mean(weight)
+mean_weight
+mean_height=mean(height)
+mean_height
+```
+
+### Variance
+
+Variance gives the amount of variation present in our data. Or how much our information are scattered from the center of our data
+
+```{r}
+variance_weight=var(weight)
+variance_weight
+variance_height=var(height)
+variance_height
+```
+
+### Standard deviation
+
+Standard deviation is simply the square root of variance
+
+```{r}
+sd_weight=sd(weight)
+sd_weight
+sd_height=sd(height)
+sd_height
+```
+
+
+### Median
+
+Median is the mid point of our information when arranged in ascending or descending order.
+
+```{r}
+median_weight=median(weight)
+median_weight
+
+median_height=median(height)
+median_height
+```
+
+### Range
+
+Range gives the minimum and maximum values of the data.
+
+```{r}
+range_weight=range(weight)
+range_weight
+
+range_height=range(height)
+range_height
+
+```
+
+### Covariance
+
+Co-variance is a measurement of variation present in two sets of data when considered together. In our example, we are calculating how weight and height varies together.
+
+```{r}
+cov_weight_height=cov(weight, height)
+cov_weight_height
+```
+
+### Correlation
+
+Correlation is the measurement of association or bonding between two variables. In this example, correlation will tell us what kind of relationship weight and height posses.
+
+```{r}
+correlation=cor(weight, height)
+
+correlation
+```
+
++ If the value of correlation is greater than 0, then we say that the two variables are positively correlated.
+
++ If the value of correlation is less than 0, then we say that the two variables are negatively correlated.
+
++ If the value of correlation is 0, then we say that the two variables are not correlated.
+
+In our example the correlation is `r correlation` which is greater than 0, and hence we say that weight and heights are positively correlated.

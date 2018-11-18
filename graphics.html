@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Graphical Representation of Data</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Stats4Every1</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="intoduction.html">
+    <span class="fa fa-home"></span>
+     
+    Introduction to the Course
+  </a>
+</li>
+<li>
+  <a href="what_is_r.html">What is R?</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Variables
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="variables.html">R Variables</a>
+    </li>
+    <li>
+      <a href="vectors.html">Vectors</a>
+    </li>
+    <li>
+      <a href="matrix.html">Matrix</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sec.html">Basic Statistical Calculations</a>
+    </li>
+    <li>
+      <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="loops.html">Loops and Decisions</a>
+    </li>
+    <li>
+      <a href="factors.html">Factors</a>
+    </li>
+    <li>
+      <a href="df.html">Data frame</a>
+    </li>
+    <li>
+      <a href="functions.html">Functions</a>
+    </li>
+    <li>
+      <a href="distribution.html">Probability Distribution</a>
+    </li>
+    <li>
+      <a href="stest.html">Statistical Test</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/SarmaSaurav/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.facebook.com/Stats4Everyone">
+    <span class="fa fa-facebook fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/saurav-sarma-0044">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Graphical Representation of Data</h1>
+
+</div>
+
+
+<div id="scatter-plot" class="section level2 flexbox vcenter">
+<h2>Scatter plot</h2>
+<p><em>A scatter plot is a plot of two variables in a two dimensional XY plan with one variable along X- axis and another variable along Y-axis.</em></p>
+<pre class="r"><code>weight=c(65,55,87,54,52,69,47,77,59,60)
+height=c(150,160,172,156,145,151,161,170,166,155)
+plot(weight,height)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>The command <code>plot(x,y)</code> gives a simple 2D plot of the variable <code>x</code> along x-axis and variable <code>y</code> along y-axis.</p>
+<pre class="r"><code>plot(weight,height,
+     main = &quot;A scatter plot of weight and height of 10 persons&quot;,
+     xlab = &quot;Weights in Kilogram&quot;,ylab = &quot;Heights in Centimeter&quot;,
+     col=&quot;red&quot;,
+     lwd=10)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>We can change the type of the plot using <code>type=&quot; &quot;</code></p>
+<ul>
+<li><p>“p” for points,</p></li>
+<li><p>“l” for lines,</p></li>
+<li><p>“b” for both,</p></li>
+<li><p>“c” for the lines part alone of “b”,</p></li>
+<li><p>“o” for both ‘over-plotted’,</p></li>
+<li><p>“h” for ‘histogram’ like (or ‘high-density’) vertical lines,</p></li>
+<li><p>“s” for stair steps,</p></li>
+<li><p>“S” for other steps, see ‘Details’ below,</p></li>
+<li><p>“n” for no plotting.</p></li>
+</ul>
+<p><code>main=&quot; &quot;</code> : is use to Give a Title to the graph</p>
+<p><code>sub=&quot; &quot;</code> : is use to specify a subtitle to the graph</p>
+<p><code>ylab=&quot; &quot;</code> : Y axis title</p>
+<p><code>xlab=&quot;&quot;</code> : X axis title</p>
+<p><code>col=&quot; &quot;</code> : color of the graph</p>
+<p><code>lwd=</code> : line/point width.</p>
+<pre class="r"><code>plot(1:10,weight,
+     type = &quot;l&quot;,
+     main = &quot;A line Diagram of Weight of a Student for past 10 months&quot;,
+     sub = &quot;Figure x.x.x&quot;,
+     xlab = &quot;Months&quot;, ylab = &quot;Weights in Kg&quot;,
+     col=&quot;steelblue&quot;,lwd=5)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-3-1.png" width="672" /> More than one line can be drawn on the same chart by using the lines()function.</p>
+<p>After the first line is plotted, the lines() function can use an additional vector as input to draw the second line in the chart,</p>
+<pre class="r"><code># Create the data for the chart.
+v &lt;- c(7,12,28,3,41)
+t &lt;- c(14,7,6,19,3)
+
+# Plot the bar chart.
+plot(v,type = &quot;o&quot;,col = &quot;red&quot;, xlab = &quot;Month&quot;, ylab = &quot;Rain fall&quot;, 
+   main = &quot;Rain fall chart&quot;)
+
+lines(t, type = &quot;o&quot;, col = &quot;blue&quot;)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>When we have more than two variables and we want to find the correlation between one variable versus the remaining ones we use scatter-plot matrix. We use pairs() function to create matrices of scatter-plots.</p>
+<p>The basic syntax for creating scatter-plot matrices in R is −</p>
+<pre><code>pairs(formula, data)</code></pre>
+<p>Following is the description of the parameters used −</p>
+<ul>
+<li><p>formula represents the series of variables used in pairs.</p></li>
+<li><p>data represents the data set from which the variables will be taken.</p></li>
+</ul>
+<p>Example</p>
+<p>Each variable is paired up with each of the remaining variable. A scatter-plot is plotted for each pair.</p>
+<pre class="r"><code># Plot the matrices between 4 variables giving 12 plots.
+
+# One variable with 3 others and total 4 variables.
+
+pairs(~wt+mpg+disp+cyl,data = mtcars,
+   main = &quot;Scatterplot Matrix&quot;)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<blockquote>
+<p><strong>mtcars</strong> is a pre-stored data frame in R library.</p>
+</blockquote>
+<hr />
+</div>
+<div id="bar-chart" class="section level2">
+<h2>Bar Chart</h2>
+<p>A bar chart represents data in rectangular bars with length of the bar proportional to the value of the variable. R uses the function barplot() to create bar charts. R can draw both vertical and Horizontal bars in the bar chart. In bar chart each of the bars can be given different colors.</p>
+<p>The basic syntax to create a bar-chart in R is −</p>
+<pre><code>barplot(H,xlab,ylab,main, names.arg,col)</code></pre>
+<p>Following is the description of the parameters used −</p>
+<ul>
+<li>H is a vector or matrix containing numeric values used in bar chart.</li>
+<li>xlab is the label for x axis.</li>
+<li>ylab is the label for y axis.</li>
+<li>main is the title of the bar chart.</li>
+<li>names.arg is a vector of names appearing under each bar.</li>
+<li>col is used to give colors to the bars in the graph.</li>
+</ul>
+<p>Example</p>
+<p>A simple bar chart is created using just the input vector and the name of each bar.</p>
+<p>The below script will create a simple bar chart:</p>
+<pre class="r"><code>barplot(weight, main = &quot;A bar plot of weights&quot;,
+        xlab = &quot;&quot;,
+        ylab = &quot;Weights&quot;, 
+        col = &quot;black&quot;)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>The features of the bar chart can be expanded by adding more parameters. The main parameter is used to add title. The col parameter is used to add colors to the bars. The args.name is a vector having same number of values as the input vector to describe the meaning of each bar.</p>
+<p>Example:</p>
+<pre class="r"><code># Create the data for the chart
+H &lt;- c(7,12,28,3,41)
+M &lt;- c(&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;)
+
+# Plot the bar chart 
+barplot(H,names.arg=M,xlab=&quot;Month&quot;,ylab=&quot;Revenue&quot;,col=&quot;blue&quot;,
+main=&quot;Revenue chart&quot;,border=&quot;red&quot;)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>We can create bar chart with groups of bars and stacks in each bar by using a matrix as input values.</p>
+<p>More than two variables are represented as a matrix which is used to create the group bar chart and stacked bar chart.</p>
+<p>Example:</p>
+<pre class="r"><code># Create the input vectors.
+colors = c(&quot;green&quot;,&quot;orange&quot;,&quot;brown&quot;)
+months &lt;- c(&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;)
+regions &lt;- c(&quot;East&quot;,&quot;West&quot;,&quot;North&quot;)
+
+# Create the matrix of the values.
+Values &lt;- matrix(c(2,9,3,11,9,4,8,7,3,12,5,2,8,10,11), 
+                 nrow = 3, ncol = 5, byrow = TRUE)
+
+# Create the bar chart
+barplot(Values, main = &quot;Total Revenue Collected&quot;, 
+        names.arg = months, xlab = &quot;Month&quot;, 
+        ylab = &quot;Revenue&quot;, col = colors)
+
+# Add the legend to the chart
+legend(&quot;topleft&quot;, regions, cex = 1.3, fill = colors)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="box-plot" class="section level2">
+<h2>Box Plot</h2>
+<p>Box plots are a measure of how well distributed is the data in a data set. It divides the data set into three quartiles. This graph represents the minimum, maximum, median, first quartile and third quartile in the data set. It is also useful in comparing the distribution of data across data sets by drawing boxplots for each of them.</p>
+<p>Box plots are created in R by using the boxplot() function.</p>
+<p>The basic syntax to create a boxplot in R is −</p>
+<pre><code>boxplot(x, data, notch, varwidth, names, main)</code></pre>
+<p>Following is the description of the parameters used −</p>
+<ul>
+<li><p>x is a vector or a formula.</p></li>
+<li><p>data is the data frame.</p></li>
+<li><p>notch is a logical value. Set as TRUE to draw a notch.</p></li>
+<li><p>varwidth is a logical value. Set as true to draw width of the box proportionate to the sample size.</p></li>
+<li><p>names are the group labels which will be printed under each boxplot.</p></li>
+<li><p>main is used to give a title to the graph.</p></li>
+</ul>
+<p>Example</p>
+<pre class="r"><code>boxplot(mpg ~ cyl, data = mtcars, xlab = &quot;Number of Cylinders&quot;,
+   ylab = &quot;Miles Per Gallon&quot;, main = &quot;Mileage Data&quot;)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>We can draw boxplot with notch to find out how the medians of different data groups match with each other.</p>
+<p>The below script will create a boxplot graph with notch for each of the data group.</p>
+<pre class="r"><code># Plot the chart.
+boxplot(mpg ~ cyl, data = mtcars, 
+   xlab = &quot;Number of Cylinders&quot;,
+   ylab = &quot;Miles Per Gallon&quot;, 
+   main = &quot;Mileage Data&quot;,
+   notch = TRUE, 
+   varwidth = TRUE, 
+   col = c(&quot;green&quot;,&quot;yellow&quot;,&quot;purple&quot;),
+   names = c(&quot;High&quot;,&quot;Medium&quot;,&quot;Low&quot;)
+)</code></pre>
+<pre><code>## Warning in bxp(list(stats = structure(c(21.4, 22.8, 26, 30.4, 33.9, 17.8, :
+## some notches went outside hinges (&#39;box&#39;): maybe set notch=FALSE</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="histogram" class="section level2">
+<h2>Histogram</h2>
+<p>A histogram represents the frequencies of values of a variable bucketed into ranges. Histogram is similar to bar chat but the difference is it groups the values into continuous ranges. Each bar in histogram represents the height of the number of values present in that range.</p>
+<p>R creates histogram using hist() function. This function takes a vector as an input and uses some more parameters to plot histograms.</p>
+<p>The basic syntax for creating a histogram using R is −</p>
+<pre><code>hist(v,main,xlab,xlim,ylim,breaks,col,border)</code></pre>
+<p>Following is the description of the parameters used −</p>
+<ul>
+<li><p>v is a vector containing numeric values used in histogram.</p></li>
+<li><p>main indicates title of the chart.</p></li>
+<li><p>col is used to set color of the bars.</p></li>
+<li><p>border is used to set border color of each bar.</p></li>
+<li><p>xlab is used to give description of x-axis.</p></li>
+<li><p>xlim is used to specify the range of values on the x-axis.</p></li>
+<li><p>ylim is used to specify the range of values on the y-axis.</p></li>
+<li><p>breaks is used to mention the width of each bar.</p></li>
+</ul>
+<p>Example A simple histogram is created using input vector, label, col and border parameters.</p>
+<pre class="r"><code># Create data for the graph.
+v &lt;-  c(9,13,21,8,36,22,12,41,31,33,19)
+
+# Create the histogram.
+hist(v,xlab = &quot;Weight&quot;,col = &quot;yellow&quot;,border = &quot;blue&quot;)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-11-1.png" width="672" /> To specify the range of values allowed in X axis and Y axis, we can use the xlim and ylim parameters.</p>
+<p>The width of each of the bar can be decided by using breaks.</p>
+<pre class="r"><code># Create data for the graph.
+v &lt;- c(9,13,21,8,36,22,12,41,31,33,19)
+
+# Create the histogram.
+hist(v,xlab = &quot;Weight&quot;,col = &quot;green&quot;,border = &quot;red&quot;, xlim = c(0,40), ylim = c(0,5),
+   breaks = 5)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="pie-diagram" class="section level2">
+<h2>Pie Diagram</h2>
+<p>A pie-chart is a representation of values as slices of a circle with different colors. The slices are labeled and the numbers corresponding to each slice is also represented in the chart.</p>
+<p>In R the pie chart is created using the pie() function which takes positive numbers as a vector input. The additional parameters are used to control labels, color, title etc.</p>
+<p>The basic syntax for creating a pie-chart using the R is −</p>
+<pre><code>pie(x, labels, radius, main, col, clockwise)</code></pre>
+<p>Following is the description of the parameters used −</p>
+<ul>
+<li><p>x is a vector containing the numeric values used in the pie chart.</p></li>
+<li><p>labels is used to give description to the slices.</p></li>
+<li><p>radius indicates the radius of the circle of the pie chart.(value between −1 and +1).</p></li>
+<li><p>main indicates the title of the chart.</p></li>
+<li><p>col indicates the color palette.</p></li>
+<li><p>clockwise is a logical value indicating if the slices are drawn clockwise or anti clockwise.</p></li>
+</ul>
+<p>Example:</p>
+<p>A very simple pie-chart is created using just the input vector and labels. The below script will create and save the pie chart in the current R working directory.</p>
+<pre class="r"><code># Create data for the graph.
+x &lt;- c(21, 62, 10, 53)
+labels &lt;- c(&quot;London&quot;, &quot;New York&quot;, &quot;Singapore&quot;, &quot;Mumbai&quot;)
+
+# Plot the chart.
+pie(x,labels)</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>We can expand the features of the chart by adding more parameters to the function. We will use parameter main to add a title to the chart and another parameter is col which will make use of rainbow colour pallet while drawing the chart. The length of the pallet should be same as the number of values we have for the chart. Hence we use length(x).</p>
+<p>Example The below script will create and save the pie chart in the current R working directory.</p>
+<pre class="r"><code># Create data for the graph.
+x &lt;- c(21, 62, 10, 53)
+labels &lt;- c(&quot;London&quot;, &quot;New York&quot;, &quot;Singapore&quot;, &quot;Mumbai&quot;)
+
+# Plot the chart with title and rainbow color pallet.
+pie(x, labels, main = &quot;City pie chart&quot;, col = rainbow(length(x)))</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>We can add slice percentage and a chart legend by creating additional chart variables.</p>
+<pre class="r"><code># Create data for the graph.
+x &lt;-  c(21, 62, 10,53)
+labels &lt;-  c(&quot;London&quot;,&quot;New York&quot;,&quot;Singapore&quot;,&quot;Mumbai&quot;)
+
+piepercent&lt;- round(100*x/sum(x), 1)
+
+# Plot the chart.
+pie(x, labels = piepercent, main = &quot;City pie chart&quot;,col = rainbow(length(x)))
+legend(&quot;topright&quot;, c(&quot;London&quot;,&quot;New York&quot;,&quot;Singapore&quot;,&quot;Mumbai&quot;), cex = 0.8,
+   fill = rainbow(length(x)))</code></pre>
+<p><img src="graphics_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+---
+title: Functions
+---
+
+A function is a set of statements organized together to perform a specific task. R has a large number of in-built functions and the user can create their own functions.
+
+In R, a function is an object so the R interpreter is able to pass control to the function, along with arguments that may be necessary for the function to accomplish the actions.
+
+The function in turn performs its task and returns control to the interpreter as well as any result which may be stored in other objects.
+
+An R function is created by using the keyword `function`. The basic syntax of an R function definition is as follows −
+
+```
+function_name <- function(arg_1, arg_2, ...) {
+   Function body 
+}
+```
+The different parts of a function are −
+
+* `Function Name` − This is the actual name of the function. It is stored in R environment as an object with this name.
+
+* `Arguments` − An argument is a placeholder. When a function is invoked, you pass a value to the argument. Arguments are optional; that is, a function may contain no arguments. Also arguments can have default values.
+
+* `Function Body` − The function body contains a collection of statements that defines what the function does.
+
+* `Return Value` − The return value of a function is the last expression in the function body to be evaluated.
+
+R has many in-built functions which can be directly called in the program without defining them first. We can also create and use our own functions referred as user defined functions.
+
+We can create user-defined functions in R. They are specific to what a user wants and once created they can be used like the built-in functions. Below is an example of how a function is created and used.
+
+## Create a function to print squares of numbers in sequence.
+```{r}
+new.function <- function(a) {
+   for(i in 1:a) {
+      b <- i^2
+      print(b)
+   }
+}
+
+# Call the function new.function supplying 6 as an argument.
+new.function(6)
+```
+The arguments to a function call can be supplied in the same sequence as defined in the function or they can be supplied in a different sequence but assigned to the names of the arguments.
+
+```{r}
+# Create a function with arguments.
+new.function <- function(a,b,c) {
+   result <- a * b + c
+   print(result)
+}
+
+# Call the function by position of arguments.
+new.function(5,3,11)
+
+# Call the function by names of the arguments.
+new.function(a = 11, b = 5, c = 3)
+```
+We can define the value of the arguments in the function definition and call the function without supplying any argument to get the default result. But we can also call such functions by supplying new values of the argument and get non default result.
+
+```{r}
+# Create a function with arguments.
+new.function <- function(a = 3, b = 6) {
+   result <- a * b
+   print(result)
+}
+
+# Call the function without giving any argument.
+new.function()
+
+# Call the function with giving new values of the argument.
+new.function(9,5)
+```
+
+## Some user defined functions
+
+Now we will write functions for the following Statistical measurements:
+
++ Mean
++ Standard deviation
++ Coefficient of variation
++ correlation coefficient
++ regression coefficient
++ t statistics
+
+```{r}
+# Creating a random sample
+x=sample(20:50,20)
+y=sample(20:50,20)
+```
+
+
+### Function for mean
+```{r}
+# Function for mean
+
+my.mean=function(x){
+  # getting sum of the observations
+  s=sum(x)
+  # getting number of observations
+  n=length(x)
+  # calculating the mean
+  avg=s/n
+  # rounding of the result to 4 decimal places
+  avg=round(avg,4)   #this step is optional. 
+  # if you are not using the next line then comment this out.
+  
+  #printing the result
+  cat(c("The arithmetic mean is",avg,"\n"))   # This step is optional, 
+  #if you want a simple function without any text in the result, 
+  #comment out this step and uncomment the next line.
+  
+  #print(avg)
+  }
+my.mean(x)
+my.mean(y)
+
+```
+### Function for standard deviation
+
+```{r}
+# Function for Standard Deviation
+
+my.sd=function(x){
+  #mean of x
+  avg=mean(x)
+  # number of observations
+  n=length(x)
+  # the deviation from mean
+  dif=x-avg
+  # square of deviations
+  dif2=dif^2
+  # sum of squares of deviation
+  s=sum(dif2)
+  # the stndard daviation
+  std.dev=sqrt(s/n)
+  #rounding off the number to 2 decimal places
+  std.dev=round(std.dev,2)
+  cat(c("The Standard deviation is",std.dev,"\n"))
+}
+my.sd(x)
+my.sd(y)
+```
+### Function for Co-efficient of variation
+
+```{r}
+# Function for Co-efficient of variation
+
+my.cv=function(x){
+  #mean of x
+  avg=mean(x)
+  avg=round(avg,2)
+  # number of observations
+  n=length(x)
+  # the deviation from mean
+  dif=x-avg
+  # square of deviations
+  dif2=dif^2
+  # sum of squares of deviation
+  s=sum(dif2)
+  # the stndard daviation
+  std.dev=sqrt(s/n)
+  std.dev=round(std.dev,2)
+  # calculating the coeficient of variation
+  cv=(std.dev/avg)*100
+  cv=round(cv,2)
+  cat(c("The mean is",avg,"\n"))
+  cat(c("The Standard deviation is",std.dev,"\n"))
+  cat(c("The Co-efficient of variation (CV) is",cv,"\n"))
+}
+
+my.cv(x)
+my.cv(y)
+
+```
+
+### Function for Coefficient of correlation
+
+```{r}
+# Function for Coefficient of correlation
+
+my.cor=function(x,y){
+  
+  mean.x=mean(x)
+  mean.y=mean(y)
+  s.xy=sum(x*y)
+  n=length(x)
+  cov.xy=(s.xy/n)-mean.x*mean.y
+  dx=(x-mean.x)^2
+  dy=(y-mean.y)^2
+  s.x=sum(dx)
+  s.y=sum(dy)
+  sd.x=sqrt(s.x/n)
+  sd.y=sqrt(s.y/n)
+  cor.xy=cov.xy/(sd.x*sd.y)
+  
+  cat(c("The Co-efficient of Correlation is","\n"))
+  print(cor.xy)
+ 
+}
+my.cor(x,y)
+```
+
+### Function for Regression coefficient
+
+```{r}
+# Function for Regression coefficient
+
+my.reg=function(x,y){
+  mean.x=mean(x)
+  mean.y=mean(y)
+  s.xy=sum(x*y)
+  n=length(x)
+  cov.xy=(s.xy/n)-mean.x*mean.y
+  dx=(x-mean.x)^2
+  dy=(y-mean.y)^2
+  s.x=sum(dx)
+  s.y=sum(dy)
+  sd.x=sqrt(s.x/n)
+  sd.y=sqrt(s.y/n)
+  cor.xy=cov.xy/(sd.x*sd.y)
+  b.yx=cor.xy*(sd.y/sd.x)
+  b.xy=cor.xy*(sd.x/sd.y)
+  
+  cat(c("The regression coefficient of Y on X is","\n"))
+  print(b.yx)
+  cat("\n")
+  cat(c("The regression coefficient of X on Y is","\n"))
+  print(b.xy)
+}
+
+my.reg(x,y)
+
+```
+
+### Function for t-test for single mean
+
+```{r}
+# Function for single mean t test
+
+my.t.single=function(x,mu=0,alpha=0.95){
+ mean.x=mean(x)
+ S=sd(x)
+ n=length(x)
+ df=n-1
+ t.cal=(mean.x-mu)/(S/sqrt(n))
+ t.tab=qt(alpha,df)
+ 
+    if(abs(t.cal)<=t.tab){
+      cat("The null hypothesis should be accepted \n")
+    }else{
+      cat("The null hypothesis should be rejected \n")
+    }
+ cat("The sample mean is \n")
+ print(mean.x)
+ cat("Calculated t statistic \n")
+ print(t.cal)
+ p.value=2*pt(-abs(t.cal),df)
+ cat("p-value \n")
+ print(p.value)
+}
+my.t.single(x,50)
+```
+
+### Function for paired mean t test
+
+```{r}
+# Function for paired mean t test
+
+my.t.paired=function(x,y,alpha=0.95){
+  mean.x=mean(x)
+  mean.y=mean(y)
+  S.x=sd(x)
+  S.y=sd(y)
+  n.x=length(x)
+  n.y=length(y)
+  df=n.x+n.y-2
+  S=sqrt(((n.x-1)*var(x)+(n.y-1)*var(y))/(n.x+n.y-2))
+  t.cal=(mean.x-mean.y)/(S*sqrt((1/n.x)+(1/n.y)))
+  t.tab=qt(alpha,df)
+  
+  if(abs(t.cal)<=t.tab){
+    cat("The null hypothesis should be accepted \n")
+  }else{
+    cat("The null hypothesis should be rejected \n")
+  }
+  
+  cat("Calculated t statistic \n")
+  print(t.cal)
+  p.value=2*pt(-abs(t.cal),df)
+  cat("p-value \n")
+  print(p.value)
+}
+my.t.paired(x,y)
+```

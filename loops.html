@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Loops and Decisions</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Stats4Every1</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="intoduction.html">
+    <span class="fa fa-home"></span>
+     
+    Introduction to the Course
+  </a>
+</li>
+<li>
+  <a href="what_is_r.html">What is R?</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Variables
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="variables.html">R Variables</a>
+    </li>
+    <li>
+      <a href="vectors.html">Vectors</a>
+    </li>
+    <li>
+      <a href="matrix.html">Matrix</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sec.html">Basic Statistical Calculations</a>
+    </li>
+    <li>
+      <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="loops.html">Loops and Decisions</a>
+    </li>
+    <li>
+      <a href="factors.html">Factors</a>
+    </li>
+    <li>
+      <a href="df.html">Data frame</a>
+    </li>
+    <li>
+      <a href="functions.html">Functions</a>
+    </li>
+    <li>
+      <a href="distribution.html">Probability Distribution</a>
+    </li>
+    <li>
+      <a href="stest.html">Statistical Test</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/SarmaSaurav/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.facebook.com/Stats4Everyone">
+    <span class="fa fa-facebook fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/saurav-sarma-0044">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Loops and Decisions</h1>
+
+</div>
+
+
+<div id="loops-in-r" class="section level2">
+<h2>Loops in R</h2>
+<p>A loop statement allows us to execute a statement or group of statements multiple times and the following is the general form of a loop statement in most of the programming languages −</p>
+<p><img src="https://www.tutorialspoint.com/r/images/loop_architecture.jpg" width="200px" /></p>
+<p>R programming language provides the following kinds of loop to handle looping requirements.</p>
+<ul>
+<li>repeat</li>
+<li>while</li>
+<li>for</li>
+</ul>
+<div id="repeat-loops" class="section level4">
+<h4>Repeat loops</h4>
+<p>The Repeat loop executes the same code again and again until a stop condition is met.</p>
+<p>The basic syntax for creating a repeat loop in R is −</p>
+<pre><code>repeat {
+  commands
+    if(condition) {
+              break
+                  }
+      }</code></pre>
+<p>The flow diagram for repeat loop is:</p>
+<p><img src="https://www.tutorialspoint.com/r/images/r_break_statement.jpg" width="200px" /></p>
+<p>An example of repeat loop is</p>
+<pre class="r"><code>v = c(&quot;Cotton&quot;,&quot;University&quot;)
+count = 1
+
+repeat {
+   print(v)
+   count = count+1
+   
+   if(count &gt; 5) {
+      break
+   }
+}</code></pre>
+<pre><code>## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;</code></pre>
+<p>The <code>break</code> statement is use to stop a loop when a certain condition is fulfilled.</p>
+</div>
+<div id="while-loop" class="section level3">
+<h3>While loop</h3>
+<p>The basic syntax for creating a while loop in R is −</p>
+<pre><code> while (test_expression) {
+    statement 
+  }</code></pre>
+<p>The flow diagram for while loop is:</p>
+<p><img src="https://www.tutorialspoint.com/r/images/swift_while_loop.jpg" width="200px" /></p>
+<p>Here key point of the while loop is that the loop might not ever run. When the condition is tested and the result is false, the loop body will be skipped and the first statement after the while loop will be executed.</p>
+<p>An example of While loop</p>
+<pre class="r"><code>v = c(&quot;Cotton&quot;,&quot;University&quot;)
+count = 1
+
+while (count &lt; 7) {
+   print(v)
+   count = count + 1
+}</code></pre>
+<pre><code>## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;</code></pre>
+<p>The above while loop is repeated until <code>count</code> is less than 7, hence it is repeated 6 times.</p>
+<p>However if the while condition is false at the very first step then the loop is not executed at all. For example:</p>
+<pre class="r"><code>v = c(&quot;Cotton&quot;,&quot;University&quot;)
+count = 8
+
+while (count &lt; 7) {
+   print(v)
+   count = count + 1
+}</code></pre>
+<p>The above while loop print nothing as the test condition is false.</p>
+<div id="for-loops" class="section level4">
+<h4>For loops</h4>
+<p>A For loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.</p>
+<p>The basic structure of a for loop is</p>
+<pre><code>for (value in vector) { 
+                 statements
+                }</code></pre>
+<p>The flow diagram of for loop is:</p>
+<p><img src="https://www.tutorialspoint.com/r/images/r_for_loop.jpg" width="200px" /></p>
+<p>An example of for loop</p>
+<pre class="r"><code>v=c(&quot;Cotton&quot;, &quot;University&quot;)
+for (i in 1:10) {
+  print(v)
+}</code></pre>
+<pre><code>## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;
+## [1] &quot;Cotton&quot;     &quot;University&quot;</code></pre>
+<p>The above for loop print the variable <code>v</code> 10 times.</p>
+<pre class="r"><code>a_vector=rep(10,10)     # We have created a vector of size 10 with all values = 10
+for (i in 1:10) {   
+  a_vector[i]=a_vector[i]+i
+}
+a_vector</code></pre>
+<pre><code>##  [1] 11 12 13 14 15 16 17 18 19 20</code></pre>
+<p>We can use multiple for loops in the same program. Also for loops can also be nested.</p>
+<p>An example of nested for loops is given below:</p>
+<pre class="r"><code>a_matrix=mat.or.vec(3,3) #Creating an empty matrix of size 3x3
+a_matrix</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    0    0    0
+## [2,]    0    0    0
+## [3,]    0    0    0</code></pre>
+<pre class="r"><code>for (i in 1:3) {
+  for (j in 1:3) {
+    a_matrix[i,j]=a_matrix[i,j]+(i*j)
+  }
+}
+a_matrix</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    2    4    6
+## [3,]    3    6    9</code></pre>
+<p>In the above example we have nested two for loops. At first we have created an empty matrix with all elements equal to 0. The loops assign the product of their position to each element of the empty matrix.</p>
+<p>for loops are particularly flexible in that they are not limited to integers, or even numbers in the input. We can pass character vectors, logical vectors, lists or expressions.</p>
+<pre class="r"><code>v &lt;- LETTERS[1:6]
+for ( i in v) {
+   print(i)
+}</code></pre>
+<pre><code>## [1] &quot;A&quot;
+## [1] &quot;B&quot;
+## [1] &quot;C&quot;
+## [1] &quot;D&quot;
+## [1] &quot;E&quot;
+## [1] &quot;F&quot;</code></pre>
+<p><em>Note: the function <code>mat.or.vec (row number, column number)</code> is use to generate an empty matrix or vector.</em></p>
+</div>
+</div>
+</div>
+<div id="conditional-statements-in-r" class="section level2">
+<h2>Conditional Statements in R</h2>
+<p>Conditional statements are decision making structure which are tested by the program, along with a statement or statements to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.</p>
+<p>The general flow chart of a conditional structure is:</p>
+<p><img src="https://www.tutorialspoint.com/r/images/r_decision_making.png" width="200px" /></p>
+<p>R provides the following types of decision making statements:</p>
+<ul>
+<li>if statements</li>
+<li>if else statements</li>
+<li>switch statements</li>
+</ul>
+<div id="if-satement" class="section level4">
+<h4>if satement:</h4>
+<p>The basic syntax for creating an if statement in R is −</p>
+<pre><code>if(conditional_expression) {
+    statement(s) will execute if the conditional expression is true.
+}</code></pre>
+<p>If the conditional expression evaluates to be true, then the block of code inside the if statement will be executed. If conditional expression evaluates to be false, then the first set of code after the end of the if statement (after the closing curly brace) will be executed.</p>
+<p>The flow diagram for if statement is:</p>
+<p><img src="https://www.tutorialspoint.com/r/images/r_if_statement.jpg" width="200 px" /></p>
+<p>An example of if statement is:</p>
+<pre class="r"><code>x=20
+if (x&lt;30) {
+  print(&quot;Cotton University&quot;)
+}</code></pre>
+<pre><code>## [1] &quot;Cotton University&quot;</code></pre>
+</div>
+<div id="if-else-statement" class="section level4">
+<h4>if-else statement:</h4>
+<p>Here an if statement is followed by an optional else statement which executes when the conditional expression is false.</p>
+<p>The basic syntax for creating an if…else statement in R is −</p>
+<pre><code>if(condition_expression) {
+    statement(s) will execute if the condition expression is true.
+} else {
+    statement(s) will execute if the condition expression is false.
+}</code></pre>
+<p>If the condition expression evaluates to be true, then the if block of code will be executed, otherwise else block of code will be executed.</p>
+<p>The flow diagram of if-else statement is:</p>
+<p><img src="https://www.tutorialspoint.com/r/images/r_if_else_statement.jpg" width="200px" /></p>
+<p>An example of if-else statement:</p>
+<pre class="r"><code>marks=c(15,45,65,78,13,45,8,60)
+
+for (i in 1:8) {
+        if (marks[i]&lt;30) {
+            print(&quot;FAIL&quot;)
+}
+        else {
+            print(&quot;PASS&quot;)
+        }
+}</code></pre>
+<pre><code>## [1] &quot;FAIL&quot;
+## [1] &quot;PASS&quot;
+## [1] &quot;PASS&quot;
+## [1] &quot;PASS&quot;
+## [1] &quot;FAIL&quot;
+## [1] &quot;PASS&quot;
+## [1] &quot;FAIL&quot;
+## [1] &quot;PASS&quot;</code></pre>
+<p>An if statement can be followed by an optional else if…else statement, which is very useful to test various conditions using single if…else if statement.</p>
+<p>When using if, else if, else statements there are few points to keep in mind.</p>
+<ul>
+<li><p>An if can have zero or one else and it must come after any else if’s.</p></li>
+<li><p>An if can have zero to many else if’s and they must come before the else.</p></li>
+<li><p>Once an else if succeeds, none of the remaining else if’s or else’s will be tested.</p></li>
+</ul>
+<p>The basic syntax for creating an <code>if...else if...else</code> statement in R is −</p>
+<pre><code>if(condition_expression 1) {
+    Executes when the condition expression 1 is true.
+} else if( condition_expression 2) {
+    Executes when the condition expression 2 is true.
+} else if( condition_expression 3) {
+    Executes when the condition expression 3 is true.
+} else {
+    Executes when none of the above condition is true.
+}</code></pre>
+<p>An example of nested if-else statement:</p>
+<pre class="r"><code>data=c(15,45,65,78,13,45,8,60)
+for (i in 1:length(data)) {
+  if(data[i]&lt;30){
+    print(&quot;FAIL&quot;)
+    }
+  else if(data[i]&gt;=30 &amp;&amp; data[i]&lt;45){
+    print(&quot;Third division&quot;)
+  }
+  else if(data[i]&gt;=45 &amp;&amp; data[i]&lt;60){
+    print(&quot;Second division&quot;)
+  }
+  else {
+    print(&quot;First division&quot;)
+    }
+}</code></pre>
+<pre><code>## [1] &quot;FAIL&quot;
+## [1] &quot;Second division&quot;
+## [1] &quot;First division&quot;
+## [1] &quot;First division&quot;
+## [1] &quot;FAIL&quot;
+## [1] &quot;Second division&quot;
+## [1] &quot;FAIL&quot;
+## [1] &quot;First division&quot;</code></pre>
+</div>
+<div id="switch-statement" class="section level4">
+<h4>switch statement:</h4>
+<p>A switch statement allows a variable to be tested for equality against a list of values. Each value is called a case, and the variable being switched on is checked for each case.</p>
+<p>The basic syntax for creating a switch statement in R is −</p>
+<pre><code>switch(expression, case1, case2, case3....)</code></pre>
+<p>The following rules apply to a switch statement −</p>
+<ul>
+<li><p>If the value of expression is not a character string it is coerced to integer.</p></li>
+<li><p>You can have any number of case statements within a switch. Each case is followed by the value to be compared to and a colon.</p></li>
+<li><p>If the value of the integer is between 1 and nargs()−1 (The max number of arguments)then the corresponding element of case condition is evaluated and the result returned.</p></li>
+<li><p>If expression evaluates to a character string then that string is matched (exactly) to the names of the elements.</p></li>
+<li><p>If there is more than one match, the first matching element is returned.</p></li>
+<li><p>No Default argument is available.</p></li>
+<li><p>In the case of no match, if there is a unnamed element of … its value is returned. (If there is more than one such argument an error is returned.)</p></li>
+</ul>
+<p>The flow diagram of switch statement is</p>
+<p><img src="https://www.tutorialspoint.com/r/images/r_switch_statement.jpg" width="200px" /></p>
+<p>An example of switch statement:</p>
+<pre class="r"><code>x=c(1,3,5,7,9)
+test=1
+test_result=switch (test,
+  mean = mean(x),
+  med = median(x),
+  max = max(x)
+)
+test_result</code></pre>
+<pre><code>## [1] 5</code></pre>
+<p>Here the switch statement is use to switch between <code>mean</code>, <code>median</code> and <code>max</code> functions. The <code>test</code> variable determines which function inside the <code>switch statement</code> is to executed.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

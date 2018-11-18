@@ -11,11 +11,11 @@
 
 
 
-<title></title>
+<title>Basic Statistical Calculations</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -106,34 +106,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 64px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 
 .section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 </style>
 
@@ -180,15 +180,70 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">About Me</a>
+      <a class="navbar-brand" href="index.html">Stats4Every1</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="intoduction.html">Introduction to the Course</a>
+  <a href="intoduction.html">
+    <span class="fa fa-home"></span>
+     
+    Introduction to the Course
+  </a>
 </li>
 <li>
-  <a href="sec.html">Basic Statistical Calculations</a>
+  <a href="what_is_r.html">What is R?</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Variables
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="variables.html">R Variables</a>
+    </li>
+    <li>
+      <a href="vectors.html">Vectors</a>
+    </li>
+    <li>
+      <a href="matrix.html">Matrix</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sec.html">Basic Statistical Calculations</a>
+    </li>
+    <li>
+      <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="loops.html">Loops and Decisions</a>
+    </li>
+    <li>
+      <a href="factors.html">Factors</a>
+    </li>
+    <li>
+      <a href="df.html">Data frame</a>
+    </li>
+    <li>
+      <a href="functions.html">Functions</a>
+    </li>
+    <li>
+      <a href="distribution.html">Probability Distribution</a>
+    </li>
+    <li>
+      <a href="stest.html">Statistical Test</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -216,12 +271,6 @@ $(document).ready(function () {
      
   </a>
 </li>
-<li>
-  <a href="https://www.researchgate.net/profile/Saurav_Sarma3">
-    <span class="fa fa-user fa-lg"></span>
-     
-  </a>
-</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -231,11 +280,97 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Basic Statistical Calculations</h1>
 
 </div>
 
 
+<p>In this chapter we will learn how to carry out some basic statistical measurements in R. The measurements are-</p>
+<ul>
+<li>Mean</li>
+<li>Variance</li>
+<li>Median</li>
+<li>Range</li>
+<li>Co-variance</li>
+<li>Correlation</li>
+</ul>
+<p>The formula for the measurements are</p>
+<p><span class="math display">\[ Mean= \frac{1}{n} \sum_{i=1}^{n} x_i\]</span> <span class="math display">\[Variance = \frac{1}{n}\sum_{i=1}^{n} (x_i-\bar{x})\]</span> <span class="math display">\[ Median = l+\dfrac{\frac{N}{2}-f_c}{f}* h\]</span></p>
+<p><span class="math display">\[Range = Maximum \ \   observation - Minimum \ \ \   observation\]</span> <span class="math display">\[ Covariance = \frac{1}{n}\sum_{i=1}^{n}x_iy_i- \bar{x}\bar{y}\]</span> <span class="math display">\[ Correlation = \dfrac{Cov(x,y)}{\sqrt{Variance(x)}\sqrt{Variance(y)}}\]</span> Let us consider the following data</p>
+<pre class="r"><code>weight=c(45,81,47,58,61,76,47,44,66,55)
+height=c(140,165,145,160,166,170,156,161,159,163)</code></pre>
+<p>Once the data are being entered in R, we can now perform various statistical calculations:</p>
+<div id="mean" class="section level3">
+<h3>Mean</h3>
+<p>Generally by <strong><code>mean</code></strong> we calculate <strong><code>Arithmetic mean</code></strong>. Arithmetic mean gives the center of our data</p>
+<pre class="r"><code>mean_weight=mean(weight)
+mean_weight</code></pre>
+<pre><code>## [1] 58</code></pre>
+<pre class="r"><code>mean_height=mean(height)
+mean_height</code></pre>
+<pre><code>## [1] 158.5</code></pre>
+</div>
+<div id="variance" class="section level3">
+<h3>Variance</h3>
+<p>Variance gives the amount of variation present in our data. Or how much our information are scattered from the center of our data</p>
+<pre class="r"><code>variance_weight=var(weight)
+variance_weight</code></pre>
+<pre><code>## [1] 171.3333</code></pre>
+<pre class="r"><code>variance_height=var(height)
+variance_height</code></pre>
+<pre><code>## [1] 87.83333</code></pre>
+</div>
+<div id="standard-deviation" class="section level3">
+<h3>Standard deviation</h3>
+<p>Standard deviation is simply the square root of variance</p>
+<pre class="r"><code>sd_weight=sd(weight)
+sd_weight</code></pre>
+<pre><code>## [1] 13.08944</code></pre>
+<pre class="r"><code>sd_height=sd(height)
+sd_height</code></pre>
+<pre><code>## [1] 9.371944</code></pre>
+</div>
+<div id="median" class="section level3">
+<h3>Median</h3>
+<p>Median is the mid point of our information when arranged in ascending or descending order.</p>
+<pre class="r"><code>median_weight=median(weight)
+median_weight</code></pre>
+<pre><code>## [1] 56.5</code></pre>
+<pre class="r"><code>median_height=median(height)
+median_height</code></pre>
+<pre><code>## [1] 160.5</code></pre>
+</div>
+<div id="range" class="section level3">
+<h3>Range</h3>
+<p>Range gives the minimum and maximum values of the data.</p>
+<pre class="r"><code>range_weight=range(weight)
+range_weight</code></pre>
+<pre><code>## [1] 44 81</code></pre>
+<pre class="r"><code>range_height=range(height)
+range_height</code></pre>
+<pre><code>## [1] 140 170</code></pre>
+</div>
+<div id="covariance" class="section level3">
+<h3>Covariance</h3>
+<p>Co-variance is a measurement of variation present in two sets of data when considered together. In our example, we are calculating how weight and height varies together.</p>
+<pre class="r"><code>cov_weight_height=cov(weight, height)
+cov_weight_height</code></pre>
+<pre><code>## [1] 83.44444</code></pre>
+</div>
+<div id="correlation" class="section level3">
+<h3>Correlation</h3>
+<p>Correlation is the measurement of association or bonding between two variables. In this example, correlation will tell us what kind of relationship weight and height posses.</p>
+<pre class="r"><code>correlation=cor(weight, height)
 
+correlation</code></pre>
+<pre><code>## [1] 0.680216</code></pre>
+<ul>
+<li><p>If the value of correlation is greater than 0, then we say that the two variables are positively correlated.</p></li>
+<li><p>If the value of correlation is less than 0, then we say that the two variables are negatively correlated.</p></li>
+<li><p>If the value of correlation is 0, then we say that the two variables are not correlated.</p></li>
+</ul>
+<p>In our example the correlation is 0.680216 which is greater than 0, and hence we say that weight and heights are positively correlated.</p>
+</div>
 
 
 

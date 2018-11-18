@@ -2,3 +2,51 @@
 title: Vectors
 ---
 
+A vector is a variable which can store more than one value under the same variable.
+
+```{r}
+a=c(1,2,3,4,5,6,7,8,9,10)
+a      # This will display the values stored in variable "a"
+sum(a) # This will give the total sum of all the elements of "a"
+a^2  # This will square each and every elements of the vector "a"
+b=c(2,3,4,5,6,7,8,9,10,11)
+a+b  # This will add corresponding elements of the two vectors "a" and "b" 
+b-a  # This will give the diffrence between corresponding elements of "b" and "a"
+a*b  # This will multiply corresponding elements of "a" and "b".
+
+a/b  # This will divide the elements of vector "a" by 
+     # corresponding elements of vector "b".
+
+```
+
+
+
+## Arranging a vector in increasing or decreasing order
+
+```{r}
+aa=c(7,1,9,4,7,3,5,8,41,36,74,2)
+sort(aa)
+sort(aa, decreasing = T)
+```
+
+
+## Some other in-built functions for vectors
+
+The `seq` function is used to create a sequence of numbers
+
+```{r}
+a_seq = seq(from=0, to= 10, by=1)
+a_seq
+```
+
+  + from = first term
+  + to = last term
+  + by = the difference between two numbers
+
+The `rep` function can be use to generate a vector with repeated value.
+
+```{r}
+a_rep=rep(5, times=10)
+a_rep
+```
+Here a vector is created with the value 5 repeated 10 times.

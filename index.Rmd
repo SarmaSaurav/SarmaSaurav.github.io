@@ -1,4 +1,5 @@
 ---
+title: About Me
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
@@ -12,14 +13,10 @@ A post graduate in Statistics from [Gauhati University](https://gauhati.ac.in/).
 Currently working as a guest faculty in the Department of Statistics, [Cotton University](https://cottonuniversity.ac.in/).
 Also pursuing my Ph.D. from Gauhati University under the guidance of [Prof Kishore K Das](https://www.gauhati.ac.in/member.php?name=kishore-kumar-das&aid=3&did=32).
 
-**Field of Interest:**
+**Field of Interest:**  
+Statistical Computation, Demography, Distribution Theory, Data Mining.
 
-+ Statistical Computation.
-+ Demography.
-+ Distribution Theory.
-+ Data Mining.
-
-_Feel free to contact me for any statistical help._
+_**Feel free to contact me for any statistical help.**_
 
 
 

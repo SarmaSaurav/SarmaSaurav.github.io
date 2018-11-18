@@ -1,0 +1,219 @@
+---
+title: Statistical Test of Significance
+---
+
+<style>
+    #green {
+        color: green;
+    }
+</style>
+
+<style>
+    #blue {
+        color: blue;
+    }
+</style>
+
+<style>
+    #purple {
+        color: purple;
+    }
+</style>
+
+
+```{r, echo=FALSE}
+set.seed(0)
+```
+
+# Statistical Test{#green} 
+Stastitical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.
+
+> HYPOTHESIS: 
+A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, **null hypothesis** and **alternative hypothesis**.
+
+> NULL HYPOTHESIS:  
+
+
+Here we will discuss about the following statistical tests-
+
++ t-test
++ Chi-square test
++ F test (ANOVA)
+
+
+## t-test{#blue}
+
+t-test is used when we are comparing a single sample mean with the mean of the population from which the sample is generated or when we are comparing the means of two different samples. 
+
+> It is to be noted that t-test is only applicable when the sample size is less than 30
+
+### t-test for single mean
+
+The t-test, or student's test for single mean, compares the mean of a vector against a theoretical population mean, . The formula used to compute the t-test is:
+
+$$ t= \dfrac{\bar{x}-\mu}{S/\sqrt{n}}$$
+
+Here
+
++ **$\bar{x}$** refers to the sample mean.
++ **$\mu$** to the assumed population mean.
++ **S** is the standard error.
++ **n** the number of observations.
+
+Here we are interested in testing the null hpothesis  
+$H_0: \mu(\text{The population mean})=\mu_0(\text{Some particular value})$
+
+Against the alternative
+$H_1: \mu(\text{The population mean})\ne\mu_0(\text{Some particular value})$
+
+
+To evaluate the statistical significance of the t-test, you need to compute the p-value. The p-value ranges from 0 to 1, and is interpreted as follow:
+
++ A p-value lower than 0.05 means you are strongly confident to reject the null hypothesis, thus the alternative hypothesis is accepted.
+
++ A p-value higher than 0.05 indicates that you don't have enough evidences to reject the null hypothesis and hence it may be accepted.
+
+```{r,echo=FALSE}
+x=round(rnorm(25,30,15))
+```
+
+**Example**
+
+> In an All-India level test, 25 students from a certain coaching center secured the following marks   
+`r x`  
+The owner of the center claimed that average mark scored by a student (All over India) is 30. Test whether his claim is correct or not.
+
+**Solution:**
+
+Here we are testing the null hypothesis: $H_0:\mu=30$  
+Against the alternative $H_1: \mu \ne 30$
+
+```{r}
+# Enter the data
+x=c(49, 25, 50, 49, 36, 7, 16, 26, 30, 66, 41, 18, 13, 26, 26, 24, 34, 17, 37, 11, 27, 36, 32, 42, 29)
+# Apply t test sor single mean
+t.test(x, mu=30)
+
+```
+Here, the p-value is 0.8085 which is greater than 0.05, hence we does not have enough evidence to reject his claim. So we should accept his claim. Also, we are 95% sure that the mark of a student will lie within 24.95326~25 and 36.40674~36.
+
+### t-test for paired mean
+
+This test is used when we want to compare the mean of two sets of data assuming that they have equal amount of variation. The test statistics is calculated using the formula-
+$$t=\dfrac{\bar{x}-\bar{y}}{S\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
+Here,
+
++ **$\bar{x}$** is the mean of first set of data.
++ **$\bar{y}$** is the mean of second set of data.
++ **S** is the standard error.
++ **$n_1$** is the number of elements in first set.
++ **$n_2$** is the number of elements in second set.
+
+Here we are interested in testing the nuyll hypothesis $\bar{x}=\bar{y}$
+
+Against the alternative $\bar{x}\ne \bar{y}$
+
+
+**Example**
+
+> In an experiment, two different kinds of protein supplement were provided to the members of a Gym. Their strength on a particular scale were measured after one month of using the product. The results are as shown below  
+Supplement A: 25,32,30,34,24,14,32,24,30,31,35,25.  
+Supplement B: 44,34,22,10,47,31,40,30,32,35,18,21,35,29,22.  
+The owner of the gym claimed that the two supplements are not of much difference. Is he correct about his claim? Test using t-test for paired mean.
+
+**Solution**
+
+Here, our null hypothesis is, $H_0:$ The two supplements has the same result  
+Against the alternative that $H_1:$ They are significantly diffrent.
+
+```{r}
+# Enter first set of data
+x=c(25,32,30,34,24,14,32,24,30,31,35,25)
+
+# Enter second set of data
+y=c(44,34,22,10,47,31,40,30,32,35,18,21,35,29,22)
+
+# Apply t-test
+
+t.test(x,y,var.equal =T)
+
+```
+
+Since the p-value = 0.5472 is greater than 0.05, so we should accept the null hypothesis and conclude that the owner's claim is correct.
+
+## Chi-square test{#purple}
+
+Chi-Square test is a statistical method to determine if two categorical variables have a significant correlation between them. Both those variables should be from same population and they should be categorical like − Yes/No, Male/Female, Red/Green etc.
+
+> Chi square test is only applicable when your variable is categorical.
+
+The formula used for CHi-square test is:
+$$\chi^2=\sum_{i=1}^n\dfrac{(O_i-E_i)^2}{E_i^2}$$
+Where $O_i$ is the observed frequency in each cell and $E_i$ is the expected frequency in that cell.
+
+For example, we can build a data set with observations on people's ice-cream buying pattern and try to correlate the gender of a person with the flavor of the ice-cream they prefer. If a correlation is found we can plan for appropriate stock of flavors by knowing the number of gender of people visiting.
+
+The function used for performing chi-Square test is `chisq.test()`.
+
+The basic syntax for creating a chi-square test in R is −
+
+```
+chisq.test(data)
+```
+
+Following is the description of the parameters used −
+
++ **data** is the data in form of a table containing the count value of the variables in the observation.
+
+Example:
+
+>  15 males and 15 females visiting a shopping mall were asked whether they do online shopping or note. The result is shown below. Check whether their online shopping habit is related to their gender or not.
+
+Gender|Online shopping | Gender | Online Shopping|
+------|--------|---|---|
+Male | Yes| Male|Yes
+Male | No|Female|Yes
+Female | No|Female|Yes
+Female | No|Female|Yes
+Male | Yes|Female|Yes
+Male | Yes|Male|Yes
+Female | Yes|Male|No
+Female | No|Male|No
+Male | No|Male|Yes
+Female | Yes|Female|Yes
+Male | No|Male|Yes
+Female | No|Male|Yes
+Female | No|Female|No
+Female | Yes|Female|Yes
+Male | Yes|Male|Yes
+
+**Solution:**
+
+Here, the null hypothesis that we are testing is, $H_0:$ There is no relationship between gender and online shopping habit. Against the alternative that they are related.
+
+```{r}
+# Create a factor variable for gender 
+# We will use 0 for female and 1 for male
+gender=c(1,1,0,0,1,1,0,0,1,0,1,0,0,0,1,1,0,0,0,0,1,1,1,1,0,1,1,0,0,1)
+gender=factor(gender,labels = c("Female","Male"))
+
+# Create a factor for shopping habit
+# 0: No, 1: Yes
+habit=c(1,0,0,0,1,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,0,1,1)
+habit=factor(habit, labels = c("No", "Yes"))
+
+# Create a cross table
+my.data=table(gender,habit)
+my.data
+
+# apply chi square test
+
+chisq.test(my.data,correct = FALSE)
+```
+
+Since the p-value is greater than 0.05, hence we should accept the null hypothesis and conclude that online shopping habit does not depends on gender of a person.
+
+## ANOVA
+
+
+
