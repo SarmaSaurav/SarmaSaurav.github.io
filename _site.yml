@@ -2,8 +2,7 @@ name: "Saurav Sarma"
 output_dir: "."
 navbar:
   title: "Stats4Every1" 
-  author: "Saurav Sarma"
-  icon: fa-home
+  
   left:
     - text: "Statistical Calculation Using R"
       menu:
@@ -45,7 +44,7 @@ navbar:
       href: https://www.facebook.com/Stats4Everyone
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/saurav-sarma-0044
-   
+  
 output:
   html_document:
     theme: cerulean
