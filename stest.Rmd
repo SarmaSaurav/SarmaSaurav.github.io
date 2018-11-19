@@ -26,7 +26,7 @@ set.seed(0)
 ```
 
 # Statistical Test{#green} 
-Stastitical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.
+Statistical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.
 
 > HYPOTHESIS: 
 A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, **null hypothesis** and **alternative hypothesis**.
@@ -60,7 +60,7 @@ Here
 + **S** is the standard error.
 + **n** the number of observations.
 
-Here we are interested in testing the null hpothesis  
+Here we are interested in testing the null hypothesis  
 $H_0: \mu(\text{The population mean})=\mu_0(\text{Some particular value})$
 
 Against the alternative
@@ -109,7 +109,7 @@ Here,
 + **$n_1$** is the number of elements in first set.
 + **$n_2$** is the number of elements in second set.
 
-Here we are interested in testing the nuyll hypothesis $\bar{x}=\bar{y}$
+Here we are interested in testing the null hypothesis $\bar{x}=\bar{y}$
 
 Against the alternative $\bar{x}\ne \bar{y}$
 
@@ -124,7 +124,7 @@ The owner of the gym claimed that the two supplements are not of much difference
 **Solution**
 
 Here, our null hypothesis is, $H_0:$ The two supplements has the same result  
-Against the alternative that $H_1:$ They are significantly diffrent.
+Against the alternative that $H_1:$ They are significantly different.
 
 ```{r}
 # Enter first set of data
@@ -147,7 +147,7 @@ Chi-Square test is a statistical method to determine if two categorical variable
 
 > Chi square test is only applicable when your variable is categorical.
 
-The formula used for CHi-square test is:
+The formula used for Chi-square test is:
 $$\chi^2=\sum_{i=1}^n\dfrac{(O_i-E_i)^2}{E_i^2}$$
 Where $O_i$ is the observed frequency in each cell and $E_i$ is the expected frequency in that cell.
 
@@ -214,6 +214,57 @@ chisq.test(my.data,correct = FALSE)
 Since the p-value is greater than 0.05, hence we should accept the null hypothesis and conclude that online shopping habit does not depends on gender of a person.
 
 ## ANOVA
+
+Analysis of Variation (ANOVA) is a way of testing whether the variation present in your dataset is due to one or more grouping factors  or they are just by chance.
+
+BAsed on the number of groups into which your data is divided, there are two different methods of ANOVA,
+
++ One way ANOVA
++ Two way ANOVA
+
+If your data is classified according to only one critarion then we will conduct **One way ANOVA** and if your data is divided according to two different criterion then we carry out **Two way ANOVA**.
+
+For example, consider that you have collected the marks of 500 students from 5 different schools of Guwahati. Now obviously the marks of different students will vary. Now we can group them according to their respective schools and see if their marks varies due to their school (Or in Statistical language: Whether school is a significant factor of variation in marks). In this case since we are considering only one grouping factor, so we will have to apply One way ANOVA. On the otherhand, if we consider another grouping factor say their gender and want to see whether gender is a significant factor of variation or not along with their school, then we will have to apply Two way ANOVA.
+
+The basic syntax for an ANOVA test is
+
+```
+aov(formula, data)
+```
+
+Where,
+
++ **formula**: The relationship we want to test.
++ **data**: The dataset we are using.  
+
+
+> It should be noted that to perform ANOVA, your data should be a numerical variable and grouping variable should be a factor of at least 2 levels.
+
+The data set we will be using here can be downloaded from here:
+<a href="files/anova.csv" download>
+  ANOVA Data
+</a>
+
+> Save the downloaded anova.csv file to your R working directory.
+
+#### One way ANOVA:
+
+
+
+```{r}
+
+# Import the data set
+data=read.csv("anova.csv", header = TRUE)
+# lets dee the structure of the data
+str(data)
+# Here we have two factor variables "Gender" and "School"
+# and a int variable "Marks"
+
+# apply one way anova
+
+one_way=aov(Marks~School, data=data)
+summary(one_way)
+```
 
 
 

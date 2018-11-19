@@ -18,7 +18,7 @@ In R we use the following syntax while dealing with a distribution
 
 - **r** : Generate a random sample
 - **d** : Generate probability density function i.e. P(X=x)
-- **p** : Generate cummulative distribution function (cdf) i.e. $P(X\le x)$
+- **p** : Generate cumulative distribution function (cdf) i.e. $P(X\le x)$
 - **q** : Generate quantile i.e. F(x) ≥ p
 
 ## Binomial Distribution
@@ -151,7 +151,7 @@ hist(sample, main = "Binomial distribution")
 $$ P(X=x) = \dfrac{e^{-\lambda}\lambda^x}{x!} \\ x=0,1,2,...$$
 Here, $\lambda$ is the parameter of the distribution.
 
-R has four in-built functions to generate poisson distribution. They are described below.
+R has four in-built functions to generate Poisson distribution. They are described below.
 
 ```
 dpois(x, lambda)

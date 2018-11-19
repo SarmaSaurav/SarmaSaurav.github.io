@@ -302,7 +302,7 @@ $(document).ready(function () {
 </style>
 <div id="green" class="section level1">
 <h1>Statistical Test</h1>
-<p>Stastitical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.</p>
+<p>Statistical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.</p>
 <blockquote>
 <p>HYPOTHESIS: A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, <strong>null hypothesis</strong> and <strong>alternative hypothesis</strong>.</p>
 </blockquote>
@@ -332,7 +332,7 @@ $(document).ready(function () {
 <li><strong>S</strong> is the standard error.</li>
 <li><strong>n</strong> the number of observations.</li>
 </ul>
-<p>Here we are interested in testing the null hpothesis<br />
+<p>Here we are interested in testing the null hypothesis<br />
 <span class="math inline">\(H_0: \mu(\text{The population mean})=\mu_0(\text{Some particular value})\)</span></p>
 <p>Against the alternative <span class="math inline">\(H_1: \mu(\text{The population mean})\ne\mu_0(\text{Some particular value})\)</span></p>
 <p>To evaluate the statistical significance of the t-test, you need to compute the p-value. The p-value ranges from 0 to 1, and is interpreted as follow:</p>
@@ -376,7 +376,7 @@ t.test(x, mu=30)</code></pre>
 <li><strong><span class="math inline">\(n_1\)</span></strong> is the number of elements in first set.</li>
 <li><strong><span class="math inline">\(n_2\)</span></strong> is the number of elements in second set.</li>
 </ul>
-<p>Here we are interested in testing the nuyll hypothesis <span class="math inline">\(\bar{x}=\bar{y}\)</span></p>
+<p>Here we are interested in testing the null hypothesis <span class="math inline">\(\bar{x}=\bar{y}\)</span></p>
 <p>Against the alternative <span class="math inline">\(\bar{x}\ne \bar{y}\)</span></p>
 <p><strong>Example</strong></p>
 <blockquote>
@@ -387,7 +387,7 @@ The owner of the gym claimed that the two supplements are not of much difference
 </blockquote>
 <p><strong>Solution</strong></p>
 <p>Here, our null hypothesis is, <span class="math inline">\(H_0:\)</span> The two supplements has the same result<br />
-Against the alternative that <span class="math inline">\(H_1:\)</span> They are significantly diffrent.</p>
+Against the alternative that <span class="math inline">\(H_1:\)</span> They are significantly different.</p>
 <pre class="r"><code># Enter first set of data
 x=c(25,32,30,34,24,14,32,24,30,31,35,25)
 
@@ -417,7 +417,7 @@ t.test(x,y,var.equal =T)</code></pre>
 <blockquote>
 <p>Chi square test is only applicable when your variable is categorical.</p>
 </blockquote>
-<p>The formula used for CHi-square test is: <span class="math display">\[\chi^2=\sum_{i=1}^n\dfrac{(O_i-E_i)^2}{E_i^2}\]</span> Where <span class="math inline">\(O_i\)</span> is the observed frequency in each cell and <span class="math inline">\(E_i\)</span> is the expected frequency in that cell.</p>
+<p>The formula used for Chi-square test is: <span class="math display">\[\chi^2=\sum_{i=1}^n\dfrac{(O_i-E_i)^2}{E_i^2}\]</span> Where <span class="math inline">\(O_i\)</span> is the observed frequency in each cell and <span class="math inline">\(E_i\)</span> is the expected frequency in that cell.</p>
 <p>For example, we can build a data set with observations on people’s ice-cream buying pattern and try to correlate the gender of a person with the flavor of the ice-cream they prefer. If a correlation is found we can plan for appropriate stock of flavors by knowing the number of gender of people visiting.</p>
 <p>The function used for performing chi-Square test is <code>chisq.test()</code>.</p>
 <p>The basic syntax for creating a chi-square test in R is −</p>
@@ -563,6 +563,49 @@ chisq.test(my.data,correct = FALSE)</code></pre>
 </div>
 <div id="anova" class="section level2">
 <h2>ANOVA</h2>
+<p>Analysis of Variation (ANOVA) is a way of testing whether the variation present in your dataset is due to one or more grouping factors or they are just by chance.</p>
+<p>BAsed on the number of groups into which your data is divided, there are two different methods of ANOVA,</p>
+<ul>
+<li>One way ANOVA</li>
+<li>Two way ANOVA</li>
+</ul>
+<p>If your data is classified according to only one critarion then we will conduct <strong>One way ANOVA</strong> and if your data is divided according to two different criterion then we carry out <strong>Two way ANOVA</strong>.</p>
+<p>For example, consider that you have collected the marks of 500 students from 5 different schools of Guwahati. Now obviously the marks of different students will vary. Now we can group them according to their respective schools and see if their marks varies due to their school (Or in Statistical language: Whether school is a significant factor of variation in marks). In this case since we are considering only one grouping factor, so we will have to apply One way ANOVA. On the otherhand, if we consider another grouping factor say their gender and want to see whether gender is a significant factor of variation or not along with their school, then we will have to apply Two way ANOVA.</p>
+<p>The basic syntax for an ANOVA test is</p>
+<pre><code>aov(formula, data)</code></pre>
+<p>Where,</p>
+<ul>
+<li><strong>formula</strong>: The relationship we want to test.</li>
+<li><strong>data</strong>: The dataset we are using.</li>
+</ul>
+<blockquote>
+<p>It should be noted that to perform ANOVA, your data should be a numerical variable and grouping variable should be a factor of at least 2 levels.</p>
+</blockquote>
+<p>The data set we will be using here can be downloaded from here: <a href="files/anova.csv" download> ANOVA Data </a></p>
+<blockquote>
+<p>Save the downloaded anova.csv file to your R working directory.</p>
+</blockquote>
+<div id="one-way-anova" class="section level4">
+<h4>One way ANOVA:</h4>
+<pre class="r"><code># Import the data set
+data=read.csv(&quot;anova.csv&quot;, header = TRUE)
+# lets dee the structure of the data
+str(data)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    30 obs. of  3 variables:
+##  $ School: Factor w/ 3 levels &quot;School A&quot;,&quot;School B&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Gender: Factor w/ 2 levels &quot;Female&quot;,&quot;Male&quot;: 2 2 2 2 2 1 1 1 1 1 ...
+##  $ Marks : int  54 47 89 23 84 74 55 64 39 48 ...</code></pre>
+<pre class="r"><code># Here we have two factor variables &quot;Gender&quot; and &quot;School&quot;
+# and a int variable &quot;Marks&quot;
+
+# apply one way anova
+
+one_way=aov(Marks~School, data=data)
+summary(one_way)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
+## School       2    150    75.2   0.189  0.829
+## Residuals   27  10762   398.6</code></pre>
+</div>
 </div>
 </div>
 
