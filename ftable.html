@@ -11,7 +11,7 @@
 
 
 
-<title>Feel free to contact me here</title>
+<title>Frequency Table</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -184,19 +184,19 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="intoduction.html">Introduction to the Course</a>
-</li>
-<li>
-  <a href="what_is_r.html">What is R?</a>
-</li>
-<li class="dropdown">
+        <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Variables
+    Statistical Calculation Using R
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intoduction.html">Introduction to the Course</a>
+    </li>
+    <li>
+      <a href="what_is_r.html">What is R?</a>
+    </li>
     <li>
       <a href="variables.html">R Variables</a>
     </li>
@@ -206,15 +206,6 @@ $(document).ready(function () {
     <li>
       <a href="matrix.html">Matrix</a>
     </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    More
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
     <li>
       <a href="sec.html">Basic Statistical Calculations</a>
     </li>
@@ -238,6 +229,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="stest.html">Statistical Test</a>
+    </li>
+    <li>
+      <a href="ftable.html">Frequency Table</a>
     </li>
   </ul>
 </li>
@@ -276,21 +270,67 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Feel free to contact me here</h1>
+<h1 class="title toc-ignore">Frequency Table</h1>
 
 </div>
 
 
-<p><strong>Department of Statistics</strong><br />
-<strong>Cotton University</strong><br />
-<strong>Panbazar, Guwahati - 781001</strong><br />
-<strong>Assam, India</strong></p>
-<ul>
-<li><p>Email: <a href="mailto:saurav.statistics.sarma@gmail.com">saurav.statistics.sarma@gmail.com</a></p></li>
-<li><p><a href="https://www.researchgate.net/profile/Saurav_Sarma3">Researchgate</a></p></li>
-<li><p><a href="https://www.facebook.com/Stats4Everyone">Facebook</a></p></li>
-<li><p><a href="https://www.linkedin.com/in/saurav-sarma-0044">LinkedIn</a></p></li>
-</ul>
+<p>In this Chapter we will discuss how to create a frequency table and calculate cumulative frequency and relative frequency.</p>
+<pre class="r"><code># Enter the data
+data=c(24,23,17,13,25,30,22,28,38,39,1,4,9,2,10,7,36,
+       14,3,31,33,37,11,19,15,16,29,35,27,26)
+
+# Find out the minimum and maximum of the data
+summary(data)</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00   11.50   22.50   20.80   29.75   39.00 </code></pre>
+<pre class="r"><code># create class intervals
+breaks=seq(0,40,5)
+
+# create frequencies
+freq=cut(data,breaks)
+
+# conver the frequencies as a table
+freq=table(freq)
+freq</code></pre>
+<pre><code>freq
+  (0,5]  (5,10] (10,15] (15,20] (20,25] (25,30] (30,35] (35,40] 
+      4       3       4       3       4       5       3       4 </code></pre>
+<pre class="r"><code># Calculate total frequencies
+N=sum(freq)
+
+# calculate cumulative frequencies
+cum.freq=cumsum(freq)
+
+# calculate relative frequencies
+rel.freq=freq/N
+
+# combine all calculated values in one table
+cbind(freq,cum.freq,rel.freq)</code></pre>
+<pre><code>        freq cum.freq  rel.freq
+(0,5]      4        4 0.1333333
+(5,10]     3        7 0.1000000
+(10,15]    4       11 0.1333333
+(15,20]    3       14 0.1000000
+(20,25]    4       18 0.1333333
+(25,30]    5       23 0.1666667
+(30,35]    3       26 0.1000000
+(35,40]    4       30 0.1333333</code></pre>
+<pre class="r"><code>barplot(freq, xlab = &quot;Class Intervals&quot;, ylab = &quot;Frequencies&quot;)</code></pre>
+<p><img src="ftable_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<blockquote>
+<p><strong>Exercise:</strong></p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Construct a frequency table from the following table- 46 40 29 24 8 3 33 49 17 35 28 34 27 43 26 37 4 5 42 10 22 13 19 9 41 14 11 50 36 32 30 47 12 44 38 15 31 7 23 25</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>Construct a frequency table from the following table and draw the bar diagram. 40 21 2 44 17 13 49 46 28 6 20 19 37 50 41 1 4 7 38 32 3 25 39 34 14 22 27 26 30 5 31 45 23 11 8 29 24 18 47 42 9 33 48 36 15</li>
+</ol>
+</blockquote>
 
 
 

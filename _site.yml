@@ -1,24 +1,22 @@
-name: "Emily C. Zabor"
+name: "Saurav Sarma"
 output_dir: "."
 navbar:
-  title: "Stats4Every1"
+  title: "Stats4Every1" 
+  author: "Saurav Sarma"
   icon: fa-home
   left:
-    - text: "Introduction to the Course"
-      icon: fa-home
-      href: intoduction.html
-    - text: "What is R?"
-      href: what_is_r.html
-    - text: "Variables"
+    - text: "Statistical Calculation Using R"
       menu:
+      - text: "Introduction to the Course"
+        href: intoduction.html
+      - text: "What is R?"
+        href: what_is_r.html
       - text: "R Variables"
         href: variables.html
       - text: "Vectors"
         href: vectors.html
       - text: "Matrix"
         href: matrix.html
-    - text: "More"
-      menu:
       - text: "Basic Statistical Calculations"
         href: sec.html
       - text: "Graphics"
@@ -35,6 +33,8 @@ navbar:
         href: distribution.html
       - text: "Statistical Test"
         href: stest.html
+      - text: "Frequency Table"
+        href: ftable.html
       
   right:
     - icon: fa-envelope fa-lg
@@ -50,3 +50,4 @@ output:
   html_document:
     theme: cerulean
     css: 'styles.css'
+    href: styles.css

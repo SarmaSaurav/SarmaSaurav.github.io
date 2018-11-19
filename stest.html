@@ -184,23 +184,19 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="intoduction.html">
-    <span class="fa fa-home"></span>
-     
-    Introduction to the Course
-  </a>
-</li>
-<li>
-  <a href="what_is_r.html">What is R?</a>
-</li>
-<li class="dropdown">
+        <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Variables
+    Statistical Calculation Using R
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intoduction.html">Introduction to the Course</a>
+    </li>
+    <li>
+      <a href="what_is_r.html">What is R?</a>
+    </li>
     <li>
       <a href="variables.html">R Variables</a>
     </li>
@@ -210,15 +206,6 @@ $(document).ready(function () {
     <li>
       <a href="matrix.html">Matrix</a>
     </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    More
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
     <li>
       <a href="sec.html">Basic Statistical Calculations</a>
     </li>
@@ -242,6 +229,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="stest.html">Statistical Test</a>
+    </li>
+    <li>
+      <a href="ftable.html">Frequency Table</a>
     </li>
   </ul>
 </li>
@@ -307,13 +297,18 @@ $(document).ready(function () {
 <p>HYPOTHESIS: A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, <strong>null hypothesis</strong> and <strong>alternative hypothesis</strong>.</p>
 </blockquote>
 <blockquote>
-<p>NULL HYPOTHESIS:</p>
+<p>NULL HYPOTHESIS:<br />
+A null hypothesis is a general statement or assumption that there is no difference between two factors, or groups or population parameters. It is usually denoted by <span class="math inline">\(H_0\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>ALTERNATIVE HYPOTHESIS:<br />
+An alternative hypothesis is a complementary statement to our null hypothesis. This statement is accepted when our null hypothesis is being rejected. It is generally denoted by <span class="math inline">\(H_1\)</span>.</p>
 </blockquote>
 <p>Here we will discuss about the following statistical tests-</p>
 <ul>
 <li>t-test</li>
 <li>Chi-square test</li>
-<li>F test (ANOVA)</li>
+<li>Analysis of Variation (ANOVA)</li>
 </ul>
 <div id="blue" class="section level2">
 <h2>t-test</h2>
@@ -563,30 +558,37 @@ chisq.test(my.data,correct = FALSE)</code></pre>
 </div>
 <div id="anova" class="section level2">
 <h2>ANOVA</h2>
-<p>Analysis of Variation (ANOVA) is a way of testing whether the variation present in your dataset is due to one or more grouping factors or they are just by chance.</p>
-<p>BAsed on the number of groups into which your data is divided, there are two different methods of ANOVA,</p>
+<p>Analysis of Variation (ANOVA) is a way of testing whether the variation present in your data set is due to one or more grouping factors or they are just by chance.</p>
+<p>Based on the number of groups into which your data is divided, there are two different methods of ANOVA,</p>
 <ul>
 <li>One way ANOVA</li>
 <li>Two way ANOVA</li>
 </ul>
-<p>If your data is classified according to only one critarion then we will conduct <strong>One way ANOVA</strong> and if your data is divided according to two different criterion then we carry out <strong>Two way ANOVA</strong>.</p>
-<p>For example, consider that you have collected the marks of 500 students from 5 different schools of Guwahati. Now obviously the marks of different students will vary. Now we can group them according to their respective schools and see if their marks varies due to their school (Or in Statistical language: Whether school is a significant factor of variation in marks). In this case since we are considering only one grouping factor, so we will have to apply One way ANOVA. On the otherhand, if we consider another grouping factor say their gender and want to see whether gender is a significant factor of variation or not along with their school, then we will have to apply Two way ANOVA.</p>
+<p>If your data is classified according to only one criterion then we will conduct <strong>One way ANOVA</strong> and if your data is divided according to two different criterion then we carry out <strong>Two way ANOVA</strong>.</p>
+<p>For example, consider that you have collected the marks of 500 students from 5 different schools of Guwahati. Now obviously the marks of different students will vary. Now we can group them according to their respective schools and see if their marks varies due to their school (Or in Statistical language: Whether school is a significant factor of variation in marks). In this case since we are considering only one grouping factor, so we will have to apply One way ANOVA. On the other hand, if we consider another grouping factor say their gender and want to see whether gender is a significant factor of variation or not along with their school, then we will have to apply Two way ANOVA.</p>
 <p>The basic syntax for an ANOVA test is</p>
 <pre><code>aov(formula, data)</code></pre>
 <p>Where,</p>
 <ul>
 <li><strong>formula</strong>: The relationship we want to test.</li>
-<li><strong>data</strong>: The dataset we are using.</li>
+<li><strong>data</strong>: The data set we are using.</li>
 </ul>
 <blockquote>
 <p>It should be noted that to perform ANOVA, your data should be a numerical variable and grouping variable should be a factor of at least 2 levels.</p>
 </blockquote>
-<p>The data set we will be using here can be downloaded from here: <a href="files/anova.csv" download> ANOVA Data </a></p>
-<blockquote>
-<p>Save the downloaded anova.csv file to your R working directory.</p>
-</blockquote>
 <div id="one-way-anova" class="section level4">
 <h4>One way ANOVA:</h4>
+<p>Example:</p>
+<blockquote>
+<p>Marks of 30 students were collected from 3 different schools for both male and female. Analyse whether school and gender are significant factor for variation in marks.</p>
+</blockquote>
+<p>Solution:</p>
+<p>The data set we will be using here can be downloaded from here: <a href="files/anova.csv" download> ANOVA Data </a></p>
+<ul>
+<li>Save the downloaded anova.csv file to your R working directory.</li>
+</ul>
+<p>Here, we are interested in testing the null hypothesis that “Gender is not a significant factor for variation in marks”</p>
+<p>The analysis can be carried out using the following R program-</p>
 <pre class="r"><code># Import the data set
 data=read.csv(&quot;anova.csv&quot;, header = TRUE)
 # lets dee the structure of the data
@@ -596,15 +598,33 @@ str(data)</code></pre>
 ##  $ Gender: Factor w/ 2 levels &quot;Female&quot;,&quot;Male&quot;: 2 2 2 2 2 1 1 1 1 1 ...
 ##  $ Marks : int  54 47 89 23 84 74 55 64 39 48 ...</code></pre>
 <pre class="r"><code># Here we have two factor variables &quot;Gender&quot; and &quot;School&quot;
-# and a int variable &quot;Marks&quot;
+# and a int variable &quot;Marks&quot;</code></pre>
+<pre class="r"><code># apply one way anova
 
-# apply one way anova
-
-one_way=aov(Marks~School, data=data)
-summary(one_way)</code></pre>
+one_way_school=aov(Marks~School, data=data)
+summary(one_way_school)</code></pre>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
 ## School       2    150    75.2   0.189  0.829
 ## Residuals   27  10762   398.6</code></pre>
+<p>Since the p-value 0.829 is greater than 0.05, hence we should accept our null hypothesis and conclude that school is not a significant factor of variation in marks of students.</p>
+<p>Again if we want to chech whether gender is a signioficant factor of variation, then we can use the following program-</p>
+<pre class="r"><code>one_way_gender=aov(Marks~Gender, data=data)
+summary(one_way_gender)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
+## Gender       1    173   172.8   0.451  0.508
+## Residuals   28  10740   383.6</code></pre>
+<p>Here also, the p-value(0.508) is greater than 0.05 and hence we conclude that gender is also not a significant factor of variation.</p>
+</div>
+<div id="two-way-anova" class="section level4">
+<h4>Two Way ANOVA:</h4>
+<p>Here we are interested in testing the null hypothesis that gender and school both are not a significant factor of variation in marks of student.</p>
+<pre class="r"><code>two_way_aov=aov(Marks~School+Gender, data=data)
+summary(two_way_aov)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
+## School       2    150    75.2   0.186  0.832
+## Gender       1    222   222.5   0.549  0.465
+## Residuals   26  10540   405.4</code></pre>
+<p>Since p-value for both School and Gender are greater than 0.05, hence both are insignificant for the variation of marks.</p>
 </div>
 </div>
 </div>

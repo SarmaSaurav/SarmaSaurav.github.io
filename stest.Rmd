@@ -32,13 +32,17 @@ Statistical inference is the art of generating conclusions about the distributio
 A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, **null hypothesis** and **alternative hypothesis**.
 
 > NULL HYPOTHESIS:  
+A null hypothesis is a general statement or assumption that there is no difference between two factors, or groups or population parameters. It is usually denoted by $H_0$. 
+
+> ALTERNATIVE HYPOTHESIS:  
+An alternative hypothesis is a complementary statement to our null hypothesis. This statement is accepted when our null hypothesis is being rejected. It is generally denoted by $H_1$. 
 
 
 Here we will discuss about the following statistical tests-
 
 + t-test
 + Chi-square test
-+ F test (ANOVA)
++ Analysis of Variation (ANOVA)
 
 
 ## t-test{#blue}
@@ -215,16 +219,16 @@ Since the p-value is greater than 0.05, hence we should accept the null hypothes
 
 ## ANOVA
 
-Analysis of Variation (ANOVA) is a way of testing whether the variation present in your dataset is due to one or more grouping factors  or they are just by chance.
+Analysis of Variation (ANOVA) is a way of testing whether the variation present in your data set is due to one or more grouping factors  or they are just by chance.
 
-BAsed on the number of groups into which your data is divided, there are two different methods of ANOVA,
+Based on the number of groups into which your data is divided, there are two different methods of ANOVA,
 
 + One way ANOVA
 + Two way ANOVA
 
-If your data is classified according to only one critarion then we will conduct **One way ANOVA** and if your data is divided according to two different criterion then we carry out **Two way ANOVA**.
+If your data is classified according to only one criterion then we will conduct **One way ANOVA** and if your data is divided according to two different criterion then we carry out **Two way ANOVA**.
 
-For example, consider that you have collected the marks of 500 students from 5 different schools of Guwahati. Now obviously the marks of different students will vary. Now we can group them according to their respective schools and see if their marks varies due to their school (Or in Statistical language: Whether school is a significant factor of variation in marks). In this case since we are considering only one grouping factor, so we will have to apply One way ANOVA. On the otherhand, if we consider another grouping factor say their gender and want to see whether gender is a significant factor of variation or not along with their school, then we will have to apply Two way ANOVA.
+For example, consider that you have collected the marks of 500 students from 5 different schools of Guwahati. Now obviously the marks of different students will vary. Now we can group them according to their respective schools and see if their marks varies due to their school (Or in Statistical language: Whether school is a significant factor of variation in marks). In this case since we are considering only one grouping factor, so we will have to apply One way ANOVA. On the other hand, if we consider another grouping factor say their gender and want to see whether gender is a significant factor of variation or not along with their school, then we will have to apply Two way ANOVA.
 
 The basic syntax for an ANOVA test is
 
@@ -235,21 +239,29 @@ aov(formula, data)
 Where,
 
 + **formula**: The relationship we want to test.
-+ **data**: The dataset we are using.  
++ **data**: The data set we are using.  
 
 
 > It should be noted that to perform ANOVA, your data should be a numerical variable and grouping variable should be a factor of at least 2 levels.
+
+#### One way ANOVA:  
+
+Example:
+
+>Marks of 30 students were collected from 3 different schools for both male and female. Analyse whether school and gender are significant factor for variation in marks.
+
+Solution:
 
 The data set we will be using here can be downloaded from here:
 <a href="files/anova.csv" download>
   ANOVA Data
 </a>
 
-> Save the downloaded anova.csv file to your R working directory.
++ Save the downloaded anova.csv file to your R working directory.
 
-#### One way ANOVA:
+Here, we are interested in testing the null hypothesis that "Gender is not a significant factor for variation in marks"
 
-
+The analysis can be carried out using the following R program-
 
 ```{r}
 
@@ -259,12 +271,32 @@ data=read.csv("anova.csv", header = TRUE)
 str(data)
 # Here we have two factor variables "Gender" and "School"
 # and a int variable "Marks"
-
-# apply one way anova
-
-one_way=aov(Marks~School, data=data)
-summary(one_way)
 ```
 
+```{r}
+# apply one way anova
 
+one_way_school=aov(Marks~School, data=data)
+summary(one_way_school)
+```
 
+Since the p-value 0.829 is greater than 0.05, hence we should accept our null hypothesis and conclude that school is not a significant factor of variation in marks of students.
+
+Again if we want to chech whether gender is a signioficant factor of variation, then we can use the following program-
+
+```{r}
+one_way_gender=aov(Marks~Gender, data=data)
+summary(one_way_gender)
+```
+Here also, the p-value(0.508) is greater than 0.05 and hence we conclude that gender is also not a significant factor of variation.
+
+#### Two Way ANOVA:
+
+Here we are interested in testing the null hypothesis that gender and school both are not a significant factor of variation in marks of student.
+
+```{r}
+two_way_aov=aov(Marks~School+Gender, data=data)
+summary(two_way_aov)
+```
+
+Since p-value for both School and Gender are greater than 0.05, hence both are insignificant for the variation of marks.
