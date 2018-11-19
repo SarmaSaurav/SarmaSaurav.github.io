@@ -291,7 +291,7 @@ $(document).ready(function () {
     }
 </style>
 <div id="green" class="section level1">
-<h1>Statistical Test</h1>
+<h1></h1>
 <p>Statistical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.</p>
 <blockquote>
 <p>HYPOTHESIS: A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, <strong>null hypothesis</strong> and <strong>alternative hypothesis</strong>.</p>
@@ -607,7 +607,7 @@ summary(one_way_school)</code></pre>
 ## School       2    150    75.2   0.189  0.829
 ## Residuals   27  10762   398.6</code></pre>
 <p>Since the p-value 0.829 is greater than 0.05, hence we should accept our null hypothesis and conclude that school is not a significant factor of variation in marks of students.</p>
-<p>Again if we want to chech whether gender is a signioficant factor of variation, then we can use the following program-</p>
+<p>Again if we want to check whether gender is a significant factor of variation, then we can use the following program-</p>
 <pre class="r"><code>one_way_gender=aov(Marks~Gender, data=data)
 summary(one_way_gender)</code></pre>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
