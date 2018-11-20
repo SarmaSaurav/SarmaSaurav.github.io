@@ -1,6 +1,10 @@
 ---
+title: About Me
+toc: false
+toc_float: false
 ---
-## About Me
+
+
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 

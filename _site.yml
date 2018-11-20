@@ -1,8 +1,7 @@
 name: "Saurav Sarma"
 output_dir: "."
 navbar:
-  title: "Stats4Every1" 
-  
+  title: "Stats4Every1"
   left:
     - text: "Statistical Calculation Using R"
       menu:
@@ -10,6 +9,7 @@ navbar:
         href: intoduction.html
       - text: "What is R?"
         href: what_is_r.html
+      - text: "------------"  
       - text: "R Variables"
         href: variables.html
       - text: "Vectors"
@@ -36,6 +36,8 @@ navbar:
         href: ftable.html
       
   right:
+    - icon: fa-download fa-lg
+      href: downloads.html
     - icon: fa-envelope fa-lg
       href: contact.html
     - icon: fa-github fa-lg
@@ -47,6 +49,10 @@ navbar:
   
 output:
   html_document:
-    theme: cerulean
-    css: 'styles.css'
-    href: styles.css
+    theme: cosmo
+    highlight: textmate
+    toc: true
+    toc_float: true
+    include:
+      after_body: footer.html
+    css: styles.css
