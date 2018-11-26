@@ -21,8 +21,8 @@ Here you will find tutorial on-
 </font>
 </span>
 
-<span style="color:blue;oblique">
+<span style="color:blue">
 <font size="3">
-This site is under-construction. Feel free to contact me if you face any difficulty
+_This site is under-construction. Feel free to contact me if you face any difficulty_
 </font>
 </span>

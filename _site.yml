@@ -48,13 +48,15 @@ navbar:
       href: https://www.facebook.com/Stats4Everyone
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/saurav-sarma-0044
+    - icon: fab fa-instagram fa-lg
+      href: https://www.instagram.com/deka_mastor/
+    - icon: fab fa-researchgate fa-lg
+      href: https://www.researchgate.net/profile/Saurav_Sarma3
   
 output:
   html_document:
     theme: cosmo
     highlight: textmate
-    toc: true
-    toc_float: true
     include:
       after_body: footer.html
     css: styles.css
