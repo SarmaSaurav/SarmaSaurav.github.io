@@ -14,11 +14,10 @@
 <span style="color:purple; font-weight:bold">
 <font size="3"; font-family: Helvetica>
 Here you will find tutorial on-
-
-*  R Programming for Basic Statistical Calculations  
-*  SPSS for Statistical Analysis  
-*  Bio-Statistics  
-*  And More  
+<li>R Programming for Basic Statistical Calculations</li>
+<li>SPSS for Statistical Analysis</li>
+<li>Bio-Statistics</li>
+<li>And More</li>
 </font>
 </span>
 
