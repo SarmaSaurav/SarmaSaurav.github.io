@@ -1,27 +1,29 @@
 ---
-title: About Me
-toc: false
-toc_float: false
 ---
-
 
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-<img src="images/photo.png" style="width:25%; margin-right: 20px" align="right">
+<img src="images/logo.png" style="width:40%; margin-right: 20px" align="right">
 
-Hi, I am SAURAV SARMA
+<span style="color:green; font-weight:bold">
+<font size="6"> Stats4Every1</font>  
+<font size="3"; font-family: Helvetica> This is a free-to-all and open sourced website for easy to follow Statistical tutorials.</font>
+</span>
 
-A post graduate in Statistics from [Gauhati University](https://gauhati.ac.in/).
+<span style="color:purple; font-weight:bold">
+<font size="3"; font-family: Helvetica>
+Here you will find tutorial on-
 
-Currently working as a guest faculty in the Department of Statistics, [Cotton University](https://cottonuniversity.ac.in/).
-Also pursuing my Ph.D. from Gauhati University under the guidance of [Prof Kishore K Das](https://www.gauhati.ac.in/member.php?name=kishore-kumar-das&aid=3&did=32).
+*  R Programming for Basic Statistical Calculations  
+*  SPSS for Statistical Analysis  
+*  Bio-Statistics  
+*  And More  
+</font>
+</span>
 
-#### **Field of Interest:**
-
-+ Statistical Computation 
-+ Demography 
-+ Distribution Theory 
-+ Data Mining
-
-
+<span style="color:blue;oblique">
+<font size="3">
+This site is under-construction. Feel free to contact me if you face any difficulty
+</font>
+</span>

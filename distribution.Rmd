@@ -1,5 +1,8 @@
 ---
 title: Standard Probability Distribution
+output: 
+  html_document: 
+    theme: united
 ---
 
 ```{r, echo=FALSE}
@@ -142,6 +145,36 @@ sample
 hist(sample, main = "Binomial distribution")
 ```
 
+### Fitting Binomial Distribution
+
+>Fit a binomial distribuion to the following data
+
+<div align="center">
+Number of success	|Frequency
+---|---
+0|	1
+1|	5
+2	|6
+3	|8
+4	|9
+5	|1
+</div>
+
+<div align="center">
+<div style="width: 60%; margin:0 left;text-align: left;">
+<li>And how do I align this in the center</li>
+<li>Or just add some spacing on the left?</li>
+</div>
+</div>
+
+```{r,echo=FALSE}
+library(kableExtra)
+library(dplyr)
+tab1<-c(seq(1,10,1))
+table(tab1) %>% 
+  kable('html') %>% 
+  kable_styling(bootstrap_options = "striped", full_width = F)
+```
 
 ## Poisson Distribution
 

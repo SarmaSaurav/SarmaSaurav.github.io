@@ -1,0 +1,21 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<img src="images/photo.png" style="width:25%; margin-right: 20px" align="right">
+
+Hi, I am SAURAV SARMA
+
+A post graduate in Statistics from [Gauhati University](https://gauhati.ac.in/).
+
+Currently working as a guest faculty in the Department of Statistics, [Cotton University](https://cottonuniversity.ac.in/).
+Also pursuing my Ph.D. from Gauhati University under the guidance of [Prof Kishore K Das](https://www.gauhati.ac.in/member.php?name=kishore-kumar-das&aid=3&did=32).
+
+#### **Field of Interest:**
+
++ Statistical Computation 
++ Demography 
++ Distribution Theory 
++ Data Mining
+

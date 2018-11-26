@@ -3,6 +3,8 @@ output_dir: "."
 navbar:
   title: "Stats4Every1"
   left:
+    - text: "About Me"
+      href: me.html
     - text: "Statistical Calculation Using R"
       menu:
       - text: "Introduction to the Course"

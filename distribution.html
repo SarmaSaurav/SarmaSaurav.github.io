@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -25,6 +25,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
 <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
 <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
@@ -282,7 +283,10 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="dropdown">
+        <li>
+  <a href="me.html">About Me</a>
+</li>
+<li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Statistical Calculation Using R
      
@@ -484,6 +488,160 @@ sample</code></pre>
 <pre class="r"><code>hist(sample, main = &quot;Binomial distribution&quot;)</code></pre>
 <p><img src="distribution_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
+<div id="fitting-binomial-distribution" class="section level3">
+<h3>Fitting Binomial Distribution</h3>
+<blockquote>
+<p>Fit a binomial distribuion to the following data</p>
+</blockquote>
+<div align="center">
+<table>
+<thead>
+<tr class="header">
+<th>Number of success</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="center">
+<div style="width: 60%; margin:0 left;text-align: left;">
+<li>
+And how do I align this in the center
+</li>
+<li>
+Or just add some spacing on the left?
+</li>
+</div>
+</div>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+tab1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="poisson-distribution" class="section level2">
 <h2>Poisson Distribution</h2>
@@ -513,7 +671,7 @@ y &lt;- dpois(x,2)
 # Plot the graph for this sample.
 plot(x,y, main = &quot;Density of Poisson Distribution&quot;, 
      ylab = &quot;Probabilities&quot;, xlab = &quot;Number of events&quot;, type = &quot;o&quot;)</code></pre>
-<p><img src="distribution_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="distribution_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="distribution-function-of-poisson-distribution-ppois" class="section level3">
 <h3>Distribution Function of Poisson Distribution <code>ppois()</code></h3>
@@ -526,7 +684,7 @@ x</code></pre>
 y = ppois(x,2)
 plot(x,y, main = &quot;Distribution Function&quot;,
      ylab = &quot;Probabilities&quot;, xlab = &quot;Less than x occurances&quot;, type = &quot;o&quot; )</code></pre>
-<p><img src="distribution_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="distribution_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="qpois" class="section level3">
 <h3><code>qpois()</code></h3>
@@ -543,7 +701,7 @@ y &lt;- rpois(100, lambda = 2)
 
 # Plot the histogram for this sample.
 hist(y, main = &quot;Poisson DIstribution&quot;, xlab = &quot;Values&quot;)</code></pre>
-<p><img src="distribution_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="distribution_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="example-1" class="section level3">
 <h3>Example</h3>
@@ -598,7 +756,7 @@ y &lt;- dnorm(x, mean = 0, sd = 2)
 # Plot the density curve
 plot(x,y, main = &quot;Density curve for normal distribution&quot;, 
      xlab=&quot;Values&quot;, ylab = &quot;Probability&quot;, type = &quot;h&quot;)</code></pre>
-<p><img src="distribution_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="distribution_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="cumulative-distribution-function-of-normal-distribution-pnorm" class="section level3">
 <h3>Cumulative Distribution Function of Normal Distribution <code>pnorm()</code></h3>
@@ -612,7 +770,7 @@ y &lt;- pnorm(x, mean = 2.5, sd = 2)
 # Plot the graph.
 plot(x,y, main = &quot;Distribution curve for normal distribution&quot;, 
      xlab = &quot;Values&quot;, ylab = &quot;Probabilities&quot;, type = &quot;o&quot;)</code></pre>
-<p><img src="distribution_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="distribution_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="area-under-normal-curve-qnorm" class="section level3">
 <h3>Area Under Normal Curve <code>qnorm()</code></h3>
@@ -625,7 +783,7 @@ y &lt;- qnorm(x, mean = 2, sd = 1)
 
 # Plot the graph.
 plot(x,y, type = &quot;o&quot;, xlab = &quot;Probabilities&quot;, ylab = &quot;Values&quot;, main = &quot;Area under normal curve&quot;)</code></pre>
-<p><img src="distribution_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="distribution_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 </div>
 <div id="random-sample-from-normal-distribution-rnorm" class="section level3">
 <h3>Random Sample from Normal Distribution <code>rnorm()</code></h3>
@@ -635,7 +793,7 @@ y &lt;- rnorm(100, mean = 2, sd=2)
 
 # Plot the histogram for this sample.
 hist(y, main = &quot;Normal DIstribution&quot;, xlab = &quot;Values&quot;)</code></pre>
-<p><img src="distribution_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="distribution_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 </div>
 
