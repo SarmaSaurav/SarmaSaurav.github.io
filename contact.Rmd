@@ -1,17 +1,34 @@
 ---
-title: Feel free to contact me here
 ---
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
 
 
+<div style="background-color:purple;color:white;padding:20px;">
+  <h2>Feel free to contact me:</h2>
+  <p>
 __Department of Statistics__  
 __Cotton University__  
 __Panbazar, Guwahati - 781001__  
-__Assam, India__  
+__Assam, India__
+  </p>
+</div>
 
-+ Email: saurav.statistics.sarma@gmail.com
+<div style="background-color:grey;color:white;padding:20px;">
+  <p>
 
-+ [Researchgate](https://www.researchgate.net/profile/Saurav_Sarma3)
 
-+ [Facebook](https://www.facebook.com/Stats4Everyone)
++ [**Researchgate**](https://www.researchgate.net/profile/Saurav_Sarma3)
 
-+ [LinkedIn](https://www.linkedin.com/in/saurav-sarma-0044)
++ [**Facebook**](https://www.facebook.com/Stats4Everyone)
+
++ [**LinkedIn**](https://www.linkedin.com/in/saurav-sarma-0044)
+  </p>
+</div>
+
+
+<a>
+  <img src="images/gmail.png" alt="logo"  style="width:5%;">
+  saurav.statistics.sarma@gmail.com
+</a>

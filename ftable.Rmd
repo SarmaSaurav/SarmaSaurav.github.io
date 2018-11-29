@@ -1,8 +1,30 @@
 ---
-title: Frequency Table
 ---
 
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+	             cache=T,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
+
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:purple;color:white;padding:20px;">
+<h2> **FREQUENCY TABLE**</h2>
+<p>
 In this Chapter we will discuss how to create a frequency table and calculate cumulative frequency and relative frequency.
+</p>
+</div>
+
+
+Let us consider the following example:
 
 ```{r, comment=NA}
 # Enter the data

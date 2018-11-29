@@ -11,7 +11,7 @@ navbar:
         href: intoduction.html
       - text: "What is R?"
         href: what_is_r.html
-      - text: "------------"  
+        
       - text: "R Variables"
         href: variables.html
       - text: "Vectors"
@@ -36,12 +36,12 @@ navbar:
         href: stest.html
       - text: "Frequency Table"
         href: ftable.html
+      - text: "Using R Packages"
+        href: pack.html
       
   right:
     - icon: fa-download fa-lg
       href: downloads.html
-    - icon: fa-envelope fa-lg
-      href: contact.html
     - icon: fa-github fa-lg
       href: https://github.com/SarmaSaurav/
     - icon: fa-facebook fa-lg
@@ -50,13 +50,13 @@ navbar:
       href: https://www.linkedin.com/in/saurav-sarma-0044
     - icon: fab fa-instagram fa-lg
       href: https://www.instagram.com/deka_mastor/
-    - icon: fab fa-researchgate fa-lg
-      href: https://www.researchgate.net/profile/Saurav_Sarma3
+    
   
 output:
   html_document:
-    theme: cosmo
+    theme: united
     highlight: textmate
     include:
+      #in_header: before.html
       after_body: footer.html
     css: styles.css

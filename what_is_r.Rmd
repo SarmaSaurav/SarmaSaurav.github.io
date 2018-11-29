@@ -1,6 +1,34 @@
 ---
-title: Whar is R?
+output: 
+  html_document: 
+    highlight: tango
+    theme: united
 ---
+
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+	             cache=T,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
+
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **WHAT IS R ?**</h2>
+<p>
+R is a programming language and software environment for statistical analysis, graphics representation and reporting. R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and is currently developed by the R Development Core Team. R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems like Linux, Windows and Mac. This programming language was named R, based on the first letter of first name of the two R authors (Robert Gentleman and Ross Ihaka), and partly a play on the name of the Bell Labs Language S.
+</p>
+</div>
+
+
+
 
 R is a _free-to-use_ and _open-sourced_ programming language that is  widely used  for statistical as well as various Socio-Economical studies.
   

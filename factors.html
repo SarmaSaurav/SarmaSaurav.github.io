@@ -11,11 +11,11 @@
 
 
 
-<title>Factors</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -200,7 +200,6 @@ $(document).ready(function () {
     <li>
       <a href="what_is_r.html">What is R?</a>
     </li>
-    <li class="divider"></li>
     <li>
       <a href="variables.html">R Variables</a>
     </li>
@@ -237,6 +236,9 @@ $(document).ready(function () {
     <li>
       <a href="ftable.html">Frequency Table</a>
     </li>
+    <li>
+      <a href="pack.html">Using R Packages</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -244,12 +246,6 @@ $(document).ready(function () {
         <li>
   <a href="downloads.html">
     <span class="fa fa-download fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="contact.html">
-    <span class="fa fa-envelope fa-lg"></span>
      
   </a>
 </li>
@@ -277,12 +273,6 @@ $(document).ready(function () {
      
   </a>
 </li>
-<li>
-  <a href="https://www.researchgate.net/profile/Saurav_Sarma3">
-    <span class="fab fa fab fa-researchgate fa-lg"></span>
-     
-  </a>
-</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -292,33 +282,41 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Factors</h1>
 
 </div>
 
 
+<p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
+<div style="background-color:purple;color:white;padding:20px;">
+<h2>
+<strong>FACTORS</strong>
+</h2>
+<p>
 <p>Factors are the data objects which are used to categorize the data and store it as levels. They can store both strings and integers. They are useful in the columns which have a limited number of unique values. Like “Male,”Female&quot; and True, False etc. They are useful in data analysis for statistical modeling.</p>
-<p>Factors are created using the <code>factor ()</code> function by taking a vector as input.</p>
+Factors are created using the <code>factor ()</code> function by taking a vector as input.
+</p>
+</div>
+<p><font size="4" color="green"> Let us consider the following example</font></p>
 <pre class="r"><code>data &lt;- c(&quot;East&quot;,&quot;West&quot;,&quot;East&quot;,&quot;North&quot;,&quot;North&quot;,&quot;East&quot;,&quot;West&quot;,
           &quot;West&quot;,&quot;West&quot;,&quot;East&quot;,&quot;North&quot;)
 factor_data=factor(data)
 factor_data</code></pre>
-<pre><code>##  [1] East  West  East  North North East  West  West  West  East  North
-## Levels: East North West</code></pre>
+<pre><code> [1] East  West  East  North North East  West  West  West  East  North
+Levels: East North West</code></pre>
 <p>By default, the factor function assign the levels alphabetically. We can change this using <code>levels=()</code> command.</p>
 <pre class="r"><code>data &lt;- c(&quot;East&quot;,&quot;West&quot;,&quot;East&quot;,&quot;North&quot;,&quot;North&quot;,&quot;East&quot;,&quot;West&quot;,
           &quot;West&quot;,&quot;West&quot;,&quot;East&quot;,&quot;North&quot;)
 factor_data=factor(data, levels = c(&quot;North&quot;,&quot;East&quot;,&quot;West&quot;))
 factor_data</code></pre>
-<pre><code>##  [1] East  West  East  North North East  West  West  West  East  North
-## Levels: North East West</code></pre>
+<pre><code> [1] East  West  East  North North East  West  West  West  East  North
+Levels: North East West</code></pre>
 <p>We can also convert a numeric vector into factor:</p>
 <pre class="r"><code>num_data=c(0,0,1,0,1,1,1,0,1,0,1,1,0,1,0,1,1)
 factor_data=factor(num_data, labels = c(&quot;Male&quot;,&quot;Female&quot;))
 factor_data</code></pre>
-<pre><code>##  [1] Male   Male   Female Male   Female Female Female Male   Female Male  
-## [11] Female Female Male   Female Male   Female Female
-## Levels: Male Female</code></pre>
+<pre><code> [1] Male   Male   Female Male   Female Female Female Male   Female Male  
+[11] Female Female Male   Female Male   Female Female
+Levels: Male Female</code></pre>
 <div id="generating-factor-levels" class="section level3">
 <h3>Generating Factor Levels</h3>
 <p>We can generate factor levels by using the gl() function. It takes two integers as input which indicates how many levels and how many times each level.</p>
@@ -331,9 +329,9 @@ factor_data</code></pre>
 </ul>
 <pre class="r"><code>factor_data=gl(2,8, labels = c(&quot;Male&quot;,&quot;Female&quot;))
 factor_data</code></pre>
-<pre><code>##  [1] Male   Male   Male   Male   Male   Male   Male   Male   Female Female
-## [11] Female Female Female Female Female Female
-## Levels: Male Female</code></pre>
+<pre><code> [1] Male   Male   Male   Male   Male   Male   Male   Male   Female Female
+[11] Female Female Female Female Female Female
+Levels: Male Female</code></pre>
 <p>Another example of Factor is:</p>
 <pre class="r"><code># Generating 100 random numbers between 1 and 100
 data = sample(1:100,100)
@@ -356,10 +354,10 @@ for (i in 1:100) {
 
 f_result=factor(result, labels = c(&quot;Fail&quot;, &quot;Third Div&quot;, &quot;Second Div&quot;, &quot;First Div&quot;))
 str(f_result)</code></pre>
-<pre><code>##  Factor w/ 4 levels &quot;Fail&quot;,&quot;Third Div&quot;,..: 1 2 2 1 4 4 4 4 1 4 ...</code></pre>
+<pre><code> Factor w/ 4 levels &quot;Fail&quot;,&quot;Third Div&quot;,..: 4 2 4 3 3 4 4 4 4 4 ...</code></pre>
 <pre class="r"><code>summary(f_result)</code></pre>
-<pre><code>##       Fail  Third Div Second Div  First Div 
-##         29         15         15         41</code></pre>
+<pre><code>      Fail  Third Div Second Div  First Div 
+        29         15         15         41 </code></pre>
 <pre class="r"><code>plot(f_result)</code></pre>
 <p><img src="factors_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>

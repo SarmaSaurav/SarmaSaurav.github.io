@@ -1,10 +1,30 @@
 ---
-title: Factors
 ---
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+	             cache=T,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
 
-Factors are the data objects which are used to categorize the data and store it as levels. They can store both strings and integers. They are useful in the columns which have a limited number of unique values. Like "Male, "Female" and True, False etc. They are useful in data analysis for statistical modeling.
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:purple;color:white;padding:20px;">
+  <h2>**FACTORS**</h2>
+  <p>Factors are the data objects which are used to categorize the data and store it as levels. They can store both strings and integers. They are useful in the columns which have a limited number of unique values. Like "Male, "Female" and True, False etc. They are useful in data analysis for statistical modeling.
 
 Factors are created using the `factor ()` function by taking a vector as input.
+</p>
+</div>
+
+
+<font size="4" color="green"> Let us consider the following example</font>
 
 ```{r}
 data <- c("East","West","East","North","North","East","West",

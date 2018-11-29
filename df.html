@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -200,7 +200,6 @@ $(document).ready(function () {
     <li>
       <a href="what_is_r.html">What is R?</a>
     </li>
-    <li class="divider"></li>
     <li>
       <a href="variables.html">R Variables</a>
     </li>
@@ -237,6 +236,9 @@ $(document).ready(function () {
     <li>
       <a href="ftable.html">Frequency Table</a>
     </li>
+    <li>
+      <a href="pack.html">Using R Packages</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -244,12 +246,6 @@ $(document).ready(function () {
         <li>
   <a href="downloads.html">
     <span class="fa fa-download fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="contact.html">
-    <span class="fa fa-envelope fa-lg"></span>
      
   </a>
 </li>
@@ -277,12 +273,6 @@ $(document).ready(function () {
      
   </a>
 </li>
-<li>
-  <a href="https://www.researchgate.net/profile/Saurav_Sarma3">
-    <span class="fab fa fab fa-researchgate fa-lg"></span>
-     
-  </a>
-</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -297,6 +287,7 @@ $(document).ready(function () {
 </div>
 
 
+<p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
 <p>A data frame is a table or a two-dimensional array-like structure in which each column contains values of one variable and each row contains one set of values from each column.</p>
 <p>Following are the characteristics of a data frame.</p>
 <ul>
@@ -319,75 +310,75 @@ $(document).ready(function () {
   stringsAsFactors = FALSE
 )
 print(data)</code></pre>
-<pre><code>##    enrollment.no first.name   last.name cgpa gender
-## 1              1      Biman        Deka 6.50   male
-## 2              2     Prapti      Kakati 7.20 female
-## 3              3   Dipjyoti   Chahariya 6.10   male
-## 4              4     Rashmi      Bhuyan 8.50 female
-## 5              5    Debojit       Barua 6.00   male
-## 6              6      Rocky     Baglary 5.20   male
-## 7              7     Rajesh        Bodo 5.50   male
-## 8              8  Semantika Chakraborty 9.00 female
-## 9              9     Dhriti Chakraborty 8.75 female
-## 10            10   Priyanka     Agarwal 8.00 female</code></pre>
+<pre><code>   enrollment.no first.name   last.name cgpa gender
+1              1      Biman        Deka 6.50   male
+2              2     Prapti      Kakati 7.20 female
+3              3   Dipjyoti   Chahariya 6.10   male
+4              4     Rashmi      Bhuyan 8.50 female
+5              5    Debojit       Barua 6.00   male
+6              6      Rocky     Baglary 5.20   male
+7              7     Rajesh        Bodo 5.50   male
+8              8  Semantika Chakraborty 9.00 female
+9              9     Dhriti Chakraborty 8.75 female
+10            10   Priyanka     Agarwal 8.00 female</code></pre>
 <p>The structure of the data frame can be seen by using <code>str()</code> function.</p>
 <pre class="r"><code>str(data)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    10 obs. of  5 variables:
-##  $ enrollment.no: int  1 2 3 4 5 6 7 8 9 10
-##  $ first.name   : chr  &quot;Biman&quot; &quot;Prapti&quot; &quot;Dipjyoti&quot; &quot;Rashmi&quot; ...
-##  $ last.name    : chr  &quot;Deka&quot; &quot;Kakati&quot; &quot;Chahariya&quot; &quot;Bhuyan&quot; ...
-##  $ cgpa         : num  6.5 7.2 6.1 8.5 6 5.2 5.5 9 8.75 8
-##  $ gender       : chr  &quot;male&quot; &quot;female&quot; &quot;male&quot; &quot;female&quot; ...</code></pre>
+<pre><code>&#39;data.frame&#39;:   10 obs. of  5 variables:
+ $ enrollment.no: int  1 2 3 4 5 6 7 8 9 10
+ $ first.name   : chr  &quot;Biman&quot; &quot;Prapti&quot; &quot;Dipjyoti&quot; &quot;Rashmi&quot; ...
+ $ last.name    : chr  &quot;Deka&quot; &quot;Kakati&quot; &quot;Chahariya&quot; &quot;Bhuyan&quot; ...
+ $ cgpa         : num  6.5 7.2 6.1 8.5 6 5.2 5.5 9 8.75 8
+ $ gender       : chr  &quot;male&quot; &quot;female&quot; &quot;male&quot; &quot;female&quot; ...</code></pre>
 <blockquote>
 <p>Note: By default R consider any variable in a data frame with character values as a factor. To override this we use <code>stringsAsFactors = FALSE</code></p>
 </blockquote>
 <p>The statistical summary and nature of the data can be obtained by applying <code>summary()</code> function.</p>
 <pre class="r"><code>summary(data)</code></pre>
-<pre><code>##  enrollment.no    first.name         last.name              cgpa      
-##  Min.   : 1.00   Length:10          Length:10          Min.   :5.200  
-##  1st Qu.: 3.25   Class :character   Class :character   1st Qu.:6.025  
-##  Median : 5.50   Mode  :character   Mode  :character   Median :6.850  
-##  Mean   : 5.50                                         Mean   :7.075  
-##  3rd Qu.: 7.75                                         3rd Qu.:8.375  
-##  Max.   :10.00                                         Max.   :9.000  
-##     gender         
-##  Length:10         
-##  Class :character  
-##  Mode  :character  
-##                    
-##                    
-## </code></pre>
+<pre><code> enrollment.no    first.name         last.name              cgpa      
+ Min.   : 1.00   Length:10          Length:10          Min.   :5.200  
+ 1st Qu.: 3.25   Class :character   Class :character   1st Qu.:6.025  
+ Median : 5.50   Mode  :character   Mode  :character   Median :6.850  
+ Mean   : 5.50                                         Mean   :7.075  
+ 3rd Qu.: 7.75                                         3rd Qu.:8.375  
+ Max.   :10.00                                         Max.   :9.000  
+    gender         
+ Length:10         
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   </code></pre>
 </div>
 <div id="extract-data-from-data-frame" class="section level2">
 <h2>Extract Data from Data Frame</h2>
 <p>Extract specific column from a data frame using column name.</p>
 <pre class="r"><code>names = data.frame(data$first.name,data$last.name)
 names</code></pre>
-<pre><code>##    data.first.name data.last.name
-## 1            Biman           Deka
-## 2           Prapti         Kakati
-## 3         Dipjyoti      Chahariya
-## 4           Rashmi         Bhuyan
-## 5          Debojit          Barua
-## 6            Rocky        Baglary
-## 7           Rajesh           Bodo
-## 8        Semantika    Chakraborty
-## 9           Dhriti    Chakraborty
-## 10        Priyanka        Agarwal</code></pre>
+<pre><code>   data.first.name data.last.name
+1            Biman           Deka
+2           Prapti         Kakati
+3         Dipjyoti      Chahariya
+4           Rashmi         Bhuyan
+5          Debojit          Barua
+6            Rocky        Baglary
+7           Rajesh           Bodo
+8        Semantika    Chakraborty
+9           Dhriti    Chakraborty
+10        Priyanka        Agarwal</code></pre>
 <p>Extract rows from a data frame</p>
 <pre class="r"><code>temp=data[8:10,]
 temp</code></pre>
-<pre><code>##    enrollment.no first.name   last.name cgpa gender
-## 8              8  Semantika Chakraborty 9.00 female
-## 9              9     Dhriti Chakraborty 8.75 female
-## 10            10   Priyanka     Agarwal 8.00 female</code></pre>
+<pre><code>   enrollment.no first.name   last.name cgpa gender
+8              8  Semantika Chakraborty 9.00 female
+9              9     Dhriti Chakraborty 8.75 female
+10            10   Priyanka     Agarwal 8.00 female</code></pre>
 <p>We can extract both rows and column simultaneously</p>
 <pre class="r"><code>result=data[8:10,2:3]
 result</code></pre>
-<pre><code>##    first.name   last.name
-## 8   Semantika Chakraborty
-## 9      Dhriti Chakraborty
-## 10   Priyanka     Agarwal</code></pre>
+<pre><code>   first.name   last.name
+8   Semantika Chakraborty
+9      Dhriti Chakraborty
+10   Priyanka     Agarwal</code></pre>
 </div>
 <div id="expand-data-frame" class="section level2">
 <h2>Expand Data Frame</h2>
@@ -400,17 +391,17 @@ result</code></pre>
                       &quot;Demography&quot;,&quot;OR&quot;,&quot;Demography&quot;,&quot;OR&quot;,&quot;Demography&quot;)
 
 data</code></pre>
-<pre><code>##    enrollment.no first.name   last.name cgpa gender specialization
-## 1              1      Biman        Deka 6.50   male             OR
-## 2              2     Prapti      Kakati 7.20 female     Demography
-## 3              3   Dipjyoti   Chahariya 6.10   male             OR
-## 4              4     Rashmi      Bhuyan 8.50 female             OR
-## 5              5    Debojit       Barua 6.00   male     Demography
-## 6              6      Rocky     Baglary 5.20   male     Demography
-## 7              7     Rajesh        Bodo 5.50   male             OR
-## 8              8  Semantika Chakraborty 9.00 female     Demography
-## 9              9     Dhriti Chakraborty 8.75 female             OR
-## 10            10   Priyanka     Agarwal 8.00 female     Demography</code></pre>
+<pre><code>   enrollment.no first.name   last.name cgpa gender specialization
+1              1      Biman        Deka 6.50   male             OR
+2              2     Prapti      Kakati 7.20 female     Demography
+3              3   Dipjyoti   Chahariya 6.10   male             OR
+4              4     Rashmi      Bhuyan 8.50 female             OR
+5              5    Debojit       Barua 6.00   male     Demography
+6              6      Rocky     Baglary 5.20   male     Demography
+7              7     Rajesh        Bodo 5.50   male             OR
+8              8  Semantika Chakraborty 9.00 female     Demography
+9              9     Dhriti Chakraborty 8.75 female             OR
+10            10   Priyanka     Agarwal 8.00 female     Demography</code></pre>
 </div>
 <div id="add-row" class="section level2">
 <h2>Add Row</h2>
@@ -427,22 +418,22 @@ data</code></pre>
 )
 data=rbind(data,data1)
 print(data)</code></pre>
-<pre><code>##    enrollment.no first.name   last.name cgpa gender specialization
-## 1              1      Biman        Deka 6.50   male             OR
-## 2              2     Prapti      Kakati 7.20 female     Demography
-## 3              3   Dipjyoti   Chahariya 6.10   male             OR
-## 4              4     Rashmi      Bhuyan 8.50 female             OR
-## 5              5    Debojit       Barua 6.00   male     Demography
-## 6              6      Rocky     Baglary 5.20   male     Demography
-## 7              7     Rajesh        Bodo 5.50   male             OR
-## 8              8  Semantika Chakraborty 9.00 female     Demography
-## 9              9     Dhriti Chakraborty 8.75 female             OR
-## 10            10   Priyanka     Agarwal 8.00 female     Demography
-## 11            11     Kankan       Sarma 7.80   male             OR
-## 12            12     Reyhan         Ali 6.50   male     Demography
-## 13            13       Simi     Mahanta 5.00 female             OR
-## 14            14     Arpita     Ganguly 5.50 female             OR
-## 15            15    Chandan        Deka 5.80   male     Demography</code></pre>
+<pre><code>   enrollment.no first.name   last.name cgpa gender specialization
+1              1      Biman        Deka 6.50   male             OR
+2              2     Prapti      Kakati 7.20 female     Demography
+3              3   Dipjyoti   Chahariya 6.10   male             OR
+4              4     Rashmi      Bhuyan 8.50 female             OR
+5              5    Debojit       Barua 6.00   male     Demography
+6              6      Rocky     Baglary 5.20   male     Demography
+7              7     Rajesh        Bodo 5.50   male             OR
+8              8  Semantika Chakraborty 9.00 female     Demography
+9              9     Dhriti Chakraborty 8.75 female             OR
+10            10   Priyanka     Agarwal 8.00 female     Demography
+11            11     Kankan       Sarma 7.80   male             OR
+12            12     Reyhan         Ali 6.50   male     Demography
+13            13       Simi     Mahanta 5.00 female             OR
+14            14     Arpita     Ganguly 5.50 female             OR
+15            15    Chandan        Deka 5.80   male     Demography</code></pre>
 <blockquote>
 <p>in R we use <code>rbind</code> and <code>cbind</code> to combine two or more vectors row wise or column wise respectively</p>
 </blockquote>
@@ -452,31 +443,31 @@ b=21:30
 data2=cbind(a,b)
 data2=as.data.frame(data2)
 data2</code></pre>
-<pre><code>##     a  b
-## 1   1 21
-## 2   2 22
-## 3   3 23
-## 4   4 24
-## 5   5 25
-## 6   6 26
-## 7   7 27
-## 8   8 28
-## 9   9 29
-## 10 10 30</code></pre>
+<pre><code>    a  b
+1   1 21
+2   2 22
+3   3 23
+4   4 24
+5   5 25
+6   6 26
+7   7 27
+8   8 28
+9   9 29
+10 10 30</code></pre>
 <pre class="r"><code>data2$total=a+b
 data2$average=(a+b)/2
 data2</code></pre>
-<pre><code>##     a  b total average
-## 1   1 21    22      11
-## 2   2 22    24      12
-## 3   3 23    26      13
-## 4   4 24    28      14
-## 5   5 25    30      15
-## 6   6 26    32      16
-## 7   7 27    34      17
-## 8   8 28    36      18
-## 9   9 29    38      19
-## 10 10 30    40      20</code></pre>
+<pre><code>    a  b total average
+1   1 21    22      11
+2   2 22    24      12
+3   3 23    26      13
+4   4 24    28      14
+5   5 25    30      15
+6   6 26    32      16
+7   7 27    34      17
+8   8 28    36      18
+9   9 29    38      19
+10 10 30    40      20</code></pre>
 <pre class="r"><code>c=c(11,31,11+31,21)
 data2=rbind(data2,c)</code></pre>
 </div>
@@ -503,15 +494,15 @@ data2=rbind(data2,c)</code></pre>
 <p>Following is a simple example of <code>read.csv()</code> function to read a CSV file available in your current working directory −</p>
 <pre class="r"><code>data3 &lt;- read.csv(&quot;files/input.csv&quot;)
 data3</code></pre>
-<pre><code>##   id     name salary start_date       dept
-## 1  1     Rick 623.30 2012-01-01         IT
-## 2  2      Dan 515.20 2013-09-23 Operations
-## 3  3 Michelle 611.00 2014-11-15         IT
-## 4  4     Ryan 729.00 2014-05-11         HR
-## 5  5     Gary 843.25 2015-03-27    Finance
-## 6  6     Nina 578.00 2013-05-21         IT
-## 7  7    Simon 632.80 2013-07-30 Operations
-## 8  8     Guru 722.50 2014-06-17    Finance</code></pre>
+<pre><code>  id     name salary start_date       dept
+1  1     Rick 623.30 2012-01-01         IT
+2  2      Dan 515.20 2013-09-23 Operations
+3  3 Michelle 611.00 2014-11-15         IT
+4  4     Ryan 729.00 2014-05-11         HR
+5  5     Gary 843.25 2015-03-27    Finance
+6  6     Nina 578.00 2013-05-21         IT
+7  7    Simon 632.80 2013-07-30 Operations
+8  8     Guru 722.50 2014-06-17    Finance</code></pre>
 <p>By default the read.csv() function gives the output as a data frame. Once we read data in a data frame, we can apply all the functions applicable to data frames.</p>
 </div>
 <div id="writing-into-a-csv-file" class="section level2">
@@ -520,43 +511,43 @@ data3</code></pre>
 <pre class="r"><code>output.data=write.csv(data,&quot;Output.csv&quot;)
 data4=read.csv(&quot;Output.csv&quot;)
 data4</code></pre>
-<pre><code>##     X enrollment.no first.name   last.name cgpa gender specialization
-## 1   1             1      Biman        Deka 6.50   male             OR
-## 2   2             2     Prapti      Kakati 7.20 female     Demography
-## 3   3             3   Dipjyoti   Chahariya 6.10   male             OR
-## 4   4             4     Rashmi      Bhuyan 8.50 female             OR
-## 5   5             5    Debojit       Barua 6.00   male     Demography
-## 6   6             6      Rocky     Baglary 5.20   male     Demography
-## 7   7             7     Rajesh        Bodo 5.50   male             OR
-## 8   8             8  Semantika Chakraborty 9.00 female     Demography
-## 9   9             9     Dhriti Chakraborty 8.75 female             OR
-## 10 10            10   Priyanka     Agarwal 8.00 female     Demography
-## 11 11            11     Kankan       Sarma 7.80   male             OR
-## 12 12            12     Reyhan         Ali 6.50   male     Demography
-## 13 13            13       Simi     Mahanta 5.00 female             OR
-## 14 14            14     Arpita     Ganguly 5.50 female             OR
-## 15 15            15    Chandan        Deka 5.80   male     Demography</code></pre>
+<pre><code>    X enrollment.no first.name   last.name cgpa gender specialization
+1   1             1      Biman        Deka 6.50   male             OR
+2   2             2     Prapti      Kakati 7.20 female     Demography
+3   3             3   Dipjyoti   Chahariya 6.10   male             OR
+4   4             4     Rashmi      Bhuyan 8.50 female             OR
+5   5             5    Debojit       Barua 6.00   male     Demography
+6   6             6      Rocky     Baglary 5.20   male     Demography
+7   7             7     Rajesh        Bodo 5.50   male             OR
+8   8             8  Semantika Chakraborty 9.00 female     Demography
+9   9             9     Dhriti Chakraborty 8.75 female             OR
+10 10            10   Priyanka     Agarwal 8.00 female     Demography
+11 11            11     Kankan       Sarma 7.80   male             OR
+12 12            12     Reyhan         Ali 6.50   male     Demography
+13 13            13       Simi     Mahanta 5.00 female             OR
+14 14            14     Arpita     Ganguly 5.50 female             OR
+15 15            15    Chandan        Deka 5.80   male     Demography</code></pre>
 <p>Once the above code is executed, you will see that a new <code>.csv</code> file is being created in your default R folder.</p>
 <p>Here the column X comes from the data set newper. This can be dropped using additional parameter <code>row.names = FALSE</code> while writing the file.</p>
 <pre class="r"><code>output.data=write.csv(data,&quot;Output.csv&quot;,row.names = FALSE)
 data4=read.csv(&quot;Output.csv&quot;)
 data4</code></pre>
-<pre><code>##    enrollment.no first.name   last.name cgpa gender specialization
-## 1              1      Biman        Deka 6.50   male             OR
-## 2              2     Prapti      Kakati 7.20 female     Demography
-## 3              3   Dipjyoti   Chahariya 6.10   male             OR
-## 4              4     Rashmi      Bhuyan 8.50 female             OR
-## 5              5    Debojit       Barua 6.00   male     Demography
-## 6              6      Rocky     Baglary 5.20   male     Demography
-## 7              7     Rajesh        Bodo 5.50   male             OR
-## 8              8  Semantika Chakraborty 9.00 female     Demography
-## 9              9     Dhriti Chakraborty 8.75 female             OR
-## 10            10   Priyanka     Agarwal 8.00 female     Demography
-## 11            11     Kankan       Sarma 7.80   male             OR
-## 12            12     Reyhan         Ali 6.50   male     Demography
-## 13            13       Simi     Mahanta 5.00 female             OR
-## 14            14     Arpita     Ganguly 5.50 female             OR
-## 15            15    Chandan        Deka 5.80   male     Demography</code></pre>
+<pre><code>   enrollment.no first.name   last.name cgpa gender specialization
+1              1      Biman        Deka 6.50   male             OR
+2              2     Prapti      Kakati 7.20 female     Demography
+3              3   Dipjyoti   Chahariya 6.10   male             OR
+4              4     Rashmi      Bhuyan 8.50 female             OR
+5              5    Debojit       Barua 6.00   male     Demography
+6              6      Rocky     Baglary 5.20   male     Demography
+7              7     Rajesh        Bodo 5.50   male             OR
+8              8  Semantika Chakraborty 9.00 female     Demography
+9              9     Dhriti Chakraborty 8.75 female             OR
+10            10   Priyanka     Agarwal 8.00 female     Demography
+11            11     Kankan       Sarma 7.80   male             OR
+12            12     Reyhan         Ali 6.50   male     Demography
+13            13       Simi     Mahanta 5.00 female             OR
+14            14     Arpita     Ganguly 5.50 female             OR
+15            15    Chandan        Deka 5.80   male     Demography</code></pre>
 </div>
 </div>
 

@@ -1,0 +1,38 @@
+---
+---
+
+
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+#Using R Packages{.tabset .tabset-fade .tabset-pills}
+
+## Installing R Packages
+
+```
+install.packages("name")
+
+```
+Where `name` is package name we want to install.
+
+For example let us try to install the <font color="green" >"ggplot2"</font> package which is used to produce nicer looking graphs.
+
+```
+install.packages("ggplot2")
+```
+Alternatively, we can install a new package in <font size="6" color="red">**RStudio**</font> using the **Packages** window. 
+
+```
+Packages > Install > Type the desired package name > Hit "Enter"
+```
+
+## Load a Package
+
+```
+library("name")
+```
+Where `name` is package name we want to load.
+
+Alternatively, we can load a new package in <font size="6" color="red">**RStudio**</font> using the **Packages** window. 
+

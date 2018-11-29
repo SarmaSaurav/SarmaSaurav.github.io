@@ -1,28 +1,89 @@
 ---
 ---
 
+<style>
+
+      @font-face { font-family: vanish; src: url('font/vanish.TTF'); } 
+      h1 {
+         font-family: vanish
+      }
+      
+      @font-face { font-family: midnight; src: url('font/midnight.OTF'); } 
+      h2 {
+         font-family: midnight
+      }
+      
+      @font-face { font-family: pan; src: url('font/pan.TTF'); } 
+      h3 {
+         font-family: pan
+      }
+      
+      @font-face { font-family: monty; src: url('font/monty.TTF'); } 
+      h4 {
+         font-family: monty
+      }
+      
+      @font-face { font-family: rale; src: url('font/rale.TTF'); } 
+      h5 {
+         font-family: rale; font size="6"
+      }
+      
+</style>
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-<img src="images/logo.png" style="width:40%; margin-right: 20px" align="right">
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:35%;">
+</a>
 
-<span style="color:green; font-weight:bold">
-<font size="6"> Stats4Every1</font>  
-<font size="3"; font-family: Helvetica> This is a free-to-all and open sourced website for easy to follow Statistical tutorials.</font>
-</span>
+<a href="what_is_r.html">
+  <img src="images/R-studio.png" alt="R tutorial"  style="width:10%;" align="left">
+  <h5>R Tutorial</h5>
+</a>
 
-<span style="color:purple; font-weight:bold">
-<font size="3"; font-family: Helvetica>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<p>
+<div style="background-color:florawhite;color:crimson;">
+<font size="6"; style="italic">
+<h5>
+_This is a free-to-all and open sourced website for easy to follow Statistical tutorials._
+
 Here you will find tutorial on-
+
 <li>R Programming for Basic Statistical Calculations</li>
+
 <li>SPSS for Statistical Analysis</li>
+
 <li>Bio-Statistics</li>
-<li>And More</li>
+
+<li>And More ... </li>
+
+</h5>
+</font>
+</div>
+</p>
+
+<br/>
+<br/>
+<br/>
+
+
+<span style="color:crimson">
+<font size="3">
+<h5>
+_This site is under-construction. Feel free to contact me if you face any difficulty_
+</h5>
 </font>
 </span>
 
-<span style="color:blue">
-<font size="3">
-_This site is under-construction. Feel free to contact me if you face any difficulty_
-</font>
-</span>
+
+
+<a href="https://www.facebook.com/ProStatikaGuwahati/">
+  <img src="images/Prostatika.jpg" alt="prostatika_ad"  style="width:20%;">
+</a>

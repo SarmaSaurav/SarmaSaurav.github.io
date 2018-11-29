@@ -3,19 +3,72 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+
 <img src="images/photo.png" style="width:25%; margin-right: 20px" align="right">
 
-Hi, I am SAURAV SARMA
-
+<div style="background-color:purple;color:white;padding:20px;">
+  <h2>Hi, I am **SAURAV SARMA**</h2>
+  ---
+  <p>
 A post graduate in Statistics from [Gauhati University](https://gauhati.ac.in/).
 
 Currently working as a guest faculty in the Department of Statistics, [Cotton University](https://cottonuniversity.ac.in/).
 Also pursuing my Ph.D. from Gauhati University under the guidance of [Prof Kishore K Das](https://www.gauhati.ac.in/member.php?name=kishore-kumar-das&aid=3&did=32).
+  </p>
+</div>
 
-#### **Field of Interest:**
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div style="background-color:lightseagreen;color:white;padding:20px;">
+<h2> **Field of Interest:** </h2>
+
+---
 
 + Statistical Computation 
 + Demography 
 + Distribution Theory 
 + Data Mining
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div style="background-color:purple;color:white;padding:20px;">
+  <h2>Feel free to contact me:</h2>
+  ---
+  <p>
+__Department of Statistics__  
+__Cotton University__  
+__Panbazar, Guwahati - 781001__  
+__Assam, India__
+  </p>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<a>
+  <img src="images/gmail.png" alt="Email"  style="width:5%;">
+  **saurav.statistics.sarma@gmail.com**
+</a>
+
+<a>
+  <img src="images/rg.png" alt="Researchgate"  style="width:5%;">
+  [**Researchgate**](https://www.researchgate.net/profile/Saurav_Sarma3)
+</a>
+
+
 
