@@ -1,6 +1,33 @@
 ---
-title: Graphical Representation of Data
 ---
+
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+	       cache=T,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
+
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **GRAPHICAL REPRESENTATION OF DATA**</h2>
+---
+<p>
+One reason why R is so popular among statistician or data scientist is because of its capability to visualize the data with easy. There are a ton of in built as- well -as graphical packages to produce good looking and highly customizable graphs or diagrams. In this chapter we will discuss few commonly used tools for graphical represntation of data.
+</p>
+</div>
+
+<br/>
+<br/>
+<br/>
+
 
 ## Scatter plot {.flexbox .vcenter}
 

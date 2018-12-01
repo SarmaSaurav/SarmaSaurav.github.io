@@ -1,5 +1,4 @@
 ---
-title: Statistical Test of Significance
 ---
 
 <style>
@@ -20,13 +19,39 @@ title: Statistical Test of Significance
     }
 </style>
 
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+	       cache=T,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
+
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **STATISTICAL TEST OF SIGNIFICANCE**</h2>
+---
+<p>
+Statistical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.
+</p>
+</div>
+
+<br/>
+<br/>
+<br/>
 
 ```{r, echo=FALSE}
 set.seed(0)
 ```
 
 #{#green}
-Statistical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.
+
 
 > HYPOTHESIS: 
 A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, **null hypothesis** and **alternative hypothesis**.

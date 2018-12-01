@@ -1,9 +1,20 @@
 ---
-title: Introduction to the Course
 ---
 
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **INTRODUCTION TO THE COURSE**</h2>
+---
+<p>
 In this course we will learn about some basic statistical calculations using R programming language. This course is intended for non-statistical students/researchers.
 At the end of the course you will be able to carry out some basic mathematical and statistical calculations for your assignments, project works etc.
+</p>
+</div>
 
-_So, lets get started..._
+<br/>
+
+<p class="coltex">_So, lets get started..._</p>
 

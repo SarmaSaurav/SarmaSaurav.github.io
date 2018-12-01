@@ -1,17 +1,25 @@
 ---
-title: Standard Probability Distribution
-output: 
-  html_document: 
-    theme: united
 ---
 
-```{r, echo=FALSE}
-set.seed(0)
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+	       cache=T,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
 ```
 
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:15%;">
 </a>
+
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **STANDARD PROBABILITY DISTRIBUTION**</h2>
+---
+<p>
 
 In this chapter we will learn about some standard probability distributions and how to generate random samples from them.
 
@@ -20,6 +28,18 @@ We will consider the following distributions
 + **Binomial Distribution**
 + **Poisson Distribution**
 + **Normal Distribution**
+</p>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+```{r, echo=FALSE}
+set.seed(0)
+```
+
+
 
 In R we use the following syntax while dealing with a distribution
 

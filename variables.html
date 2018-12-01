@@ -11,7 +11,7 @@
 
 
 
-<title>Variables</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,7 +71,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 </head>
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
       <a href="graphics.html">Graphics</a>
     </li>
     <li>
-      <a href="loops.html">Loops and Decisions</a>
+      <a href="loops.html">Loops</a>
     </li>
     <li>
       <a href="factors.html">Factors</a>
@@ -238,6 +238,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
+    </li>
+    <li>
+      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -282,13 +285,22 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Variables</h1>
 
 </div>
 
 
+<p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2>
+<strong>VARIABLES</strong>
+</h2>
+<hr />
+<p>
 <p>Generally, while doing programming in any programming language, you need to use various variables to store various information. Variables are nothing but reserved memory locations to store values. This means that, when you create a variable you reserve some space in memory.</p>
-<p>You may like to store information of various data types like character, wide character, integer, floating point, double floating point, Boolean etc. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.</p>
+You may like to store information of various data types like character, wide character, integer, floating point, double floating point, Boolean etc. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.
+</p>
+</div>
+<p><br/> <br/> <br/></p>
 <p>In contrast to other programming languages like C and java in R, the variables are not declared as some data type. The variables are assigned with R-Objects and the data type of the R-object becomes the data type of the variable. There are many types of R-objects. The frequently used ones are −</p>
 <ul>
 <li><p>Vectors</p></li>
@@ -301,13 +313,9 @@ $(document).ready(function () {
 <p>We will describe all of them in due time.</p>
 <p>While using R for calculation, it is always advisable to store the outcome of a particular calculation against a variable. A variable may be considered as a container which will store the outcome.</p>
 <p>The general way of declaring a variable name is</p>
-<blockquote>
-<p>variable_name &lt;- (the r calculation)</p>
-</blockquote>
+<pre><code>variable_name &lt;- (the r calculation)  </code></pre>
 <p>For example</p>
-<blockquote>
-<p>x&lt;- 2+5</p>
-</blockquote>
+<pre><code>x&lt;- 2+5</code></pre>
 <p>However in general we <code>&lt;-</code> and <code>=</code> are equivalent and hence it is convenient to use <code>=</code> in place of <code>&lt;-</code>.</p>
 <p>So we can use the code</p>
 <pre class="r"><code>x=2+5</code></pre>
@@ -315,23 +323,23 @@ $(document).ready(function () {
 <p>For example:</p>
 <pre class="r"><code>x_square=x^2
 x_square</code></pre>
-<pre><code>## [1] 49</code></pre>
+<pre><code>[1] 49</code></pre>
 <p>If we simply type the variable name and press <code>Enter</code> it will return the value stored in that variable name. This process is called <em>calling the variable</em>.</p>
 <p>Once some values are stored in a variable name , then we can subject the variables to all arithmetic operations</p>
 <pre class="r"><code>x=5
 y=10
 x+y</code></pre>
-<pre><code>## [1] 15</code></pre>
+<pre><code>[1] 15</code></pre>
 <pre class="r"><code>x-y</code></pre>
-<pre><code>## [1] -5</code></pre>
+<pre><code>[1] -5</code></pre>
 <pre class="r"><code>x*y</code></pre>
-<pre><code>## [1] 50</code></pre>
+<pre><code>[1] 50</code></pre>
 <pre class="r"><code>y/x</code></pre>
-<pre><code>## [1] 2</code></pre>
+<pre><code>[1] 2</code></pre>
 <pre class="r"><code>y^2+x</code></pre>
-<pre><code>## [1] 105</code></pre>
+<pre><code>[1] 105</code></pre>
 <pre class="r"><code>2*x+y-15</code></pre>
-<pre><code>## [1] 5</code></pre>
+<pre><code>[1] 5</code></pre>
 <div id="naming-a-variable" class="section level2">
 <h2>Naming a variable</h2>
 <p>There are few points that should be considered while naming a variable in R:</p>
@@ -344,7 +352,10 @@ x+y</code></pre>
 </ul>
 </div>
 
-<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.<p>
+<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.
+<br/>
+Powered by ProStatika Analysis &trade;  
+<p>
 
 
 

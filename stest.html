@@ -11,7 +11,7 @@
 
 
 
-<title>Statistical Test of Significance</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,7 +71,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 </head>
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
       <a href="graphics.html">Graphics</a>
     </li>
     <li>
-      <a href="loops.html">Loops and Decisions</a>
+      <a href="loops.html">Loops</a>
     </li>
     <li>
       <a href="factors.html">Factors</a>
@@ -238,6 +238,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
+    </li>
+    <li>
+      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -282,7 +285,6 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Statistical Test of Significance</h1>
 
 </div>
 
@@ -302,9 +304,19 @@ $(document).ready(function () {
         color: purple;
     }
 </style>
+<p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2>
+<strong>STATISTICAL TEST OF SIGNIFICANCE</strong>
+</h2>
+<hr />
+<p>
+Statistical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.
+</p>
+</div>
+<p><br/> <br/> <br/></p>
 <div id="green" class="section level1">
 <h1></h1>
-<p>Statistical inference is the art of generating conclusions about the distribution of the data. A data scientist is often exposed to question that can only be answered scientifically. Therefore, statistical inference is a strategy to test whether a hypothesis is true, i.e. validated by the data.</p>
 <blockquote>
 <p>HYPOTHESIS: A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, <strong>null hypothesis</strong> and <strong>alternative hypothesis</strong>.</p>
 </blockquote>
@@ -360,17 +372,17 @@ Against the alternative <span class="math inline">\(H_1: \mu \ne 30\)</span></p>
 x=c(49, 25, 50, 49, 36, 7, 16, 26, 30, 66, 41, 18, 13, 26, 26, 24, 34, 17, 37, 11, 27, 36, 32, 42, 29)
 # Apply t test sor single mean
 t.test(x, mu=30)</code></pre>
-<pre><code>## 
-##  One Sample t-test
-## 
-## data:  x
-## t = 0.24507, df = 24, p-value = 0.8085
-## alternative hypothesis: true mean is not equal to 30
-## 95 percent confidence interval:
-##  24.95326 36.40674
-## sample estimates:
-## mean of x 
-##     30.68</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  x
+t = 0.24507, df = 24, p-value = 0.8085
+alternative hypothesis: true mean is not equal to 30
+95 percent confidence interval:
+ 24.95326 36.40674
+sample estimates:
+mean of x 
+    30.68 </code></pre>
 <p>Here, the p-value is 0.8085 which is greater than 0.05, hence we does not have enough evidence to reject his claim. So we should accept his claim. Also, we are 95% sure that the mark of a student will lie within 24.95326~25 and 36.40674~36.</p>
 </div>
 <div id="t-test-for-paired-mean" class="section level3">
@@ -404,17 +416,17 @@ y=c(44,34,22,10,47,31,40,30,32,35,18,21,35,29,22)
 # Apply t-test
 
 t.test(x,y,var.equal =T)</code></pre>
-<pre><code>## 
-##  Two Sample t-test
-## 
-## data:  x and y
-## t = -0.61028, df = 25, p-value = 0.5472
-## alternative hypothesis: true difference in means is not equal to 0
-## 95 percent confidence interval:
-##  -8.749507  4.749507
-## sample estimates:
-## mean of x mean of y 
-##        28        30</code></pre>
+<pre><code>
+    Two Sample t-test
+
+data:  x and y
+t = -0.61028, df = 25, p-value = 0.5472
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -8.749507  4.749507
+sample estimates:
+mean of x mean of y 
+       28        30 </code></pre>
 <p>Since the p-value = 0.5472 is greater than 0.05, so we should accept the null hypothesis and conclude that the owner’s claim is correct.</p>
 </div>
 </div>
@@ -554,18 +566,18 @@ habit=factor(habit, labels = c(&quot;No&quot;, &quot;Yes&quot;))
 # Create a cross table
 my.data=table(gender,habit)
 my.data</code></pre>
-<pre><code>##         habit
-## gender   No Yes
-##   Female  6   9
-##   Male    5  10</code></pre>
+<pre><code>        habit
+gender   No Yes
+  Female  6   9
+  Male    5  10</code></pre>
 <pre class="r"><code># apply chi square test
 
 chisq.test(my.data,correct = FALSE)</code></pre>
-<pre><code>## 
-##  Pearson&#39;s Chi-squared test
-## 
-## data:  my.data
-## X-squared = 0.14354, df = 1, p-value = 0.7048</code></pre>
+<pre><code>
+    Pearson&#39;s Chi-squared test
+
+data:  my.data
+X-squared = 0.14354, df = 1, p-value = 0.7048</code></pre>
 <p>Since the p-value is greater than 0.05, hence we should accept the null hypothesis and conclude that online shopping habit does not depends on gender of a person.</p>
 </div>
 <div id="anova" class="section level2">
@@ -605,26 +617,26 @@ chisq.test(my.data,correct = FALSE)</code></pre>
 data=read.csv(&quot;anova.csv&quot;, header = TRUE)
 # lets dee the structure of the data
 str(data)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    30 obs. of  3 variables:
-##  $ School: Factor w/ 3 levels &quot;School A&quot;,&quot;School B&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ Gender: Factor w/ 2 levels &quot;Female&quot;,&quot;Male&quot;: 2 2 2 2 2 1 1 1 1 1 ...
-##  $ Marks : int  54 47 89 23 84 74 55 64 39 48 ...</code></pre>
+<pre><code>&#39;data.frame&#39;:   30 obs. of  3 variables:
+ $ School: Factor w/ 3 levels &quot;School A&quot;,&quot;School B&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ Gender: Factor w/ 2 levels &quot;Female&quot;,&quot;Male&quot;: 2 2 2 2 2 1 1 1 1 1 ...
+ $ Marks : int  54 47 89 23 84 74 55 64 39 48 ...</code></pre>
 <pre class="r"><code># Here we have two factor variables &quot;Gender&quot; and &quot;School&quot;
 # and a int variable &quot;Marks&quot;</code></pre>
 <pre class="r"><code># apply one way anova
 
 one_way_school=aov(Marks~School, data=data)
 summary(one_way_school)</code></pre>
-<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
-## School       2    150    75.2   0.189  0.829
-## Residuals   27  10762   398.6</code></pre>
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)
+School       2    150    75.2   0.189  0.829
+Residuals   27  10762   398.6               </code></pre>
 <p>Since the p-value 0.829 is greater than 0.05, hence we should accept our null hypothesis and conclude that school is not a significant factor of variation in marks of students.</p>
 <p>Again if we want to check whether gender is a significant factor of variation, then we can use the following program-</p>
 <pre class="r"><code>one_way_gender=aov(Marks~Gender, data=data)
 summary(one_way_gender)</code></pre>
-<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
-## Gender       1    173   172.8   0.451  0.508
-## Residuals   28  10740   383.6</code></pre>
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)
+Gender       1    173   172.8   0.451  0.508
+Residuals   28  10740   383.6               </code></pre>
 <p>Here also, the p-value(0.508) is greater than 0.05 and hence we conclude that gender is also not a significant factor of variation.</p>
 </div>
 <div id="two-way-anova" class="section level4">
@@ -632,16 +644,19 @@ summary(one_way_gender)</code></pre>
 <p>Here we are interested in testing the null hypothesis that gender and school both are not a significant factor of variation in marks of student.</p>
 <pre class="r"><code>two_way_aov=aov(Marks~School+Gender, data=data)
 summary(two_way_aov)</code></pre>
-<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
-## School       2    150    75.2   0.186  0.832
-## Gender       1    222   222.5   0.549  0.465
-## Residuals   26  10540   405.4</code></pre>
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)
+School       2    150    75.2   0.186  0.832
+Gender       1    222   222.5   0.549  0.465
+Residuals   26  10540   405.4               </code></pre>
 <p>Since p-value for both School and Gender are greater than 0.05, hence both are insignificant for the variation of marks.</p>
 </div>
 </div>
 </div>
 
-<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.<p>
+<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.
+<br/>
+Powered by ProStatika Analysis &trade;  
+<p>
 
 
 

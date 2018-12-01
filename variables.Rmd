@@ -1,10 +1,34 @@
 ---
-title: Variables
 ---
 
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+	       cache=T,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
+
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **VARIABLES**</h2>
+---
+<p>
 Generally, while doing programming in any programming language, you need to use various variables to store various information. Variables are nothing but reserved memory locations to store values. This means that, when you create a variable you reserve some space in memory.
 
 You may like to store information of various data types like character, wide character, integer, floating point, double floating point, Boolean etc. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.
+</p>
+</div>
+
+<br/>
+<br/>
+<br/>
 
 In contrast to other programming languages like C and java in R, the variables are not declared as some data type. The variables are assigned with R-Objects and the data type of the R-object becomes the data type of the variable. There are many types of R-objects. The frequently used ones are −
 
@@ -26,11 +50,15 @@ While using R for calculation, it is always advisable to store the outcome of a 
 
 The general way of declaring a variable name is 
 
-> variable_name <- (the r calculation)  
+```
+variable_name <- (the r calculation)  
+```
 
-For example 
+For example
 
->x<- 2+5
+```
+x<- 2+5
+```
 
 However in general we `<-` and `=` are equivalent and hence it is convenient to use `=` in place of `<-`.
 

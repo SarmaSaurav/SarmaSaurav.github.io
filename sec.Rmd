@@ -1,6 +1,25 @@
 ---
-title: Basic Statistical Calculations
 ---
+
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+	       cache=T,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
+
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **BASIC STATISTICAL CALCULATIONS**</h2>
+---
+<p>
 
 In this chapter we will learn how to carry out some basic statistical measurements in R.
 The measurements are-
@@ -12,15 +31,23 @@ The measurements are-
 + Co-variance
 + Correlation
 
+</p>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+
 The formula for the measurements are
 
 $$ Mean= \frac{1}{n} \sum_{i=1}^{n} x_i$$
-$$Variance = \frac{1}{n}\sum_{i=1}^{n} (x_i-\bar{x})$$
+$$Variance = \frac{1}{n}\sum_{i=1}^{n} (x_i-\bar{x})^2$$
 $$ Median = l+\dfrac{\frac{N}{2}-f_c}{f}* h$$
 
-$$Range = Maximum \ \   observation - Minimum \ \ \   observation$$
+$$Range = \text{Max}^m\  \text{value} - \text{Min}^m \ \text{value}$$
 $$ Covariance = \frac{1}{n}\sum_{i=1}^{n}x_iy_i- \bar{x}\bar{y}$$
-$$ Correlation = \dfrac{Cov(x,y)}{\sqrt{Variance(x)}\sqrt{Variance(y)}}$$
+$$ Correlation \ (r) = \dfrac{Cov(x,y)}{\sqrt{Variance\ (x)}\sqrt{Variance\ (y)}}$$
 Let us consider the following data
 ```{r}
 weight=c(45,81,47,58,61,76,47,44,66,55)

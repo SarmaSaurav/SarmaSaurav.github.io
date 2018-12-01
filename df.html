@@ -11,7 +11,7 @@
 
 
 
-<title>Data Frame</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,7 +71,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 </head>
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
       <a href="graphics.html">Graphics</a>
     </li>
     <li>
-      <a href="loops.html">Loops and Decisions</a>
+      <a href="loops.html">Loops</a>
     </li>
     <li>
       <a href="factors.html">Factors</a>
@@ -238,6 +238,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
+    </li>
+    <li>
+      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -282,13 +285,21 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Data Frame</h1>
 
 </div>
 
 
 <p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
-<p>A data frame is a table or a two-dimensional array-like structure in which each column contains values of one variable and each row contains one set of values from each column.</p>
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2>
+<strong>DATA FRAME</strong>
+</h2>
+<hr />
+<p>
+A data frame is a table or a two-dimensional array-like structure in which each column contains values of one variable and each row contains one set of values from each column.
+</p>
+</div>
+<p><br/> <br/> <br/></p>
 <p>Following are the characteristics of a data frame.</p>
 <ul>
 <li>The column names should be non-empty.</li>
@@ -471,8 +482,8 @@ data2</code></pre>
 <pre class="r"><code>c=c(11,31,11+31,21)
 data2=rbind(data2,c)</code></pre>
 </div>
-<div id="reading-external-files" class="section level1">
-<h1>Reading External Files</h1>
+<div id="reading-external-files" class="section level2">
+<h2>Reading External Files</h2>
 <p>In R, we can read data from files stored outside the R environment. We can also write data into files which will be stored and accessed by the operating system. R can read and write into various file formats like csv, excel, xml etc.</p>
 <p>In this chapter we will learn to read data from a csv file and then write data into a csv file. The file should be present in current working directory so that R can read it. Of course we can also set our own directory and read files from there.</p>
 <blockquote>
@@ -489,8 +500,8 @@ data2=rbind(data2,c)</code></pre>
 6,Nina,578,2013-05-21,IT
 7,Simon,632.8,2013-07-30,Operations
 8,Guru,722.5,2014-06-17,Finance</code></pre>
-<div id="reading-a-csv-file" class="section level2">
-<h2>Reading a CSV File</h2>
+<div id="reading-a-csv-file" class="section level3">
+<h3>Reading a CSV File</h3>
 <p>Following is a simple example of <code>read.csv()</code> function to read a CSV file available in your current working directory −</p>
 <pre class="r"><code>data3 &lt;- read.csv(&quot;files/input.csv&quot;)
 data3</code></pre>
@@ -504,6 +515,7 @@ data3</code></pre>
 7  7    Simon 632.80 2013-07-30 Operations
 8  8     Guru 722.50 2014-06-17    Finance</code></pre>
 <p>By default the read.csv() function gives the output as a data frame. Once we read data in a data frame, we can apply all the functions applicable to data frames.</p>
+</div>
 </div>
 <div id="writing-into-a-csv-file" class="section level2">
 <h2>Writing into a CSV File</h2>
@@ -549,9 +561,11 @@ data4</code></pre>
 14            14     Arpita     Ganguly 5.50 female             OR
 15            15    Chandan        Deka 5.80   male     Demography</code></pre>
 </div>
-</div>
 
-<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.<p>
+<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.
+<br/>
+Powered by ProStatika Analysis &trade;  
+<p>
 
 
 

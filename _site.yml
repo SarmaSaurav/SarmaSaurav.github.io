@@ -22,7 +22,7 @@ navbar:
         href: sec.html
       - text: "Graphics"
         href: graphics.html
-      - text: "Loops and Decisions"
+      - text: "Loops"
         href: loops.html
       - text: "Factors"
         href: factors.html
@@ -38,6 +38,8 @@ navbar:
         href: ftable.html
       - text: "Using R Packages"
         href: pack.html
+      - text: "Decision Statements"
+        href: conditional.html
       
   right:
     - icon: fa-download fa-lg
@@ -59,4 +61,4 @@ output:
     include:
       #in_header: before.html
       after_body: footer.html
-    css: styles.css
+    css: mystyle.css

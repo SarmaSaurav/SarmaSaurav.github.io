@@ -11,7 +11,7 @@
 
 
 
-<title>Basic Statistical Calculations</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,7 +71,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 </head>
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
       <a href="graphics.html">Graphics</a>
     </li>
     <li>
-      <a href="loops.html">Loops and Decisions</a>
+      <a href="loops.html">Loops</a>
     </li>
     <li>
       <a href="factors.html">Factors</a>
@@ -238,6 +238,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
+    </li>
+    <li>
+      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -282,11 +285,17 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Basic Statistical Calculations</h1>
 
 </div>
 
 
+<p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2>
+<strong>BASIC STATISTICAL CALCULATIONS</strong>
+</h2>
+<hr />
+<p>
 <p>In this chapter we will learn how to carry out some basic statistical measurements in R. The measurements are-</p>
 <ul>
 <li>Mean</li>
@@ -296,9 +305,12 @@ $(document).ready(function () {
 <li>Co-variance</li>
 <li>Correlation</li>
 </ul>
+</p>
+</div>
+<p><br/> <br/> <br/></p>
 <p>The formula for the measurements are</p>
-<p><span class="math display">\[ Mean= \frac{1}{n} \sum_{i=1}^{n} x_i\]</span> <span class="math display">\[Variance = \frac{1}{n}\sum_{i=1}^{n} (x_i-\bar{x})\]</span> <span class="math display">\[ Median = l+\dfrac{\frac{N}{2}-f_c}{f}* h\]</span></p>
-<p><span class="math display">\[Range = Maximum \ \   observation - Minimum \ \ \   observation\]</span> <span class="math display">\[ Covariance = \frac{1}{n}\sum_{i=1}^{n}x_iy_i- \bar{x}\bar{y}\]</span> <span class="math display">\[ Correlation = \dfrac{Cov(x,y)}{\sqrt{Variance(x)}\sqrt{Variance(y)}}\]</span> Let us consider the following data</p>
+<p><span class="math display">\[ Mean= \frac{1}{n} \sum_{i=1}^{n} x_i\]</span> <span class="math display">\[Variance = \frac{1}{n}\sum_{i=1}^{n} (x_i-\bar{x})^2\]</span> <span class="math display">\[ Median = l+\dfrac{\frac{N}{2}-f_c}{f}* h\]</span></p>
+<p><span class="math display">\[Range = \text{Max}^m\  \text{value} - \text{Min}^m \ \text{value}\]</span> <span class="math display">\[ Covariance = \frac{1}{n}\sum_{i=1}^{n}x_iy_i- \bar{x}\bar{y}\]</span> <span class="math display">\[ Correlation \ (r) = \dfrac{Cov(x,y)}{\sqrt{Variance\ (x)}\sqrt{Variance\ (y)}}\]</span> Let us consider the following data</p>
 <pre class="r"><code>weight=c(45,81,47,58,61,76,47,44,66,55)
 height=c(140,165,145,160,166,170,156,161,159,163)</code></pre>
 <p>Once the data are being entered in R, we can now perform various statistical calculations:</p>
@@ -307,57 +319,57 @@ height=c(140,165,145,160,166,170,156,161,159,163)</code></pre>
 <p>Generally by <strong><code>mean</code></strong> we calculate <strong><code>Arithmetic mean</code></strong>. Arithmetic mean gives the center of our data</p>
 <pre class="r"><code>mean_weight=mean(weight)
 mean_weight</code></pre>
-<pre><code>## [1] 58</code></pre>
+<pre><code>[1] 58</code></pre>
 <pre class="r"><code>mean_height=mean(height)
 mean_height</code></pre>
-<pre><code>## [1] 158.5</code></pre>
+<pre><code>[1] 158.5</code></pre>
 </div>
 <div id="variance" class="section level3">
 <h3>Variance</h3>
 <p>Variance gives the amount of variation present in our data. Or how much our information are scattered from the center of our data</p>
 <pre class="r"><code>variance_weight=var(weight)
 variance_weight</code></pre>
-<pre><code>## [1] 171.3333</code></pre>
+<pre><code>[1] 171.3333</code></pre>
 <pre class="r"><code>variance_height=var(height)
 variance_height</code></pre>
-<pre><code>## [1] 87.83333</code></pre>
+<pre><code>[1] 87.83333</code></pre>
 </div>
 <div id="standard-deviation" class="section level3">
 <h3>Standard deviation</h3>
 <p>Standard deviation is simply the square root of variance</p>
 <pre class="r"><code>sd_weight=sd(weight)
 sd_weight</code></pre>
-<pre><code>## [1] 13.08944</code></pre>
+<pre><code>[1] 13.08944</code></pre>
 <pre class="r"><code>sd_height=sd(height)
 sd_height</code></pre>
-<pre><code>## [1] 9.371944</code></pre>
+<pre><code>[1] 9.371944</code></pre>
 </div>
 <div id="median" class="section level3">
 <h3>Median</h3>
 <p>Median is the mid point of our information when arranged in ascending or descending order.</p>
 <pre class="r"><code>median_weight=median(weight)
 median_weight</code></pre>
-<pre><code>## [1] 56.5</code></pre>
+<pre><code>[1] 56.5</code></pre>
 <pre class="r"><code>median_height=median(height)
 median_height</code></pre>
-<pre><code>## [1] 160.5</code></pre>
+<pre><code>[1] 160.5</code></pre>
 </div>
 <div id="range" class="section level3">
 <h3>Range</h3>
 <p>Range gives the minimum and maximum values of the data.</p>
 <pre class="r"><code>range_weight=range(weight)
 range_weight</code></pre>
-<pre><code>## [1] 44 81</code></pre>
+<pre><code>[1] 44 81</code></pre>
 <pre class="r"><code>range_height=range(height)
 range_height</code></pre>
-<pre><code>## [1] 140 170</code></pre>
+<pre><code>[1] 140 170</code></pre>
 </div>
 <div id="covariance" class="section level3">
 <h3>Covariance</h3>
 <p>Co-variance is a measurement of variation present in two sets of data when considered together. In our example, we are calculating how weight and height varies together.</p>
 <pre class="r"><code>cov_weight_height=cov(weight, height)
 cov_weight_height</code></pre>
-<pre><code>## [1] 83.44444</code></pre>
+<pre><code>[1] 83.44444</code></pre>
 </div>
 <div id="correlation" class="section level3">
 <h3>Correlation</h3>
@@ -365,7 +377,7 @@ cov_weight_height</code></pre>
 <pre class="r"><code>correlation=cor(weight, height)
 
 correlation</code></pre>
-<pre><code>## [1] 0.680216</code></pre>
+<pre><code>[1] 0.680216</code></pre>
 <ul>
 <li><p>If the value of correlation is greater than 0, then we say that the two variables are positively correlated.</p></li>
 <li><p>If the value of correlation is less than 0, then we say that the two variables are negatively correlated.</p></li>
@@ -374,7 +386,10 @@ correlation</code></pre>
 <p>In our example the correlation is 0.680216 which is greater than 0, and hence we say that weight and heights are positively correlated.</p>
 </div>
 
-<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.<p>
+<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.
+<br/>
+Powered by ProStatika Analysis &trade;  
+<p>
 
 
 

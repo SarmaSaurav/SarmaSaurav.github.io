@@ -1,7 +1,6 @@
 ---
-title: Data Frame
-
 ---
+
 ```{r knitr_init, echo=F, cache=FALSE,results='markup'}
 library(knitr)
 opts_chunk$set(echo=T,
@@ -17,8 +16,20 @@ opts_chunk$set(echo=T,
   <img src="images/logo.png" alt="logo"  style="width:15%;">
 </a>
 
-
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **DATA FRAME**</h2>
+---
+<p>
 A data frame is a table or a two-dimensional array-like structure in which each column contains values of one variable and each row contains one set of values from each column.
+</p>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+
+
 
 Following are the characteristics of a data frame.
 
@@ -127,7 +138,7 @@ c=c(11,31,11+31,21)
 data2=rbind(data2,c)
 ```
 
-# Reading External Files
+## Reading External Files
 
 In R, we can read data from files stored outside the R environment. We can also write data into files which will be stored and accessed by the operating system. R can read and write into various file formats like csv, excel, xml etc.
 
@@ -152,7 +163,7 @@ id,name,salary,start_date,dept
 8,Guru,722.5,2014-06-17,Finance
 ```
 
-## Reading a CSV File
+### Reading a CSV File
 
 Following is a simple example of `read.csv()` function to read a CSV file available in your current working directory −
 

@@ -44,7 +44,7 @@ Also pursuing my Ph.D. from Gauhati University under the guidance of [Prof Kisho
 <br/>
 
 <div style="background-color:purple;color:white;padding:20px;">
-  <h2>Feel free to contact me:</h2>
+  <h2>Feel free to contact me</h2>
   ---
   <p>
 __Department of Statistics__  
@@ -56,9 +56,6 @@ __Assam, India__
 
 <br/>
 <br/>
-<br/>
-<br/>
-
 
 <a>
   <img src="images/gmail.png" alt="Email"  style="width:5%;">

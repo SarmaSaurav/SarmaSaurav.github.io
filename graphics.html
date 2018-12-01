@@ -11,7 +11,7 @@
 
 
 
-<title>Graphical Representation of Data</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,7 +71,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 </head>
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
       <a href="graphics.html">Graphics</a>
     </li>
     <li>
-      <a href="loops.html">Loops and Decisions</a>
+      <a href="loops.html">Loops</a>
     </li>
     <li>
       <a href="factors.html">Factors</a>
@@ -238,6 +238,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
+    </li>
+    <li>
+      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -282,11 +285,21 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Graphical Representation of Data</h1>
 
 </div>
 
 
+<p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2>
+<strong>GRAPHICAL REPRESENTATION OF DATA</strong>
+</h2>
+<hr />
+<p>
+One reason why R is so popular among statistician or data scientist is because of its capability to visualize the data with easy. There are a ton of in built as- well -as graphical packages to produce good looking and highly customizable graphs or diagrams. In this chapter we will discuss few commonly used tools for graphical represntation of data.
+</p>
+</div>
+<p><br/> <br/> <br/></p>
 <div id="scatter-plot" class="section level2 flexbox vcenter">
 <h2>Scatter plot</h2>
 <p><em>A scatter plot is a plot of two variables in a two dimensional XY plan with one variable along X- axis and another variable along Y-axis.</em></p>
@@ -444,8 +457,6 @@ boxplot(mpg ~ cyl, data = mtcars,
    col = c(&quot;green&quot;,&quot;yellow&quot;,&quot;purple&quot;),
    names = c(&quot;High&quot;,&quot;Medium&quot;,&quot;Low&quot;)
 )</code></pre>
-<pre><code>## Warning in bxp(list(stats = structure(c(21.4, 22.8, 26, 30.4, 33.9, 17.8, :
-## some notches went outside hinges (&#39;box&#39;): maybe set notch=FALSE</code></pre>
 <p><img src="graphics_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <hr />
 </div>
@@ -530,7 +541,10 @@ legend(&quot;topright&quot;, c(&quot;London&quot;,&quot;New York&quot;,&quot;Sin
 <p><img src="graphics_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 
-<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.<p>
+<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.
+<br/>
+Powered by ProStatika Analysis &trade;  
+<p>
 
 
 

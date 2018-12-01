@@ -18,14 +18,15 @@ opts_chunk$set(echo=T,
 
 <div style="background-color:purple;color:white;padding:20px;">
 <h2> **FUNCTIONS**</h2>
+---
 <p>
-A function is a set of statements organized together to perform a specific task. R has a large number of in-built functions and the user can create their own functions.
-
-In R, a function is an object so the R interpreter is able to pass control to the function, along with arguments that may be necessary for the function to accomplish the actions.
-
-The function in turn performs its task and returns control to the interpreter as well as any result which may be stored in other objects.
+A function is a set of statements organized together to perform a specific task. R has a large number of in-built functions and the user can create their own functions. In R, a function is an object so the R interpreter is able to pass control to the function, along with arguments that may be necessary for the function to accomplish the actions. The function in turn performs its task and returns control to the interpreter as well as any result which may be stored in other objects.
 </p>
 </div>
+
+<br/>
+<br/>
+<br/>
 
 
 

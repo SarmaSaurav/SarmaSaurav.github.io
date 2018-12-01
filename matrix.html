@@ -11,7 +11,7 @@
 
 
 
-<title>Matrix</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,7 +71,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 </head>
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
       <a href="graphics.html">Graphics</a>
     </li>
     <li>
-      <a href="loops.html">Loops and Decisions</a>
+      <a href="loops.html">Loops</a>
     </li>
     <li>
       <a href="factors.html">Factors</a>
@@ -238,6 +238,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
+    </li>
+    <li>
+      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -282,21 +285,30 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Matrix</h1>
 
 </div>
 
 
-<p>Matrices are the R objects in which the elements are arranged in a two-dimensional rectangular layout. They contain elements of the same atomic types. Though we can create a matrix containing only characters or only logical values, they are not of much use. We use matrices containing numeric elements to be used in mathematical calculations.</p>
+<p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2>
+<strong>MATRIX</strong>
+</h2>
+<hr />
+<p>
+Matrices are the R objects in which the elements are arranged in a two-dimensional rectangular layout. They contain elements of the same atomic types. Though we can create a matrix containing only characters or only logical values, they are not of much use. We use matrices containing numeric elements to be used in mathematical calculations.
+</p>
+</div>
+<p><br/> <br/> <br/></p>
 <p>A Matrix is created using the <code>matrix()</code> function.</p>
 <p>Matrix are nothing but two dimensional vectors.</p>
 <p>Each element of a matrix can be identified by its row and column position.</p>
 <pre class="r"><code>A=c(1,2,3,4)
 dim(A)=c(2,2)
 A</code></pre>
-<pre><code>##      [,1] [,2]
-## [1,]    1    3
-## [2,]    2    4</code></pre>
+<pre><code>     [,1] [,2]
+[1,]    1    3
+[2,]    2    4</code></pre>
 <p>In the above example, A is a normal vector of size 4. Using the <strong><code>dim</code></strong> function we have converted the vector into a matrix.</p>
 <pre class="r"><code>matrix1=matrix(c(1,2,3,4),nrow = 2, ncol = 2)</code></pre>
 <p>The basic syntax for creating a matrix in R is −</p>
@@ -313,15 +325,15 @@ A</code></pre>
 <p>If we want to point to a particular element of the matrix, we can do so by using <strong><code>matrix_name[row_number, coloumn_number]</code></strong></p>
 <p>For example:</p>
 <pre class="r"><code>matrix1[1,1]</code></pre>
-<pre><code>## [1] 1</code></pre>
+<pre><code>[1] 1</code></pre>
 <pre class="r"><code>matrix1[2,2]</code></pre>
-<pre><code>## [1] 4</code></pre>
+<pre><code>[1] 4</code></pre>
 <p>We can even replace an element of the matrix</p>
 <pre class="r"><code>matrix1[1,1]=5
 matrix1</code></pre>
-<pre><code>##      [,1] [,2]
-## [1,]    5    3
-## [2,]    2    4</code></pre>
+<pre><code>     [,1] [,2]
+[1,]    5    3
+[2,]    2    4</code></pre>
 <p>Here the first element of matrix1 is replaces from 1 to 5</p>
 <div id="matrix-calculation" class="section level3">
 <h3>Matrix Calculation:</h3>
@@ -330,68 +342,71 @@ matrix1</code></pre>
 B = matrix(c(9,8,7,6,15,4,3,2,1),3,3) </code></pre>
 <p>The matrices are</p>
 <pre class="r"><code>A</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1   14    7
-## [2,]    2    5    8
-## [3,]    3    6    9</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1   14    7
+[2,]    2    5    8
+[3,]    3    6    9</code></pre>
 <pre class="r"><code>B</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    9    6    3
-## [2,]    8   15    2
-## [3,]    7    4    1</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]    9    6    3
+[2,]    8   15    2
+[3,]    7    4    1</code></pre>
 <p>Now let us perform some simple arithmetic</p>
 <pre class="r"><code>A + B   # The corresponding elements of A and B are added</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]   10   20   10
-## [2,]   10   20   10
-## [3,]   10   10   10</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]   10   20   10
+[2,]   10   20   10
+[3,]   10   10   10</code></pre>
 <pre class="r"><code>A - B   # The elements of B are subtracted from corresponding elemts of A</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]   -8    8    4
-## [2,]   -6  -10    6
-## [3,]   -4    2    8</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]   -8    8    4
+[2,]   -6  -10    6
+[3,]   -4    2    8</code></pre>
 <pre class="r"><code>A * B   # This will multiply corresponding elemets of A and B</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    9   84   21
-## [2,]   16   75   16
-## [3,]   21   24    9</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]    9   84   21
+[2,]   16   75   16
+[3,]   21   24    9</code></pre>
 <pre class="r"><code>A / B   # This will divide elements of A by corresponding elements of B</code></pre>
-<pre><code>##           [,1]      [,2]     [,3]
-## [1,] 0.1111111 2.3333333 2.333333
-## [2,] 0.2500000 0.3333333 4.000000
-## [3,] 0.4285714 1.5000000 9.000000</code></pre>
+<pre><code>          [,1]      [,2]     [,3]
+[1,] 0.1111111 2.3333333 2.333333
+[2,] 0.2500000 0.3333333 4.000000
+[3,] 0.4285714 1.5000000 9.000000</code></pre>
 <p>However, in matrix multiplication or division, the process is a bit different. Hence to get actual value we use the following operation</p>
 <pre class="r"><code>A %*% B   # Matrix multiplication</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]  170  244   38
-## [2,]  114  119   24
-## [3,]  138  144   30</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]  170  244   38
+[2,]  114  119   24
+[3,]  138  144   30</code></pre>
 <p>Some other functions are:</p>
 <pre class="r"><code>det(A)   # Determinent of A</code></pre>
-<pre><code>## [1] 60</code></pre>
+<pre><code>[1] 60</code></pre>
 <pre class="r"><code>t(A)     # Transpose of A</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]   14    5    6
-## [3,]    7    8    9</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]   14    5    6
+[3,]    7    8    9</code></pre>
 <pre class="r"><code>solve (A)  # Inverse of A</code></pre>
-<pre><code>##       [,1] [,2]       [,3]
-## [1,] -0.05 -1.4  1.2833333
-## [2,]  0.10 -0.2  0.1000000
-## [3,] -0.05  0.6 -0.3833333</code></pre>
+<pre><code>      [,1] [,2]       [,3]
+[1,] -0.05 -1.4  1.2833333
+[2,]  0.10 -0.2  0.1000000
+[3,] -0.05  0.6 -0.3833333</code></pre>
 <pre class="r"><code>eigen(A)  # Eigen values and eigen vector</code></pre>
-<pre><code>## eigen() decomposition
-## $values
-## [1] 17.3844+0.000000i -1.1922+1.424791i -1.1922-1.424791i
-## 
-## $vectors
-##              [,1]                  [,2]                  [,3]
-## [1,] 0.6582245+0i  0.9468122+0.0000000i  0.9468122+0.0000000i
-## [2,] 0.4806063+0i -0.0254148+0.1608858i -0.0254148-0.1608858i
-## [3,] 0.5794464+0i -0.2456849-0.1290560i -0.2456849+0.1290560i</code></pre>
+<pre><code>eigen() decomposition
+$values
+[1] 17.3844+0.000000i -1.1922+1.424791i -1.1922-1.424791i
+
+$vectors
+             [,1]                  [,2]                  [,3]
+[1,] 0.6582245+0i  0.9468122+0.0000000i  0.9468122+0.0000000i
+[2,] 0.4806063+0i -0.0254148+0.1608858i -0.0254148-0.1608858i
+[3,] 0.5794464+0i -0.2456849-0.1290560i -0.2456849+0.1290560i</code></pre>
 </div>
 
-<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.<p>
+<p>Copyright &copy; 2018 Saurav Sarma. All rights reserved.
+<br/>
+Powered by ProStatika Analysis &trade;  
+<p>
 
 
 
