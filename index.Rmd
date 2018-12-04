@@ -1,56 +1,39 @@
 ---
 ---
 
-<style>
 
-      @font-face { font-family: vanish; src: url('font/vanish.TTF'); } 
-      h1 {
-         font-family: vanish
-      }
-      
-      @font-face { font-family: midnight; src: url('font/midnight.OTF'); } 
-      h2 {
-         font-family: midnight
-      }
-      
-      @font-face { font-family: pan; src: url('font/pan.TTF'); } 
-      h3 {
-         font-family: pan
-      }
-      
-      @font-face { font-family: monty; src: url('font/monty.TTF'); } 
-      h4 {
-         font-family: monty
-      }
-      
-      @font-face { font-family: rale; src: url('font/rale.TTF'); } 
-      h5 {
-         font-family: rale; font size="6"
-      }
-      
-</style>
+<!-- Calling the CSS -->
 
-<link rel="stylesheet" href="styles.css" type="text/css">
+<link rel="stylesheet" href="mystyle.css" type="text/css">
 
+<!-- Website Logo -->
+<div class="banner">
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:35%;">
 </a>
+</div>
 
-<a href="what_is_r.html">
-  <img src="images/R-studio.png" alt="R tutorial"  style="width:10%;" align="left">
-  <h5>R Tutorial</h5>
-</a>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<!-- R Tutorial banner -->
+<!-- <div class="banner1"> -->
+ <!-- <img src="images/R-studio.png" alt="R tutorial" > -->
+ <!--  <a href="what_is_r.html"> -->
+ <!--    <button>R Tutorial </button> -->
+ <!--  </a> -->
+<!-- </div> -->
 
-<p>
-<div style="background-color:florawhite;color:crimson;">
-<font size="6"; style="italic">
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="intro">
+
 <h5>
 _This is a free-to-all and open sourced website for easy to follow Statistical tutorials._
 
@@ -67,14 +50,25 @@ Here you will find tutorial on-
 </h5>
 </font>
 </div>
-</p>
 
 <br/>
 <br/>
 <br/>
 
+<div class="notice">
+  <h1>ANNOUNCMENTS</h1>
+  <p>**The End Semester Examination for SEC: Statistical Computation With R for the department of Physics will be held on 07/12/2018 from 11.00AM @ Computer Cell, Library Building**</p>
+  <br>
+  <p>**The End Semester Examination for SEC: Statistical Computation With R for the department of EBWS will be held on 07/12/2018 from 1.00PM in the Department of Statistics, MCB Building**</p>
+</div>
 
-<span style="color:crimson">
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<span>
 <font size="3">
 <h5>
 _This site is under-construction. Feel free to contact me if you face any difficulty_
@@ -85,5 +79,5 @@ _This site is under-construction. Feel free to contact me if you face any diffic
 
 
 <a href="https://www.facebook.com/ProStatikaGuwahati/">
-  <img src="images/Prostatika.jpg" alt="prostatika_ad"  style="width:20%;">
+  <img src="images/prostat_banner.jpg" alt="prostatika_ad"  style="width:30%;">
 </a>

@@ -40,6 +40,8 @@ navbar:
         href: pack.html
       - text: "Decision Statements"
         href: conditional.html
+    #- text: "ProStatika"
+    #  href: newpage.html
       
   right:
     - icon: fa-download fa-lg
@@ -61,4 +63,4 @@ output:
     include:
       #in_header: before.html
       after_body: footer.html
-    css: mystyle.css
+      css: mystyle.css
