@@ -57,9 +57,12 @@ Here you will find tutorial on-
 
 <div class="notice">
   <h3>ANNOUNCMENTS</h3>
+  ---
   <p>The End Semester Examination for SEC: Statistical Computation With R for the department of Physics will be held on 07/12/2018 from 11.00AM @ Computer Cell, Library Building</p>
   <br>
-  <p>**The End Semester Examination for SEC: Statistical Computation With R for the department of EBWS will be held on 07/12/2018 from 1.00PM in the Department of Statistics, MCB Building**</p>
+  <p>The End Semester Examination for SEC: Statistical Computation With R for the department of EBWS will be held on 07/12/2018 from 1.00PM in the Department of Statistics, MCB Building</p>
+  <br>
+  <p>The End Semester Examination for SEC: Statistical Computation With R for the Department of Computer Science & IT (MCA) will be held on 10/12/2018 from 11.00AM @ Computer Cell, Library Building. Please contact your department for details.<p>
 </div>
 
 <br>
