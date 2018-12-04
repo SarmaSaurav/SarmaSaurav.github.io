@@ -108,9 +108,11 @@ a{
   background-color:#DCDCDC;
   margin:auto;
   padding:10px;
+  width:80%;
 }
 
 .notice p{
   font: 20px/1.5, Arial;
   color:	#A52A2A;
+  font-weight:bold;
 }

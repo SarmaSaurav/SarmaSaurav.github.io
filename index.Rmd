@@ -56,8 +56,8 @@ Here you will find tutorial on-
 <br/>
 
 <div class="notice">
-  <h1>ANNOUNCMENTS</h1>
-  <p>**The End Semester Examination for SEC: Statistical Computation With R for the department of Physics will be held on 07/12/2018 from 11.00AM @ Computer Cell, Library Building**</p>
+  <h3>ANNOUNCMENTS</h3>
+  <p>The End Semester Examination for SEC: Statistical Computation With R for the department of Physics will be held on 07/12/2018 from 11.00AM @ Computer Cell, Library Building</p>
   <br>
   <p>**The End Semester Examination for SEC: Statistical Computation With R for the department of EBWS will be held on 07/12/2018 from 1.00PM in the Department of Statistics, MCB Building**</p>
 </div>
