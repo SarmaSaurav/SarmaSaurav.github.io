@@ -12,6 +12,8 @@ opts_chunk$set(echo=T,
                warning=FALSE)
 ```
 
+<link rel="stylesheet" href="mystyle.css" type="text/css">
+
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:15%;">
 </a>
@@ -192,3 +194,8 @@ output.data=write.csv(data,"Output.csv",row.names = FALSE)
 data4=read.csv("Output.csv")
 data4
 ```
+
+<div class="icon-bar">
+  <a href="factors.html" class="prev">PREVIOUS PAGE</a>
+  <a href="functions.html" class="next">NEXT PAGE</a>
+</div>

@@ -8,16 +8,6 @@
 
 <br>
 
-<div class="pagination">
-  <a href="index.html">&laquo;</a>
-  <a href="#">Home</a>
-  <a class="active" href="intoduction.html">Introduction</a>
-  <a href="what_is_r.html">What is R</a>
-  <a href="variables.html">Variables</a>
-  <a href="vectors.html">Vectors</a>
-  <a href="what_is_r.html">&raquo;</a>
-</div>
-
 <br>
 
 <div style="background-color:crimson;color:white;padding:20px;">
@@ -34,6 +24,20 @@ _So, lets get started..._
 </div>
 
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<p class="coltex"></p>
+<div class="icon-bar">
+  <a href="index.html" class="prev">PREVIOUS PAGE</a>
+  <a href="what_is_r.html" class="next">NEXT PAGE</a>
+</div>
+
 

@@ -30,6 +30,16 @@ opts_chunk$set(echo=T,
                warning=FALSE)
 ```
 
+<link rel="stylesheet" href="mystyle.css" type="text/css">
+
+<div class="icon-bar">
+  <a href="distribution.html" class="prev">PREVIOUS PAGE</a>
+  <a href="ftable.html" class="next">NEXT PAGE</a>
+</div>
+
+
+
+
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:15%;">
 </a>

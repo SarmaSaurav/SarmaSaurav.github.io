@@ -1,5 +1,11 @@
+*{
+  padding:0;
+  margin:0;
+}
+
+
 body{
-  background-color: #f5f5dc;
+  background-color: white;
   font: 16 px/1.5 Arial, helvetica;
   color: #191970;
   /*padding:0;*/
@@ -9,6 +15,11 @@ body{
 
 h1{
 	color: green;
+}
+
+h3{
+  color:lightseagreen;
+  font: 25px Arial helvetica sans-serif;
 }
 
 a{
@@ -21,6 +32,7 @@ a{
   float: left;
   padding:0;
   margin:0;
+  margin-bottom:100px;
   
 }
 
@@ -63,7 +75,7 @@ a{
 	}
 
 .container{
-	width: 75%;
+	width: 85%;
 	margin: auto;
 }
 
@@ -119,32 +131,52 @@ a{
 
 
 .notice{
-  background-color:#DCDCDC;
+  /*background-color:#DCDCDC;*/
   margin:auto;
   padding:10px;
   width:80%;
 }
 
 .notice p{
-  font: 20px/1.5, Arial;
+  font: 17px/1.5 Arial;
   color:	#A52A2A;
   font-weight:bold;
 }
 
-.pagination {
-margin:auto;
+
+.icon-bar {
+  position: fixed;
+  bottom:80%;
+  right:0;
+  
 }
 
-.pagination a {
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
+.icon-bar a {
+  display: inline-block;
+  text-align: center;
+  padding: 6px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 15px;
 }
 
-.pagination a.active {
-    background-color: dodgerblue;
-    color: white;
+.icon-bar a:hover {
+  background-color: #000;
+  text-decoration:none;
 }
 
-.pagination a:hover:not(.active) {background-color: crimson; color:white;}
+
+
+.prev {
+  background: #007bb5;
+  color: white;
+  text-decoration:none;
+}
+
+
+.next {
+background: #bb0000;
+  color: white;
+  text-decoration:none;
+}
+

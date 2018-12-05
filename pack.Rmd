@@ -1,6 +1,12 @@
 ---
 ---
 
+<link rel="stylesheet" href="mystyle.css" type="text/css">
+
+<div class="icon-bar">
+  <a href="ftable.html" class="prev">PREVIOUS PAGE</a>
+  <a href="me.html" class="next">NEXT PAGE</a>
+</div>
 
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:15%;">
