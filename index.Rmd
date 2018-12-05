@@ -33,22 +33,9 @@
 
 
 <div class="intro">
-
-<h5>
-_This is a free-to-all and open sourced website for easy to follow Statistical tutorials._
-
-Here you will find tutorial on-
-
-<li>R Programming for Basic Statistical Calculations</li>
-
-<li>SPSS for Statistical Analysis</li>
-
-<li>Bio-Statistics</li>
-
-<li>And More ... </li>
-
-</h5>
-</font>
+<h2>STATISTICAL COMPUTATION WITH R</h2>
+<hr>
+<p> This Website is intended for the Students of PG 1st Semester of Cotton University. The website will provide course-materials and step-by-step tutorials for **Skill Enhancement Course: Statistical Computation with R**</p>
 </div>
 
 <br/>
@@ -71,16 +58,10 @@ Here you will find tutorial on-
 <br>
 <br>
 
-<span>
-<font size="3">
-<h5>
-_This site is under-construction. Feel free to contact me if you face any difficulty_
-</h5>
-</font>
-</span>
-
-
 
 <a href="https://www.facebook.com/ProStatikaGuwahati/">
   <img src="images/prostat_banner.jpg" alt="prostatika_ad"  style="width:30%;">
 </a>
+
+
+---

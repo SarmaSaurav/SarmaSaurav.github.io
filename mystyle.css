@@ -2,6 +2,8 @@ body{
   background-color: #f5f5dc;
   font: 16 px/1.5 Arial, helvetica;
   color: #191970;
+  /*padding:0;*/
+  margin-bottom:0;
 }
 
 
@@ -95,13 +97,26 @@ a{
 }
 
 .intro{
-  background-color: #f5f5dc;
+  
+  /*background-image:url(./images/bgimage.jpg);
+  background-position:center center;*/
+  
   /*display: flex;*/
   margin:auto;
-  width:60%;
+  width:80%;
   color:#191970;
   font: 20px/1.5 Arial;
+  text-align:center;
 }
+
+.intro h2{
+  font: 30px Arial helvetica sans-serif;
+}
+
+.intro p{
+  font: 20px Arial helvetica sans-serif;
+}
+
 
 .notice{
   background-color:#DCDCDC;
@@ -115,3 +130,21 @@ a{
   color:	#A52A2A;
   font-weight:bold;
 }
+
+.pagination {
+margin:auto;
+}
+
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: crimson; color:white;}

@@ -1,9 +1,24 @@
 ---
 ---
+<link rel="stylesheet" href="mystyle.css" type="text/css">
 
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:15%;">
 </a>
+
+<br>
+
+<div class="pagination">
+  <a href="index.html">&laquo;</a>
+  <a href="#">Home</a>
+  <a class="active" href="intoduction.html">Introduction</a>
+  <a href="what_is_r.html">What is R</a>
+  <a href="variables.html">Variables</a>
+  <a href="vectors.html">Vectors</a>
+  <a href="what_is_r.html">&raquo;</a>
+</div>
+
+<br>
 
 <div style="background-color:crimson;color:white;padding:20px;">
 <h2> **INTRODUCTION TO THE COURSE**</h2>
@@ -11,10 +26,14 @@
 <p>
 In this course we will learn about some basic statistical calculations using R programming language. This course is intended for non-statistical students/researchers.
 At the end of the course you will be able to carry out some basic mathematical and statistical calculations for your assignments, project works etc.
+
+<br>
+
+_So, lets get started..._
 </p>
 </div>
 
 <br/>
 
-<p class="coltex">_So, lets get started..._</p>
+<p class="coltex"></p>
 
