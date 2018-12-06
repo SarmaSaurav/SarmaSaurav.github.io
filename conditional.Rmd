@@ -204,12 +204,12 @@ test_result
 <br>
 <br>
 
-<div class="box1">
-<h4>NOTE:</h4>
+
+<h3>NOTE:</h3>
 <p>
 Here the switch statement is use to switch between `mean`, `median` and `max` functions. The `test` variable determines which function inside the `switch statement` is to executed.
 </p>
-</div>
+
 
 
 

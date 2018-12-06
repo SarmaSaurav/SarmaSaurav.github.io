@@ -29,7 +29,8 @@
   <h3>ANNOUNCMENTS</h3>
 
 <marquee direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">  
-The End Semester Examination for SEC: Statistical Computation With R for the        department of Physics will be held on 07/12/2018 from 11.00AM @ Computer Cell,      Library Building
+
+<span class="new">NEW</span> The End Semester Examination for SEC: Statistical Computation With R for the        department of Physics will be held on 07/12/2018 from 10.30 AM @ Computer Cell,      Library Building
   
 <br>
 
