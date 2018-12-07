@@ -139,9 +139,8 @@ a{
 .notice{
   /*background-color:#DCDCDC;*/
   margin:auto;
-  padding:10px;
+  padding:0;
   width:80%;
-  height:20%;
 }
 
 .notice p{
