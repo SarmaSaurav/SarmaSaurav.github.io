@@ -30,7 +30,7 @@
 
 <marquee direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">  
 
-The End Semester Examination for SEC: Statistical Computation With R for the        Department of Computer Science & IT (MCA) will be held on 10/12/2018 from           11.00AM @ Computer Cell, Library Building. Please contact your department for       details.
+The End Semester Examination for SEC: Statistical Computation With R for the Department of Computer Science & IT (MCA) will be held on 10/12/2018 from 11.00AM ( for odd enrolment numbers) and from 12.30 PM (for even enrolment numbers) @ Computer Cell, Library Building. Please contact your department for       details.
 
 </marquee>
 </div>
