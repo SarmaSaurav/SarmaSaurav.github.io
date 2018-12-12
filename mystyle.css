@@ -1,9 +1,8 @@
 body{
-  background-color: white;
+  background-color: 	#FFFAFA;
   font: 16 px/1.5 Arial, helvetica;
   color: #191970;
   /*padding:0;*/
-  margin-bottom:0;
 }
 
 
@@ -30,42 +29,7 @@ h6{
 }
 
 a{
-	/*background-color: coral;*/
-	color: coral;
 	text-decoration: none;
-}
-
-.banner{
-  float: left;
-  padding:0;
-  margin:0;
-  margin-bottom:100px;
-  
-}
-
-
-
-/*a:hover{
-	color: green;*/
-/*}*/
-
-.colbox{
-	background-color: lightseagreen;
-	color: white;
-	/*text-align: left;*/
-	font-size: 16px;
-	font-style: normal;
-	font-family: Arial;	
-	line-height: 1.5em;
-}
-
-.coltex{
-	color: lightseagreen;
-	/*text-align: left;*/
-	font-size: 16px;
-	font-style: italic;
-	font-family: Arial;	
-	line-height: 1.5em;
 }
 
 .box1{
@@ -96,64 +60,11 @@ a{
   float:left;
 }
 
-
-.block{
-	float: left;
-	width: 33%;
-
-}
-
-.button{
-	background-color: crimson;
-	color: white;
-	padding: 10px 15px;
-	border: none;
-}
-.button:hover{
-	background: black;
-	color: white;
-}
-
-.intro{
-  
-  /*background-image:url(./images/bgimage.jpg);
-  background-position:center center;*/
-  
-  /*display: flex;*/
-  margin:auto;
-  width:80%;
-  color:#191970;
-  font: 20px/1.5 Arial;
-  text-align:center;
-}
-
-.intro h2{
-  font: 30px Arial helvetica sans-serif;
-}
-
-.intro p{
-  font: 20px Arial helvetica sans-serif;
-}
-
-
-.notice{
-  /*background-color:#DCDCDC;*/
-  margin:auto;
-  padding:0;
-  width:80%;
-}
-
-.notice p{
-  font: 15px/1.5 Arial;
-  color:	#A52A2A;
-  font-weight:bold;
-}
-
-
 .icon-bar {
+  display:inline-block;
   position: fixed;
-  bottom:10%;
-  right:0;
+  bottom:0;
+  right:50%;
   
 }
 
@@ -171,24 +82,18 @@ a{
   text-decoration:none;
 }
 
-
-
 .prev {
+  float:left;
   background: #007bb5;
   color: white;
   text-decoration:none;
+  margin-right:10px;
 }
 
-
 .next {
+  float:right;
 background: #bb0000;
   color: white;
   text-decoration:none;
+  margin-left:5px;
 }
-
-.new{
-  display:flex;
-  background:red;
-  color:white;
-}
-

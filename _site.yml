@@ -1,11 +1,11 @@
 name: "Saurav Sarma"
 output_dir: "."
 navbar:
-  title: "Stats4Every1"
+  title: "Saurav Sarma"
   left:
     - text: "About Me"
       href: me.html
-    - text: "Statistical Calculation Using R"
+    - text: "R Tutorial"
       menu:
       - text: "Introduction to the Course"
         href: intoduction.html

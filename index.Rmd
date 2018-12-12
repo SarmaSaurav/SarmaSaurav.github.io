@@ -6,36 +6,24 @@
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
 
-<!-- Website Logo -->
-<div class="banner">
-<a href="index.html">
-  <img src="images/logo.png" alt="logo"  style="width:35%;">
-</a>
+<div class="container">
+<h3> Hi, this website is intended for non-statistical students and research scholars for easy to follow tutorials on</h3>
+
+<ul>
+  + <a href="intoduction.html">R Programming</a>
+  
+  + SPSS
+  
+  + Fundamentals of Statistics
+  
+  + Bio Statistics
+</ul>
+
+<h5> Hope it will be helpful for you. Feel free to 
+<a href="me.html">Contact</a> 
+me if you need any other help.</h5>
+
 </div>
-
-
-
-<div class="intro">
-<h2>STATISTICAL COMPUTATION WITH R</h2>
-<hr>
-<p> This Website is intended for the Students of PG 1st Semester of Cotton University. The website will provide course-materials and step-by-step tutorials for **Skill Enhancement Course: Statistical Computation with R**</p>
-</div>
-
-<br/>
-<br/>
-<br/>
-
-<!-- <div class="notice"> -->
-<!--   <h3>ANNOUNCMENTS</h3> -->
-
-<!-- <marquee direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">   -->
-
-<!-- The End Semester Examination for SEC: Statistical Computation With R for the Department of Computer Science & IT (MCA) will be held on 10/12/2018 from 11.00AM ( for odd enrolment numbers) and from 12.30 PM (for even enrolment numbers) @ Computer Cell, Library Building. Please contact your department for       details. -->
-
-<!-- </marquee> -->
-<!-- </div> -->
-
-
 
 <a href="https://www.facebook.com/ProStatikaGuwahati/">
   <img src="images/prostat_banner.png" alt="prostatika_ad"  style="width:20%;">
