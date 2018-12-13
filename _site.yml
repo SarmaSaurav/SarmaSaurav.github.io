@@ -40,8 +40,8 @@ navbar:
         href: pack.html
       - text: "Decision Statements"
         href: conditional.html
-    #- text: "ProStatika"
-    #  href: newpage.html
+    - text: "ProStatika"
+      href: prostat.html
       
   right:
     - icon: fa-download fa-lg
