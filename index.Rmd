@@ -9,14 +9,15 @@
 <div class="container">
 <h3> Hi, this website is intended for non-statistical students and research scholars for easy to follow tutorials on</h3>
 
+
 <ul>
-  + <a href="intoduction.html"><h3>R Programming</h3></a>
+  + <a href="intoduction.html"><h4>R Programming</h4> (Click Me) </a>
   
-  + SPSS
-  
-  + Fundamentals of Statistics
-  
-  + Bio Statistics
+  <!-- + SPSS -->
+
+  <!-- + Fundamentals of Statistics -->
+
+  <!-- + Bio Statistics -->
 </ul>
 
 <h5> Hope it will be helpful for you. Feel free to 

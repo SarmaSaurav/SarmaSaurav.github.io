@@ -10,14 +10,14 @@
 
 <img src="images/photo.png" style="width:25%; margin-right: 20px" align="right">
 
-<div style="background-color:purple;color:white;padding:20px;">
+<div style="background-color:teal;color:white;padding:20px;">
   <h2>Hi, I am **SAURAV SARMA**</h2>
   ---
   <p>
-A post graduate in Statistics from [Gauhati University](https://gauhati.ac.in/).
+A post graduate in Statistics from Gauhati University.
 
-Currently working as a guest faculty in the Department of Statistics, [Cotton University](https://cottonuniversity.ac.in/).
-Also pursuing my Ph.D. from Gauhati University under the guidance of [Prof Kishore K Das](https://www.gauhati.ac.in/member.php?name=kishore-kumar-das&aid=3&did=32).
+Currently working as a Part Time Faculty in the Department of Statistics, Cotton University.
+Also pursuing my Ph.D. from Gauhati University under the guidance of Prof Kishore K Das.
   </p>
 </div>
 
