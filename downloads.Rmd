@@ -18,7 +18,7 @@ Here you will find all the R codes and Data files.
 <h2>Previous Year Question Papers</h2>
 
 <a href="/files/SEC_dec_2019.zip" download>
-<button class="btn"><i class="fa fa-download"></i> Dec, 2018 </button>
+<button class="btn"><i class="fa fa-download"></i> Dec 2018 </button>
 </a>
 
 
