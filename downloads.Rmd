@@ -1,10 +1,24 @@
 ---
 ---
 
+<link rel="stylesheet" href="mystyle.css" type="text/css">
+
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:15%;">
 </a>
 
 
 Here you will find all the R codes and Data files.
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Auto width -->
+
+<h2>Previous Year Question Papers</h2>
+
+<a href="/files/SEC_dec_2019.zip" download>
+<button class="btn"><i class="fa fa-download"></i> Dec, 2018 </button>
+</a>
+
 
