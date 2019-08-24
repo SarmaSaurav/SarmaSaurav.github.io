@@ -6,16 +6,30 @@
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
 
-<div class="container">
-<h3> Hi, this website is intended for non-statistical students and research scholars for easy to follow tutorials on</h3>
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<a href="intoduction.html">
-  <button class="btn"><i class="fa fa-registered"></i> R Programming</button>
-</a>
+<div class="img1">
+<img src="images/logo.png" alt="logo"  style="width:25%;">
+</div>
 
+<div class="cont1">
+<img src="images/bg2.jpg" alt="logo"  style="width:100%;">
+<div class="text_block">
+Hi, this website is intended for non-statistical students and research scholars for easy to follow tutorials on R Programming. Click the below link to get started. Hope it will be helpful for you. Feel free to 
+<a href="me.html">Contact</a> 
+me if you need any other help.
+</div>
+</div>
+
+
+
+<br></br>
+
+<div>
+<a href="intoduction.html">
+  <button class="btn"><i class="fa fa-registered"></i> Click HERE for R Tutorial </button>
+</a>
+</div>
 
 <!-- <ul> -->
 <!--   + <a href="intoduction.html"><h4>R Programming</h4> (Click Me) </a> -->
@@ -27,11 +41,7 @@
   <!-- + Bio Statistics -->
 <!-- </ul> -->
 
-<h5> Hope it will be helpful for you. Feel free to 
-<a href="me.html">Contact</a> 
-me if you need any other help.</h5>
-
-</div>
+<br></br>
 
 
 <a href="https://www.facebook.com/ProStatikaGuwahati/">

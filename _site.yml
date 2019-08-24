@@ -1,7 +1,10 @@
 name: "Saurav Sarma"
 output_dir: "."
 navbar:
-  title: "Saurav Sarma"
+  logo:
+    image: images/logo1.png
+    href: index.html
+  title: "R 4 Everyone"
   left:
     - text: "About Me"
       href: me.html
@@ -58,7 +61,7 @@ navbar:
   
 output:
   html_document:
-    theme: united
+    theme: journal
     highlight: textmate
     include:
       #in_header: before.html

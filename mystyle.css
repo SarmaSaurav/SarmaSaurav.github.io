@@ -1,6 +1,6 @@
 body{
   background-color: 	#FFFAFA;
-  font: 16 px/1.5 Arial, helvetica;
+  font: 16 px/1.5 Arial;
   color: #191970;
   /*padding:0;*/
 }
@@ -12,8 +12,8 @@ h1{
 
 
 h3{
-  color: lightseagreen;
-  font: 25px Arial helvetica sans-serif;
+  color:  #2e4053;
+  font: 18px Arial;
 }
 
 h4{
@@ -98,17 +98,57 @@ background: #bb0000;
   margin-left:5px;
 }
 
+.next:hover{
+  font-size: 120%;
+}
+
+.prev:hover{
+  font-size: 120%;
+}
+
 /* Style buttons */
 .btn {
-  background-color: DodgerBlue;
+  background-color:  #138d75;
   border: none;
   color: white;
   padding: 12px 30px;
   cursor: pointer;
   font-size: 20px;
+  font: Arial;
 }
 
 /* Darker background on mouse-over */
 .btn:hover {
-  background-color: RoyalBlue;
+  background-color:  #273746;
+}
+
+.cont1{
+  /*background-color:  #f7dc6f;*/
+  position: relative;
+}
+
+.img1{
+  float:left;
+}
+
+.text_block{
+  float:right;
+  position: absolute;
+  bottom: 10%;
+  right: 20px;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+  color: white;
+  padding-left: 10%;
+  padding-right: 5%;
+  font: 18px Arial;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: 18px Arial;
+  color: white;
 }
