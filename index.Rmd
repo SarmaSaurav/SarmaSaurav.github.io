@@ -12,14 +12,15 @@
 <img src="images/logo.png" alt="logo"  style="width:25%;">
 </div>
 
-<div class="cont1">
-<img src="images/bg2.jpg" alt="logo"  style="width:100% height:auto;">
+
 <div class="text_block">
-Hi, this website is intended for non-statistical students and research scholars for easy to follow tutorials on R Programming. Click the below link to get started. Hope it will be helpful for you. Feel free to 
-<a href="me.html">Contact</a> 
+Hi, I am **SAURAV SARMA**, faculty in the **Department of Statistics, Cotton University**. This website is intended for students and research scholars from non-statistical background for easy to follow tutorials on **R** Programming language and how to use **R** programming for easily carry out various statistical calculations. Click the below link to get started. Hope it will be helpful for you.
+<br></br>
+Feel free to 
+<a href="me.html">**Contact**</a> 
 me if you need any other help.
 </div>
-</div>
+
 
 
 
@@ -27,7 +28,7 @@ me if you need any other help.
 
 <div>
 <a href="intoduction.html">
-  <button class="btn"><i class="fa fa-registered"></i> Click HERE for R Tutorial </button>
+  <div class="btn"> Click HERE for R Tutorial </div>
 </a>
 </div>
 
@@ -50,3 +51,5 @@ me if you need any other help.
 
 
 ---
+**Disclaimer**: This website is Created using [**R-markdown Package**](https://rmarkdown.rstudio.com/) & [**R Studio**](https://www.rstudio.com/). Hosted by [**GitHub**](https://github.com/).  
+Use [__Google Chrome__](https://www.google.com/chrome/) or [**Mozila Firefox**](https://www.mozilla.org/en-US/firefox/new/) for best result.

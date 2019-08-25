@@ -111,10 +111,11 @@ background: #bb0000;
   background-color:  #138d75;
   border: none;
   color: white;
-  padding: 12px 30px;
+  padding: 10px 10px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   font: Arial;
+  margin-left:5%;
 }
 
 /* Darker background on mouse-over */
@@ -123,8 +124,12 @@ background: #bb0000;
 }
 
 .cont1{
-  /*background-color:  #f7dc6f;*/
+  background-color:  #f7dc6f;
   position: relative;
+  top:10px;
+  bottom:10px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .img1{
@@ -133,15 +138,21 @@ background: #bb0000;
 
 .text_block{
   float:right;
-  position: absolute;
+  position: relative;
   bottom: 10%;
-  right: 20px;
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+  
+  margin-bottom:5%;
+  margin-left:5%;
+  margin-right:5%;
+  right: 10px;
+  background: rgb(0, 1, 0); /* Fallback color */
+  background: rgba(0, 1, 0, 0.6); /* Black background with 0.5 opacity */
   color: white;
-  padding-left: 10%;
-  padding-right: 10%;
-  font: 18px Arial;
+  padding-top:10%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom:10%;
+  font: 22px Arial;
 }
 
 .centered {
