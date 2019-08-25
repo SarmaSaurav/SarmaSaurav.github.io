@@ -128,7 +128,7 @@ background: #bb0000;
 }
 
 .img1{
-  float:left;
+  float:inherit;
 }
 
 .text_block{
@@ -140,7 +140,7 @@ background: #bb0000;
   background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
   color: white;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 10%;
   font: 18px Arial;
 }
 

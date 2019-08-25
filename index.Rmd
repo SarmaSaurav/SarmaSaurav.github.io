@@ -13,7 +13,7 @@
 </div>
 
 <div class="cont1">
-<img src="images/bg2.jpg" alt="logo"  style="width:100%;">
+<img src="images/bg2.jpg" alt="logo"  style="width:100% height:auto;">
 <div class="text_block">
 Hi, this website is intended for non-statistical students and research scholars for easy to follow tutorials on R Programming. Click the below link to get started. Hope it will be helpful for you. Feel free to 
 <a href="me.html">Contact</a> 
