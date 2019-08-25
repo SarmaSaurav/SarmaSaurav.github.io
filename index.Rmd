@@ -51,5 +51,5 @@ me if you need any other help.
 
 
 ---
-**Disclaimer**: This website is Created using [**R-markdown Package**](https://rmarkdown.rstudio.com/) & [**R Studio**](https://www.rstudio.com/). Hosted by [**GitHub**](https://github.com/).  
+**Disclaimer**: This website is Created using [**R- markdown Package**](https://rmarkdown.rstudio.com/) & [**R Studio**](https://www.rstudio.com/). Hosted by [**GitHub**](https://github.com/).  
 Use [__Google Chrome__](https://www.google.com/chrome/) or [**Mozila Firefox**](https://www.mozilla.org/en-US/firefox/new/) for best result.
