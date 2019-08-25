@@ -64,17 +64,17 @@ a{
   display:inline-block;
   position: fixed;
   bottom:0;
-  right:50%;
+  right:5%;
   
 }
 
 .icon-bar a {
   display: block;
   text-align: center;
-  padding: 2px;
+  padding: 5px;
   transition: all 0.3s ease;
   color: white;
-  font-size: 12px;
+  font: 12px Arial;
 }
 
 .icon-bar a:hover {
@@ -87,23 +87,27 @@ a{
   background: #007bb5;
   color: white;
   text-decoration:none;
-  margin-right:10px;
+  margin-right:1px;
+  margin-left:1px;
+  margin-bottom:10%;
+  padding:3% 5%;
 }
 
 .next {
   float:right;
-background: #bb0000;
+  background: #bb0000;
   color: white;
   text-decoration:none;
-  margin-left:5px;
+  margin-left:1px;
+  margin-bottom:10%;
 }
 
 .next:hover{
-  font-size: 120%;
+  font-size: 90%;
 }
 
 .prev:hover{
-  font-size: 120%;
+  font-size: 90%;
 }
 
 /* Style buttons */
