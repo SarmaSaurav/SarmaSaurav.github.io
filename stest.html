@@ -411,7 +411,8 @@ Statistical inference is the art of generating conclusions about the distributio
 </p>
 </div>
 <p><br/> <br/> <br/></p>
-<p>#{#green}</p>
+<div id="green" class="section level1">
+<h1>Some Definitions</h1>
 <blockquote>
 <p>HYPOTHESIS: A hypothesis is a statement or assumption that we make about the population which is tested based on information from a sample. The hypothesis is either accepted after the test or is being rejected. There are two types of hypothesis, <strong>null hypothesis</strong> and <strong>alternative hypothesis</strong>.</p>
 </blockquote>
@@ -447,8 +448,8 @@ An alternative hypothesis is a complementary statement to our null hypothesis. T
 <li><strong>n</strong> the number of observations.</li>
 </ul>
 <p>Here we are interested in testing the null hypothesis<br />
-<span class="math inline">\(H_0: \mu(\text{The population mean})=\mu_0(\text{Some particular value})\)</span></p>
-<p>Against the alternative <span class="math inline">\(H_1: \mu(\text{The population mean})\ne\mu_0(\text{Some particular value})\)</span></p>
+<span class="math inline">\(H_0: \mu(\text{$pop^n$ mean})=\mu_0(\text{particular value})\)</span></p>
+<p>Against the alternative <span class="math inline">\(H_1: \mu(\text{$pop^n$ mean})\ne\mu_0(\text{particular value})\)</span></p>
 <p>To evaluate the statistical significance of the t-test, you need to compute the p-value. The p-value ranges from 0 to 1, and is interpreted as follow:</p>
 <ul>
 <li><p>A p-value lower than 0.05 means you are strongly confident to reject the null hypothesis, thus the alternative hypothesis is accepted.</p></li>
@@ -744,6 +745,7 @@ School       2    150    75.2   0.186  0.832
 Gender       1    222   222.5   0.549  0.465
 Residuals   26  10540   405.4               </code></pre>
 <p>Since p-value for both School and Gender are greater than 0.05, hence both are insignificant for the variation of marks.</p>
+</div>
 </div>
 </div>
 

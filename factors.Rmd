@@ -14,12 +14,8 @@ opts_chunk$set(echo=T,
 <link rel="stylesheet" href="mystyle.css" type="text/css">
 
 <div class="icon-bar">
-  <div>
   <a href="loops.html" class="prev">PREVIOUS PAGE</a>
-  </div>
-  <div>
   <a href="df.html" class="next">NEXT PAGE</a>
-  </div>
 </div>
 
 <a href="index.html">

@@ -60,7 +60,7 @@ Statistical inference is the art of generating conclusions about the distributio
 set.seed(0)
 ```
 
-#{#green}
+# Some Definitions{#green}
 
 
 > HYPOTHESIS: 
@@ -100,10 +100,10 @@ Here
 + **n** the number of observations.
 
 Here we are interested in testing the null hypothesis  
-$H_0: \mu(\text{The population mean})=\mu_0(\text{Some particular value})$
+$H_0: \mu(\text{$pop^n$ mean})=\mu_0(\text{particular value})$
 
 Against the alternative
-$H_1: \mu(\text{The population mean})\ne\mu_0(\text{Some particular value})$
+$H_1: \mu(\text{$pop^n$ mean})\ne\mu_0(\text{particular value})$
 
 
 To evaluate the statistical significance of the t-test, you need to compute the p-value. The p-value ranges from 0 to 1, and is interpreted as follow:

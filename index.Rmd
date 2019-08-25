@@ -14,7 +14,7 @@
 
 
 <div class="text_block">
-Hi, I am **SAURAV SARMA**, faculty in the **Department of Statistics, Cotton University**. This website is intended for students and research scholars from non-statistical background for easy to follow tutorials on **R** Programming language and how to use **R** programming for easily carry out various statistical calculations. Click the below link to get started. Hope it will be helpful for you.
+Hi, I am **SAURAV SARMA**, faculty in the **Department of Statistics, Cotton University**. This website is intended for students and research scholars from non-statistical background for easy to follow tutorials on **R** Programming language and how to use **R** programming to carry out various statistical calculations. Click the below link to get started. Hope it will be helpful for you.
 <br></br>
 Feel free to 
 <a href="me.html">**Contact**</a> 
