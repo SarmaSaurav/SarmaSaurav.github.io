@@ -1,4 +1,11 @@
 ---
+title: "R Packages"
+output:
+  html_document:
+    toc_float: false
+    includes:
+      before_body: [include_lessons_nav.html]
+      after_body: [include_lessons_nav_end.html, footer.html]
 ---
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">

@@ -12,35 +12,18 @@
 
 
 
-<title>pack.utf8.md</title>
+<title>R Packages</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -105,33 +88,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 61px;
+  padding-top: 60px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .dropdown-submenu {
   position: relative;
@@ -372,11 +355,33 @@ $(document).ready(function () {
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+<div class="lessonPage">
+  <div class="lessonsNav">
+    <a id="nav-lesson-1" href="lesson-1.html">Introduction</a>
+    <a id="nav-lesson-2" href="lesson-2.html">What id R?</a>
+    <a id="nav-lesson-3" href="lesson-3.html">R Variables</a>
+    <a id="nav-lesson-4" href="lesson-4.html">Vectors</a>
+    <a id="nav-lesson-5" href="lesson-5.html">Matrix</a>
+    <a id="nav-lesson-6" href="lesson-6.html">Basic Statistical Calculations</a>
+    <a id="nav-lesson-7" href="lesson-7.html">Graphics</a>
+    <a id="nav-lesson-8" href="lesson-8.html">Loops</a>
+    <a id="nav-lesson-16" href="lesson-15.html">Decision Statements</a>
+    <a id="nav-lesson-9" href="lesson-9.html">Factors</a>
+    <a id="nav-lesson-10" href="lesson-10.html">Data Frame</a>
+    <a id="nav-lesson-11" href="lesson-11.html">Functions</a>
+    <a id="nav-lesson-12" href="lesson-12.html">Probability Distribution</a>
+    <a id="nav-lesson-13" href="lesson-13.html">Statistical Test</a>
+    <a id="nav-lesson-14" href="lesson-14.html">Frequency Tables</a>
+    <a id="nav-lesson-15" href="lesson-15.html">Using R Packages</a>
+    <a id="nav-lesson-15" href="lesson-15.html">Decision Statements</a>
+  </div>
+  <div class="lessonContent">
 
 <div class="fluid-row" id="header">
 
 
 
+<h1 class="title toc-ignore">R Packages</h1>
 
 </div>
 
@@ -406,39 +411,40 @@ $(document).ready(function () {
 </div>
 </div>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title></title>
-    <style>
-    .mainFooter{
-      background-color:#2c3e50;
-      color: #f0f3f4 ;
-      text-align:center;
-      margin:0;
-      padding:8%;
-      width:100%;
-      font:16px arial;
-    }
-    #footerImage{
-      width:20%;
-      float:right;
-    }
-        
-    </style>
+  </div> <!-- lessonContent -->
+</div> <!-- lessonPage -->
 
-  </head>
-  <body>
-    <footer class="mainFooter">
-      <p>Copyright &copy; 2019 Saurav Sarma. All rights reserved.
-      <br/>
-      Powered by ProStatika Analysis &trade;  
-      <p>
-    </footer>
-    
-  </body>
-</html>
+
+<script type="text/javascript">
+  var lesson = window.location.href.match(/lesson-[0-9]+/g);
+  if (lesson !== null) {
+    lesson = 'nav-' + lesson[0];
+    $('#'+lesson).addClass('current');
+  }
+
+  $('#show-answer').on("click", function() {
+    $('#show-answer').addClass('showing');
+    $('#model-answer').addClass('showing');
+  })
+</script>
+  </div> <!-- articleBandContent -->
+</div> <!-- pageContent -->
+
+<div id="rStudioFooter" class="band full">
+<div class="bandContent">
+  <div id="copyright">© Copyright Saurav Sarma 2018 - 2019 All rights reseved. Powered by ProStatika Analysis</div>
+  </div>
+</div>
+
+<!-- bizible -->
+<script type="text/javascript" src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
+
+<!-- disqus -->
+<div id="disqus_thread" class="standardPadding"></div>
+<script type="text/javascript" src="js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<script type="text/javascript" src="js/external-links.js"></script>
 
 
 

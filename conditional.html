@@ -16,32 +16,105 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
+
 <style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
   }
 </style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
 
 
 <style type="text/css">
@@ -105,33 +178,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 61px;
+  padding-top: 60px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .dropdown-submenu {
   position: relative;
@@ -414,10 +487,10 @@ Conditional statements are decision making structure which are tested by the pro
 <p>The flow diagram for if statement is:</p>
 <p><img src="images/r_if_statement.jpg" width="200 px" /></p>
 <p>An example of if statement is:</p>
-<pre class="r"><code>x=20
-if (x&lt;30) {
-  print(&quot;Cotton University&quot;)
-}</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">x=<span class="dv">20</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="cf">if</span> (x<span class="op">&lt;</span><span class="dv">30</span>) {</a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="kw">print</span>(<span class="st">&quot;Cotton University&quot;</span>)</a>
+<a class="sourceLine" id="cb2-4" title="4">}</a></code></pre></div>
 <pre><code>[1] &quot;Cotton University&quot;</code></pre>
 </div>
 <div id="if-else-statement" class="section level4">
@@ -433,16 +506,16 @@ if (x&lt;30) {
 <p>The flow diagram of if-else statement is:</p>
 <p><img src="images/r_if_else_statement.jpg" width="200px" /></p>
 <p>An example of if-else statement:</p>
-<pre class="r"><code>marks=c(15,45,65,78,13,45,8,60)
-
-for (i in 1:8) {
-        if (marks[i]&lt;30) {
-            print(&quot;FAIL&quot;)
-}
-        else {
-            print(&quot;PASS&quot;)
-        }
-}</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">marks=<span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">78</span>,<span class="dv">13</span>,<span class="dv">45</span>,<span class="dv">8</span>,<span class="dv">60</span>)</a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>) {</a>
+<a class="sourceLine" id="cb5-4" title="4">        <span class="cf">if</span> (marks[i]<span class="op">&lt;</span><span class="dv">30</span>) {</a>
+<a class="sourceLine" id="cb5-5" title="5">            <span class="kw">print</span>(<span class="st">&quot;FAIL&quot;</span>)</a>
+<a class="sourceLine" id="cb5-6" title="6">}</a>
+<a class="sourceLine" id="cb5-7" title="7">        <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb5-8" title="8">            <span class="kw">print</span>(<span class="st">&quot;PASS&quot;</span>)</a>
+<a class="sourceLine" id="cb5-9" title="9">        }</a>
+<a class="sourceLine" id="cb5-10" title="10">}</a></code></pre></div>
 <pre><code>[1] &quot;FAIL&quot;
 [1] &quot;PASS&quot;
 [1] &quot;PASS&quot;
@@ -469,21 +542,21 @@ for (i in 1:8) {
     Executes when none of the above condition is true.
 }</code></pre>
 <p>An example of nested if-else statement:</p>
-<pre class="r"><code>data=c(15,45,65,78,13,45,8,60)
-for (i in 1:length(data)) {
-  if(data[i]&lt;30){
-    print(&quot;FAIL&quot;)
-    }
-  else if(data[i]&gt;=30 &amp;&amp; data[i]&lt;45){
-    print(&quot;Third division&quot;)
-  }
-  else if(data[i]&gt;=45 &amp;&amp; data[i]&lt;60){
-    print(&quot;Second division&quot;)
-  }
-  else {
-    print(&quot;First division&quot;)
-    }
-}</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">data=<span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">78</span>,<span class="dv">13</span>,<span class="dv">45</span>,<span class="dv">8</span>,<span class="dv">60</span>)</a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(data)) {</a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="cf">if</span>(data[i]<span class="op">&lt;</span><span class="dv">30</span>){</a>
+<a class="sourceLine" id="cb8-4" title="4">    <span class="kw">print</span>(<span class="st">&quot;FAIL&quot;</span>)</a>
+<a class="sourceLine" id="cb8-5" title="5">    }</a>
+<a class="sourceLine" id="cb8-6" title="6">  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">30</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">45</span>){</a>
+<a class="sourceLine" id="cb8-7" title="7">    <span class="kw">print</span>(<span class="st">&quot;Third division&quot;</span>)</a>
+<a class="sourceLine" id="cb8-8" title="8">  }</a>
+<a class="sourceLine" id="cb8-9" title="9">  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">45</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">60</span>){</a>
+<a class="sourceLine" id="cb8-10" title="10">    <span class="kw">print</span>(<span class="st">&quot;Second division&quot;</span>)</a>
+<a class="sourceLine" id="cb8-11" title="11">  }</a>
+<a class="sourceLine" id="cb8-12" title="12">  <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb8-13" title="13">    <span class="kw">print</span>(<span class="st">&quot;First division&quot;</span>)</a>
+<a class="sourceLine" id="cb8-14" title="14">    }</a>
+<a class="sourceLine" id="cb8-15" title="15">}</a></code></pre></div>
 <pre><code>[1] &quot;FAIL&quot;
 [1] &quot;Second division&quot;
 [1] &quot;First division&quot;
@@ -511,14 +584,14 @@ for (i in 1:length(data)) {
 <p>The flow diagram of switch statement is</p>
 <p><img src="images/r_switch_statement.jpg" width="200px" /></p>
 <p>An example of switch statement:</p>
-<pre class="r"><code>x=c(1,3,5,7,9)
-test=1
-test_result=switch (test,
-  mean = mean(x),
-  med = median(x),
-  max = max(x)
-)
-test_result</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb11-2" title="2">test=<span class="dv">1</span></a>
+<a class="sourceLine" id="cb11-3" title="3">test_result=<span class="cf">switch</span> (test,</a>
+<a class="sourceLine" id="cb11-4" title="4">  <span class="dt">mean =</span> <span class="kw">mean</span>(x),</a>
+<a class="sourceLine" id="cb11-5" title="5">  <span class="dt">med =</span> <span class="kw">median</span>(x),</a>
+<a class="sourceLine" id="cb11-6" title="6">  <span class="dt">max =</span> <span class="kw">max</span>(x)</a>
+<a class="sourceLine" id="cb11-7" title="7">)</a>
+<a class="sourceLine" id="cb11-8" title="8">test_result</a></code></pre></div>
 <pre><code>[1] 5</code></pre>
 <p><br> <br> <br> <br></p>
 <h3>
@@ -529,39 +602,24 @@ Here the switch statement is use to switch between <code>mean</code>, <code>medi
 </p>
 </div>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title></title>
-    <style>
-    .mainFooter{
-      background-color:#2c3e50;
-      color: #f0f3f4 ;
-      text-align:center;
-      margin:0;
-      padding:8%;
-      width:100%;
-      font:16px arial;
-    }
-    #footerImage{
-      width:20%;
-      float:right;
-    }
-        
-    </style>
+  </div> <!-- articleBandContent -->
+</div> <!-- pageContent -->
 
-  </head>
-  <body>
-    <footer class="mainFooter">
-      <p>Copyright &copy; 2019 Saurav Sarma. All rights reserved.
-      <br/>
-      Powered by ProStatika Analysis &trade;  
-      <p>
-    </footer>
-    
-  </body>
-</html>
+<div id="rStudioFooter" class="band full">
+<div class="bandContent">
+  <div id="copyright">© Copyright Saurav Sarma 2018 - 2019 All rights reseved. Powered by ProStatika Analysis</div>
+  </div>
+</div>
+
+<!-- bizible -->
+<script type="text/javascript" src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
+
+<!-- disqus -->
+<div id="disqus_thread" class="standardPadding"></div>
+<script type="text/javascript" src="js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<script type="text/javascript" src="js/external-links.js"></script>
 
 
 

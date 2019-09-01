@@ -1,8 +1,11 @@
 body{
-  background-color: 	#FFFAFA;
+  background-color: 	#FFF;
   font: 16 px/1.5 Arial;
   color: #191970;
-  /*padding:0;*/
+  padding-top:5%;
+  padding-bottom:0%;
+  padding-left:0;
+  margin:0;
 }
 
 
@@ -61,20 +64,21 @@ a{
 }
 
 .icon-bar {
-  display:inline-block;
+  display:grid;
   position: fixed;
-  bottom:0;
-  right:5%;
+  bottom:10%;
+  right:0;
   
 }
 
 .icon-bar a {
-  display: block;
+  display: inline-block;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   transition: all 0.3s ease;
   color: white;
-  font: 12px Arial;
+  font: 14px Arial;
+  
 }
 
 .icon-bar a:hover {
@@ -103,11 +107,11 @@ a{
 }
 
 .next:hover{
-  font-size: 90%;
+  
 }
 
 .prev:hover{
-  font-size: 90%;
+  
 }
 
 /* Style buttons */
@@ -144,7 +148,6 @@ a{
   float:right;
   position: relative;
   bottom: 10%;
-  
   margin-bottom:5%;
   margin-left:5%;
   margin-right:5%;
@@ -167,3 +170,169 @@ a{
   font: 18px Arial;
   color: white;
 }
+
+.lessonPage {
+  display: flex;
+  display: -ms-flexbox;
+}
+
+.lessonPage .lessonsNav {
+  margin-top: 23px;
+  min-width: 290px;
+  line-height: 40px;
+  padding-right: 30px;
+}
+
+.lessonPage .lessonsNav a {
+  display: block;
+  padding: 0 10px;
+}
+
+.lessonPage .lessonsNav a:hover {
+  text-decoration: none;
+  background-color: #34495e;
+  color:white;
+}
+
+.lessonPage .lessonsNav a.current {
+  background-color: #75aadb;
+  color: #fff;
+}
+
+.lessonPage .lessonContent #show-answer h2 {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 20px;
+  background-color: #75aadb;
+  color: #fff;
+
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lessonPage .lessonContent #show-answer.showing {
+  display: none;
+}
+
+.lessonPage .lessonContent #model-answer {
+  display: none;
+}
+
+.lessonPage .lessonContent #model-answer.showing {
+  display: block;
+}
+
+.lessonPage .lessonContent #continue-to-next-lesson h2 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.lessonPage .continue-link {
+  font-size: 24px;
+}
+
+/*Adjustments for smaller screen*/
+
+@media screen and (max-width: 768px){
+  .lessonPage {
+    display: block;
+  }
+
+  .lessonPage .lessonsNav {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+  .gallerySection .galleryItems .galleryItem {
+    width: 100%;
+  }
+  .formatTable .formatName {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 350px){
+
+    #rStudioHeader .productName {
+      font-size: 26px;
+    }
+
+    #rStudioFooter .bandContent .footerLogo {
+      margin: 0 2px;
+    }
+
+}
+
+
+#rStudioFooter {
+  display:grid;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  height: 91px;
+  margin-top:60px;
+  text-align:center;
+}
+
+#rStudioFooter.band {
+
+  background-color: #34495e;
+  padding: 30px 5%;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  text-align:center;
+  line-height: 25px;
+}
+
+#rStudioFooter .bandContent {
+  color: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  line-height: 20px;
+}
+
+#rStudioFooter .bandContent #copyright {
+  text-align:center;
+  flex-shrink: 6;
+}
+
+#rStudioFooter .bandContent #logos {
+  flex-shrink: 1;
+}
+
+#rStudioFooter .bandContent .footerLogo {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+
+  margin: 0 8px;
+}
+
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 80%;
+height: 80%;
+}
+
+
+
