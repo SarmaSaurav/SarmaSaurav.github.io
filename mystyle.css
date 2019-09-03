@@ -1,14 +1,20 @@
+/*{
+ margin:0;
+ 
+}*/
+
 body{
   background-color: 	#FFF;
   font: 16 px/1.5 Arial;
   color: #191970;
-  padding-top:5%;
+  padding-top:15%;
   padding-bottom:0%;
   padding-left:0;
   margin:0;
 }
 
 
+/*
 h1{
 	color: lightseagreen;
 }
@@ -30,7 +36,7 @@ h5{
 h6{
 	color: lightseagreen;
 }
-
+*/
 a{
 	text-decoration: none;
 }
@@ -66,13 +72,16 @@ a{
 .icon-bar {
   display:grid;
   position: fixed;
-  bottom:10%;
+  left:0;
+  bottom:0;
   right:0;
+  width:100%;
+  text-align:center;
   
 }
 
 .icon-bar a {
-  display: inline-block;
+  
   text-align: center;
   padding: 10px;
   transition: all 0.3s ease;
@@ -93,7 +102,7 @@ a{
   text-decoration:none;
   margin-right:1px;
   margin-left:1px;
-  margin-bottom:10%;
+  margin-bottom:20%;
   padding:3% 5%;
 }
 
@@ -106,15 +115,9 @@ a{
   margin-bottom:10%;
 }
 
-.next:hover{
-  
-}
-
-.prev:hover{
-  
-}
 
 /* Style buttons */
+
 .btn {
   background-color:  #138d75;
   border: none;
