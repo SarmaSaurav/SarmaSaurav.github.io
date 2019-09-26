@@ -57,7 +57,12 @@ In this course we will be using two different applications,
   
   <div class="video-container">
   <iframe width="853" height="480" src="https://www.youtube.com/embed/Qre20nlYnMg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  
+
+ 
+  >Note: If you are using a 32bit Operating system then the latest R Studio 1.2.xxx will not support in your machine. You can download older version 1.1.xxx from the below link
+
+<http://download1.rstudio.org/RStudio-1.1.463.exe>
+
   
   Though we will use R studio for our calculations, but R is essential for proper functioning of R studio.
   
