@@ -27,9 +27,9 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -39,14 +39,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -55,9 +57,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  { background-color: #f8f8f8; }
+  {  background-color: #f8f8f8; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
@@ -472,16 +474,16 @@ One reason why R is so popular among statistician or data scientist is because o
 <div id="scatter-plot" class="section level2 flexbox vcenter">
 <h2>Scatter plot</h2>
 <p><em>A scatter plot is a plot of two variables in a two dimensional XY plan with one variable along X- axis and another variable along Y-axis.</em></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">weight=<span class="kw">c</span>(<span class="dv">65</span>,<span class="dv">55</span>,<span class="dv">87</span>,<span class="dv">54</span>,<span class="dv">52</span>,<span class="dv">69</span>,<span class="dv">47</span>,<span class="dv">77</span>,<span class="dv">59</span>,<span class="dv">60</span>)</a>
-<a class="sourceLine" id="cb1-2" title="2">height=<span class="kw">c</span>(<span class="dv">150</span>,<span class="dv">160</span>,<span class="dv">172</span>,<span class="dv">156</span>,<span class="dv">145</span>,<span class="dv">151</span>,<span class="dv">161</span>,<span class="dv">170</span>,<span class="dv">166</span>,<span class="dv">155</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">plot</span>(weight,height)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>weight=<span class="kw">c</span>(<span class="dv">65</span>,<span class="dv">55</span>,<span class="dv">87</span>,<span class="dv">54</span>,<span class="dv">52</span>,<span class="dv">69</span>,<span class="dv">47</span>,<span class="dv">77</span>,<span class="dv">59</span>,<span class="dv">60</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>height=<span class="kw">c</span>(<span class="dv">150</span>,<span class="dv">160</span>,<span class="dv">172</span>,<span class="dv">156</span>,<span class="dv">145</span>,<span class="dv">151</span>,<span class="dv">161</span>,<span class="dv">170</span>,<span class="dv">166</span>,<span class="dv">155</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">plot</span>(weight,height)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>The command <code>plot(x,y)</code> gives a simple 2D plot of the variable <code>x</code> along x-axis and variable <code>y</code> along y-axis.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">plot</span>(weight,height,</a>
-<a class="sourceLine" id="cb2-2" title="2">     <span class="dt">main =</span> <span class="st">&quot;A scatter plot of weight and height of 10 persons&quot;</span>,</a>
-<a class="sourceLine" id="cb2-3" title="3">     <span class="dt">xlab =</span> <span class="st">&quot;Weights in Kilogram&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Heights in Centimeter&quot;</span>,</a>
-<a class="sourceLine" id="cb2-4" title="4">     <span class="dt">col=</span><span class="st">&quot;red&quot;</span>,</a>
-<a class="sourceLine" id="cb2-5" title="5">     <span class="dt">lwd=</span><span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">plot</span>(weight,height,</span>
+<span id="cb2-2"><a href="#cb2-2"></a>     <span class="dt">main =</span> <span class="st">&quot;A scatter plot of weight and height of 10 persons&quot;</span>,</span>
+<span id="cb2-3"><a href="#cb2-3"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Weights in Kilogram&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Heights in Centimeter&quot;</span>,</span>
+<span id="cb2-4"><a href="#cb2-4"></a>     <span class="dt">col=</span><span class="st">&quot;red&quot;</span>,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>     <span class="dt">lwd=</span><span class="dv">10</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>We can change the type of the plot using <code>type=" "</code></p>
 <ul>
@@ -501,23 +503,23 @@ One reason why R is so popular among statistician or data scientist is because o
 <p><code>xlab=""</code> : X axis title</p>
 <p><code>col=" "</code> : color of the graph</p>
 <p><code>lwd=</code> : line/point width.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,weight,</a>
-<a class="sourceLine" id="cb3-2" title="2">     <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb3-3" title="3">     <span class="dt">main =</span> <span class="st">&quot;A line Diagram of Weight of a Student for past 10 months&quot;</span>,</a>
-<a class="sourceLine" id="cb3-4" title="4">     <span class="dt">sub =</span> <span class="st">&quot;Figure x.x.x&quot;</span>,</a>
-<a class="sourceLine" id="cb3-5" title="5">     <span class="dt">xlab =</span> <span class="st">&quot;Months&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Weights in Kg&quot;</span>,</a>
-<a class="sourceLine" id="cb3-6" title="6">     <span class="dt">col=</span><span class="st">&quot;steelblue&quot;</span>,<span class="dt">lwd=</span><span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,weight,</span>
+<span id="cb3-2"><a href="#cb3-2"></a>     <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb3-3"><a href="#cb3-3"></a>     <span class="dt">main =</span> <span class="st">&quot;A line Diagram of Weight of a Student for past 10 months&quot;</span>,</span>
+<span id="cb3-4"><a href="#cb3-4"></a>     <span class="dt">sub =</span> <span class="st">&quot;Figure x.x.x&quot;</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Months&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Weights in Kg&quot;</span>,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>     <span class="dt">col=</span><span class="st">&quot;steelblue&quot;</span>,<span class="dt">lwd=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-3-1.png" width="672" /> More than one line can be drawn on the same chart by using the lines()function.</p>
 <p>After the first line is plotted, the lines() function can use an additional vector as input to draw the second line in the chart,</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Create the data for the chart.</span></a>
-<a class="sourceLine" id="cb4-2" title="2">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">12</span>,<span class="dv">28</span>,<span class="dv">3</span>,<span class="dv">41</span>)</a>
-<a class="sourceLine" id="cb4-3" title="3">t &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">14</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">19</span>,<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb4-4" title="4"></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="co"># Plot the bar chart.</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="kw">plot</span>(v,<span class="dt">type =</span> <span class="st">&quot;o&quot;</span>,<span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Month&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Rain fall&quot;</span>, </a>
-<a class="sourceLine" id="cb4-7" title="7">   <span class="dt">main =</span> <span class="st">&quot;Rain fall chart&quot;</span>)</a>
-<a class="sourceLine" id="cb4-8" title="8"></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="kw">lines</span>(t, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Create the data for the chart.</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">12</span>,<span class="dv">28</span>,<span class="dv">3</span>,<span class="dv">41</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>t &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">14</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">19</span>,<span class="dv">3</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># Plot the bar chart.</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="kw">plot</span>(v,<span class="dt">type =</span> <span class="st">&quot;o&quot;</span>,<span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Month&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Rain fall&quot;</span>, </span>
+<span id="cb4-7"><a href="#cb4-7"></a>   <span class="dt">main =</span> <span class="st">&quot;Rain fall chart&quot;</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="kw">lines</span>(t, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>When we have more than two variables and we want to find the correlation between one variable versus the remaining ones we use scatter-plot matrix. We use pairs() function to create matrices of scatter-plots.</p>
 <p>The basic syntax for creating scatter-plot matrices in R is −</p>
@@ -529,12 +531,12 @@ One reason why R is so popular among statistician or data scientist is because o
 </ul>
 <p>Example</p>
 <p>Each variable is paired up with each of the remaining variable. A scatter-plot is plotted for each pair.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Plot the matrices between 4 variables giving 12 plots.</span></a>
-<a class="sourceLine" id="cb6-2" title="2"></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="co"># One variable with 3 others and total 4 variables.</span></a>
-<a class="sourceLine" id="cb6-4" title="4"></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="kw">pairs</span>(<span class="op">~</span>wt<span class="op">+</span>mpg<span class="op">+</span>disp<span class="op">+</span>cyl,<span class="dt">data =</span> mtcars,</a>
-<a class="sourceLine" id="cb6-6" title="6">   <span class="dt">main =</span> <span class="st">&quot;Scatterplot Matrix&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Plot the matrices between 4 variables giving 12 plots.</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># One variable with 3 others and total 4 variables.</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="kw">pairs</span>(<span class="op">~</span>wt<span class="op">+</span>mpg<span class="op">+</span>disp<span class="op">+</span>cyl,<span class="dt">data =</span> mtcars,</span>
+<span id="cb6-6"><a href="#cb6-6"></a>   <span class="dt">main =</span> <span class="st">&quot;Scatterplot Matrix&quot;</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <blockquote>
 <p><strong>mtcars</strong> is a pre-stored data frame in R library.</p>
@@ -558,40 +560,40 @@ One reason why R is so popular among statistician or data scientist is because o
 <p>Example</p>
 <p>A simple bar chart is created using just the input vector and the name of each bar.</p>
 <p>The below script will create a simple bar chart:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">barplot</span>(weight, <span class="dt">main =</span> <span class="st">&quot;A bar plot of weights&quot;</span>,</a>
-<a class="sourceLine" id="cb8-2" title="2">        <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>,</a>
-<a class="sourceLine" id="cb8-3" title="3">        <span class="dt">ylab =</span> <span class="st">&quot;Weights&quot;</span>, </a>
-<a class="sourceLine" id="cb8-4" title="4">        <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">barplot</span>(weight, <span class="dt">main =</span> <span class="st">&quot;A bar plot of weights&quot;</span>,</span>
+<span id="cb8-2"><a href="#cb8-2"></a>        <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Weights&quot;</span>, </span>
+<span id="cb8-4"><a href="#cb8-4"></a>        <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>The features of the bar chart can be expanded by adding more parameters. The main parameter is used to add title. The col parameter is used to add colors to the bars. The args.name is a vector having same number of values as the input vector to describe the meaning of each bar.</p>
 <p>Example:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># Create the data for the chart</span></a>
-<a class="sourceLine" id="cb9-2" title="2">H &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">12</span>,<span class="dv">28</span>,<span class="dv">3</span>,<span class="dv">41</span>)</a>
-<a class="sourceLine" id="cb9-3" title="3">M &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;Apr&quot;</span>,<span class="st">&quot;May&quot;</span>,<span class="st">&quot;Jun&quot;</span>,<span class="st">&quot;Jul&quot;</span>)</a>
-<a class="sourceLine" id="cb9-4" title="4"></a>
-<a class="sourceLine" id="cb9-5" title="5"><span class="co"># Plot the bar chart </span></a>
-<a class="sourceLine" id="cb9-6" title="6"><span class="kw">barplot</span>(H,<span class="dt">names.arg=</span>M,<span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Revenue&quot;</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,</a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="dt">main=</span><span class="st">&quot;Revenue chart&quot;</span>,<span class="dt">border=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Create the data for the chart</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>H &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">12</span>,<span class="dv">28</span>,<span class="dv">3</span>,<span class="dv">41</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>M &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;Apr&quot;</span>,<span class="st">&quot;May&quot;</span>,<span class="st">&quot;Jun&quot;</span>,<span class="st">&quot;Jul&quot;</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="co"># Plot the bar chart </span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="kw">barplot</span>(H,<span class="dt">names.arg=</span>M,<span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Revenue&quot;</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="dt">main=</span><span class="st">&quot;Revenue chart&quot;</span>,<span class="dt">border=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>We can create bar chart with groups of bars and stacks in each bar by using a matrix as input values.</p>
 <p>More than two variables are represented as a matrix which is used to create the group bar chart and stacked bar chart.</p>
 <p>Example:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># Create the input vectors.</span></a>
-<a class="sourceLine" id="cb10-2" title="2">colors =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;green&quot;</span>,<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;brown&quot;</span>)</a>
-<a class="sourceLine" id="cb10-3" title="3">months &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;Apr&quot;</span>,<span class="st">&quot;May&quot;</span>,<span class="st">&quot;Jun&quot;</span>,<span class="st">&quot;Jul&quot;</span>)</a>
-<a class="sourceLine" id="cb10-4" title="4">regions &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;North&quot;</span>)</a>
-<a class="sourceLine" id="cb10-5" title="5"></a>
-<a class="sourceLine" id="cb10-6" title="6"><span class="co"># Create the matrix of the values.</span></a>
-<a class="sourceLine" id="cb10-7" title="7">Values &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">11</span>), </a>
-<a class="sourceLine" id="cb10-8" title="8">                 <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb10-9" title="9"></a>
-<a class="sourceLine" id="cb10-10" title="10"><span class="co"># Create the bar chart</span></a>
-<a class="sourceLine" id="cb10-11" title="11"><span class="kw">barplot</span>(Values, <span class="dt">main =</span> <span class="st">&quot;Total Revenue Collected&quot;</span>, </a>
-<a class="sourceLine" id="cb10-12" title="12">        <span class="dt">names.arg =</span> months, <span class="dt">xlab =</span> <span class="st">&quot;Month&quot;</span>, </a>
-<a class="sourceLine" id="cb10-13" title="13">        <span class="dt">ylab =</span> <span class="st">&quot;Revenue&quot;</span>, <span class="dt">col =</span> colors)</a>
-<a class="sourceLine" id="cb10-14" title="14"></a>
-<a class="sourceLine" id="cb10-15" title="15"><span class="co"># Add the legend to the chart</span></a>
-<a class="sourceLine" id="cb10-16" title="16"><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, regions, <span class="dt">cex =</span> <span class="fl">1.3</span>, <span class="dt">fill =</span> colors)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Create the input vectors.</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>colors =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;green&quot;</span>,<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a>months &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;Apr&quot;</span>,<span class="st">&quot;May&quot;</span>,<span class="st">&quot;Jun&quot;</span>,<span class="st">&quot;Jul&quot;</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>regions &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;North&quot;</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co"># Create the matrix of the values.</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>Values &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">11</span>), </span>
+<span id="cb10-8"><a href="#cb10-8"></a>                 <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb10-9"><a href="#cb10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="co"># Create the bar chart</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="kw">barplot</span>(Values, <span class="dt">main =</span> <span class="st">&quot;Total Revenue Collected&quot;</span>, </span>
+<span id="cb10-12"><a href="#cb10-12"></a>        <span class="dt">names.arg =</span> months, <span class="dt">xlab =</span> <span class="st">&quot;Month&quot;</span>, </span>
+<span id="cb10-13"><a href="#cb10-13"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Revenue&quot;</span>, <span class="dt">col =</span> colors)</span>
+<span id="cb10-14"><a href="#cb10-14"></a></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="co"># Add the legend to the chart</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, regions, <span class="dt">cex =</span> <span class="fl">1.3</span>, <span class="dt">fill =</span> colors)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <hr />
 </div>
@@ -611,21 +613,21 @@ One reason why R is so popular among statistician or data scientist is because o
 <li><p>main is used to give a title to the graph.</p></li>
 </ul>
 <p>Example</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars, <span class="dt">xlab =</span> <span class="st">&quot;Number of Cylinders&quot;</span>,</a>
-<a class="sourceLine" id="cb12-2" title="2">   <span class="dt">ylab =</span> <span class="st">&quot;Miles Per Gallon&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Mileage Data&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars, <span class="dt">xlab =</span> <span class="st">&quot;Number of Cylinders&quot;</span>,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>   <span class="dt">ylab =</span> <span class="st">&quot;Miles Per Gallon&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Mileage Data&quot;</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>We can draw boxplot with notch to find out how the medians of different data groups match with each other.</p>
 <p>The below script will create a boxplot graph with notch for each of the data group.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Plot the chart.</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars, </a>
-<a class="sourceLine" id="cb13-3" title="3">   <span class="dt">xlab =</span> <span class="st">&quot;Number of Cylinders&quot;</span>,</a>
-<a class="sourceLine" id="cb13-4" title="4">   <span class="dt">ylab =</span> <span class="st">&quot;Miles Per Gallon&quot;</span>, </a>
-<a class="sourceLine" id="cb13-5" title="5">   <span class="dt">main =</span> <span class="st">&quot;Mileage Data&quot;</span>,</a>
-<a class="sourceLine" id="cb13-6" title="6">   <span class="dt">notch =</span> <span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb13-7" title="7">   <span class="dt">varwidth =</span> <span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb13-8" title="8">   <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;green&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;purple&quot;</span>),</a>
-<a class="sourceLine" id="cb13-9" title="9">   <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;High&quot;</span>,<span class="st">&quot;Medium&quot;</span>,<span class="st">&quot;Low&quot;</span>)</a>
-<a class="sourceLine" id="cb13-10" title="10">)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Plot the chart.</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars, </span>
+<span id="cb13-3"><a href="#cb13-3"></a>   <span class="dt">xlab =</span> <span class="st">&quot;Number of Cylinders&quot;</span>,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>   <span class="dt">ylab =</span> <span class="st">&quot;Miles Per Gallon&quot;</span>, </span>
+<span id="cb13-5"><a href="#cb13-5"></a>   <span class="dt">main =</span> <span class="st">&quot;Mileage Data&quot;</span>,</span>
+<span id="cb13-6"><a href="#cb13-6"></a>   <span class="dt">notch =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb13-7"><a href="#cb13-7"></a>   <span class="dt">varwidth =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb13-8"><a href="#cb13-8"></a>   <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;green&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;purple&quot;</span>),</span>
+<span id="cb13-9"><a href="#cb13-9"></a>   <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;High&quot;</span>,<span class="st">&quot;Medium&quot;</span>,<span class="st">&quot;Low&quot;</span>)</span>
+<span id="cb13-10"><a href="#cb13-10"></a>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <hr />
 </div>
@@ -647,19 +649,19 @@ One reason why R is so popular among statistician or data scientist is because o
 <li><p>breaks is used to mention the width of each bar.</p></li>
 </ul>
 <p>Example A simple histogram is created using input vector, label, col and border parameters.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># Create data for the graph.</span></a>
-<a class="sourceLine" id="cb15-2" title="2">v &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">8</span>,<span class="dv">36</span>,<span class="dv">22</span>,<span class="dv">12</span>,<span class="dv">41</span>,<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">19</span>)</a>
-<a class="sourceLine" id="cb15-3" title="3"></a>
-<a class="sourceLine" id="cb15-4" title="4"><span class="co"># Create the histogram.</span></a>
-<a class="sourceLine" id="cb15-5" title="5"><span class="kw">hist</span>(v,<span class="dt">xlab =</span> <span class="st">&quot;Weight&quot;</span>,<span class="dt">col =</span> <span class="st">&quot;yellow&quot;</span>,<span class="dt">border =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Create data for the graph.</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>v &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">8</span>,<span class="dv">36</span>,<span class="dv">22</span>,<span class="dv">12</span>,<span class="dv">41</span>,<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">19</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># Create the histogram.</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="kw">hist</span>(v,<span class="dt">xlab =</span> <span class="st">&quot;Weight&quot;</span>,<span class="dt">col =</span> <span class="st">&quot;yellow&quot;</span>,<span class="dt">border =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-11-1.png" width="672" /> To specify the range of values allowed in X axis and Y axis, we can use the xlim and ylim parameters.</p>
 <p>The width of each of the bar can be decided by using breaks.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="co"># Create data for the graph.</span></a>
-<a class="sourceLine" id="cb16-2" title="2">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">8</span>,<span class="dv">36</span>,<span class="dv">22</span>,<span class="dv">12</span>,<span class="dv">41</span>,<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">19</span>)</a>
-<a class="sourceLine" id="cb16-3" title="3"></a>
-<a class="sourceLine" id="cb16-4" title="4"><span class="co"># Create the histogram.</span></a>
-<a class="sourceLine" id="cb16-5" title="5"><span class="kw">hist</span>(v,<span class="dt">xlab =</span> <span class="st">&quot;Weight&quot;</span>,<span class="dt">col =</span> <span class="st">&quot;green&quot;</span>,<span class="dt">border =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">40</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">5</span>),</a>
-<a class="sourceLine" id="cb16-6" title="6">   <span class="dt">breaks =</span> <span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Create data for the graph.</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">8</span>,<span class="dv">36</span>,<span class="dv">22</span>,<span class="dv">12</span>,<span class="dv">41</span>,<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">19</span>)</span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># Create the histogram.</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="kw">hist</span>(v,<span class="dt">xlab =</span> <span class="st">&quot;Weight&quot;</span>,<span class="dt">col =</span> <span class="st">&quot;green&quot;</span>,<span class="dt">border =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">40</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">5</span>),</span>
+<span id="cb16-6"><a href="#cb16-6"></a>   <span class="dt">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <hr />
 </div>
@@ -680,33 +682,33 @@ One reason why R is so popular among statistician or data scientist is because o
 </ul>
 <p>Example:</p>
 <p>A very simple pie-chart is created using just the input vector and labels. The below script will create and save the pie chart in the current R working directory.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="co"># Create data for the graph.</span></a>
-<a class="sourceLine" id="cb18-2" title="2">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">62</span>, <span class="dv">10</span>, <span class="dv">53</span>)</a>
-<a class="sourceLine" id="cb18-3" title="3">labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;London&quot;</span>, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Singapore&quot;</span>, <span class="st">&quot;Mumbai&quot;</span>)</a>
-<a class="sourceLine" id="cb18-4" title="4"></a>
-<a class="sourceLine" id="cb18-5" title="5"><span class="co"># Plot the chart.</span></a>
-<a class="sourceLine" id="cb18-6" title="6"><span class="kw">pie</span>(x,labels)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Create data for the graph.</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">62</span>, <span class="dv">10</span>, <span class="dv">53</span>)</span>
+<span id="cb18-3"><a href="#cb18-3"></a>labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;London&quot;</span>, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Singapore&quot;</span>, <span class="st">&quot;Mumbai&quot;</span>)</span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="co"># Plot the chart.</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="kw">pie</span>(x,labels)</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>We can expand the features of the chart by adding more parameters to the function. We will use parameter main to add a title to the chart and another parameter is col which will make use of rainbow colour pallet while drawing the chart. The length of the pallet should be same as the number of values we have for the chart. Hence we use length(x).</p>
 <p>Example The below script will create and save the pie chart in the current R working directory.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="co"># Create data for the graph.</span></a>
-<a class="sourceLine" id="cb19-2" title="2">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">62</span>, <span class="dv">10</span>, <span class="dv">53</span>)</a>
-<a class="sourceLine" id="cb19-3" title="3">labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;London&quot;</span>, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Singapore&quot;</span>, <span class="st">&quot;Mumbai&quot;</span>)</a>
-<a class="sourceLine" id="cb19-4" title="4"></a>
-<a class="sourceLine" id="cb19-5" title="5"><span class="co"># Plot the chart with title and rainbow color pallet.</span></a>
-<a class="sourceLine" id="cb19-6" title="6"><span class="kw">pie</span>(x, labels, <span class="dt">main =</span> <span class="st">&quot;City pie chart&quot;</span>, <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="kw">length</span>(x)))</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Create data for the graph.</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">62</span>, <span class="dv">10</span>, <span class="dv">53</span>)</span>
+<span id="cb19-3"><a href="#cb19-3"></a>labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;London&quot;</span>, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Singapore&quot;</span>, <span class="st">&quot;Mumbai&quot;</span>)</span>
+<span id="cb19-4"><a href="#cb19-4"></a></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="co"># Plot the chart with title and rainbow color pallet.</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="kw">pie</span>(x, labels, <span class="dt">main =</span> <span class="st">&quot;City pie chart&quot;</span>, <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="kw">length</span>(x)))</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>We can add slice percentage and a chart legend by creating additional chart variables.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="co"># Create data for the graph.</span></a>
-<a class="sourceLine" id="cb20-2" title="2">x &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">62</span>, <span class="dv">10</span>,<span class="dv">53</span>)</a>
-<a class="sourceLine" id="cb20-3" title="3">labels &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="st">&quot;London&quot;</span>,<span class="st">&quot;New York&quot;</span>,<span class="st">&quot;Singapore&quot;</span>,<span class="st">&quot;Mumbai&quot;</span>)</a>
-<a class="sourceLine" id="cb20-4" title="4"></a>
-<a class="sourceLine" id="cb20-5" title="5">piepercent&lt;-<span class="st"> </span><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span>x<span class="op">/</span><span class="kw">sum</span>(x), <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb20-6" title="6"></a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="co"># Plot the chart.</span></a>
-<a class="sourceLine" id="cb20-8" title="8"><span class="kw">pie</span>(x, <span class="dt">labels =</span> piepercent, <span class="dt">main =</span> <span class="st">&quot;City pie chart&quot;</span>,<span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="kw">length</span>(x)))</a>
-<a class="sourceLine" id="cb20-9" title="9"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;London&quot;</span>,<span class="st">&quot;New York&quot;</span>,<span class="st">&quot;Singapore&quot;</span>,<span class="st">&quot;Mumbai&quot;</span>), <span class="dt">cex =</span> <span class="fl">0.8</span>,</a>
-<a class="sourceLine" id="cb20-10" title="10">   <span class="dt">fill =</span> <span class="kw">rainbow</span>(<span class="kw">length</span>(x)))</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Create data for the graph.</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>x &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">62</span>, <span class="dv">10</span>,<span class="dv">53</span>)</span>
+<span id="cb20-3"><a href="#cb20-3"></a>labels &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="st">&quot;London&quot;</span>,<span class="st">&quot;New York&quot;</span>,<span class="st">&quot;Singapore&quot;</span>,<span class="st">&quot;Mumbai&quot;</span>)</span>
+<span id="cb20-4"><a href="#cb20-4"></a></span>
+<span id="cb20-5"><a href="#cb20-5"></a>piepercent&lt;-<span class="st"> </span><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span>x<span class="op">/</span><span class="kw">sum</span>(x), <span class="dv">1</span>)</span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="co"># Plot the chart.</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="kw">pie</span>(x, <span class="dt">labels =</span> piepercent, <span class="dt">main =</span> <span class="st">&quot;City pie chart&quot;</span>,<span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="kw">length</span>(x)))</span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;London&quot;</span>,<span class="st">&quot;New York&quot;</span>,<span class="st">&quot;Singapore&quot;</span>,<span class="st">&quot;Mumbai&quot;</span>), <span class="dt">cex =</span> <span class="fl">0.8</span>,</span>
+<span id="cb20-10"><a href="#cb20-10"></a>   <span class="dt">fill =</span> <span class="kw">rainbow</span>(<span class="kw">length</span>(x)))</span></code></pre></div>
 <p><img src="graphics_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 

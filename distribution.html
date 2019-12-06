@@ -27,9 +27,9 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -39,14 +39,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -55,9 +57,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  { background-color: #f8f8f8; }
+  {  background-color: #f8f8f8; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
@@ -527,47 +529,47 @@ rbinom(n, size, prob)</code></pre>
 <div id="density-of-binomial-distribution-dbinom" class="section level3">
 <h3>Density of Binomial Distribution <code>dbinom()</code></h3>
 <p>This function gives the probability density distribution at each point.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Create a sample of 30 numbers which are incremented by 1.</span></a>
-<a class="sourceLine" id="cb2-2" title="2">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">30</span>,<span class="dt">by =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co"># Create the binomial distribution.</span></a>
-<a class="sourceLine" id="cb2-5" title="5">y &lt;-<span class="st"> </span><span class="kw">dbinom</span>(x,<span class="dv">30</span>,<span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb2-6" title="6"></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co"># Plot the graph for this sample.</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Density of Binomial Distribution&quot;</span>, </a>
-<a class="sourceLine" id="cb2-9" title="9">     <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Number of Successes&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Create a sample of 30 numbers which are incremented by 1.</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">30</span>,<span class="dt">by =</span> <span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Create the binomial distribution.</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>y &lt;-<span class="st"> </span><span class="kw">dbinom</span>(x,<span class="dv">30</span>,<span class="fl">0.5</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># Plot the graph for this sample.</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Density of Binomial Distribution&quot;</span>, </span>
+<span id="cb2-9"><a href="#cb2-9"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Number of Successes&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="distribution-function-pbinom" class="section level3">
 <h3>Distribution Function <code>pbinom()</code></h3>
 <p>This function gives the cumulative probability of an event. It is a single value representing the probability.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Probability of getting 25 or less heads from a 50 tosses of a coin.</span></a>
-<a class="sourceLine" id="cb3-2" title="2">x =<span class="st"> </span><span class="kw">pbinom</span>(<span class="dv">25</span>,<span class="dv">50</span>,<span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb3-3" title="3">x</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Probability of getting 25 or less heads from a 50 tosses of a coin.</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>x =<span class="st"> </span><span class="kw">pbinom</span>(<span class="dv">25</span>,<span class="dv">50</span>,<span class="fl">0.5</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>x</span></code></pre></div>
 <pre><code>[1] 0.5561376</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">x =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb5-2" title="2">y =<span class="st"> </span><span class="kw">pbinom</span>(x,<span class="dv">50</span>,<span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Distribution Function&quot;</span>,</a>
-<a class="sourceLine" id="cb5-4" title="4">     <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Less than x successes&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span> )</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>y =<span class="st"> </span><span class="kw">pbinom</span>(x,<span class="dv">50</span>,<span class="fl">0.5</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Distribution Function&quot;</span>,</span>
+<span id="cb5-4"><a href="#cb5-4"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Less than x successes&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span> )</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="qbinom" class="section level3">
 <h3>qbinom()</h3>
 <p>This function takes the probability value and gives a number whose cumulative value matches the probability value.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># How many heads will have a probability of 0.25 will come out when a coin</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="co"># is tossed 51 times.</span></a>
-<a class="sourceLine" id="cb6-3" title="3">x &lt;-<span class="st"> </span><span class="kw">qbinom</span>(<span class="fl">0.25</span>,<span class="dv">51</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb6-4" title="4">x</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># How many heads will have a probability of 0.25 will come out when a coin</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># is tossed 51 times.</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>x &lt;-<span class="st"> </span><span class="kw">qbinom</span>(<span class="fl">0.25</span>,<span class="dv">51</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>x</span></code></pre></div>
 <pre><code>[1] 23</code></pre>
 </div>
 <div id="random-sample-from-binomial-distribution-rbinom" class="section level3">
 <h3>Random Sample from Binomial Distribution <code>rbinom()</code></h3>
 <p>This function generates required number of random values of given probability from a given sample.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Find 20 random values from a sample of 150 with probability of 0.4.</span></a>
-<a class="sourceLine" id="cb8-2" title="2">x &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">20</span>,<span class="dv">150</span>,.<span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb8-3" title="3">x</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Find 20 random values from a sample of 150 with probability of 0.4.</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>x &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">20</span>,<span class="dv">150</span>,.<span class="dv">4</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>x</span></code></pre></div>
 <pre><code> [1] 62 49 59 57 60 58 60 68 59 62 55 55 60 66 63 70 65 59 59 62</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">hist</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">hist</span>(x)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="example" class="section level3">
@@ -580,18 +582,18 @@ rbinom(n, size, prob)</code></pre>
 Let us consider getting a head as success. Here, n=20 and since the coin is fair, hence p= Probability of getting a head is 1/2 = 0.5</p>
 <p>Now, we need to find out</p>
 <p><span class="math display">\[P(\text{10 successes}) = {}^{20}C_{10} (0.5)^{10}(1-0.5)^{(20-10)}\]</span> This can be done using the following R program</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">dbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">dbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>[1] 0.1761971</code></pre>
 <p>Hence from calculation we see that the probability of 10 successes is 0.1761971.</p>
 <p>If we are interested in getting the probability of getting at less than 10 successes, then we can use <code>pbinom</code></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">pbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">pbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>[1] 0.5880985</code></pre>
 <p>Now let us try to generate a random sample from the above example.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">sample=<span class="kw">rbinom</span>(<span class="dv">30</span>,<span class="dv">20</span>,<span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb15-2" title="2">sample</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>sample=<span class="kw">rbinom</span>(<span class="dv">30</span>,<span class="dv">20</span>,<span class="fl">0.5</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>sample</span></code></pre></div>
 <pre><code> [1]  9 11  9 10 12  7 13  9 12  9  9 10 13 12  9 12 14 10 11  9  9 12  8
 [24] 11  7  8  8  8  7 11</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">hist</span>(sample, <span class="dt">main =</span> <span class="st">&quot;Binomial distribution&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">hist</span>(sample, <span class="dt">main =</span> <span class="st">&quot;Binomial distribution&quot;</span>)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 </div>
@@ -614,45 +616,45 @@ rpois(n, lambda)</code></pre>
 <div id="density-of-poisson-distribution-dpois" class="section level3">
 <h3>Density of Poisson Distribution <code>dpois()</code></h3>
 <p>This function gives the probability density distribution at each point.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="co"># Create a sample of 30 numbers which are incremented by 1.</span></a>
-<a class="sourceLine" id="cb19-2" title="2">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">30</span>,<span class="dt">by =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb19-3" title="3"></a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="co"># Create the binomial distribution.</span></a>
-<a class="sourceLine" id="cb19-5" title="5">y &lt;-<span class="st"> </span><span class="kw">dpois</span>(x,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb19-6" title="6"></a>
-<a class="sourceLine" id="cb19-7" title="7"><span class="co"># Plot the graph for this sample.</span></a>
-<a class="sourceLine" id="cb19-8" title="8"><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Density of Poisson Distribution&quot;</span>, </a>
-<a class="sourceLine" id="cb19-9" title="9">     <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Number of events&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Create a sample of 30 numbers which are incremented by 1.</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">30</span>,<span class="dt">by =</span> <span class="dv">1</span>)</span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># Create the binomial distribution.</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>y &lt;-<span class="st"> </span><span class="kw">dpois</span>(x,<span class="dv">2</span>)</span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># Plot the graph for this sample.</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Density of Poisson Distribution&quot;</span>, </span>
+<span id="cb19-9"><a href="#cb19-9"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Number of events&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="distribution-function-of-poisson-distribution-ppois" class="section level3">
 <h3>Distribution Function of Poisson Distribution <code>ppois()</code></h3>
 <p>This function gives the cumulative probability of an event. It is a single value representing the probability.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="co"># Probability of getting 25 or less heads from a 50 tosses of a coin.</span></a>
-<a class="sourceLine" id="cb20-2" title="2">x =<span class="st"> </span><span class="kw">ppois</span>(<span class="dv">5</span>,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb20-3" title="3">x</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Probability of getting 25 or less heads from a 50 tosses of a coin.</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>x =<span class="st"> </span><span class="kw">ppois</span>(<span class="dv">5</span>,<span class="dv">2</span>)</span>
+<span id="cb20-3"><a href="#cb20-3"></a>x</span></code></pre></div>
 <pre><code>[1] 0.9834364</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">x =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb22-2" title="2">y =<span class="st"> </span><span class="kw">ppois</span>(x,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb22-3" title="3"><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Distribution Function&quot;</span>,</a>
-<a class="sourceLine" id="cb22-4" title="4">     <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Less than x occurances&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span> )</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>x =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">1</span>)</span>
+<span id="cb22-2"><a href="#cb22-2"></a>y =<span class="st"> </span><span class="kw">ppois</span>(x,<span class="dv">2</span>)</span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Distribution Function&quot;</span>,</span>
+<span id="cb22-4"><a href="#cb22-4"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Less than x occurances&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span> )</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="qpois" class="section level3">
 <h3><code>qpois()</code></h3>
 <p>This function takes the probability value and gives a number whose cumulative value matches the probability value.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">x &lt;-<span class="st"> </span><span class="kw">qpois</span>(<span class="fl">0.5</span>,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb23-2" title="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>x &lt;-<span class="st"> </span><span class="kw">qpois</span>(<span class="fl">0.5</span>,<span class="dv">2</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>x</span></code></pre></div>
 <pre><code>[1] 2</code></pre>
 </div>
 <div id="random-sample-from-poisson-distribution" class="section level3">
 <h3>Random Sample from Poisson Distribution</h3>
 <p>This function is used to generate random numbers whose distribution is normal. It takes the sample size as input and generates that many random numbers. We draw a histogram to show the distribution of the generated numbers.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="co"># Create a sample of 100 numbers which are Poisson distributed.</span></a>
-<a class="sourceLine" id="cb25-2" title="2">y &lt;-<span class="st"> </span><span class="kw">rpois</span>(<span class="dv">100</span>, <span class="dt">lambda =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb25-3" title="3"></a>
-<a class="sourceLine" id="cb25-4" title="4"><span class="co"># Plot the histogram for this sample.</span></a>
-<a class="sourceLine" id="cb25-5" title="5"><span class="kw">hist</span>(y, <span class="dt">main =</span> <span class="st">&quot;Poisson DIstribution&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Values&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Create a sample of 100 numbers which are Poisson distributed.</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>y &lt;-<span class="st"> </span><span class="kw">rpois</span>(<span class="dv">100</span>, <span class="dt">lambda =</span> <span class="dv">2</span>)</span>
+<span id="cb25-3"><a href="#cb25-3"></a></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="co"># Plot the histogram for this sample.</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="kw">hist</span>(y, <span class="dt">main =</span> <span class="st">&quot;Poisson DIstribution&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Values&quot;</span>)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="example-1" class="section level3">
@@ -665,14 +667,14 @@ rpois(n, lambda)</code></pre>
 Given,<br />
 <span class="math inline">\(\lambda\)</span> = 2 We are to find <span class="math inline">\(P(X=4) = \dfrac{e^{-2}2^4}{4!}\)</span></p>
 <p>This can be done in R as</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">dpois</span>(<span class="dv">4</span>,<span class="dv">2</span>)  <span class="co"># the probability of 4 misprints</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">dpois</span>(<span class="dv">4</span>,<span class="dv">2</span>)  <span class="co"># the probability of 4 misprints</span></span></code></pre></div>
 <pre><code>[1] 0.09022352</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">ppois</span>(<span class="dv">5</span>,<span class="dv">2</span>)  <span class="co"># the probability of getting less than 5 misprints</span></a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">ppois</span>(<span class="dv">5</span>,<span class="dv">2</span>)  <span class="co"># the probability of getting less than 5 misprints</span></span></code></pre></div>
 <pre><code>[1] 0.9834364</code></pre>
 <p>A random sample from Poisson distribution can be generated using the syntax</p>
 <pre><code>rpois(size=  ,lambda=  )</code></pre>
 <p>For example let us generate a random sample of size 30 from a Poisson population with parameter 2</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">rpois</span>(<span class="dv">30</span>,<span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">rpois</span>(<span class="dv">30</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code> [1] 4 1 2 0 3 1 3 1 1 2 1 1 2 2 0 1 3 5 0 3 5 3 1 2 5 5 1 1 1 1</code></pre>
 </div>
 </div>
@@ -699,52 +701,52 @@ rnorm(n, mean, sd)</code></pre>
 <div id="density-of-normal-distribution-dnorm" class="section level3">
 <h3>Density of Normal Distribution <code>dnorm()</code></h3>
 <p>This function gives height of the probability distribution at each point for a given mean and standard deviation.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1"><span class="co"># Create a sequence of numbers between -10 and 10 incrementing by 0.1.</span></a>
-<a class="sourceLine" id="cb34-2" title="2">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">by =</span> <span class="fl">.1</span>)</a>
-<a class="sourceLine" id="cb34-3" title="3"></a>
-<a class="sourceLine" id="cb34-4" title="4"><span class="co"># Choose the mean as 2.5 and standard deviation as 0.5.</span></a>
-<a class="sourceLine" id="cb34-5" title="5">y &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb34-6" title="6"></a>
-<a class="sourceLine" id="cb34-7" title="7"><span class="co"># Plot the density curve</span></a>
-<a class="sourceLine" id="cb34-8" title="8"><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Density curve for normal distribution&quot;</span>, </a>
-<a class="sourceLine" id="cb34-9" title="9">     <span class="dt">xlab=</span><span class="st">&quot;Values&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Probability&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;h&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Create a sequence of numbers between -10 and 10 incrementing by 0.1.</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">by =</span> <span class="fl">.1</span>)</span>
+<span id="cb34-3"><a href="#cb34-3"></a></span>
+<span id="cb34-4"><a href="#cb34-4"></a><span class="co"># Choose the mean as 2.5 and standard deviation as 0.5.</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>y &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb34-6"><a href="#cb34-6"></a></span>
+<span id="cb34-7"><a href="#cb34-7"></a><span class="co"># Plot the density curve</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Density curve for normal distribution&quot;</span>, </span>
+<span id="cb34-9"><a href="#cb34-9"></a>     <span class="dt">xlab=</span><span class="st">&quot;Values&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Probability&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;h&quot;</span>)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 <div id="cumulative-distribution-function-of-normal-distribution-pnorm" class="section level3">
 <h3>Cumulative Distribution Function of Normal Distribution <code>pnorm()</code></h3>
 <p>This function gives the probability of a normally distributed random number to be less that the value of a given number. It is also called “Cumulative Distribution Function”.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="co"># Create a sequence of numbers between -10 and 10 incrementing by 0.2.</span></a>
-<a class="sourceLine" id="cb35-2" title="2">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="dt">by =</span> <span class="fl">.2</span>)</a>
-<a class="sourceLine" id="cb35-3" title="3"> </a>
-<a class="sourceLine" id="cb35-4" title="4"><span class="co"># Choose the mean as 2.5 and standard deviation as 2. </span></a>
-<a class="sourceLine" id="cb35-5" title="5">y &lt;-<span class="st"> </span><span class="kw">pnorm</span>(x, <span class="dt">mean =</span> <span class="fl">2.5</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb35-6" title="6"></a>
-<a class="sourceLine" id="cb35-7" title="7"><span class="co"># Plot the graph.</span></a>
-<a class="sourceLine" id="cb35-8" title="8"><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Distribution curve for normal distribution&quot;</span>, </a>
-<a class="sourceLine" id="cb35-9" title="9">     <span class="dt">xlab =</span> <span class="st">&quot;Values&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Create a sequence of numbers between -10 and 10 incrementing by 0.2.</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="dt">by =</span> <span class="fl">.2</span>)</span>
+<span id="cb35-3"><a href="#cb35-3"></a> </span>
+<span id="cb35-4"><a href="#cb35-4"></a><span class="co"># Choose the mean as 2.5 and standard deviation as 2. </span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>y &lt;-<span class="st"> </span><span class="kw">pnorm</span>(x, <span class="dt">mean =</span> <span class="fl">2.5</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb35-6"><a href="#cb35-6"></a></span>
+<span id="cb35-7"><a href="#cb35-7"></a><span class="co"># Plot the graph.</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a><span class="kw">plot</span>(x,y, <span class="dt">main =</span> <span class="st">&quot;Distribution curve for normal distribution&quot;</span>, </span>
+<span id="cb35-9"><a href="#cb35-9"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Values&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="area-under-normal-curve-qnorm" class="section level3">
 <h3>Area Under Normal Curve <code>qnorm()</code></h3>
 <p>This function takes the probability value and gives a number whose cumulative value matches the probability value. It gives the area under normal curve.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1"><span class="co"># Create a sequence of probability values incrementing by 0.01.</span></a>
-<a class="sourceLine" id="cb36-2" title="2">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.01</span>)</a>
-<a class="sourceLine" id="cb36-3" title="3"></a>
-<a class="sourceLine" id="cb36-4" title="4"><span class="co"># Choose the mean as 2 and standard deviation as 3.</span></a>
-<a class="sourceLine" id="cb36-5" title="5">y &lt;-<span class="st"> </span><span class="kw">qnorm</span>(x, <span class="dt">mean =</span> <span class="dv">2</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb36-6" title="6"></a>
-<a class="sourceLine" id="cb36-7" title="7"><span class="co"># Plot the graph.</span></a>
-<a class="sourceLine" id="cb36-8" title="8"><span class="kw">plot</span>(x,y, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Values&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Area under normal curve&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Create a sequence of probability values incrementing by 0.01.</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.01</span>)</span>
+<span id="cb36-3"><a href="#cb36-3"></a></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="co"># Choose the mean as 2 and standard deviation as 3.</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>y &lt;-<span class="st"> </span><span class="kw">qnorm</span>(x, <span class="dt">mean =</span> <span class="dv">2</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb36-6"><a href="#cb36-6"></a></span>
+<span id="cb36-7"><a href="#cb36-7"></a><span class="co"># Plot the graph.</span></span>
+<span id="cb36-8"><a href="#cb36-8"></a><span class="kw">plot</span>(x,y, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Probabilities&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Values&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Area under normal curve&quot;</span>)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="random-sample-from-normal-distribution-rnorm" class="section level3">
 <h3>Random Sample from Normal Distribution <code>rnorm()</code></h3>
 <p>This function is used to generate random numbers whose distribution is normal. It takes the sample size as input and generates that many random numbers. We draw a histogram to show the distribution of the generated numbers.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="co"># Create a sample of 100 numbers which are normally distributed.</span></a>
-<a class="sourceLine" id="cb37-2" title="2">y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">2</span>, <span class="dt">sd=</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb37-3" title="3"></a>
-<a class="sourceLine" id="cb37-4" title="4"><span class="co"># Plot the histogram for this sample.</span></a>
-<a class="sourceLine" id="cb37-5" title="5"><span class="kw">hist</span>(y, <span class="dt">main =</span> <span class="st">&quot;Normal DIstribution&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Values&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Create a sample of 100 numbers which are normally distributed.</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">2</span>, <span class="dt">sd=</span><span class="dv">2</span>)</span>
+<span id="cb37-3"><a href="#cb37-3"></a></span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="co"># Plot the histogram for this sample.</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a><span class="kw">hist</span>(y, <span class="dt">main =</span> <span class="st">&quot;Normal DIstribution&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Values&quot;</span>)</span></code></pre></div>
 <p><img src="distribution_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 </div>
 </div>

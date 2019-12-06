@@ -27,9 +27,9 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -39,14 +39,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -55,9 +57,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  { background-color: #f8f8f8; }
+  {  background-color: #f8f8f8; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
@@ -469,23 +471,23 @@ Factors are created using the <code>factor ()</code> function by taking a vector
 </p>
 </div>
 <p><font size="4" color="green"> Let us consider the following example</font></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,</a>
-<a class="sourceLine" id="cb1-2" title="2">          <span class="st">&quot;West&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3">factor_data=<span class="kw">factor</span>(data)</a>
-<a class="sourceLine" id="cb1-4" title="4">factor_data</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,</span>
+<span id="cb1-2"><a href="#cb1-2"></a>          <span class="st">&quot;West&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>factor_data=<span class="kw">factor</span>(data)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>factor_data</span></code></pre></div>
 <pre><code> [1] East  West  East  North North East  West  West  West  East  North
 Levels: East North West</code></pre>
 <p>By default, the factor function assign the levels alphabetically. We can change this using <code>levels=()</code> command.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,</a>
-<a class="sourceLine" id="cb3-2" title="2">          <span class="st">&quot;West&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>)</a>
-<a class="sourceLine" id="cb3-3" title="3">factor_data=<span class="kw">factor</span>(data, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>))</a>
-<a class="sourceLine" id="cb3-4" title="4">factor_data</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,</span>
+<span id="cb3-2"><a href="#cb3-2"></a>          <span class="st">&quot;West&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>factor_data=<span class="kw">factor</span>(data, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>))</span>
+<span id="cb3-4"><a href="#cb3-4"></a>factor_data</span></code></pre></div>
 <pre><code> [1] East  West  East  North North East  West  West  West  East  North
 Levels: North East West</code></pre>
 <p>We can also convert a numeric vector into factor:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">num_data=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb5-2" title="2">factor_data=<span class="kw">factor</span>(num_data, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</a>
-<a class="sourceLine" id="cb5-3" title="3">factor_data</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>num_data=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>factor_data=<span class="kw">factor</span>(num_data, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
+<span id="cb5-3"><a href="#cb5-3"></a>factor_data</span></code></pre></div>
 <pre><code> [1] Male   Male   Female Male   Female Female Female Male   Female Male  
 [11] Female Female Male   Female Male   Female Female
 Levels: Male Female</code></pre>
@@ -499,38 +501,38 @@ Levels: Male Female</code></pre>
 <li><p><strong>k</strong> is a integer giving the number of replications.</p></li>
 <li><p><strong>labels</strong> is a vector of labels for the resulting factor levels.</p></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">factor_data=<span class="kw">gl</span>(<span class="dv">2</span>,<span class="dv">8</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</a>
-<a class="sourceLine" id="cb8-2" title="2">factor_data</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>factor_data=<span class="kw">gl</span>(<span class="dv">2</span>,<span class="dv">8</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
+<span id="cb8-2"><a href="#cb8-2"></a>factor_data</span></code></pre></div>
 <pre><code> [1] Male   Male   Male   Male   Male   Male   Male   Male   Female Female
 [11] Female Female Female Female Female Female
 Levels: Male Female</code></pre>
 <p>Another example of Factor is:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># Generating 100 random numbers between 1 and 100</span></a>
-<a class="sourceLine" id="cb10-2" title="2">data =<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="co"># Generating an empty vector of size 100.</span></a>
-<a class="sourceLine" id="cb10-4" title="4">result=<span class="kw">mat.or.vec</span>(<span class="dv">100</span>,<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb10-5" title="5"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</a>
-<a class="sourceLine" id="cb10-6" title="6">  <span class="cf">if</span>(data[i]<span class="op">&lt;</span><span class="dv">30</span>){</a>
-<a class="sourceLine" id="cb10-7" title="7">    result[i]=<span class="dv">0</span></a>
-<a class="sourceLine" id="cb10-8" title="8">    }</a>
-<a class="sourceLine" id="cb10-9" title="9">  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">30</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">45</span>){</a>
-<a class="sourceLine" id="cb10-10" title="10">    result[i]=<span class="dv">1</span></a>
-<a class="sourceLine" id="cb10-11" title="11">  }</a>
-<a class="sourceLine" id="cb10-12" title="12">  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">45</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">60</span>){</a>
-<a class="sourceLine" id="cb10-13" title="13">    result[i]=<span class="dv">2</span></a>
-<a class="sourceLine" id="cb10-14" title="14">  }</a>
-<a class="sourceLine" id="cb10-15" title="15">  <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb10-16" title="16">    result[i]=<span class="dv">3</span></a>
-<a class="sourceLine" id="cb10-17" title="17">    }</a>
-<a class="sourceLine" id="cb10-18" title="18">}</a>
-<a class="sourceLine" id="cb10-19" title="19"></a>
-<a class="sourceLine" id="cb10-20" title="20">f_result=<span class="kw">factor</span>(result, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Fail&quot;</span>, <span class="st">&quot;Third Div&quot;</span>, <span class="st">&quot;Second Div&quot;</span>, <span class="st">&quot;First Div&quot;</span>))</a>
-<a class="sourceLine" id="cb10-21" title="21"><span class="kw">str</span>(f_result)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Generating 100 random numbers between 1 and 100</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>data =<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">100</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co"># Generating an empty vector of size 100.</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>result=<span class="kw">mat.or.vec</span>(<span class="dv">100</span>,<span class="dv">1</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="cf">if</span>(data[i]<span class="op">&lt;</span><span class="dv">30</span>){</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    result[i]=<span class="dv">0</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>    }</span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">30</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">45</span>){</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    result[i]=<span class="dv">1</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a>  }</span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">45</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">60</span>){</span>
+<span id="cb10-13"><a href="#cb10-13"></a>    result[i]=<span class="dv">2</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a>  }</span>
+<span id="cb10-15"><a href="#cb10-15"></a>  <span class="cf">else</span> {</span>
+<span id="cb10-16"><a href="#cb10-16"></a>    result[i]=<span class="dv">3</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a>    }</span>
+<span id="cb10-18"><a href="#cb10-18"></a>}</span>
+<span id="cb10-19"><a href="#cb10-19"></a></span>
+<span id="cb10-20"><a href="#cb10-20"></a>f_result=<span class="kw">factor</span>(result, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Fail&quot;</span>, <span class="st">&quot;Third Div&quot;</span>, <span class="st">&quot;Second Div&quot;</span>, <span class="st">&quot;First Div&quot;</span>))</span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="kw">str</span>(f_result)</span></code></pre></div>
 <pre><code> Factor w/ 4 levels &quot;Fail&quot;,&quot;Third Div&quot;,..: 4 2 4 3 3 4 4 4 4 4 ...</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">summary</span>(f_result)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">summary</span>(f_result)</span></code></pre></div>
 <pre><code>      Fail  Third Div Second Div  First Div 
         29         15         15         41 </code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">plot</span>(f_result)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">plot</span>(f_result)</span></code></pre></div>
 <p><img src="factors_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 

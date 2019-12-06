@@ -26,3 +26,7 @@
 </a>
 
 
+
+<a href="/files/GU_SPSS_R_Julia_Workshop_Material.zip" download>
+<button class="btn"><i class="fa fa-download"></i> GU Workshop on SPSS, R, Julia Course Material </button>
+</a>
