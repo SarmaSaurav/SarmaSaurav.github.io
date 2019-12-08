@@ -140,62 +140,9 @@ c=c(11,31,11+31,21)
 data2=rbind(data2,c)
 ```
 
-## Reading External Files
 
-In R, we can read data from files stored outside the R environment. We can also write data into files which will be stored and accessed by the operating system. R can read and write into various file formats like csv, excel, xml etc.
-
-In this chapter we will learn to read data from a csv file and then write data into a csv file. The file should be present in current working directory so that R can read it. Of course we can also set our own directory and read files from there.
-
->
-You can check which directory the R workspace is pointing to using the `getwd()` function. You can also set a new working directory using `setwd()` function.
-
-The csv file is a text file in which the values in the columns are separated by a comma. Let's consider the following data present in the file named input.csv.
-
-You can create this file using **Windows Notepad** by copying and pasting this data. Save the file as input.csv using the save As All files(*.*) option in notepad.
-
-```
-id,name,salary,start_date,dept
-1,Rick,623.3,2012-01-01,IT
-2,Dan,515.2,2013-09-23,Operations
-3,Michelle,611,2014-11-15,IT
-4,Ryan,729,2014-05-11,HR
-5,Gary,843.25,2015-03-27,Finance
-6,Nina,578,2013-05-21,IT
-7,Simon,632.8,2013-07-30,Operations
-8,Guru,722.5,2014-06-17,Finance
-```
-
-### Reading a CSV File
-
-Following is a simple example of `read.csv()` function to read a CSV file available in your current working directory −
-
-```{r}
-data3 <- read.csv("files/input.csv")
-data3
-```
-
-By default the read.csv() function gives the output as a data frame. Once we read data in a data frame, we can apply all the functions applicable to data frames.
-
-## Writing into a CSV File
-
-R can create csv file form existing data frame. The write.csv() function is used to create the csv file. This file gets created in the working directory.
-
-```{r}
-output.data=write.csv(data,"Output.csv")
-data4=read.csv("Output.csv")
-data4
-```
-Once the above code is executed, you will see that a new `.csv` file is being created in your default R folder.
-
-Here the column X comes from the data set newper. This can be dropped using additional parameter `row.names = FALSE` while writing the file.
-
-```{r}
-output.data=write.csv(data,"Output.csv",row.names = FALSE)
-data4=read.csv("Output.csv")
-data4
-```
 
 <div class="icon-bar">
   <a href="factors.html" class="prev">PREVIOUS PAGE</a>
-  <a href="functions.html" class="next">NEXT PAGE</a>
+  <a href="extapp.html" class="next">NEXT PAGE</a>
 </div>

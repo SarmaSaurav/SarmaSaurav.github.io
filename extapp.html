@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>External Files</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">R 4 Everyone</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="me.html">About Me</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    R Tutorial
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intoduction.html">Introduction to the Course</a>
+    </li>
+    <li>
+      <a href="what_is_r.html">What is R?</a>
+    </li>
+    <li>
+      <a href="variables.html">R Variables</a>
+    </li>
+    <li>
+      <a href="vectors.html">Vectors</a>
+    </li>
+    <li>
+      <a href="matrix.html">Matrix</a>
+    </li>
+    <li>
+      <a href="sec.html">Basic Statistical Calculations</a>
+    </li>
+    <li>
+      <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="loops.html">Loops</a>
+    </li>
+    <li>
+      <a href="factors.html">Factors</a>
+    </li>
+    <li>
+      <a href="df.html">Data frame</a>
+    </li>
+    <li>
+      <a href="extapp.html">Importing and Exporting External Files</a>
+    </li>
+    <li>
+      <a href="functions.html">Functions</a>
+    </li>
+    <li>
+      <a href="distribution.html">Probability Distribution</a>
+    </li>
+    <li>
+      <a href="stest.html">Statistical Test</a>
+    </li>
+    <li>
+      <a href="ftable.html">Frequency Table</a>
+    </li>
+    <li>
+      <a href="pack.html">Using R Packages</a>
+    </li>
+    <li>
+      <a href="conditional.html">Decision Statements</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="prostat.html">ProStatika</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="downloads.html">
+    <span class="fa fa-download fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/SarmaSaurav/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.facebook.com/Stats4Everyone">
+    <span class="fa fa-facebook fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/saurav-sarma-0044">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.instagram.com/hashtag_sarmaji/">
+    <span class="fab fa fab fa-instagram fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="mystyle.css" type="text/css"></p>
+<p><a href="index.html"> <img src="images/logo.png" alt="logo"  style="width:15%;"> </a></p>
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2>
+<strong>IMPORTING AND EXPORTING EXTERNAL FILES</strong>
+</h2>
+<hr />
+<p>
+In R, we can read data from files stored outside the R environment. We can also write data into files which will be stored and accessed by the operating system.
+</p>
+</div>
+<p><br/> <br/> <br/></p>
+<p>R environment has a wide support for 3rd Party files.</p>
+<p>For Example, We can import and export data files from</p>
+<ul>
+<li>SPSS</li>
+<li>Microsoft Excel</li>
+<li>CSV files</li>
+<li>SAS</li>
+<li>Stata</li>
+</ul>
+<p>In this chapter we will learn to read data from a csv file and then write data into a csv file. We will also learn how to import and export Microsoft Excel files (.xls or .xlsx) and SPSS (.sav) files. The file should be present in current working directory so that R can read it. Of course we can also set our own directory and read files from there or define the path to our files.</p>
+<blockquote>
+<p>You can check which directory the R work space is pointing to using the <code>getwd()</code> function. You can also set a new working directory using <code>setwd()</code> function.</p>
+</blockquote>
+<div id="what-is-a-csv-file" class="section level3">
+<h3>What is a CSV file</h3>
+<p>A csv (comma separated values) file is a text file in which the values in the columns are separated by a comma. Let’s consider the following data present in the file named input.csv.</p>
+<p>You can create this file using <strong>Windows Notepad</strong> by copying and pasting this data. Save the file as input.csv using the save As All files(<em>.</em>) option in notepad.</p>
+<pre><code>id,name,salary,start_date,dept
+1,Rick,623.3,2012-01-01,IT
+2,Dan,515.2,2013-09-23,Operations
+3,Michelle,611,2014-11-15,IT
+4,Ryan,729,2014-05-11,HR
+5,Gary,843.25,2015-03-27,Finance
+6,Nina,578,2013-05-21,IT
+7,Simon,632.8,2013-07-30,Operations
+8,Guru,722.5,2014-06-17,Finance</code></pre>
+</div>
+<div id="reading-a-csv-file" class="section level3">
+<h3>Reading a CSV File</h3>
+<p>To read a csv file we use the <code>read.csv()</code> function.</p>
+<p>Following is a simple example of <code>read.csv()</code> function to read a CSV file available in your current working directory −</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>data1 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;input.csv&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>data1</span></code></pre></div>
+<p>Here <code>data1</code> is the variable holding the data frame and <code>input.csv</code> is the name of the csv file that we want to import.</p>
+<p>By default the read.csv() function gives the output as a data frame. Once we read data in a data frame, we can apply all the functions applicable to data frames.</p>
+</div>
+<div id="writing-into-a-csv-file" class="section level3">
+<h3>Writing into a CSV File</h3>
+<p>R can create csv file form existing data frame. The <code>write.csv()</code> function is used to create the csv file. This file gets created in the working directory.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">write.csv</span>(data1, <span class="st">&quot;Output.csv&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>data2 =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Output.csv&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>data2</span></code></pre></div>
+<p>Once the above code is executed, you will see that a new file with the name <code>Output.csv</code> file is being created in your default R folder.</p>
+<p>Here the column X comes from the data set newper. This can be dropped using additional parameter <code>row.names = FALSE</code> while writing the file.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">write.csv</span>(data1, <span class="st">&quot;Output.csv&quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>data2 =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Output.csv&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>data2</span></code></pre></div>
+</div>
+<div id="importing-microsoft-excel-files" class="section level3">
+<h3>Importing Microsoft Excel files</h3>
+<p>To import or read an excel file we use the “readxl” package in R</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">library</span>(<span class="st">&quot;readxl&quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>data4 =<span class="st"> </span><span class="kw">read_xlsx</span>(<span class="st">&quot;data.xlsx&quot;</span>)</span></code></pre></div>
+<p>In case your Excel file has more than one sheets, then you can specify a sheet using either its name or number.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Specify sheet by its name</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>data5 =<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="st">&quot;DATA&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># DATA is the name of sheet1 in the importet excel file.</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># Specify sheet by its index</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>data6 =<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>By default if we do not specify sheet than it will read the first sheet in the excel file.</p>
+</div>
+<div id="writing-to-excel-file" class="section level3">
+<h3>Writing to Excel file</h3>
+<p>To write an excel file from a data frame we can use the “writexl” package in R as follows.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">library</span>(writexl)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>age =<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">26</span>, <span class="dv">48</span>, <span class="dv">28</span>, <span class="dv">29</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>height =<span class="st"> </span><span class="kw">c</span>(<span class="dv">149</span>, <span class="dv">154</span>, <span class="dv">165</span>, <span class="dv">148</span>, <span class="dv">152</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>weight =<span class="st"> </span><span class="kw">c</span>(<span class="dv">56</span>, <span class="dv">71</span>, <span class="dv">59</span>, <span class="dv">80</span>, <span class="dv">62</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>data7 =<span class="st"> </span><span class="kw">cbind.data.frame</span>(age, weight, height)</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="kw">write_xlsx</span>(data7, <span class="st">&quot;newdata.xlsx&quot;</span>)</span></code></pre></div>
+<p>Here, a new excel file “newdata.xlsx” will be created in your working directory.</p>
+<p>We can write multiple data frames to a single excel file also.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>salary =<span class="st"> </span><span class="kw">c</span>(<span class="dv">10655</span>, <span class="dv">56172</span>, <span class="dv">32457</span>, <span class="dv">85135</span>, <span class="dv">52539</span>, <span class="dv">67869</span>, <span class="dv">41291</span>, <span class="dv">71817</span>, <span class="dv">74047</span>, <span class="dv">21864</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a>saving =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1082</span>, <span class="dv">6178</span>, <span class="dv">12246</span>, <span class="dv">10071</span>, <span class="dv">5193</span>, <span class="dv">1049</span>, <span class="dv">8962</span>, <span class="dv">3608</span>, <span class="dv">6307</span>, <span class="dv">7995</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>ent =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1315</span>, <span class="dv">2934</span>, <span class="dv">1272</span>, <span class="dv">1404</span>, <span class="dv">3525</span>, <span class="dv">2814</span>, <span class="dv">3953</span>, <span class="dv">1330</span>, <span class="dv">1585</span>, <span class="dv">2605</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"></a>data.new =<span class="st"> </span><span class="kw">cbind.data.frame</span>(salary, saving, ent)</span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="kw">write_xlsx</span>(<span class="kw">list</span>(<span class="dt">Vital =</span> data7, <span class="dt">Financial =</span> data.new), <span class="st">&quot;newdata2.xlsx&quot;</span>)</span></code></pre></div>
+<p>the syntax to create an excel file with multiple data frame is</p>
+<pre><code>wtite_xlsx(list(Name_of_1st_sheet = data_frame, Name_of_2nd_Sheet = data_frame), &quot;file_name.xlsx&quot;)</code></pre>
+</div>
+<div id="importing-spss-files" class="section level3">
+<h3>Importing SPSS Files</h3>
+<p>R can import data sets from SPSS with the function <code>read.spss()</code> from the package <code>foreign</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">library</span>(foreign)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>data3 =<span class="st"> </span><span class="kw">read.spss</span>(<span class="st">&quot;data.sav&quot;</span>, <span class="dt">use.value.labels =</span> T, <span class="dt">to.data.frame =</span> T)</span></code></pre></div>
+<p><strong>data3</strong> is the name of data frame created in R, and <strong>data.sav</strong> is the file name of SPSS dataset we want to import, the additional parameter <strong>use.value.label=TRUE</strong> is to convert variables with value labels in SPSS into R factors, and <strong>to.data.frame=TRUE</strong> is to read it as a data frame.</p>
+</div>
+<div id="writing-to-a-spss-file" class="section level3">
+<h3>Writing to a SPSS file</h3>
+<p>To write a data frame into a SPSS file we can use the <code>write.foreign</code> function.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">library</span>(foreign)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">write.foreign</span>(data3, <span class="st">&quot;mydata.txt&quot;</span>, <span class="st">&quot;mydata.sps&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
+<p>This will create two individual files with the names “mydata.txt” and “mydata.sps”. These files then can be converted into an SPSS data file using SPSS syntax.</p>
+<div class="icon-bar">
+<p><a href="df.html" class="prev">PREVIOUS PAGE</a> <a href="functions.html" class="next">NEXT PAGE</a></p>
+</div>
+</div>
+
+  </div> <!-- articleBandContent -->
+</div> <!-- pageContent -->
+
+<div id="rStudioFooter" class="band full">
+<div class="bandContent">
+  <div id="copyright">© Copyright Saurav Sarma 2018 - 2019 All rights reseved. Powered by ProStatika Analysis</div>
+  </div>
+</div>
+
+<!-- bizible -->
+<script type="text/javascript" src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
+
+<!-- disqus -->
+<div id="disqus_thread" class="standardPadding"></div>
+<script type="text/javascript" src="js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<script type="text/javascript" src="js/external-links.js"></script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

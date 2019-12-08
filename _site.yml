@@ -30,6 +30,8 @@ navbar:
         href: factors.html
       - text: "Data frame"
         href: df.html
+      - text: "Importing and Exporting External Files"
+        href: extapp.html
       - text: "Functions"
         href: functions.html
       - text: "Probability Distribution"
@@ -55,7 +57,7 @@ navbar:
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/saurav-sarma-0044
     - icon: fab fa-instagram fa-lg
-      href: https://www.instagram.com/deka_mastor/
+      href: https://www.instagram.com/hashtag_sarmaji/
     
   
 output:

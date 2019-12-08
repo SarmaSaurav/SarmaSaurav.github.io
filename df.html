@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>df.utf8.md</title>
+<title>df.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -309,6 +308,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -389,6 +389,9 @@ $(document).ready(function () {
       <a href="df.html">Data frame</a>
     </li>
     <li>
+      <a href="extapp.html">Importing and Exporting 3rd party files</a>
+    </li>
+    <li>
       <a href="functions.html">Functions</a>
     </li>
     <li>
@@ -438,7 +441,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="https://www.instagram.com/deka_mastor/">
+  <a href="https://www.instagram.com/hashtag_sarmaji/">
     <span class="fab fa fab fa-instagram fa-lg"></span>
      
   </a>
@@ -477,18 +480,13 @@ A data frame is a table or a two-dimensional array-like structure in which each 
 </ul>
 <div id="creating-a-data-frame" class="section level2">
 <h2>Creating a data frame</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>data=<span class="kw">data.frame</span>(</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="dt">enrollment.no=</span><span class="dv">01</span><span class="op">:</span><span class="dv">10</span>,</span>
-<span id="cb1-3"><a href="#cb1-3"></a>  <span class="dt">first.name=</span><span class="kw">c</span>(<span class="st">&quot;Biman&quot;</span>,<span class="st">&quot;Prapti&quot;</span>,<span class="st">&quot;Dipjyoti&quot;</span>,<span class="st">&quot;Rashmi&quot;</span>,<span class="st">&quot;Debojit&quot;</span>,</span>
-<span id="cb1-4"><a href="#cb1-4"></a>               <span class="st">&quot;Rocky&quot;</span>,<span class="st">&quot;Rajesh&quot;</span>,<span class="st">&quot;Semantika&quot;</span>,<span class="st">&quot;Dhriti&quot;</span>,<span class="st">&quot;Priyanka&quot;</span>),</span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="dt">last.name=</span><span class="kw">c</span>(<span class="st">&quot;Deka&quot;</span>,<span class="st">&quot;Kakati&quot;</span>,<span class="st">&quot;Chahariya&quot;</span>,<span class="st">&quot;Bhuyan&quot;</span>,<span class="st">&quot;Barua&quot;</span>,</span>
-<span id="cb1-6"><a href="#cb1-6"></a>              <span class="st">&quot;Baglary&quot;</span>,<span class="st">&quot;Bodo&quot;</span>,<span class="st">&quot;Chakraborty&quot;</span>,<span class="st">&quot;Chakraborty&quot;</span>,<span class="st">&quot;Agarwal&quot;</span>),</span>
-<span id="cb1-7"><a href="#cb1-7"></a>  <span class="dt">cgpa=</span><span class="kw">c</span>(<span class="fl">6.5</span>,<span class="fl">7.2</span>,<span class="fl">6.1</span>,<span class="fl">8.5</span>,<span class="fl">6.0</span>,<span class="fl">5.2</span>,<span class="fl">5.5</span>,<span class="fl">9.0</span>,<span class="fl">8.75</span>,<span class="fl">8.0</span>),</span>
-<span id="cb1-8"><a href="#cb1-8"></a>  <span class="dt">gender=</span><span class="kw">c</span>(<span class="st">&quot;male&quot;</span>,<span class="st">&quot;female&quot;</span>,<span class="st">&quot;male&quot;</span>,<span class="st">&quot;female&quot;</span>,<span class="st">&quot;male&quot;</span>,<span class="st">&quot;male&quot;</span>,</span>
-<span id="cb1-9"><a href="#cb1-9"></a>           <span class="st">&quot;male&quot;</span>,<span class="st">&quot;female&quot;</span>,<span class="st">&quot;female&quot;</span>,<span class="st">&quot;female&quot;</span>),</span>
-<span id="cb1-10"><a href="#cb1-10"></a>  <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>)</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="kw">print</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>data =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">enrollment.no =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">first.name =</span> <span class="kw">c</span>(<span class="st">&quot;Biman&quot;</span>, <span class="st">&quot;Prapti&quot;</span>, <span class="st">&quot;Dipjyoti&quot;</span>, </span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="st">&quot;Rashmi&quot;</span>, <span class="st">&quot;Debojit&quot;</span>, <span class="st">&quot;Rocky&quot;</span>, <span class="st">&quot;Rajesh&quot;</span>, <span class="st">&quot;Semantika&quot;</span>, <span class="st">&quot;Dhriti&quot;</span>, <span class="st">&quot;Priyanka&quot;</span>), <span class="dt">last.name =</span> <span class="kw">c</span>(<span class="st">&quot;Deka&quot;</span>, </span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="st">&quot;Kakati&quot;</span>, <span class="st">&quot;Chahariya&quot;</span>, <span class="st">&quot;Bhuyan&quot;</span>, <span class="st">&quot;Barua&quot;</span>, <span class="st">&quot;Baglary&quot;</span>, <span class="st">&quot;Bodo&quot;</span>, <span class="st">&quot;Chakraborty&quot;</span>, <span class="st">&quot;Chakraborty&quot;</span>, </span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="st">&quot;Agarwal&quot;</span>), <span class="dt">cgpa =</span> <span class="kw">c</span>(<span class="fl">6.5</span>, <span class="fl">7.2</span>, <span class="fl">6.1</span>, <span class="fl">8.5</span>, <span class="dv">6</span>, <span class="fl">5.2</span>, <span class="fl">5.5</span>, <span class="dv">9</span>, <span class="fl">8.75</span>, <span class="dv">8</span>), <span class="dt">gender =</span> <span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, </span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>), </span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">print</span>(data)</span></code></pre></div>
 <pre><code>   enrollment.no first.name   last.name cgpa gender
 1              1      Biman        Deka 6.50   male
 2              2     Prapti      Kakati 7.20 female
@@ -531,7 +529,7 @@ A data frame is a table or a two-dimensional array-like structure in which each 
 <div id="extract-data-from-data-frame" class="section level2">
 <h2>Extract Data from Data Frame</h2>
 <p>Extract specific column from a data frame using column name.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>names =<span class="st"> </span><span class="kw">data.frame</span>(data<span class="op">$</span>first.name,data<span class="op">$</span>last.name)</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>names =<span class="st"> </span><span class="kw">data.frame</span>(data<span class="op">$</span>first.name, data<span class="op">$</span>last.name)</span>
 <span id="cb7-2"><a href="#cb7-2"></a>names</span></code></pre></div>
 <pre><code>   data.first.name data.last.name
 1            Biman           Deka
@@ -545,14 +543,14 @@ A data frame is a table or a two-dimensional array-like structure in which each 
 9           Dhriti    Chakraborty
 10        Priyanka        Agarwal</code></pre>
 <p>Extract rows from a data frame</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>temp=data[<span class="dv">8</span><span class="op">:</span><span class="dv">10</span>,]</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>temp =<span class="st"> </span>data[<span class="dv">8</span><span class="op">:</span><span class="dv">10</span>, ]</span>
 <span id="cb9-2"><a href="#cb9-2"></a>temp</span></code></pre></div>
 <pre><code>   enrollment.no first.name   last.name cgpa gender
 8              8  Semantika Chakraborty 9.00 female
 9              9     Dhriti Chakraborty 8.75 female
 10            10   Priyanka     Agarwal 8.00 female</code></pre>
 <p>We can extract both rows and column simultaneously</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>result=data[<span class="dv">8</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]</span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>result =<span class="st"> </span>data[<span class="dv">8</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]</span>
 <span id="cb11-2"><a href="#cb11-2"></a>result</span></code></pre></div>
 <pre><code>   first.name   last.name
 8   Semantika Chakraborty
@@ -566,8 +564,8 @@ A data frame is a table or a two-dimensional array-like structure in which each 
 <div id="add-column" class="section level2">
 <h2>Add Column</h2>
 <p>Just add the column vector using a new column name.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>data<span class="op">$</span>specialization=<span class="kw">c</span>(<span class="st">&quot;OR&quot;</span>,<span class="st">&quot;Demography&quot;</span>,<span class="st">&quot;OR&quot;</span>,<span class="st">&quot;OR&quot;</span>,<span class="st">&quot;Demography&quot;</span>,</span>
-<span id="cb13-2"><a href="#cb13-2"></a>                      <span class="st">&quot;Demography&quot;</span>,<span class="st">&quot;OR&quot;</span>,<span class="st">&quot;Demography&quot;</span>,<span class="st">&quot;OR&quot;</span>,<span class="st">&quot;Demography&quot;</span>)</span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>data<span class="op">$</span>specialization =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;OR&quot;</span>, <span class="st">&quot;Demography&quot;</span>, <span class="st">&quot;OR&quot;</span>, <span class="st">&quot;OR&quot;</span>, <span class="st">&quot;Demography&quot;</span>, <span class="st">&quot;Demography&quot;</span>, </span>
+<span id="cb13-2"><a href="#cb13-2"></a>    <span class="st">&quot;OR&quot;</span>, <span class="st">&quot;Demography&quot;</span>, <span class="st">&quot;OR&quot;</span>, <span class="st">&quot;Demography&quot;</span>)</span>
 <span id="cb13-3"><a href="#cb13-3"></a></span>
 <span id="cb13-4"><a href="#cb13-4"></a>data</span></code></pre></div>
 <pre><code>   enrollment.no first.name   last.name cgpa gender specialization
@@ -586,17 +584,13 @@ A data frame is a table or a two-dimensional array-like structure in which each 
 <h2>Add Row</h2>
 <p>To add more rows permanently to an existing data frame, we need to bring in the new rows in the same structure as the existing data frame and use the <code>rbind()</code> function.</p>
 <p>In the example below we create a data frame with new rows and merge it with the existing data frame to create the final data frame.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>data1=<span class="kw">data.frame</span>(</span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="dt">enrollment.no=</span><span class="dv">11</span><span class="op">:</span><span class="dv">15</span>,</span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="dt">first.name=</span><span class="kw">c</span>(<span class="st">&quot;Kankan&quot;</span>,<span class="st">&quot;Reyhan&quot;</span>,<span class="st">&quot;Simi&quot;</span>,<span class="st">&quot;Arpita&quot;</span>,<span class="st">&quot;Chandan&quot;</span>),</span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="dt">last.name=</span><span class="kw">c</span>(<span class="st">&quot;Sarma&quot;</span>,<span class="st">&quot;Ali&quot;</span>,<span class="st">&quot;Mahanta&quot;</span>,<span class="st">&quot;Ganguly&quot;</span>,<span class="st">&quot;Deka&quot;</span>),</span>
-<span id="cb15-5"><a href="#cb15-5"></a>  <span class="dt">cgpa=</span><span class="kw">c</span>(<span class="fl">7.8</span>,<span class="fl">6.5</span>,<span class="fl">5.0</span>,<span class="fl">5.5</span>,<span class="fl">5.8</span>),</span>
-<span id="cb15-6"><a href="#cb15-6"></a>  <span class="dt">gender=</span><span class="kw">c</span>(<span class="st">&quot;male&quot;</span>,<span class="st">&quot;male&quot;</span>,<span class="st">&quot;female&quot;</span>,<span class="st">&quot;female&quot;</span>,<span class="st">&quot;male&quot;</span>),</span>
-<span id="cb15-7"><a href="#cb15-7"></a>  <span class="dt">specialization=</span><span class="kw">c</span>(<span class="st">&quot;OR&quot;</span>,<span class="st">&quot;Demography&quot;</span>,<span class="st">&quot;OR&quot;</span>,<span class="st">&quot;OR&quot;</span>,<span class="st">&quot;Demography&quot;</span>),</span>
-<span id="cb15-8"><a href="#cb15-8"></a>  <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span></span>
-<span id="cb15-9"><a href="#cb15-9"></a>)</span>
-<span id="cb15-10"><a href="#cb15-10"></a>data=<span class="kw">rbind</span>(data,data1)</span>
-<span id="cb15-11"><a href="#cb15-11"></a><span class="kw">print</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>data1 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">enrollment.no =</span> <span class="dv">11</span><span class="op">:</span><span class="dv">15</span>, <span class="dt">first.name =</span> <span class="kw">c</span>(<span class="st">&quot;Kankan&quot;</span>, <span class="st">&quot;Reyhan&quot;</span>, <span class="st">&quot;Simi&quot;</span>, </span>
+<span id="cb15-2"><a href="#cb15-2"></a>    <span class="st">&quot;Arpita&quot;</span>, <span class="st">&quot;Chandan&quot;</span>), <span class="dt">last.name =</span> <span class="kw">c</span>(<span class="st">&quot;Sarma&quot;</span>, <span class="st">&quot;Ali&quot;</span>, <span class="st">&quot;Mahanta&quot;</span>, <span class="st">&quot;Ganguly&quot;</span>, <span class="st">&quot;Deka&quot;</span>), </span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="dt">cgpa =</span> <span class="kw">c</span>(<span class="fl">7.8</span>, <span class="fl">6.5</span>, <span class="dv">5</span>, <span class="fl">5.5</span>, <span class="fl">5.8</span>), <span class="dt">gender =</span> <span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>, </span>
+<span id="cb15-4"><a href="#cb15-4"></a>        <span class="st">&quot;male&quot;</span>), <span class="dt">specialization =</span> <span class="kw">c</span>(<span class="st">&quot;OR&quot;</span>, <span class="st">&quot;Demography&quot;</span>, <span class="st">&quot;OR&quot;</span>, <span class="st">&quot;OR&quot;</span>, <span class="st">&quot;Demography&quot;</span>), </span>
+<span id="cb15-5"><a href="#cb15-5"></a>    <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb15-6"><a href="#cb15-6"></a>data =<span class="st"> </span><span class="kw">rbind</span>(data, data1)</span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="kw">print</span>(data)</span></code></pre></div>
 <pre><code>   enrollment.no first.name   last.name cgpa gender specialization
 1              1      Biman        Deka 6.50   male             OR
 2              2     Prapti      Kakati 7.20 female     Demography
@@ -617,10 +611,10 @@ A data frame is a table or a two-dimensional array-like structure in which each 
 <p>in R we use <code>rbind</code> and <code>cbind</code> to combine two or more vectors row wise or column wise respectively</p>
 </blockquote>
 <p>Another simple way of creating a data frame is:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>a=<span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>b=<span class="dv">21</span><span class="op">:</span><span class="dv">30</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a>data2=<span class="kw">cbind</span>(a,b)</span>
-<span id="cb17-4"><a href="#cb17-4"></a>data2=<span class="kw">as.data.frame</span>(data2)</span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>a =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>b =<span class="st"> </span><span class="dv">21</span><span class="op">:</span><span class="dv">30</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>data2 =<span class="st"> </span><span class="kw">cbind</span>(a, b)</span>
+<span id="cb17-4"><a href="#cb17-4"></a>data2 =<span class="st"> </span><span class="kw">as.data.frame</span>(data2)</span>
 <span id="cb17-5"><a href="#cb17-5"></a>data2</span></code></pre></div>
 <pre><code>    a  b
 1   1 21
@@ -633,8 +627,8 @@ A data frame is a table or a two-dimensional array-like structure in which each 
 8   8 28
 9   9 29
 10 10 30</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>data2<span class="op">$</span>total=a<span class="op">+</span>b</span>
-<span id="cb19-2"><a href="#cb19-2"></a>data2<span class="op">$</span>average=(a<span class="op">+</span>b)<span class="op">/</span><span class="dv">2</span></span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>data2<span class="op">$</span>total =<span class="st"> </span>a <span class="op">+</span><span class="st"> </span>b</span>
+<span id="cb19-2"><a href="#cb19-2"></a>data2<span class="op">$</span>average =<span class="st"> </span>(a <span class="op">+</span><span class="st"> </span>b)<span class="op">/</span><span class="dv">2</span></span>
 <span id="cb19-3"><a href="#cb19-3"></a>data2</span></code></pre></div>
 <pre><code>    a  b total average
 1   1 21    22      11
@@ -647,89 +641,10 @@ A data frame is a table or a two-dimensional array-like structure in which each 
 8   8 28    36      18
 9   9 29    38      19
 10 10 30    40      20</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>c=<span class="kw">c</span>(<span class="dv">11</span>,<span class="dv">31</span>,<span class="dv">11</span><span class="op">+</span><span class="dv">31</span>,<span class="dv">21</span>)</span>
-<span id="cb21-2"><a href="#cb21-2"></a>data2=<span class="kw">rbind</span>(data2,c)</span></code></pre></div>
-</div>
-<div id="reading-external-files" class="section level2">
-<h2>Reading External Files</h2>
-<p>In R, we can read data from files stored outside the R environment. We can also write data into files which will be stored and accessed by the operating system. R can read and write into various file formats like csv, excel, xml etc.</p>
-<p>In this chapter we will learn to read data from a csv file and then write data into a csv file. The file should be present in current working directory so that R can read it. Of course we can also set our own directory and read files from there.</p>
-<blockquote>
-<p>You can check which directory the R workspace is pointing to using the <code>getwd()</code> function. You can also set a new working directory using <code>setwd()</code> function.</p>
-</blockquote>
-<p>The csv file is a text file in which the values in the columns are separated by a comma. Let’s consider the following data present in the file named input.csv.</p>
-<p>You can create this file using <strong>Windows Notepad</strong> by copying and pasting this data. Save the file as input.csv using the save As All files(<em>.</em>) option in notepad.</p>
-<pre><code>id,name,salary,start_date,dept
-1,Rick,623.3,2012-01-01,IT
-2,Dan,515.2,2013-09-23,Operations
-3,Michelle,611,2014-11-15,IT
-4,Ryan,729,2014-05-11,HR
-5,Gary,843.25,2015-03-27,Finance
-6,Nina,578,2013-05-21,IT
-7,Simon,632.8,2013-07-30,Operations
-8,Guru,722.5,2014-06-17,Finance</code></pre>
-<div id="reading-a-csv-file" class="section level3">
-<h3>Reading a CSV File</h3>
-<p>Following is a simple example of <code>read.csv()</code> function to read a CSV file available in your current working directory −</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>data3 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;files/input.csv&quot;</span>)</span>
-<span id="cb23-2"><a href="#cb23-2"></a>data3</span></code></pre></div>
-<pre><code>  id     name salary start_date       dept
-1  1     Rick 623.30 2012-01-01         IT
-2  2      Dan 515.20 2013-09-23 Operations
-3  3 Michelle 611.00 2014-11-15         IT
-4  4     Ryan 729.00 2014-05-11         HR
-5  5     Gary 843.25 2015-03-27    Finance
-6  6     Nina 578.00 2013-05-21         IT
-7  7    Simon 632.80 2013-07-30 Operations
-8  8     Guru 722.50 2014-06-17    Finance</code></pre>
-<p>By default the read.csv() function gives the output as a data frame. Once we read data in a data frame, we can apply all the functions applicable to data frames.</p>
-</div>
-</div>
-<div id="writing-into-a-csv-file" class="section level2">
-<h2>Writing into a CSV File</h2>
-<p>R can create csv file form existing data frame. The write.csv() function is used to create the csv file. This file gets created in the working directory.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>output.data=<span class="kw">write.csv</span>(data,<span class="st">&quot;Output.csv&quot;</span>)</span>
-<span id="cb25-2"><a href="#cb25-2"></a>data4=<span class="kw">read.csv</span>(<span class="st">&quot;Output.csv&quot;</span>)</span>
-<span id="cb25-3"><a href="#cb25-3"></a>data4</span></code></pre></div>
-<pre><code>    X enrollment.no first.name   last.name cgpa gender specialization
-1   1             1      Biman        Deka 6.50   male             OR
-2   2             2     Prapti      Kakati 7.20 female     Demography
-3   3             3   Dipjyoti   Chahariya 6.10   male             OR
-4   4             4     Rashmi      Bhuyan 8.50 female             OR
-5   5             5    Debojit       Barua 6.00   male     Demography
-6   6             6      Rocky     Baglary 5.20   male     Demography
-7   7             7     Rajesh        Bodo 5.50   male             OR
-8   8             8  Semantika Chakraborty 9.00 female     Demography
-9   9             9     Dhriti Chakraborty 8.75 female             OR
-10 10            10   Priyanka     Agarwal 8.00 female     Demography
-11 11            11     Kankan       Sarma 7.80   male             OR
-12 12            12     Reyhan         Ali 6.50   male     Demography
-13 13            13       Simi     Mahanta 5.00 female             OR
-14 14            14     Arpita     Ganguly 5.50 female             OR
-15 15            15    Chandan        Deka 5.80   male     Demography</code></pre>
-<p>Once the above code is executed, you will see that a new <code>.csv</code> file is being created in your default R folder.</p>
-<p>Here the column X comes from the data set newper. This can be dropped using additional parameter <code>row.names = FALSE</code> while writing the file.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>output.data=<span class="kw">write.csv</span>(data,<span class="st">&quot;Output.csv&quot;</span>,<span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb27-2"><a href="#cb27-2"></a>data4=<span class="kw">read.csv</span>(<span class="st">&quot;Output.csv&quot;</span>)</span>
-<span id="cb27-3"><a href="#cb27-3"></a>data4</span></code></pre></div>
-<pre><code>   enrollment.no first.name   last.name cgpa gender specialization
-1              1      Biman        Deka 6.50   male             OR
-2              2     Prapti      Kakati 7.20 female     Demography
-3              3   Dipjyoti   Chahariya 6.10   male             OR
-4              4     Rashmi      Bhuyan 8.50 female             OR
-5              5    Debojit       Barua 6.00   male     Demography
-6              6      Rocky     Baglary 5.20   male     Demography
-7              7     Rajesh        Bodo 5.50   male             OR
-8              8  Semantika Chakraborty 9.00 female     Demography
-9              9     Dhriti Chakraborty 8.75 female             OR
-10            10   Priyanka     Agarwal 8.00 female     Demography
-11            11     Kankan       Sarma 7.80   male             OR
-12            12     Reyhan         Ali 6.50   male     Demography
-13            13       Simi     Mahanta 5.00 female             OR
-14            14     Arpita     Ganguly 5.50 female             OR
-15            15    Chandan        Deka 5.80   male     Demography</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>c =<span class="st"> </span><span class="kw">c</span>(<span class="dv">11</span>, <span class="dv">31</span>, <span class="dv">11</span> <span class="op">+</span><span class="st"> </span><span class="dv">31</span>, <span class="dv">21</span>)</span>
+<span id="cb21-2"><a href="#cb21-2"></a>data2 =<span class="st"> </span><span class="kw">rbind</span>(data2, c)</span></code></pre></div>
 <div class="icon-bar">
-<p><a href="factors.html" class="prev">PREVIOUS PAGE</a> <a href="functions.html" class="next">NEXT PAGE</a></p>
+<p><a href="factors.html" class="prev">PREVIOUS PAGE</a> <a href="extapp.html" class="next">NEXT PAGE</a></p>
 </div>
 </div>
 

@@ -8,14 +8,14 @@
 </a>
 
 
-<h3>  Here you will find all the Question papers, R codes and Data files. </h3>
+<h3>  Here you will find all the Question papers, course materials and Data files. </h3>
 
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Auto width -->
 
-<h3>Previous Year Question Papers</h3>
+<h3> + Previous Year Question Papers</h3>
 
 <a href="/files/SEC_dec_2019.zip" download>
 <button class="btn"><i class="fa fa-download"></i> DEC 2018 </button>
@@ -25,8 +25,10 @@
 <button class="btn"><i class="fa fa-download"></i> JUNE 2019 </button>
 </a>
 
-
+<h3> + Workshop Course Materials </h3>
 
 <a href="/files/GU_SPSS_R_Julia_Workshop_Material.zip" download>
-<button class="btn"><i class="fa fa-download"></i> GU Workshop on SPSS, R, Julia Course Material </button>
-</a>
+<button class="btn"><i class="fa fa-download"></i> Workshop on  <br> SPSS, R, Julia </button>
+</a> 
+
+Department of Statistics, Gauhati University, December, 2019

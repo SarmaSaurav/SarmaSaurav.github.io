@@ -1,0 +1,201 @@
+---
+pagetitle: "External Files"
+---
+
+```{r knitr_init, echo=F, cache=FALSE,results='markup'}
+library(knitr)
+opts_chunk$set(echo=T,
+               eval = F,
+	             cache=F,
+               prompt=FALSE,
+               tidy=T,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
+
+<link rel="stylesheet" href="mystyle.css" type="text/css">
+
+<a href="index.html">
+  <img src="images/logo.png" alt="logo"  style="width:15%;">
+</a>
+
+<div style="background-color:crimson;color:white;padding:20px;">
+<h2> **IMPORTING AND EXPORTING EXTERNAL FILES**</h2>
+---
+<p>In R, we can read data from files stored outside the R environment. We can also write data into files which will be stored and accessed by the operating system.</p>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+
+R environment has a wide support for 3rd Party files.
+
+For Example, We can import and export data files from
+
++ SPSS
++ Microsoft Excel
++ CSV files
++ SAS
++ Stata
+
+In this chapter we will learn to read data from a csv file and then write data into a csv file. We will also learn how to import and export Microsoft Excel files (.xls or .xlsx) and SPSS (.sav) files. The file should be present in current working directory so that R can read it. Of course we can also set our own directory and read files from there or define the path to our files.
+
+>
+You can check which directory the R work space is pointing to using the `getwd()` function. You can also set a new working directory using `setwd()` function.
+
+### What is a CSV file
+
+A csv (comma separated values) file is a text file in which the values in the columns are separated by a comma. Let's consider the following data present in the file named input.csv.
+
+You can create this file using **Windows Notepad** by copying and pasting this data. Save the file as input.csv using the save As All files(*.*) option in notepad.
+
+```
+id,name,salary,start_date,dept
+1,Rick,623.3,2012-01-01,IT
+2,Dan,515.2,2013-09-23,Operations
+3,Michelle,611,2014-11-15,IT
+4,Ryan,729,2014-05-11,HR
+5,Gary,843.25,2015-03-27,Finance
+6,Nina,578,2013-05-21,IT
+7,Simon,632.8,2013-07-30,Operations
+8,Guru,722.5,2014-06-17,Finance
+```
+
+### Reading a CSV File
+
+To read a csv file we use the `read.csv()` function.
+
+Following is a simple example of `read.csv()` function to read a CSV file available in your current working directory −
+
+```{r}
+data1 <- read.csv("input.csv")
+data1
+```
+
+Here `data1` is the variable holding the data frame and `input.csv` is the name of the csv file that we want to import.
+
+By default the read.csv() function gives the output as a data frame. Once we read data in a data frame, we can apply all the functions applicable to data frames.
+
+### Writing into a CSV File
+
+R can create csv file form existing data frame. The `write.csv()` function is used to create the csv file. This file gets created in the working directory.
+
+```{r}
+write.csv(data1, "Output.csv")
+data2 = read.csv("Output.csv")
+data2
+```
+
+Once the above code is executed, you will see that a new file with the name `Output.csv` file is being created in your default R folder.
+
+Here the column X comes from the data set newper. This can be dropped using additional parameter `row.names = FALSE` while writing the file.
+
+```{r}
+write.csv(data1, "Output.csv",
+          row.names = FALSE)
+data2 = read.csv("Output.csv")
+data2
+```
+
+
+### Importing Microsoft Excel files
+
+To import or read an excel file we use the "readxl" package in R
+
+```{r}
+library("readxl")
+data4 = read_xlsx("data.xlsx")
+```
+
+In case your Excel file has more than one sheets, then you can specify a sheet using either its name or number.
+
+```{r}
+# Specify sheet by its name
+data5 = read_excel("data.xlsx", sheet = "DATA")
+# DATA is the name of sheet1 in the importet excel file.
+
+
+# Specify sheet by its index
+data6 = read_excel("data.xlsx", sheet = 2)
+```
+
+By default if we do not specify sheet than it will read the first sheet in the excel file.
+
+### Writing to Excel file
+
+To write an excel file from a data frame we can use the "writexl" package in R as follows.
+
+```{r}
+library(writexl)
+age = c(25,26,48,28,29)
+height = c(149,154,165,148,152)
+weight = c(56,71,59,80,62)
+data7 = cbind.data.frame(age, weight, height)
+write_xlsx(data7, "newdata.xlsx")
+```
+
+Here, a new excel file "newdata.xlsx" will be created in your working directory.
+
+We can write multiple data frames to a single excel file also.
+
+```{r}
+salary = c(10655, 56172, 32457, 85135, 52539, 
+           67869, 41291, 71817, 74047, 21864)
+saving = c(1082,6178,12246,10071,5193,1049,
+           8962,3608,6307,7995)
+ent = c(1315,2934,1272,1404,3525,2814,3953,
+        1330,1585,2605)
+data.new = cbind.data.frame(salary, saving, ent)
+write_xlsx(list(Vital = data7, Financial = data.new), 
+           "newdata2.xlsx")
+```
+
+the syntax to create an excel file with multiple data frame is
+
+```
+wtite_xlsx(list(Name_of_1st_sheet = data_frame, Name_of_2nd_Sheet = data_frame), "file_name.xlsx")
+```
+
+
+
+### Importing SPSS Files
+
+R can import data sets from SPSS with the function `read.spss()` from the package `foreign`.
+
+```{r}
+library(foreign)
+data3 = read.spss("data.sav", 
+                  use.value.labels = T,
+                  to.data.frame = T)
+```
+
+**data3** is the name of data frame created in R, and **data.sav** is the file name of SPSS dataset we want to import, the additional parameter **use.value.label=TRUE** is to convert variables with value labels in SPSS into R factors, and **to.data.frame=TRUE** is to read it as a data frame.
+
+
+### Writing to a SPSS file
+
+To write a data frame into a SPSS file we can use the `write.foreign` function.
+
+```{r}
+library(foreign)
+write.foreign(data3, "mydata.txt", 
+              "mydata.sps",   
+              package="SPSS")
+```
+
+This will create two individual files with the names "mydata.txt" and "mydata.sps". These files then can be converted into an SPSS data file using SPSS syntax.
+
+
+
+
+
+<div class="icon-bar">
+  <a href="df.html" class="prev">PREVIOUS PAGE</a>
+  <a href="functions.html" class="next">NEXT PAGE</a>
+</div>
