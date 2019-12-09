@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>loops.utf8.md</title>
+<title>loops.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -309,6 +308,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -389,6 +389,9 @@ $(document).ready(function () {
       <a href="df.html">Data frame</a>
     </li>
     <li>
+      <a href="extapp.html">Importing and Exporting External Files</a>
+    </li>
+    <li>
       <a href="functions.html">Functions</a>
     </li>
     <li>
@@ -438,7 +441,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="https://www.instagram.com/deka_mastor/">
+  <a href="https://www.instagram.com/hashtag_sarmaji/">
     <span class="fab fa fab fa-instagram fa-lg"></span>
      
   </a>
@@ -492,16 +495,16 @@ A loop statement allows us to execute a statement or group of statements multipl
 <p>The flow diagram for repeat loop is:</p>
 <p><img src="images/r_break_statement.jpg" width="200px" /></p>
 <p>An example of repeat loop is</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Cotton&quot;</span>,<span class="st">&quot;University&quot;</span>)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Cotton&quot;</span>, <span class="st">&quot;University&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>count =<span class="st"> </span><span class="dv">1</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="cf">repeat</span> {</span>
-<span id="cb2-5"><a href="#cb2-5"></a>   <span class="kw">print</span>(v)</span>
-<span id="cb2-6"><a href="#cb2-6"></a>   count =<span class="st"> </span>count<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>   </span>
-<span id="cb2-8"><a href="#cb2-8"></a>   <span class="cf">if</span>(count <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>) {</span>
-<span id="cb2-9"><a href="#cb2-9"></a>      <span class="cf">break</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>   }</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="kw">print</span>(v)</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    count =<span class="st"> </span>count <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>    </span>
+<span id="cb2-8"><a href="#cb2-8"></a>    <span class="cf">if</span> (count <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>) {</span>
+<span id="cb2-9"><a href="#cb2-9"></a>        <span class="cf">break</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>    }</span>
 <span id="cb2-11"><a href="#cb2-11"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;Cotton&quot;     &quot;University&quot;
 [1] &quot;Cotton&quot;     &quot;University&quot;
@@ -520,12 +523,12 @@ A loop statement allows us to execute a statement or group of statements multipl
 <p><img src="images/swift_while_loop.jpg" width="200px" /></p>
 <p>Here key point of the while loop is that the loop might not ever run. When the condition is tested and the result is false, the loop body will be skipped and the first statement after the while loop will be executed.</p>
 <p>An example of While loop</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Cotton&quot;</span>,<span class="st">&quot;University&quot;</span>)</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Cotton&quot;</span>, <span class="st">&quot;University&quot;</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>count =<span class="st"> </span><span class="dv">1</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="cf">while</span> (count <span class="op">&lt;</span><span class="st"> </span><span class="dv">7</span>) {</span>
-<span id="cb5-5"><a href="#cb5-5"></a>   <span class="kw">print</span>(v)</span>
-<span id="cb5-6"><a href="#cb5-6"></a>   count =<span class="st"> </span>count <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="kw">print</span>(v)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    count =<span class="st"> </span>count <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;Cotton&quot;     &quot;University&quot;
 [1] &quot;Cotton&quot;     &quot;University&quot;
@@ -535,12 +538,12 @@ A loop statement allows us to execute a statement or group of statements multipl
 [1] &quot;Cotton&quot;     &quot;University&quot;</code></pre>
 <p>The above while loop is repeated until <code>count</code> is less than 7, hence it is repeated 6 times.</p>
 <p>However if the while condition is false at the very first step then the loop is not executed at all. For example:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Cotton&quot;</span>,<span class="st">&quot;University&quot;</span>)</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Cotton&quot;</span>, <span class="st">&quot;University&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2"></a>count =<span class="st"> </span><span class="dv">8</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="cf">while</span> (count <span class="op">&lt;</span><span class="st"> </span><span class="dv">7</span>) {</span>
-<span id="cb7-5"><a href="#cb7-5"></a>   <span class="kw">print</span>(v)</span>
-<span id="cb7-6"><a href="#cb7-6"></a>   count =<span class="st"> </span>count <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="kw">print</span>(v)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    count =<span class="st"> </span>count <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
 <span id="cb7-7"><a href="#cb7-7"></a>}</span></code></pre></div>
 <p>The above while loop print nothing as the test condition is false.</p>
 <div id="for-loops" class="section level4">
@@ -553,9 +556,9 @@ A loop statement allows us to execute a statement or group of statements multipl
 <p>The flow diagram of for loop is:</p>
 <p><img src="images/r_for_loop.jpg" width="200px" /></p>
 <p>An example of for loop</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>v=<span class="kw">c</span>(<span class="st">&quot;Cotton&quot;</span>, <span class="st">&quot;University&quot;</span>)</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Cotton&quot;</span>, <span class="st">&quot;University&quot;</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {</span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="kw">print</span>(v)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    <span class="kw">print</span>(v)</span>
 <span id="cb9-4"><a href="#cb9-4"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;Cotton&quot;     &quot;University&quot;
 [1] &quot;Cotton&quot;     &quot;University&quot;
@@ -568,24 +571,24 @@ A loop statement allows us to execute a statement or group of statements multipl
 [1] &quot;Cotton&quot;     &quot;University&quot;
 [1] &quot;Cotton&quot;     &quot;University&quot;</code></pre>
 <p>The above for loop print the variable <code>v</code> 10 times.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>a_vector=<span class="kw">rep</span>(<span class="dv">10</span>,<span class="dv">10</span>)     <span class="co"># We have created a vector of size 10 with all values = 10</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {   </span>
-<span id="cb11-3"><a href="#cb11-3"></a>  a_vector[i]=a_vector[i]<span class="op">+</span>i</span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>a_vector =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">10</span>, <span class="dv">10</span>)  <span class="co"># We have created a vector of size 10 with all values = 10</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    a_vector[i] =<span class="st"> </span>a_vector[i] <span class="op">+</span><span class="st"> </span>i</span>
 <span id="cb11-4"><a href="#cb11-4"></a>}</span>
 <span id="cb11-5"><a href="#cb11-5"></a>a_vector</span></code></pre></div>
 <pre><code> [1] 11 12 13 14 15 16 17 18 19 20</code></pre>
 <p>We can use multiple for loops in the same program. Also for loops can also be nested.</p>
 <p>An example of nested for loops is given below:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>a_matrix=<span class="kw">mat.or.vec</span>(<span class="dv">3</span>,<span class="dv">3</span>) <span class="co">#Creating an empty matrix of size 3x3</span></span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>a_matrix =<span class="st"> </span><span class="kw">mat.or.vec</span>(<span class="dv">3</span>, <span class="dv">3</span>)  <span class="co">#Creating an empty matrix of size 3x3</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>a_matrix</span></code></pre></div>
 <pre><code>     [,1] [,2] [,3]
 [1,]    0    0    0
 [2,]    0    0    0
 [3,]    0    0    0</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {</span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {</span>
-<span id="cb15-3"><a href="#cb15-3"></a>    a_matrix[i,j]=a_matrix[i,j]<span class="op">+</span>(i<span class="op">*</span>j)</span>
-<span id="cb15-4"><a href="#cb15-4"></a>  }</span>
+<span id="cb15-2"><a href="#cb15-2"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {</span>
+<span id="cb15-3"><a href="#cb15-3"></a>        a_matrix[i, j] =<span class="st"> </span>a_matrix[i, j] <span class="op">+</span><span class="st"> </span>(i <span class="op">*</span><span class="st"> </span>j)</span>
+<span id="cb15-4"><a href="#cb15-4"></a>    }</span>
 <span id="cb15-5"><a href="#cb15-5"></a>}</span>
 <span id="cb15-6"><a href="#cb15-6"></a>a_matrix</span></code></pre></div>
 <pre><code>     [,1] [,2] [,3]
@@ -595,8 +598,8 @@ A loop statement allows us to execute a statement or group of statements multipl
 <p>In the above example we have nested two for loops. At first we have created an empty matrix with all elements equal to 0. The loops assign the product of their position to each element of the empty matrix.</p>
 <p>for loops are particularly flexible in that they are not limited to integers, or even numbers in the input. We can pass character vectors, logical vectors, lists or expressions.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>v &lt;-<span class="st"> </span>LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>]</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="cf">for</span> ( i <span class="cf">in</span> v) {</span>
-<span id="cb17-3"><a href="#cb17-3"></a>   <span class="kw">print</span>(i)</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="cf">for</span> (i <span class="cf">in</span> v) {</span>
+<span id="cb17-3"><a href="#cb17-3"></a>    <span class="kw">print</span>(i)</span>
 <span id="cb17-4"><a href="#cb17-4"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;A&quot;
 [1] &quot;B&quot;

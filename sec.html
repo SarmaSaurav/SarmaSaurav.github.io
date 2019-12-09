@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>sec.utf8.md</title>
+<title>sec.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -309,6 +308,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -389,6 +389,9 @@ $(document).ready(function () {
       <a href="df.html">Data frame</a>
     </li>
     <li>
+      <a href="extapp.html">Importing and Exporting External Files</a>
+    </li>
+    <li>
       <a href="functions.html">Functions</a>
     </li>
     <li>
@@ -438,7 +441,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="https://www.instagram.com/deka_mastor/">
+  <a href="https://www.instagram.com/hashtag_sarmaji/">
     <span class="fab fa fab fa-instagram fa-lg"></span>
      
   </a>
@@ -482,70 +485,70 @@ $(document).ready(function () {
 <p>The formula for the measurements are</p>
 <p><span class="math display">\[ Mean= \frac{1}{n} \sum_{i=1}^{n} x_i\]</span> <span class="math display">\[Variance = \frac{1}{n}\sum_{i=1}^{n} (x_i-\bar{x})^2\]</span> <span class="math display">\[ Median = l+\dfrac{\frac{N}{2}-f_c}{f}* h\]</span></p>
 <p><span class="math display">\[Range = \text{Max}^m\  \text{value} - \text{Min}^m \ \text{value}\]</span> <span class="math display">\[ Covariance = \frac{1}{n}\sum_{i=1}^{n}x_iy_i- \bar{x}\bar{y}\]</span> <span class="math display">\[ Correlation \ (r) = \dfrac{Cov(x,y)}{\sqrt{Variance\ (x)}\sqrt{Variance\ (y)}}\]</span> Let us consider the following data</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>weight=<span class="kw">c</span>(<span class="dv">45</span>,<span class="dv">81</span>,<span class="dv">47</span>,<span class="dv">58</span>,<span class="dv">61</span>,<span class="dv">76</span>,<span class="dv">47</span>,<span class="dv">44</span>,<span class="dv">66</span>,<span class="dv">55</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>height=<span class="kw">c</span>(<span class="dv">140</span>,<span class="dv">165</span>,<span class="dv">145</span>,<span class="dv">160</span>,<span class="dv">166</span>,<span class="dv">170</span>,<span class="dv">156</span>,<span class="dv">161</span>,<span class="dv">159</span>,<span class="dv">163</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>weight =<span class="st"> </span><span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">81</span>, <span class="dv">47</span>, <span class="dv">58</span>, <span class="dv">61</span>, <span class="dv">76</span>, <span class="dv">47</span>, <span class="dv">44</span>, <span class="dv">66</span>, <span class="dv">55</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>height =<span class="st"> </span><span class="kw">c</span>(<span class="dv">140</span>, <span class="dv">165</span>, <span class="dv">145</span>, <span class="dv">160</span>, <span class="dv">166</span>, <span class="dv">170</span>, <span class="dv">156</span>, <span class="dv">161</span>, <span class="dv">159</span>, <span class="dv">163</span>)</span></code></pre></div>
 <p>Once the data are being entered in R, we can now perform various statistical calculations:</p>
 <div id="mean" class="section level3">
 <h3>Mean</h3>
 <p>Generally by <strong><code>mean</code></strong> we calculate <strong><code>Arithmetic mean</code></strong>. Arithmetic mean gives the center of our data</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>mean_weight=<span class="kw">mean</span>(weight)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>mean_weight =<span class="st"> </span><span class="kw">mean</span>(weight)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>mean_weight</span></code></pre></div>
 <pre><code>[1] 58</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>mean_height=<span class="kw">mean</span>(height)</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>mean_height =<span class="st"> </span><span class="kw">mean</span>(height)</span>
 <span id="cb4-2"><a href="#cb4-2"></a>mean_height</span></code></pre></div>
 <pre><code>[1] 158.5</code></pre>
 </div>
 <div id="variance" class="section level3">
 <h3>Variance</h3>
 <p>Variance gives the amount of variation present in our data. Or how much our information are scattered from the center of our data</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>variance_weight=<span class="kw">var</span>(weight)</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>variance_weight =<span class="st"> </span><span class="kw">var</span>(weight)</span>
 <span id="cb6-2"><a href="#cb6-2"></a>variance_weight</span></code></pre></div>
 <pre><code>[1] 171.3333</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>variance_height=<span class="kw">var</span>(height)</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>variance_height =<span class="st"> </span><span class="kw">var</span>(height)</span>
 <span id="cb8-2"><a href="#cb8-2"></a>variance_height</span></code></pre></div>
 <pre><code>[1] 87.83333</code></pre>
 </div>
 <div id="standard-deviation" class="section level3">
 <h3>Standard deviation</h3>
 <p>Standard deviation is simply the square root of variance</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>sd_weight=<span class="kw">sd</span>(weight)</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>sd_weight =<span class="st"> </span><span class="kw">sd</span>(weight)</span>
 <span id="cb10-2"><a href="#cb10-2"></a>sd_weight</span></code></pre></div>
 <pre><code>[1] 13.08944</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>sd_height=<span class="kw">sd</span>(height)</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>sd_height =<span class="st"> </span><span class="kw">sd</span>(height)</span>
 <span id="cb12-2"><a href="#cb12-2"></a>sd_height</span></code></pre></div>
 <pre><code>[1] 9.371944</code></pre>
 </div>
 <div id="median" class="section level3">
 <h3>Median</h3>
 <p>Median is the mid point of our information when arranged in ascending or descending order.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>median_weight=<span class="kw">median</span>(weight)</span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>median_weight =<span class="st"> </span><span class="kw">median</span>(weight)</span>
 <span id="cb14-2"><a href="#cb14-2"></a>median_weight</span></code></pre></div>
 <pre><code>[1] 56.5</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>median_height=<span class="kw">median</span>(height)</span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>median_height =<span class="st"> </span><span class="kw">median</span>(height)</span>
 <span id="cb16-2"><a href="#cb16-2"></a>median_height</span></code></pre></div>
 <pre><code>[1] 160.5</code></pre>
 </div>
 <div id="range" class="section level3">
 <h3>Range</h3>
 <p>Range gives the minimum and maximum values of the data.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>range_weight=<span class="kw">range</span>(weight)</span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>range_weight =<span class="st"> </span><span class="kw">range</span>(weight)</span>
 <span id="cb18-2"><a href="#cb18-2"></a>range_weight</span></code></pre></div>
 <pre><code>[1] 44 81</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>range_height=<span class="kw">range</span>(height)</span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>range_height =<span class="st"> </span><span class="kw">range</span>(height)</span>
 <span id="cb20-2"><a href="#cb20-2"></a>range_height</span></code></pre></div>
 <pre><code>[1] 140 170</code></pre>
 </div>
 <div id="covariance" class="section level3">
 <h3>Covariance</h3>
 <p>Co-variance is a measurement of variation present in two sets of data when considered together. In our example, we are calculating how weight and height varies together.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>cov_weight_height=<span class="kw">cov</span>(weight, height)</span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>cov_weight_height =<span class="st"> </span><span class="kw">cov</span>(weight, height)</span>
 <span id="cb22-2"><a href="#cb22-2"></a>cov_weight_height</span></code></pre></div>
 <pre><code>[1] 83.44444</code></pre>
 </div>
 <div id="correlation" class="section level3">
 <h3>Correlation</h3>
 <p>Correlation is the measurement of association or bonding between two variables. In this example, correlation will tell us what kind of relationship weight and height posses.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>correlation=<span class="kw">cor</span>(weight, height)</span>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>correlation =<span class="st"> </span><span class="kw">cor</span>(weight, height)</span>
 <span id="cb24-2"><a href="#cb24-2"></a></span>
 <span id="cb24-3"><a href="#cb24-3"></a>correlation</span></code></pre></div>
 <pre><code>[1] 0.680216</code></pre>
