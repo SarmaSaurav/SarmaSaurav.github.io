@@ -18,6 +18,22 @@ pagetitle: "R 4 Everyone"
 </div>
 
 
+<div class="notification">
+<div class="container">
+  <h2>Practical Examination of PG 1st Semester 
+  <br>
+  SEC: Statistical Calculation With R <span class="new-box">NEW</span></h2>
+  <i class="fa fa-calendar"></i> 11/01/2020
+  <br>
+  <i class="far fa-clock"></i> 10.00 AM - 2.00 PM
+  <br>
+  <i class="fas fa-map-marker-alt"></i> Computer Cell, 2nd Floor, SKB Library
+  <br>
+  <button class="new-btn"> <a href="/files/sec_dec_19.pdf" download> Click Here for Details</a> </button>
+</div>
+</div>
+
+
 <div class="text_block">
 Hi, I am **SAURAV SARMA**, faculty in the **Department of Statistics, Cotton University**. This website is intended for students and research scholars from non-statistical background for easy to follow tutorials on **R** Programming language and how to use **R** programming to carry out various statistical calculations. Click the below link to get started. Hope it will be helpful for you.
 <br></br>
@@ -49,18 +65,7 @@ me if you need any other help.
 
 
 
-<div class="notification">
-<div class="container">
-  <h4>Practical Examination of PG 1st Semester SEC: Statistical Calculation With R <span class="new-box">NEW</span></h4>
-  <i class="fa fa-calendar"></i> 11/01/2020
-  <br>
-  <i class="far fa-clock"></i> 10.00 AM - 2.00 PM
-  <br>
-  <i class="fas fa-map-marker-alt"></i> Computer Cell, 2nd Floor, SKB Library
-  <br>
-  <button class="new-btn"> <a href="/files/sec_dec_19.pdf" download> Click Here for Details</a> </button>
-</div>
-</div>
+
 
 
 

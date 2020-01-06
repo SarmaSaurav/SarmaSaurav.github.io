@@ -152,7 +152,7 @@ a{
   position: relative;
   bottom: 10%;
   margin-bottom:5%;
-  margin-left:5%;
+  margin-left:10%;
   margin-right:5%;
   right: 10px;
   background: rgb(0, 1, 0); /* Fallback color */
@@ -337,21 +337,29 @@ width: 80%;
 height: 80%;
 }
 
-.notification h4{
-  line-height: 30px;
+.notification{
+  /*margin-bottom: 20px;*/
+  border: black 2px solid;
+  padding: 0;
+  margin: 20px 10% 20px 10%;
 }
+
+/*.notification h4{
+  line-height: normal;
+}*/
 
 .notification .new-box{
   background-color: #bb0000;
   color: #fff;
-  padding: 4px;
+  padding: 2px 5px;
   margin: 2px;
+  font-size:16px;
 }
 
 .new-btn{
   background-color: #007bb5;
   border: none;
-  padding: 2px, 5px;
+  padding: 2px 5px;
   margin-top: 5px;
   
 }
