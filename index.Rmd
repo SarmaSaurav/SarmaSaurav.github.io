@@ -58,7 +58,7 @@ me if you need any other help.
   <br>
   <i class="fas fa-map-marker-alt"></i> Computer Cell, 2nd Floor, SKB Library
   <br>
-  <button class="new-btn"> <a href="/files/sec_dec_19.pdf"> Click Here for Details</a> </button>
+  <button class="new-btn"> <a href="/files/sec_dec_19.pdf" download> Click Here for Details</a> </button>
 </div>
 </div>
 
