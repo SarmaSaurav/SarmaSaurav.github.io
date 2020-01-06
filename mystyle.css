@@ -337,5 +337,26 @@ width: 80%;
 height: 80%;
 }
 
+.notification h4{
+  line-height: 30px;
+}
 
+.notification .new-box{
+  background-color: #bb0000;
+  color: #fff;
+  padding: 4px;
+  margin: 2px;
+}
+
+.new-btn{
+  background-color: #007bb5;
+  border: none;
+  padding: 2px, 5px;
+  margin-top: 5px;
+  
+}
+
+.new-btn a{
+  color: #fff;
+}
 

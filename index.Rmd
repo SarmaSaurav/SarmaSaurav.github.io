@@ -33,7 +33,7 @@ me if you need any other help.
 
 <div>
 <a href="intoduction.html">
-  <div class="btn"> Click HERE for R Tutorial </div>
+<div class="btn"> Click HERE for R Tutorial </div>
 </a>
 </div>
 
@@ -47,9 +47,20 @@ me if you need any other help.
   <!-- + Bio Statistics -->
 <!-- </ul> -->
 
-<br></br>
 
 
+<div class="notification">
+<div class="container">
+  <h4>Practical Examination of PG 1st Semester SEC: Statistical Calculation With R <span class="new-box">NEW</span></h4>
+  <i class="fa fa-calendar"></i> 11/01/2020
+  <br>
+  <i class="far fa-clock"></i> 10.00 AM - 2.00 PM
+  <br>
+  <i class="fas fa-map-marker-alt"></i> Computer Cell, 2nd Floor, SKB Library
+  <br>
+  <button class="new-btn"> <a href="./files/sec_dec_19.pdf"> Click Here for Details</a> </button>
+</div>
+</div>
 
 
 
