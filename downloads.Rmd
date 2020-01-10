@@ -17,7 +17,7 @@
 
 <h3> + Previous Year Question Papers</h3>
 
-<a href="/files/SEC_dec_2019.zip" download>
+<a href="/files/SEC_dec_2018.zip" download>
 <button class="btn"><i class="fa fa-download"></i> DEC 2018 </button>
 </a>
 
