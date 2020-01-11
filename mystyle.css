@@ -1,9 +1,4 @@
-*{
- margin:0;
- padding:0;
- box-sizing:border-box;
- 
-}
+
 
 body{
   background-color: 	#FFF;
@@ -15,30 +10,6 @@ body{
   margin:0;
 }
 
-
-/*
-h1{
-	color: lightseagreen;
-}
-
-
-h3{
-  color:  #2e4053;
-  font: 18px Arial;
-}
-
-h4{
-	color: lightseagreen;
-}
-
-h5{
-	color: lightseagreen;
-}
-
-h6{
-	color: lightseagreen;
-}
-*/
 a{
 	text-decoration: none;
 }

@@ -1,9 +1,6 @@
 name: "Saurav Sarma"
 output_dir: "."
 navbar:
-  logo:
-    image: images/logo1.png
-    href: index.html
   title: "R 4 Everyone"
   left:
     - text: "About Me"

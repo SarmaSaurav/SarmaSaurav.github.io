@@ -26,6 +26,12 @@ pagetitle:"Downloads"
 <button class="btn"><i class="fa fa-download"></i> JUNE 2019 </button>
 </a>
 
+
+<a href="/files/SEC_Dec_2019.zip" download>
+<button class="btn"><i class="fa fa-download"></i> DEC 2019 </button>
+</a>
+
+
 <h3> + Workshop Course Materials </h3>
 
 <a href="/files/GU_SPSS_R_Julia_Workshop_Material.zip" download>
