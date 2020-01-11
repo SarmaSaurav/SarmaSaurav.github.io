@@ -1,4 +1,5 @@
 ---
+pagetitle:"Downloads"
 ---
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
