@@ -1,14 +1,16 @@
-/*{
+*{
  margin:0;
+ padding:0;
+ box-sizing:border-box;
  
-}*/
+}
 
 body{
   background-color: 	#FFF;
   font: 16 px/1.5 Arial;
   color: #191970;
   padding-top:15%;
-  padding-bottom:0%;
+  padding-bottom:0;
   padding-left:0;
   margin:0;
 }
@@ -158,10 +160,7 @@ a{
   background: rgb(0, 1, 0); /* Fallback color */
   background: rgba(0, 1, 0, 0.6); /* Black background with 0.5 opacity */
   color: white;
-  padding-top:10%;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-bottom:10%;
+  padding: 10% 3%;
   font: 22px Arial;
 }
 
@@ -273,14 +272,12 @@ a{
   display:grid;
   position: relative;
   z-index: 2;
-  box-sizing: border-box;
   height: 91px;
   margin-top:60px;
   text-align:center;
 }
 
 #rStudioFooter.band {
-
   background-color: #34495e;
   padding: 30px 5%;
   color: #fff;

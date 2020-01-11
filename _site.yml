@@ -48,7 +48,7 @@ navbar:
       href: prostat.html
       
   right:
-    - icon: fa-download fa-lg
+    - text: "Downloads"
       href: downloads.html
     - icon: fa-github fa-lg
       href: https://github.com/SarmaSaurav/
@@ -65,6 +65,6 @@ output:
     theme: flatly
     highlight: tango
     include:
-      #in_header: before.html
+      in_header: favicon.html
       after_body: footer.html
       css: mystyle.css
