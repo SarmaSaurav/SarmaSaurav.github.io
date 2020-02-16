@@ -1,7 +1,7 @@
 name: "Saurav Sarma"
 output_dir: "."
 navbar:
-  title: "R 4 Everyone"
+  title: "R By Saurav"
   left:
     - text: "About Me"
       href: me.html
@@ -41,26 +41,40 @@ navbar:
         href: pack.html
       - text: "Decision Statements"
         href: conditional.html
-    - text: "ProStatika"
+    - text: "ProStatika Analysis"
       href: prostat.html
       
   right:
-    - text: "Downloads"
+    - text: Downloads
+      icon: fa-download fa-lg
       href: downloads.html
-    - icon: fa-github fa-lg
-      href: https://github.com/SarmaSaurav/
-    - icon: fa-facebook fa-lg
-      href: https://www.facebook.com/Stats4Everyone
-    - icon: fa-linkedin fa-lg
-      href: https://www.linkedin.com/in/saurav-sarma-0044
-    - icon: fab fa-instagram fa-lg
-      href: https://www.instagram.com/hashtag_sarmaji/
+    - text: Connect With Me
+      icon: fa-share-alt fa-lg
+      menu:
+      - icon: fa-github fa-lg
+        text: Github
+        href: https://github.com/SarmaSaurav/
+      # - icon: fa-facebook fa-lg
+      #   text: Facebook
+      #   href: https://www.facebook.com/Stats4Everyone
+      - icon: fa-linkedin fa-lg
+        text: LinkedIn
+        href: https://www.linkedin.com/in/saurav-sarma-0044
+      - icon: fab fa-instagram fa-lg
+        text: Instagram
+        href: https://www.instagram.com/hashtag_sarmaji/
+      # - text: Research Gate
+      #   icon: fab fa-reseachgate fa-lg
+      #   href: https://www.researchgate.net/profile/Saurav_Sarma3
+      # - text: YouTube
+      #   icon: fa-youtube fa-lg
+      #   href: 
     
   
 output:
   html_document:
     theme: flatly
-    highlight: tango
+    highlight: zenburn
     include:
       in_header: favicon.html
       after_body: footer.html

@@ -1,4 +1,5 @@
 ---
+pagetitle: "Frequency Title"
 ---
 
 ```{r knitr_init, echo=F, cache=FALSE,results='markup'}
@@ -14,10 +15,10 @@ opts_chunk$set(echo=T,
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
 
-<div class="icon-bar">
-  <a href="stest.html" class="prev">PREVIOUS PAGE</a>
-  <a href="pack.html" class="next">NEXT PAGE</a>
-</div>
+<!-- <div class="icon-bar"> -->
+<!--   <a href="stest.html" class="prev">PREVIOUS PAGE</a> -->
+<!--   <a href="pack.html" class="next">NEXT PAGE</a> -->
+<!-- </div> -->
 
 
 

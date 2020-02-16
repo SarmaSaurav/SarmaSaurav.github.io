@@ -1,18 +1,17 @@
 ---
+title: "About Me"
 ---
-
-<link rel="stylesheet" href="mystyle.css" type="text/css">
+<link rel = "stylesheet" href = "mystyle.css" type="text/css">
 
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:15%;">
 </a>
 
 
-<img src="images/photo.png" style="width:25%; margin-right: 20px" align="right">
+<img src = "images/photo.png" style = "width:15%; margin-left: 40px" align="right">
 
-<div style="background-color:teal;color:white;padding:20px;">
-  <h2>Hi, I am **SAURAV SARMA**</h2>
-  ---
+<div>
+  <h4>Hi, I am **SAURAV SARMA**</h4>
   <p>
 A post graduate in Statistics from Gauhati University.
 
@@ -23,29 +22,21 @@ Also pursuing my Ph.D. from Gauhati University under the guidance of Prof Kishor
 
 <br/>
 <br/>
-<br/>
-<br/>
 
-<div style="background-color:lightseagreen;color:white;padding:20px;">
-<h2> **Field of Interest:** </h2>
-
----
+<div>
+<h4> **Field of Interest:** </h4>
 
 + Statistical Computation 
 + Demography 
 + Distribution Theory 
 + Data Mining
-
 </div>
 
 <br/>
 <br/>
-<br/>
-<br/>
 
-<div style="background-color:purple;color:white;padding:20px;">
-  <h2>Feel free to contact me</h2>
-  ---
+<div>
+  <h4>Feel free to contact me</h4>
   <p>
 __Department of Statistics__  
 __Cotton University__  
@@ -54,16 +45,11 @@ __Assam, India__
   </p>
 </div>
 
-<br/>
-<br/>
-
 <a>
-  <img src="images/gmail.png" alt="Email"  style="width:5%;">
   **saurav.statistics.sarma@gmail.com**
 </a>
 
 <a>
-  <img src="images/rg.png" alt="Researchgate"  style="width:5%;">
   [**Researchgate**](https://www.researchgate.net/profile/Saurav_Sarma3)
 </a>
 

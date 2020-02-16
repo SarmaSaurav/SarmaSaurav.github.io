@@ -1,4 +1,5 @@
 ---
+pagetitle: "Vectors"
 ---
 
 ```{r knitr_init, echo=F, cache=FALSE,results='markup'}
@@ -14,10 +15,10 @@ opts_chunk$set(echo=T,
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
 
-<div class="icon-bar">
-  <a href="variables.html" class="prev">PREVIOUS PAGE</a>
-  <a href="matrix.html" class="next">NEXT PAGE</a>
-</div>
+<!-- <div class="icon-bar"> -->
+<!--   <a href="variables.html" class="prev">PREVIOUS PAGE</a> -->
+<!--   <a href="matrix.html" class="next">NEXT PAGE</a> -->
+<!-- </div> -->
 
 
 <a href="index.html">

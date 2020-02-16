@@ -1,5 +1,5 @@
 ---
-pagetitle:"Downloads"
+pagetitle: "Downloads"
 ---
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
@@ -9,14 +9,14 @@ pagetitle:"Downloads"
 </a>
 
 
-<h3>  Here you will find all the Question papers, course materials and Data files. </h3>
+Here you will find all the Question papers, course materials and Data files.
 
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Auto width -->
 
-<h3> + Previous Year Question Papers</h3>
+<h4> Previous Year Question Papers</h4>
 
 <a href="/files/SEC_dec_2018.zip" download>
 <button class="btn"><i class="fa fa-download"></i> DEC 2018 </button>
@@ -31,11 +31,19 @@ pagetitle:"Downloads"
 <button class="btn"><i class="fa fa-download"></i> DEC 2019 </button>
 </a>
 
+<br>
+<br>
 
-<h3> + Workshop Course Materials </h3>
+<h4> Workshop Course Materials </h4>
 
 <a href="/files/GU_SPSS_R_Julia_Workshop_Material.zip" download>
-<button class="btn"><i class="fa fa-download"></i> Workshop on  <br> SPSS, R, Julia </button>
+<button class="btn"><i class="fa fa-download"></i> Workshop on SPSS, R, Julia </button>
 </a> 
 
 Department of Statistics, Gauhati University, December, 2019
+
+<a href="/files/R_CourseMaterial_AVC_Feb2020.zip" download>
+<button class="btn"><i class="fa fa-download"></i> AVC SPSS R Workshop Feb 2020 </button>
+</a> 
+
+Department of Statistics, Arya Vidyapeeth College, February, 2020

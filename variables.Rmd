@@ -1,6 +1,6 @@
 ---
+pagetitle: "Variables"
 ---
-
 ```{r knitr_init, echo=F, cache=FALSE,results='markup'}
 library(knitr)
 opts_chunk$set(echo=T,
@@ -14,10 +14,10 @@ opts_chunk$set(echo=T,
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
 
-<div class="icon-bar">
-  <a href="what_is_r.html" class="prev">PREVIOUS PAGE</a>
-  <a href="vectors.html" class="next">NEXT PAGE</a>
-</div>
+<!-- <div class="icon-bar"> -->
+<!--   <a href="what_is_r.html" class="prev">PREVIOUS PAGE</a> -->
+<!--   <a href="vectors.html" class="next">NEXT PAGE</a> -->
+<!-- </div> -->
 
 <a href="index.html">
   <img src="images/logo.png" alt="logo"  style="width:15%;">

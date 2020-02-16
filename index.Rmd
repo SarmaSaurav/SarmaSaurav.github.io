@@ -2,19 +2,12 @@
 pagetitle: "R 4 Everyone"
 ---
 
-
 <!-- Calling the CSS -->
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-<script data-ad-client="ca-pub-5146871745274287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<div class="img1">
-<img src="images/logo.png" alt="logo"  style="width:25%;">
+<div class="logo">
+<img src="images/logo.png" alt="logo">
 </div>
 
 
@@ -33,7 +26,6 @@ pagetitle: "R 4 Everyone"
 <!-- </div> -->
 <!-- </div> -->
 
-
 <div class="text_block">
 Hi, I am **SAURAV SARMA**, faculty in the **Department of Statistics, Cotton University**. This website is intended for students and research scholars from non-statistical background for easy to follow tutorials on **R** Programming language and how to use **R** programming to carry out various statistical calculations. Click the below link to get started. Hope it will be helpful for you.
 <br></br>
@@ -42,25 +34,13 @@ Feel free to
 me if you need any other help.
 </div>
 
+<br>
 
-
-
-<br></br>
-
-<div>
-<a href="intoduction.html">
-<div class="btn"> Click HERE for R Tutorial </div>
-</a>
+<div class ="centerbox">
+<button  class="linkBtn">
+<a href="intoduction.html">Click HERE for R Tutorial</a>
+</button>
 </div>
-
-
-
-
-
-<a href="https://www.facebook.com/ProStatikaGuwahati/">
-  <img src="images/prostat_banner.png" alt="prostatika_ad"  style="width:20%;">
-</a>
-
 
 ---
 **Disclaimer**: This website is Created using [**R- markdown Package**](https://rmarkdown.rstudio.com/) & [**R Studio**](https://www.rstudio.com/). Hosted by [**GitHub**](https://github.com/).  

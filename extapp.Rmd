@@ -195,7 +195,7 @@ This will create two individual files with the names "mydata.txt" and "mydata.sp
 
 
 
-<div class="icon-bar">
-  <a href="df.html" class="prev">PREVIOUS PAGE</a>
-  <a href="functions.html" class="next">NEXT PAGE</a>
-</div>
+<!-- <div class="icon-bar"> -->
+<!--   <a href="df.html" class="prev">PREVIOUS PAGE</a> -->
+<!--   <a href="functions.html" class="next">NEXT PAGE</a> -->
+<!-- </div> -->

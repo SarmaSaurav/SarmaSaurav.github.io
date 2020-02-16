@@ -1,4 +1,5 @@
 ---
+pagetitle: "Introduction"
 ---
 <link rel="stylesheet" href="mystyle.css" type="text/css">
 
@@ -7,7 +8,6 @@
 </a>
 
 <br>
-
 <br>
 
 <div style="background-color:crimson;color:white;padding:20px;">
@@ -86,9 +86,9 @@ We can type `Ctrl + Enter` to run a particular code from the script window witho
 
 --------
 
-<div class="icon-bar">
-  <a href="index.html" class="prev">PREVIOUS PAGE</a>
-  <a href="what_is_r.html" class="next">NEXT PAGE</a>
-</div>
+<!-- <div class="pagination"> -->
+<!--   <a href="index.html" class="prev btn">PREV</a> -->
+<!--   <a href="what_is_r.html" class="next btn">NEXT</a> -->
+<!-- </div> -->
 
 

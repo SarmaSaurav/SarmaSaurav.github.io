@@ -143,7 +143,7 @@ data2=rbind(data2,c)
 
 
 
-<div class="icon-bar">
-  <a href="factors.html" class="prev">PREVIOUS PAGE</a>
-  <a href="extapp.html" class="next">NEXT PAGE</a>
-</div>
+<!-- <div class="icon-bar"> -->
+<!--   <a href="factors.html" class="prev">PREVIOUS PAGE</a> -->
+<!--   <a href="extapp.html" class="next">NEXT PAGE</a> -->
+<!-- </div> -->

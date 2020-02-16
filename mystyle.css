@@ -1,10 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 body{
+  font-family: 'Raleway', sans-serif;
   background-color: 	#FFF;
-  font: 16 px/1.5 Arial;
   color: #191970;
-  padding-top:15%;
   padding-bottom:0;
   padding-left:0;
   margin:0;
@@ -19,22 +18,18 @@ a{
 	color: white;
 	text-align: left;
 	font-size: 16px;
-	font-style: italic;
-	font-family: Arial;	
 	padding: 0;
 	margin: 0;
-	
-	}
+}
 
 .container{
-	width: 85%;
+	width: 90%;
 	margin: auto;
 }
 
 .container a{
   text-decoration:none;
-  font-family: Arial;
-  color:#2f4f4f;
+  /*color:#2f4f4f;*/
 }
 
 .container img{
@@ -42,50 +37,70 @@ a{
   float:left;
 }
 
-.icon-bar {
+
+.pagination {
   display:grid;
   position: fixed;
+  bottom:80px;
   left:0;
-  bottom:0;
-  right:0;
-  width:100%;
+  width:98%;
   text-align:center;
-  
+  margin-left:5px;
+  margin-right:15px;
 }
 
-.icon-bar a {
-  
+.pagination a {
   text-align: center;
   padding: 10px;
   transition: all 0.3s ease;
   color: white;
-  font: 14px Arial;
-  
+  font-weight:600;
 }
 
-.icon-bar a:hover {
+.pagination a:hover {
   background-color: #000;
   text-decoration:none;
 }
 
+
 .prev {
   float:left;
-  background: #007bb5;
-  color: white;
-  text-decoration:none;
-  margin-right:1px;
-  margin-left:1px;
-  margin-bottom:20%;
-  padding:3% 5%;
 }
 
 .next {
   float:right;
-  background: #bb0000;
-  color: white;
-  text-decoration:none;
-  margin-left:1px;
-  margin-bottom:10%;
+}
+
+
+.centerbox{
+  width:80%;
+  margin: 10px auto;
+  display:flex;
+  align-items:center;
+}
+
+.linkBtn{
+  background-color:  #138d75;
+  border: none;
+  padding: 5px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: auto;
+  border-radius: 2px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.3);
+  transition:0.6s;
+}
+
+.linkBtn:hover{
+  box-shadow:0 2px 12px rgba(0,0,0,0.6);
+}
+
+.linkBtn a{
+  color: #fff;
+}
+
+.linkBtn a:hover{
+  text-decoration: none;
 }
 
 
@@ -95,16 +110,22 @@ a{
   background-color:  #138d75;
   border: none;
   color: white;
-  padding: 10px 10px;
+  padding: 5px 20px;
   cursor: pointer;
   font-size: 16px;
-  font: Arial;
-  margin-left:5%;
+  margin: auto;
+  border-radius: 2px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.3);
+  transition:0.4s;
+}
+
+.btn i{
+  margin-right: 5px;
 }
 
 /* Darker background on mouse-over */
 .btn:hover {
-  background-color:  #273746;
+  box-shadow:0 2px 15px rgba(0, 0, 0, 0.7);
 }
 
 .cont1{
@@ -116,9 +137,16 @@ a{
   padding-right: 10%;
 }
 
-.img1{
-  float:inherit;
+
+.logo{
+  margin-top:20px;
+  margin-bottom:40px;  
 }
+
+.logo img{
+  width:300px;
+}
+
 
 .text_block{
   float:right;
@@ -132,7 +160,6 @@ a{
   background: rgba(0, 1, 0, 0.6); /* Black background with 0.5 opacity */
   color: white;
   padding: 10% 3%;
-  font: 22px Arial;
 }
 
 .centered {
@@ -140,7 +167,6 @@ a{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font: 18px Arial;
   color: white;
 }
 
@@ -178,7 +204,6 @@ a{
   padding: 7px 20px;
   background-color: #75aadb;
   color: #fff;
-
   border-radius: 5px;
   cursor: pointer;
 }
@@ -203,6 +228,14 @@ a{
 .lessonPage .continue-link {
   font-size: 24px;
 }
+
+
+@media screen and (min-width: 768px){
+  .pagination{
+    display:none;
+  }
+}
+
 
 /*Adjustments for smaller screen*/
 
@@ -235,7 +268,6 @@ a{
     #rStudioFooter .bandContent .footerLogo {
       margin: 0 2px;
     }
-
 }
 
 
@@ -260,11 +292,9 @@ a{
 
 #rStudioFooter .bandContent {
   color: #fff;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   line-height: 20px;
 }
 
@@ -285,7 +315,6 @@ a{
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center center;
-
   margin: 0 8px;
 }
 

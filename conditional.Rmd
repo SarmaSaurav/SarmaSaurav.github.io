@@ -15,10 +15,10 @@ opts_chunk$set(echo=T,
 
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 
-<div class="icon-bar">
-  <a href="graphics.html" class="prev">PREVIOUS PAGE</a>
-  <a href="loops.html" class="next">NEXT PAGE</a>
-</div>
+<!-- <div class="icon-bar"> -->
+<!--   <a href="graphics.html" class="prev"><i class="far fa-angle-left"></i></a> -->
+<!--   <a href="loops.html" class="next"><i class="far fa-angle-right"></i></a> -->
+<!-- </div> -->
 
 
 <a href="index.html">
