@@ -17,17 +17,19 @@ navbar:
         href: vectors.html
       - text: "Matrix"
         href: matrix.html
-      - text: "Basic Statistical Calculations"
+      - text: "Statistical Calculations"
         href: sec.html
       - text: "Graphics"
         href: graphics.html
+      - text: "Conditions"
+        href: conditional.html
       - text: "Loops"
         href: loops.html
       - text: "Factors"
         href: factors.html
       - text: "Data frame"
         href: df.html
-      - text: "Importing and Exporting External Files"
+      - text: "External Files"
         href: extapp.html
       - text: "Functions"
         href: functions.html
@@ -39,8 +41,6 @@ navbar:
         href: ftable.html
       - text: "Using R Packages"
         href: pack.html
-      - text: "Decision Statements"
-        href: conditional.html
     - text: "ProStatika Analysis"
       href: prostat.html
       
@@ -73,7 +73,7 @@ navbar:
   
 output:
   html_document:
-    theme: flatly
+    theme: cerulean
     highlight: zenburn
     include:
       in_header: favicon.html

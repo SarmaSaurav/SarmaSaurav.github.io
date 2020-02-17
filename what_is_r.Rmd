@@ -7,9 +7,10 @@ opts_chunk$set(echo=T,
 	             cache=T,
                prompt=FALSE,
                tidy=T,
+               tidy.opts=list(width.cutoff=50),
                comment=NA,
                message=FALSE,
-               warning=FALSE)
+               warning=FALSE, prompt = T)
 ```
 
 <link rel="stylesheet" href="mystyle.css" type="text/css">
@@ -48,32 +49,33 @@ R Can be think as an advance calculator which can handle all basic calculations:
 There are some pre-defined functions in R that can be used to do some other arithmetic operations. For example:
 
 ```{r}
-sum(2,3,4,5,6,8) # will give the sum of all the numbers
-
-factorial(5)  # will give the value of 5!
-
-sqrt(16)      # will give the square root of 16
-
-abs(-5)       # will give the absolute value of the number
-
-exp(5)        # will calculate exponential of 5
-
-log(2)        # log of 2 to the base e
-
-log10(100)    # log of 100 to the base 10
+# will give the sum of all the numbers
+sum(2,3,4,5,6,8) 
+# will give the value of 5!
+factorial(5)  
+# will give the square root of 16
+sqrt(16)      
+# will give the absolute value of the number
+abs(-5)       
+# will calculate exponential of 5
+exp(5)        
+# log of 2 to the base e
+log(2)        
+# log of 100 to the base 10
+log10(100)    
 
 # will round off the number/vector to given number of decimal places.
 round(3.2666666,2)    
           
 # truncates the decimal part of a number/vector.
 trunc(3.266666)   
-
-letters      # the vector of small letters
-
-LETTERS      # the vector of CAPITAL letters.
-
-letters[1:4] # Selecting the first 4 small letters.
-
-LETTERS[1:4] # Selecting the first four capital letters.
+# the vector of small letters
+letters      
+# the vector of CAPITAL letters.
+LETTERS      
+# Selecting the first 4 small letters.
+letters[1:4] 
+# Selecting the first four capital letters.
+LETTERS[1:4] 
 
 ```

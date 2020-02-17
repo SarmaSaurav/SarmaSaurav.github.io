@@ -9,6 +9,10 @@ body{
   margin:0;
 }
 
+h2{
+  color:#fff;
+}
+
 a{
 	text-decoration: none;
 }
@@ -276,16 +280,16 @@ a{
   position: relative;
   z-index: 2;
   height: 91px;
-  margin-top:60px;
+  margin-top: 100px;
   text-align:center;
 }
 
 #rStudioFooter.band {
-  background-color: #34495e;
+  background-color: #212121;
   padding: 30px 5%;
   color: #fff;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
   text-align:center;
   line-height: 25px;
 }

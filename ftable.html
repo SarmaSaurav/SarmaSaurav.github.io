@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -183,33 +183,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 60px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .dropdown-submenu {
   position: relative;
@@ -378,10 +378,13 @@ $(document).ready(function () {
       <a href="matrix.html">Matrix</a>
     </li>
     <li>
-      <a href="sec.html">Basic Statistical Calculations</a>
+      <a href="sec.html">Statistical Calculations</a>
     </li>
     <li>
       <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="conditional.html">Conditions</a>
     </li>
     <li>
       <a href="loops.html">Loops</a>
@@ -393,7 +396,7 @@ $(document).ready(function () {
       <a href="df.html">Data frame</a>
     </li>
     <li>
-      <a href="extapp.html">Importing and Exporting External Files</a>
+      <a href="extapp.html">External Files</a>
     </li>
     <li>
       <a href="functions.html">Functions</a>
@@ -409,9 +412,6 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
-    </li>
-    <li>
-      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -488,11 +488,12 @@ In this Chapter we will discuss how to create a frequency table and calculate cu
 </div>
 <p>Let us consider the following example:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Enter the data</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>data =<span class="st"> </span><span class="kw">c</span>(<span class="dv">24</span>, <span class="dv">23</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">22</span>, <span class="dv">28</span>, <span class="dv">38</span>, <span class="dv">39</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">36</span>, <span class="dv">14</span>, <span class="dv">3</span>, <span class="dv">31</span>, </span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="dv">33</span>, <span class="dv">37</span>, <span class="dv">11</span>, <span class="dv">19</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">29</span>, <span class="dv">35</span>, <span class="dv">27</span>, <span class="dv">26</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Find out the minimum and maximum of the data</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">summary</span>(data)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a>data =<span class="st"> </span><span class="kw">c</span>(<span class="dv">24</span>, <span class="dv">23</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">22</span>, <span class="dv">28</span>, <span class="dv">38</span>, <span class="dv">39</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">2</span>, </span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">36</span>, <span class="dv">14</span>, <span class="dv">3</span>, <span class="dv">31</span>, <span class="dv">33</span>, <span class="dv">37</span>, <span class="dv">11</span>, <span class="dv">19</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">29</span>, <span class="dv">35</span>, <span class="dv">27</span>, </span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="dv">26</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># Find out the minimum and maximum of the data</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">summary</span>(data)</span></code></pre></div>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    1.00   11.50   22.50   20.80   29.75   39.00 </code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># create class intervals</span></span>
@@ -505,8 +506,10 @@ In this Chapter we will discuss how to create a frequency table and calculate cu
 <span id="cb3-8"><a href="#cb3-8"></a>freq =<span class="st"> </span><span class="kw">table</span>(freq)</span>
 <span id="cb3-9"><a href="#cb3-9"></a>freq</span></code></pre></div>
 <pre><code>freq
-  (0,5]  (5,10] (10,15] (15,20] (20,25] (25,30] (30,35] (35,40] 
-      4       3       4       3       4       5       3       4 </code></pre>
+  (0,5]  (5,10] (10,15] (15,20] (20,25] (25,30] (30,35] 
+      4       3       4       3       4       5       3 
+(35,40] 
+      4 </code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Calculate total frequencies</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>N =<span class="st"> </span><span class="kw">sum</span>(freq)</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>

@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -183,33 +183,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 60px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .dropdown-submenu {
   position: relative;
@@ -378,10 +378,13 @@ $(document).ready(function () {
       <a href="matrix.html">Matrix</a>
     </li>
     <li>
-      <a href="sec.html">Basic Statistical Calculations</a>
+      <a href="sec.html">Statistical Calculations</a>
     </li>
     <li>
       <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="conditional.html">Conditions</a>
     </li>
     <li>
       <a href="loops.html">Loops</a>
@@ -393,7 +396,7 @@ $(document).ready(function () {
       <a href="df.html">Data frame</a>
     </li>
     <li>
-      <a href="extapp.html">Importing and Exporting External Files</a>
+      <a href="extapp.html">External Files</a>
     </li>
     <li>
       <a href="functions.html">Functions</a>
@@ -409,9 +412,6 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
-    </li>
-    <li>
-      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -556,8 +556,8 @@ The owner of the center claimed that average mark scored by a student (All over 
 <p>Here we are testing the null hypothesis: <span class="math inline">\(H_0:\mu=30\)</span><br />
 Against the alternative <span class="math inline">\(H_1: \mu \ne 30\)</span></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Enter the data</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">49</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">49</span>, <span class="dv">36</span>, <span class="dv">7</span>, <span class="dv">16</span>, <span class="dv">26</span>, <span class="dv">30</span>, <span class="dv">66</span>, <span class="dv">41</span>, <span class="dv">18</span>, <span class="dv">13</span>, <span class="dv">26</span>, <span class="dv">26</span>, <span class="dv">24</span>, <span class="dv">34</span>, <span class="dv">17</span>, <span class="dv">37</span>, </span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="dv">11</span>, <span class="dv">27</span>, <span class="dv">36</span>, <span class="dv">32</span>, <span class="dv">42</span>, <span class="dv">29</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">49</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">49</span>, <span class="dv">36</span>, <span class="dv">7</span>, <span class="dv">16</span>, <span class="dv">26</span>, <span class="dv">30</span>, <span class="dv">66</span>, <span class="dv">41</span>, <span class="dv">18</span>, <span class="dv">13</span>, <span class="dv">26</span>, </span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="dv">26</span>, <span class="dv">24</span>, <span class="dv">34</span>, <span class="dv">17</span>, <span class="dv">37</span>, <span class="dv">11</span>, <span class="dv">27</span>, <span class="dv">36</span>, <span class="dv">32</span>, <span class="dv">42</span>, <span class="dv">29</span>)</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Apply t test sor single mean</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="kw">t.test</span>(x, <span class="dt">mu =</span> <span class="dv">30</span>)</span></code></pre></div>
 <pre><code>
@@ -599,11 +599,12 @@ Against the alternative that <span class="math inline">\(H_1:\)</span> They are 
 <span id="cb3-2"><a href="#cb3-2"></a>x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">32</span>, <span class="dv">30</span>, <span class="dv">34</span>, <span class="dv">24</span>, <span class="dv">14</span>, <span class="dv">32</span>, <span class="dv">24</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">35</span>, <span class="dv">25</span>)</span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Enter second set of data</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">44</span>, <span class="dv">34</span>, <span class="dv">22</span>, <span class="dv">10</span>, <span class="dv">47</span>, <span class="dv">31</span>, <span class="dv">40</span>, <span class="dv">30</span>, <span class="dv">32</span>, <span class="dv">35</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">35</span>, <span class="dv">29</span>, <span class="dv">22</span>)</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Apply t-test</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="kw">t.test</span>(x, y, <span class="dt">var.equal =</span> T)</span></code></pre></div>
+<span id="cb3-5"><a href="#cb3-5"></a>y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">44</span>, <span class="dv">34</span>, <span class="dv">22</span>, <span class="dv">10</span>, <span class="dv">47</span>, <span class="dv">31</span>, <span class="dv">40</span>, <span class="dv">30</span>, <span class="dv">32</span>, <span class="dv">35</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">35</span>, <span class="dv">29</span>, </span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="dv">22</span>)</span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># Apply t-test</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="kw">t.test</span>(x, y, <span class="dt">var.equal =</span> T)</span></code></pre></div>
 <pre><code>
     Two Sample t-test
 
@@ -741,19 +742,20 @@ mean of x mean of y
 </table>
 <p><strong>Solution:</strong></p>
 <p>Here, the null hypothesis that we are testing is, <span class="math inline">\(H_0:\)</span> There is no relationship between gender and online shopping habit. Against the alternative that they are related.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Create a factor variable for gender We will use 0 for female and 1 for male</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>gender =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, </span>
-<span id="cb6-3"><a href="#cb6-3"></a>    <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb6-4"><a href="#cb6-4"></a>gender =<span class="st"> </span><span class="kw">factor</span>(gender, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>))</span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># Create a factor for shopping habit 0: No, 1: Yes</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>habit =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, </span>
-<span id="cb6-8"><a href="#cb6-8"></a>    <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a>habit =<span class="st"> </span><span class="kw">factor</span>(habit, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>))</span>
-<span id="cb6-10"><a href="#cb6-10"></a></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="co"># Create a cross table</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a>my.data =<span class="st"> </span><span class="kw">table</span>(gender, habit)</span>
-<span id="cb6-13"><a href="#cb6-13"></a>my.data</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Create a factor variable for gender We will use 0 for</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># female and 1 for male</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>gender =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, </span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb6-5"><a href="#cb6-5"></a>gender =<span class="st"> </span><span class="kw">factor</span>(gender, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>))</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># Create a factor for shopping habit 0: No, 1: Yes</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>habit =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, </span>
+<span id="cb6-9"><a href="#cb6-9"></a>    <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb6-10"><a href="#cb6-10"></a>habit =<span class="st"> </span><span class="kw">factor</span>(habit, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>))</span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># Create a cross table</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>my.data =<span class="st"> </span><span class="kw">table</span>(gender, habit)</span>
+<span id="cb6-14"><a href="#cb6-14"></a>my.data</span></code></pre></div>
 <pre><code>        habit
 gender   No Yes
   Female  6   9
@@ -809,8 +811,8 @@ X-squared = 0.14354, df = 1, p-value = 0.7048</code></pre>
  $ School: Factor w/ 3 levels &quot;School A&quot;,&quot;School B&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
  $ Gender: Factor w/ 2 levels &quot;Female&quot;,&quot;Male&quot;: 2 2 2 2 2 1 1 1 1 1 ...
  $ Marks : int  54 47 89 23 84 74 55 64 39 48 ...</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Here we have two factor variables &#39;Gender&#39; and &#39;School&#39; and a int variable</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="co"># &#39;Marks&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Here we have two factor variables &#39;Gender&#39; and &#39;School&#39; and</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="co"># a int variable &#39;Marks&#39;</span></span></code></pre></div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># apply one way anova</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a></span>
 <span id="cb14-3"><a href="#cb14-3"></a>one_way_school =<span class="st"> </span><span class="kw">aov</span>(Marks <span class="op">~</span><span class="st"> </span>School, <span class="dt">data =</span> data)</span>

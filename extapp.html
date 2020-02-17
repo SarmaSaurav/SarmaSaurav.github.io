@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -183,33 +183,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 60px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .dropdown-submenu {
   position: relative;
@@ -378,10 +378,13 @@ $(document).ready(function () {
       <a href="matrix.html">Matrix</a>
     </li>
     <li>
-      <a href="sec.html">Basic Statistical Calculations</a>
+      <a href="sec.html">Statistical Calculations</a>
     </li>
     <li>
       <a href="graphics.html">Graphics</a>
+    </li>
+    <li>
+      <a href="conditional.html">Conditions</a>
     </li>
     <li>
       <a href="loops.html">Loops</a>
@@ -393,7 +396,7 @@ $(document).ready(function () {
       <a href="df.html">Data frame</a>
     </li>
     <li>
-      <a href="extapp.html">Importing and Exporting External Files</a>
+      <a href="extapp.html">External Files</a>
     </li>
     <li>
       <a href="functions.html">Functions</a>
@@ -409,9 +412,6 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="pack.html">Using R Packages</a>
-    </li>
-    <li>
-      <a href="conditional.html">Decision Statements</a>
     </li>
   </ul>
 </li>
@@ -558,11 +558,14 @@ In R, we can read data from files stored outside the R environment. We can also 
 <span id="cb7-6"><a href="#cb7-6"></a><span class="kw">write_xlsx</span>(data7, <span class="st">&quot;newdata.xlsx&quot;</span>)</span></code></pre></div>
 <p>Here, a new excel file “newdata.xlsx” will be created in your working directory.</p>
 <p>We can write multiple data frames to a single excel file also.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>salary =<span class="st"> </span><span class="kw">c</span>(<span class="dv">10655</span>, <span class="dv">56172</span>, <span class="dv">32457</span>, <span class="dv">85135</span>, <span class="dv">52539</span>, <span class="dv">67869</span>, <span class="dv">41291</span>, <span class="dv">71817</span>, <span class="dv">74047</span>, <span class="dv">21864</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a>saving =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1082</span>, <span class="dv">6178</span>, <span class="dv">12246</span>, <span class="dv">10071</span>, <span class="dv">5193</span>, <span class="dv">1049</span>, <span class="dv">8962</span>, <span class="dv">3608</span>, <span class="dv">6307</span>, <span class="dv">7995</span>)</span>
-<span id="cb8-3"><a href="#cb8-3"></a>ent =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1315</span>, <span class="dv">2934</span>, <span class="dv">1272</span>, <span class="dv">1404</span>, <span class="dv">3525</span>, <span class="dv">2814</span>, <span class="dv">3953</span>, <span class="dv">1330</span>, <span class="dv">1585</span>, <span class="dv">2605</span>)</span>
-<span id="cb8-4"><a href="#cb8-4"></a>data.new =<span class="st"> </span><span class="kw">cbind.data.frame</span>(salary, saving, ent)</span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="kw">write_xlsx</span>(<span class="kw">list</span>(<span class="dt">Vital =</span> data7, <span class="dt">Financial =</span> data.new), <span class="st">&quot;newdata2.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>salary =<span class="st"> </span><span class="kw">c</span>(<span class="dv">10655</span>, <span class="dv">56172</span>, <span class="dv">32457</span>, <span class="dv">85135</span>, <span class="dv">52539</span>, <span class="dv">67869</span>, <span class="dv">41291</span>, <span class="dv">71817</span>, </span>
+<span id="cb8-2"><a href="#cb8-2"></a>    <span class="dv">74047</span>, <span class="dv">21864</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>saving =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1082</span>, <span class="dv">6178</span>, <span class="dv">12246</span>, <span class="dv">10071</span>, <span class="dv">5193</span>, <span class="dv">1049</span>, <span class="dv">8962</span>, <span class="dv">3608</span>, </span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="dv">6307</span>, <span class="dv">7995</span>)</span>
+<span id="cb8-5"><a href="#cb8-5"></a>ent =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1315</span>, <span class="dv">2934</span>, <span class="dv">1272</span>, <span class="dv">1404</span>, <span class="dv">3525</span>, <span class="dv">2814</span>, <span class="dv">3953</span>, <span class="dv">1330</span>, <span class="dv">1585</span>, </span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="dv">2605</span>)</span>
+<span id="cb8-7"><a href="#cb8-7"></a>data.new =<span class="st"> </span><span class="kw">cbind.data.frame</span>(salary, saving, ent)</span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="kw">write_xlsx</span>(<span class="kw">list</span>(<span class="dt">Vital =</span> data7, <span class="dt">Financial =</span> data.new), <span class="st">&quot;newdata2.xlsx&quot;</span>)</span></code></pre></div>
 <p>the syntax to create an excel file with multiple data frame is</p>
 <pre><code>wtite_xlsx(list(Name_of_1st_sheet = data_frame, Name_of_2nd_Sheet = data_frame), &quot;file_name.xlsx&quot;)</code></pre>
 </div>
