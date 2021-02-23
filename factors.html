@@ -20,6 +20,7 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -415,9 +416,6 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
-<li>
-  <a href="prostat.html">ProStatika Analysis</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -488,26 +486,25 @@ Factors are created using the <code>factor ()</code> function by taking a vector
 </p>
 </div>
 <p><font size="4" color="green"> Let us consider the following example</font></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>, <span class="st">&quot;West&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;North&quot;</span>, <span class="st">&quot;North&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;West&quot;</span>, </span>
-<span id="cb1-2"><a href="#cb1-2"></a>    <span class="st">&quot;West&quot;</span>, <span class="st">&quot;West&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;North&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>factor_data =<span class="st"> </span><span class="kw">factor</span>(data)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,</span>
+<span id="cb1-2"><a href="#cb1-2"></a>          <span class="st">&quot;West&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>factor_data=<span class="kw">factor</span>(data)</span>
 <span id="cb1-4"><a href="#cb1-4"></a>factor_data</span></code></pre></div>
 <pre><code> [1] East  West  East  North North East  West  West  West 
 [10] East  North
 Levels: East North West</code></pre>
 <p>By default, the factor function assign the levels alphabetically. We can change this using <code>levels=()</code> command.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>, <span class="st">&quot;West&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;North&quot;</span>, <span class="st">&quot;North&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;West&quot;</span>, </span>
-<span id="cb3-2"><a href="#cb3-2"></a>    <span class="st">&quot;West&quot;</span>, <span class="st">&quot;West&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;North&quot;</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>factor_data =<span class="st"> </span><span class="kw">factor</span>(data, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;North&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;West&quot;</span>))</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>,</span>
+<span id="cb3-2"><a href="#cb3-2"></a>          <span class="st">&quot;West&quot;</span>,<span class="st">&quot;West&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;North&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>factor_data=<span class="kw">factor</span>(data, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;North&quot;</span>,<span class="st">&quot;East&quot;</span>,<span class="st">&quot;West&quot;</span>))</span>
 <span id="cb3-4"><a href="#cb3-4"></a>factor_data</span></code></pre></div>
 <pre><code> [1] East  West  East  North North East  West  West  West 
 [10] East  North
 Levels: North East West</code></pre>
 <p>We can also convert a numeric vector into factor:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>num_data =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, </span>
-<span id="cb5-2"><a href="#cb5-2"></a>    <span class="dv">1</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a>factor_data =<span class="st"> </span><span class="kw">factor</span>(num_data, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>))</span>
-<span id="cb5-4"><a href="#cb5-4"></a>factor_data</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>num_data=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>factor_data=<span class="kw">factor</span>(num_data, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
+<span id="cb5-3"><a href="#cb5-3"></a>factor_data</span></code></pre></div>
 <pre><code> [1] Male   Male   Female Male   Female Female Female Male  
  [9] Female Male   Female Female Male   Female Male   Female
 [17] Female
@@ -522,31 +519,33 @@ Levels: Male Female</code></pre>
 <li><p><strong>k</strong> is a integer giving the number of replications.</p></li>
 <li><p><strong>labels</strong> is a vector of labels for the resulting factor levels.</p></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>factor_data =<span class="st"> </span><span class="kw">gl</span>(<span class="dv">2</span>, <span class="dv">8</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>))</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>factor_data=<span class="kw">gl</span>(<span class="dv">2</span>,<span class="dv">8</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
 <span id="cb8-2"><a href="#cb8-2"></a>factor_data</span></code></pre></div>
 <pre><code> [1] Male   Male   Male   Male   Male   Male   Male   Male  
  [9] Female Female Female Female Female Female Female Female
 Levels: Male Female</code></pre>
 <p>Another example of Factor is:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Generating 100 random numbers between 1 and 100</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>data =<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">100</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>data =<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">100</span>)</span>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="co"># Generating an empty vector of size 100.</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>result =<span class="st"> </span><span class="kw">mat.or.vec</span>(<span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>result=<span class="kw">mat.or.vec</span>(<span class="dv">100</span>,<span class="dv">1</span>)</span>
 <span id="cb10-5"><a href="#cb10-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</span>
-<span id="cb10-6"><a href="#cb10-6"></a>    <span class="cf">if</span> (data[i] <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) {</span>
-<span id="cb10-7"><a href="#cb10-7"></a>        result[i] =<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a>    } <span class="cf">else</span> <span class="cf">if</span> (data[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">30</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i] <span class="op">&lt;</span><span class="st"> </span><span class="dv">45</span>) {</span>
-<span id="cb10-9"><a href="#cb10-9"></a>        result[i] =<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a>    } <span class="cf">else</span> <span class="cf">if</span> (data[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">45</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i] <span class="op">&lt;</span><span class="st"> </span><span class="dv">60</span>) {</span>
-<span id="cb10-11"><a href="#cb10-11"></a>        result[i] =<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a>    } <span class="cf">else</span> {</span>
-<span id="cb10-13"><a href="#cb10-13"></a>        result[i] =<span class="st"> </span><span class="dv">3</span></span>
-<span id="cb10-14"><a href="#cb10-14"></a>    }</span>
-<span id="cb10-15"><a href="#cb10-15"></a>}</span>
-<span id="cb10-16"><a href="#cb10-16"></a></span>
-<span id="cb10-17"><a href="#cb10-17"></a>f_result =<span class="st"> </span><span class="kw">factor</span>(result, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Fail&quot;</span>, <span class="st">&quot;Third Div&quot;</span>, <span class="st">&quot;Second Div&quot;</span>, </span>
-<span id="cb10-18"><a href="#cb10-18"></a>    <span class="st">&quot;First Div&quot;</span>))</span>
-<span id="cb10-19"><a href="#cb10-19"></a><span class="kw">str</span>(f_result)</span></code></pre></div>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="cf">if</span>(data[i]<span class="op">&lt;</span><span class="dv">30</span>){</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    result[i]=<span class="dv">0</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>    }</span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">30</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">45</span>){</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    result[i]=<span class="dv">1</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a>  }</span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">45</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">60</span>){</span>
+<span id="cb10-13"><a href="#cb10-13"></a>    result[i]=<span class="dv">2</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a>  }</span>
+<span id="cb10-15"><a href="#cb10-15"></a>  <span class="cf">else</span> {</span>
+<span id="cb10-16"><a href="#cb10-16"></a>    result[i]=<span class="dv">3</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a>    }</span>
+<span id="cb10-18"><a href="#cb10-18"></a>}</span>
+<span id="cb10-19"><a href="#cb10-19"></a></span>
+<span id="cb10-20"><a href="#cb10-20"></a>f_result=<span class="kw">factor</span>(result, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Fail&quot;</span>, <span class="st">&quot;Third Div&quot;</span>, <span class="st">&quot;Second Div&quot;</span>, <span class="st">&quot;First Div&quot;</span>))</span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="kw">str</span>(f_result)</span></code></pre></div>
 <pre><code> Factor w/ 4 levels &quot;Fail&quot;,&quot;Third Div&quot;,..: 2 3 4 4 4 2 2 1 1 3 ...</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">summary</span>(f_result)</span></code></pre></div>
 <pre><code>      Fail  Third Div Second Div  First Div 

@@ -15,7 +15,7 @@ title: "About Me"
   <p>
 A post graduate in Statistics from Gauhati University.
 
-Currently working as a Part Time Faculty in the Department of Statistics, Cotton University.
+Currently working as an Assistant Professor in the Department of Statistics, Cotton University.
 Also pursuing my Ph.D. from Gauhati University under the guidance of Prof Kishore K Das.
   </p>
 </div>
@@ -46,7 +46,7 @@ __Assam, India__
 </div>
 
 <a>
-  **saurav.statistics.sarma@gmail.com**
+  **saurav.sarma@cottonuniversity.ac.in**
 </a>
 
 <a>

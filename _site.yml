@@ -41,9 +41,7 @@ navbar:
         href: ftable.html
       - text: "Using R Packages"
         href: pack.html
-    - text: "ProStatika Analysis"
-      href: prostat.html
-      
+
   right:
     - text: Downloads
       icon: fa-download fa-lg

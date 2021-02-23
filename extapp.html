@@ -20,6 +20,7 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -415,9 +416,6 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
-<li>
-  <a href="prostat.html">ProStatika Analysis</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -528,9 +526,10 @@ In R, we can read data from files stored outside the R environment. We can also 
 <span id="cb3-3"><a href="#cb3-3"></a>data2</span></code></pre></div>
 <p>Once the above code is executed, you will see that a new file with the name <code>Output.csv</code> file is being created in your default R folder.</p>
 <p>Here the column X comes from the data set newper. This can be dropped using additional parameter <code>row.names = FALSE</code> while writing the file.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">write.csv</span>(data1, <span class="st">&quot;Output.csv&quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>data2 =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Output.csv&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a>data2</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">write.csv</span>(data1, <span class="st">&quot;Output.csv&quot;</span>,</span>
+<span id="cb4-2"><a href="#cb4-2"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>data2 =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Output.csv&quot;</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>data2</span></code></pre></div>
 </div>
 <div id="importing-microsoft-excel-files" class="section level3">
 <h3>Importing Microsoft Excel files</h3>
@@ -551,21 +550,22 @@ In R, we can read data from files stored outside the R environment. We can also 
 <h3>Writing to Excel file</h3>
 <p>To write an excel file from a data frame we can use the “writexl” package in R as follows.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">library</span>(writexl)</span>
-<span id="cb7-2"><a href="#cb7-2"></a>age =<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">26</span>, <span class="dv">48</span>, <span class="dv">28</span>, <span class="dv">29</span>)</span>
-<span id="cb7-3"><a href="#cb7-3"></a>height =<span class="st"> </span><span class="kw">c</span>(<span class="dv">149</span>, <span class="dv">154</span>, <span class="dv">165</span>, <span class="dv">148</span>, <span class="dv">152</span>)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>weight =<span class="st"> </span><span class="kw">c</span>(<span class="dv">56</span>, <span class="dv">71</span>, <span class="dv">59</span>, <span class="dv">80</span>, <span class="dv">62</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>age =<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>,<span class="dv">26</span>,<span class="dv">48</span>,<span class="dv">28</span>,<span class="dv">29</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>height =<span class="st"> </span><span class="kw">c</span>(<span class="dv">149</span>,<span class="dv">154</span>,<span class="dv">165</span>,<span class="dv">148</span>,<span class="dv">152</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>weight =<span class="st"> </span><span class="kw">c</span>(<span class="dv">56</span>,<span class="dv">71</span>,<span class="dv">59</span>,<span class="dv">80</span>,<span class="dv">62</span>)</span>
 <span id="cb7-5"><a href="#cb7-5"></a>data7 =<span class="st"> </span><span class="kw">cbind.data.frame</span>(age, weight, height)</span>
 <span id="cb7-6"><a href="#cb7-6"></a><span class="kw">write_xlsx</span>(data7, <span class="st">&quot;newdata.xlsx&quot;</span>)</span></code></pre></div>
 <p>Here, a new excel file “newdata.xlsx” will be created in your working directory.</p>
 <p>We can write multiple data frames to a single excel file also.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>salary =<span class="st"> </span><span class="kw">c</span>(<span class="dv">10655</span>, <span class="dv">56172</span>, <span class="dv">32457</span>, <span class="dv">85135</span>, <span class="dv">52539</span>, <span class="dv">67869</span>, <span class="dv">41291</span>, <span class="dv">71817</span>, </span>
-<span id="cb8-2"><a href="#cb8-2"></a>    <span class="dv">74047</span>, <span class="dv">21864</span>)</span>
-<span id="cb8-3"><a href="#cb8-3"></a>saving =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1082</span>, <span class="dv">6178</span>, <span class="dv">12246</span>, <span class="dv">10071</span>, <span class="dv">5193</span>, <span class="dv">1049</span>, <span class="dv">8962</span>, <span class="dv">3608</span>, </span>
-<span id="cb8-4"><a href="#cb8-4"></a>    <span class="dv">6307</span>, <span class="dv">7995</span>)</span>
-<span id="cb8-5"><a href="#cb8-5"></a>ent =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1315</span>, <span class="dv">2934</span>, <span class="dv">1272</span>, <span class="dv">1404</span>, <span class="dv">3525</span>, <span class="dv">2814</span>, <span class="dv">3953</span>, <span class="dv">1330</span>, <span class="dv">1585</span>, </span>
-<span id="cb8-6"><a href="#cb8-6"></a>    <span class="dv">2605</span>)</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>salary =<span class="st"> </span><span class="kw">c</span>(<span class="dv">10655</span>, <span class="dv">56172</span>, <span class="dv">32457</span>, <span class="dv">85135</span>, <span class="dv">52539</span>, </span>
+<span id="cb8-2"><a href="#cb8-2"></a>           <span class="dv">67869</span>, <span class="dv">41291</span>, <span class="dv">71817</span>, <span class="dv">74047</span>, <span class="dv">21864</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>saving =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1082</span>,<span class="dv">6178</span>,<span class="dv">12246</span>,<span class="dv">10071</span>,<span class="dv">5193</span>,<span class="dv">1049</span>,</span>
+<span id="cb8-4"><a href="#cb8-4"></a>           <span class="dv">8962</span>,<span class="dv">3608</span>,<span class="dv">6307</span>,<span class="dv">7995</span>)</span>
+<span id="cb8-5"><a href="#cb8-5"></a>ent =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1315</span>,<span class="dv">2934</span>,<span class="dv">1272</span>,<span class="dv">1404</span>,<span class="dv">3525</span>,<span class="dv">2814</span>,<span class="dv">3953</span>,</span>
+<span id="cb8-6"><a href="#cb8-6"></a>        <span class="dv">1330</span>,<span class="dv">1585</span>,<span class="dv">2605</span>)</span>
 <span id="cb8-7"><a href="#cb8-7"></a>data.new =<span class="st"> </span><span class="kw">cbind.data.frame</span>(salary, saving, ent)</span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="kw">write_xlsx</span>(<span class="kw">list</span>(<span class="dt">Vital =</span> data7, <span class="dt">Financial =</span> data.new), <span class="st">&quot;newdata2.xlsx&quot;</span>)</span></code></pre></div>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="kw">write_xlsx</span>(<span class="kw">list</span>(<span class="dt">Vital =</span> data7, <span class="dt">Financial =</span> data.new), </span>
+<span id="cb8-9"><a href="#cb8-9"></a>           <span class="st">&quot;newdata2.xlsx&quot;</span>)</span></code></pre></div>
 <p>the syntax to create an excel file with multiple data frame is</p>
 <pre><code>wtite_xlsx(list(Name_of_1st_sheet = data_frame, Name_of_2nd_Sheet = data_frame), &quot;file_name.xlsx&quot;)</code></pre>
 </div>
@@ -573,14 +573,18 @@ In R, we can read data from files stored outside the R environment. We can also 
 <h3>Importing SPSS Files</h3>
 <p>R can import data sets from SPSS with the function <code>read.spss()</code> from the package <code>foreign</code>.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">library</span>(foreign)</span>
-<span id="cb10-2"><a href="#cb10-2"></a>data3 =<span class="st"> </span><span class="kw">read.spss</span>(<span class="st">&quot;data.sav&quot;</span>, <span class="dt">use.value.labels =</span> T, <span class="dt">to.data.frame =</span> T)</span></code></pre></div>
+<span id="cb10-2"><a href="#cb10-2"></a>data3 =<span class="st"> </span><span class="kw">read.spss</span>(<span class="st">&quot;data.sav&quot;</span>, </span>
+<span id="cb10-3"><a href="#cb10-3"></a>                  <span class="dt">use.value.labels =</span> T,</span>
+<span id="cb10-4"><a href="#cb10-4"></a>                  <span class="dt">to.data.frame =</span> T)</span></code></pre></div>
 <p><strong>data3</strong> is the name of data frame created in R, and <strong>data.sav</strong> is the file name of SPSS dataset we want to import, the additional parameter <strong>use.value.label=TRUE</strong> is to convert variables with value labels in SPSS into R factors, and <strong>to.data.frame=TRUE</strong> is to read it as a data frame.</p>
 </div>
 <div id="writing-to-a-spss-file" class="section level3">
 <h3>Writing to a SPSS file</h3>
 <p>To write a data frame into a SPSS file we can use the <code>write.foreign</code> function.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">library</span>(foreign)</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">write.foreign</span>(data3, <span class="st">&quot;mydata.txt&quot;</span>, <span class="st">&quot;mydata.sps&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">write.foreign</span>(data3, <span class="st">&quot;mydata.txt&quot;</span>, </span>
+<span id="cb11-3"><a href="#cb11-3"></a>              <span class="st">&quot;mydata.sps&quot;</span>,   </span>
+<span id="cb11-4"><a href="#cb11-4"></a>              <span class="dt">package=</span><span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
 <p>This will create two individual files with the names “mydata.txt” and “mydata.sps”. These files then can be converted into an SPSS data file using SPSS syntax.</p>
 <!-- <div class="icon-bar"> -->
 <!--   <a href="df.html" class="prev">PREVIOUS PAGE</a> -->

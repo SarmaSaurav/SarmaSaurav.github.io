@@ -20,6 +20,7 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -415,9 +416,6 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
-<li>
-  <a href="prostat.html">ProStatika Analysis</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -506,27 +504,27 @@ You may like to store information of various data types like character, wide cha
 <pre><code>x&lt;- 2+5</code></pre>
 <p>However in general we <code>&lt;-</code> and <code>=</code> are equivalent and hence it is convenient to use <code>=</code> in place of <code>&lt;-</code>.</p>
 <p>So we can use the code</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x =<span class="st"> </span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x=<span class="dv">2</span><span class="op">+</span><span class="dv">5</span></span></code></pre></div>
 <p>To store the value of 2+5 (=7) against x. We can call the variable at any time to use the value stored against the variable in our program.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x_square =<span class="st"> </span>x<span class="op">^</span><span class="dv">2</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x_square=x<span class="op">^</span><span class="dv">2</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>x_square</span></code></pre></div>
 <pre><code>[1] 49</code></pre>
 <p>If we simply type the variable name and press <code>Enter</code> it will return the value stored in that variable name. This process is called <em>calling the variable</em>.</p>
 <p>Once some values are stored in a variable name , then we can subject the variables to all arithmetic operations</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>x =<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>y =<span class="st"> </span><span class="dv">10</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>x <span class="op">+</span><span class="st"> </span>y</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>x=<span class="dv">5</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>y=<span class="dv">10</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>x<span class="op">+</span>y</span></code></pre></div>
 <pre><code>[1] 15</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>x <span class="op">-</span><span class="st"> </span>y</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>x<span class="op">-</span>y</span></code></pre></div>
 <pre><code>[1] -5</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>x <span class="op">*</span><span class="st"> </span>y</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>x<span class="op">*</span>y</span></code></pre></div>
 <pre><code>[1] 50</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>y<span class="op">/</span>x</span></code></pre></div>
 <pre><code>[1] 2</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>y<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>x</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>y<span class="op">^</span><span class="dv">2</span><span class="op">+</span>x</span></code></pre></div>
 <pre><code>[1] 105</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y <span class="op">-</span><span class="st"> </span><span class="dv">15</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="dv">2</span><span class="op">*</span>x<span class="op">+</span>y<span class="dv">-15</span></span></code></pre></div>
 <pre><code>[1] 5</code></pre>
 <div id="naming-a-variable" class="section level2">
 <h2>Naming a variable</h2>
