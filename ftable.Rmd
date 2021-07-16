@@ -72,11 +72,11 @@ barplot(freq, xlab = "Class Intervals", ylab = "Frequencies")
 
 >**Exercise:**
 
->1. Construct a frequency table from the following table-
+>1. Construct a frequency table from the following data-
 46 40 29 24  8  3 33 49 17 35 28 34 27 43 26 37  4  5 42 10 22 13 19  9 41 14 11 50
 36 32 30 47 12 44 38 15 31  7 23 25
 
->2. Construct a frequency table from the following table and draw the bar diagram.
+>2. Construct a frequency table from the following data and draw the bar diagram.
 40 21  2 44 17 13 49 46 28  6 20 19 37 50 41  1  4  7 38 32  3 25 39 34 14 22 27 26
 30  5 31 45 23 11  8 29 24 18 47 42  9 33 48 36 15
 
