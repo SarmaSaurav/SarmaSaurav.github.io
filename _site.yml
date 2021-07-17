@@ -64,9 +64,9 @@ navbar:
       # - text: Research Gate
       #   icon: fab fa-reseachgate fa-lg
       #   href: https://www.researchgate.net/profile/Saurav_Sarma3
-      # - text: YouTube
-      #   icon: fa-youtube fa-lg
-      #   href: 
+    - text: YouTube
+      icon: fa-youtube fa-lg
+      href: https://www.youtube.com/channel/UC8O4ksfAciKfVV01TGEwQJw
     
   
 output:

@@ -13,14 +13,23 @@
 
 <title>Frequency Title</title>
 
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -28,22 +37,38 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -62,7 +87,7 @@ pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   { color: #cccccc; background-color: #303030; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ffcfaf; } /* Alert */
 code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
@@ -116,39 +141,9 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   }
 })();
 </script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -158,10 +153,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -178,40 +169,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -239,7 +203,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -251,7 +215,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -262,10 +226,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -277,7 +254,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -420,14 +396,14 @@ $(document).ready(function () {
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="downloads.html">
-    <span class="fa fa-download fa-lg"></span>
+    <span class="fas fa-download fa-lg"></span>
      
     Downloads
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-share-alt fa-lg"></span>
+    <span class="fas fa-share-alt fa-lg"></span>
      
     Connect With Me
      
@@ -436,33 +412,40 @@ $(document).ready(function () {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="https://github.com/SarmaSaurav/">
-        <span class="fa fa-github fa-lg"></span>
+        <span class="fas fa-github fa-lg"></span>
          
         Github
       </a>
     </li>
     <li>
       <a href="https://www.linkedin.com/in/saurav-sarma-0044">
-        <span class="fa fa-linkedin fa-lg"></span>
+        <span class="fas fa-linkedin fa-lg"></span>
          
         LinkedIn
       </a>
     </li>
     <li>
-      <a href="https://www.instagram.com/hashtag_sarmaji/">
-        <span class="fab fa fab fa-instagram fa-lg"></span>
+      <a href="https://www.instagram.com/that_stats_guy/">
+        <span class="fab fa-instagram fa-lg"></span>
          
         Instagram
       </a>
     </li>
   </ul>
 </li>
+<li>
+  <a href="https://www.youtube.com/channel/UC8O4ksfAciKfVV01TGEwQJw">
+    <span class="fas fa-youtube fa-lg"></span>
+     
+    YouTube
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -485,39 +468,39 @@ In this Chapter we will discuss how to create a frequency table and calculate cu
 </p>
 </div>
 <p>Let us consider the following example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Enter the data</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>data=<span class="kw">c</span>(<span class="dv">24</span>,<span class="dv">23</span>,<span class="dv">17</span>,<span class="dv">13</span>,<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">22</span>,<span class="dv">28</span>,<span class="dv">38</span>,<span class="dv">39</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">7</span>,<span class="dv">36</span>,</span>
-<span id="cb1-3"><a href="#cb1-3"></a>       <span class="dv">14</span>,<span class="dv">3</span>,<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">37</span>,<span class="dv">11</span>,<span class="dv">19</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">29</span>,<span class="dv">35</span>,<span class="dv">27</span>,<span class="dv">26</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Find out the minimum and maximum of the data</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">summary</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enter the data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">c</span>(<span class="dv">24</span>,<span class="dv">23</span>,<span class="dv">17</span>,<span class="dv">13</span>,<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">22</span>,<span class="dv">28</span>,<span class="dv">38</span>,<span class="dv">39</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">7</span>,<span class="dv">36</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>       <span class="dv">14</span>,<span class="dv">3</span>,<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">37</span>,<span class="dv">11</span>,<span class="dv">19</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">29</span>,<span class="dv">35</span>,<span class="dv">27</span>,<span class="dv">26</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Find out the minimum and maximum of the data</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code></pre></div>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    1.00   11.50   22.50   20.80   29.75   39.00 </code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># create class intervals</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>breaks=<span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">40</span>,<span class="dv">5</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># create frequencies</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>freq=<span class="kw">cut</span>(data,breaks)</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># conver the frequencies as a table</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>freq=<span class="kw">table</span>(freq)</span>
-<span id="cb3-9"><a href="#cb3-9"></a>freq</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create class intervals</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>breaks<span class="ot">=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">40</span>,<span class="dv">5</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create frequencies</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>freq<span class="ot">=</span><span class="fu">cut</span>(data,breaks)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># conver the frequencies as a table</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>freq<span class="ot">=</span><span class="fu">table</span>(freq)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>freq</span></code></pre></div>
 <pre><code>freq
   (0,5]  (5,10] (10,15] (15,20] (20,25] (25,30] (30,35] 
       4       3       4       3       4       5       3 
 (35,40] 
       4 </code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Calculate total frequencies</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>N=<span class="kw">sum</span>(freq)</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># calculate cumulative frequencies</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>cum.freq=<span class="kw">cumsum</span>(freq)</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># calculate relative frequencies</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a>rel.freq=freq<span class="op">/</span>N</span>
-<span id="cb5-9"><a href="#cb5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># combine all calculated values in one table</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="kw">cbind</span>(freq,cum.freq,rel.freq)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate total frequencies</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span><span class="fu">sum</span>(freq)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate cumulative frequencies</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>cum.freq<span class="ot">=</span><span class="fu">cumsum</span>(freq)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate relative frequencies</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>rel.freq<span class="ot">=</span>freq<span class="sc">/</span>N</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># combine all calculated values in one table</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(freq,cum.freq,rel.freq)</span></code></pre></div>
 <pre><code>        freq cum.freq  rel.freq
 (0,5]      4        4 0.1333333
 (5,10]     3        7 0.1000000
@@ -527,19 +510,19 @@ In this Chapter we will discuss how to create a frequency table and calculate cu
 (25,30]    5       23 0.1666667
 (30,35]    3       26 0.1000000
 (35,40]    4       30 0.1333333</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">barplot</span>(freq, <span class="dt">xlab =</span> <span class="st">&quot;Class Intervals&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Frequencies&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(freq, <span class="at">xlab =</span> <span class="st">&quot;Class Intervals&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frequencies&quot;</span>)</span></code></pre></div>
 <p><img src="ftable_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <blockquote>
 <p><strong>Exercise:</strong></p>
 </blockquote>
 <blockquote>
 <ol style="list-style-type: decimal">
-<li>Construct a frequency table from the following table- 46 40 29 24 8 3 33 49 17 35 28 34 27 43 26 37 4 5 42 10 22 13 19 9 41 14 11 50 36 32 30 47 12 44 38 15 31 7 23 25</li>
+<li>Construct a frequency table from the following data- 46 40 29 24 8 3 33 49 17 35 28 34 27 43 26 37 4 5 42 10 22 13 19 9 41 14 11 50 36 32 30 47 12 44 38 15 31 7 23 25</li>
 </ol>
 </blockquote>
 <blockquote>
 <ol start="2" style="list-style-type: decimal">
-<li>Construct a frequency table from the following table and draw the bar diagram. 40 21 2 44 17 13 49 46 28 6 20 19 37 50 41 1 4 7 38 32 3 25 39 34 14 22 27 26 30 5 31 45 23 11 8 29 24 18 47 42 9 33 48 36 15</li>
+<li>Construct a frequency table from the following data and draw the bar diagram. 40 21 2 44 17 13 49 46 28 6 20 19 37 50 41 1 4 7 38 32 3 25 39 34 14 22 27 26 30 5 31 45 23 11 8 29 24 18 47 42 9 33 48 36 15</li>
 </ol>
 </blockquote>
 
@@ -562,7 +545,7 @@ In this Chapter we will discuss how to create a frequency table and calculate cu
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -580,7 +563,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

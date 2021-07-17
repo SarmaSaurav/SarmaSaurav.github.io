@@ -13,14 +13,23 @@
 
 <title>Conditional Statements</title>
 
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -28,22 +37,38 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -62,7 +87,7 @@ pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   { color: #cccccc; background-color: #303030; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ffcfaf; } /* Alert */
 code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
@@ -116,39 +141,9 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   }
 })();
 </script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -158,10 +153,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -178,40 +169,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -239,7 +203,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -251,7 +215,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -262,10 +226,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -277,7 +254,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -420,14 +396,14 @@ $(document).ready(function () {
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="downloads.html">
-    <span class="fa fa-download fa-lg"></span>
+    <span class="fas fa-download fa-lg"></span>
      
     Downloads
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-share-alt fa-lg"></span>
+    <span class="fas fa-share-alt fa-lg"></span>
      
     Connect With Me
      
@@ -436,33 +412,40 @@ $(document).ready(function () {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="https://github.com/SarmaSaurav/">
-        <span class="fa fa-github fa-lg"></span>
+        <span class="fas fa-github fa-lg"></span>
          
         Github
       </a>
     </li>
     <li>
       <a href="https://www.linkedin.com/in/saurav-sarma-0044">
-        <span class="fa fa-linkedin fa-lg"></span>
+        <span class="fas fa-linkedin fa-lg"></span>
          
         LinkedIn
       </a>
     </li>
     <li>
-      <a href="https://www.instagram.com/hashtag_sarmaji/">
-        <span class="fab fa fab fa-instagram fa-lg"></span>
+      <a href="https://www.instagram.com/that_stats_guy/">
+        <span class="fab fa-instagram fa-lg"></span>
          
         Instagram
       </a>
     </li>
   </ul>
 </li>
+<li>
+  <a href="https://www.youtube.com/channel/UC8O4ksfAciKfVV01TGEwQJw">
+    <span class="fas fa-youtube fa-lg"></span>
+     
+    YouTube
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -504,10 +487,10 @@ Conditional statements are decision making structure which are tested by the pro
 <p>The flow diagram for if statement is:</p>
 <p><img src="images/r_if_statement.jpg" width="200 px" /></p>
 <p>An example of if statement is:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>x=<span class="dv">20</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="cf">if</span> (x<span class="op">&lt;</span><span class="dv">30</span>) {</span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="kw">print</span>(<span class="st">&quot;Cotton University&quot;</span>)</span>
-<span id="cb2-4"><a href="#cb2-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="dv">20</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x<span class="sc">&lt;</span><span class="dv">30</span>) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Cotton University&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;Cotton University&quot;</code></pre>
 </div>
 <div id="if-else-statement" class="section level4">
@@ -523,16 +506,16 @@ Conditional statements are decision making structure which are tested by the pro
 <p>The flow diagram of if-else statement is:</p>
 <p><img src="images/r_if_else_statement.jpg" width="200px" /></p>
 <p>An example of if-else statement:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>marks=<span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">78</span>,<span class="dv">13</span>,<span class="dv">45</span>,<span class="dv">8</span>,<span class="dv">60</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>) {</span>
-<span id="cb5-4"><a href="#cb5-4"></a>        <span class="cf">if</span> (marks[i]<span class="op">&lt;</span><span class="dv">30</span>) {</span>
-<span id="cb5-5"><a href="#cb5-5"></a>            <span class="kw">print</span>(<span class="st">&quot;FAIL&quot;</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a>}</span>
-<span id="cb5-7"><a href="#cb5-7"></a>        <span class="cf">else</span> {</span>
-<span id="cb5-8"><a href="#cb5-8"></a>            <span class="kw">print</span>(<span class="st">&quot;PASS&quot;</span>)</span>
-<span id="cb5-9"><a href="#cb5-9"></a>        }</span>
-<span id="cb5-10"><a href="#cb5-10"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>marks<span class="ot">=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">78</span>,<span class="dv">13</span>,<span class="dv">45</span>,<span class="dv">8</span>,<span class="dv">60</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (marks[i]<span class="sc">&lt;</span><span class="dv">30</span>) {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;FAIL&quot;</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> {</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;PASS&quot;</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;FAIL&quot;
 [1] &quot;PASS&quot;
 [1] &quot;PASS&quot;
@@ -559,21 +542,21 @@ Conditional statements are decision making structure which are tested by the pro
     Executes when none of the above condition is true.
 }</code></pre>
 <p>An example of nested if-else statement:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>data=<span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">78</span>,<span class="dv">13</span>,<span class="dv">45</span>,<span class="dv">8</span>,<span class="dv">60</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(data)) {</span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="cf">if</span>(data[i]<span class="op">&lt;</span><span class="dv">30</span>){</span>
-<span id="cb8-4"><a href="#cb8-4"></a>    <span class="kw">print</span>(<span class="st">&quot;FAIL&quot;</span>)</span>
-<span id="cb8-5"><a href="#cb8-5"></a>    }</span>
-<span id="cb8-6"><a href="#cb8-6"></a>  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">30</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">45</span>){</span>
-<span id="cb8-7"><a href="#cb8-7"></a>    <span class="kw">print</span>(<span class="st">&quot;Third division&quot;</span>)</span>
-<span id="cb8-8"><a href="#cb8-8"></a>  }</span>
-<span id="cb8-9"><a href="#cb8-9"></a>  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="op">&gt;=</span><span class="dv">45</span> <span class="op">&amp;&amp;</span><span class="st"> </span>data[i]<span class="op">&lt;</span><span class="dv">60</span>){</span>
-<span id="cb8-10"><a href="#cb8-10"></a>    <span class="kw">print</span>(<span class="st">&quot;Second division&quot;</span>)</span>
-<span id="cb8-11"><a href="#cb8-11"></a>  }</span>
-<span id="cb8-12"><a href="#cb8-12"></a>  <span class="cf">else</span> {</span>
-<span id="cb8-13"><a href="#cb8-13"></a>    <span class="kw">print</span>(<span class="st">&quot;First division&quot;</span>)</span>
-<span id="cb8-14"><a href="#cb8-14"></a>    }</span>
-<span id="cb8-15"><a href="#cb8-15"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">78</span>,<span class="dv">13</span>,<span class="dv">45</span>,<span class="dv">8</span>,<span class="dv">60</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(data)) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(data[i]<span class="sc">&lt;</span><span class="dv">30</span>){</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;FAIL&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="sc">&gt;=</span><span class="dv">30</span> <span class="sc">&amp;&amp;</span> data[i]<span class="sc">&lt;</span><span class="dv">45</span>){</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Third division&quot;</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(data[i]<span class="sc">&gt;=</span><span class="dv">45</span> <span class="sc">&amp;&amp;</span> data[i]<span class="sc">&lt;</span><span class="dv">60</span>){</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Second division&quot;</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;First division&quot;</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;FAIL&quot;
 [1] &quot;Second division&quot;
 [1] &quot;First division&quot;
@@ -601,14 +584,14 @@ Conditional statements are decision making structure which are tested by the pro
 <p>The flow diagram of switch statement is</p>
 <p><img src="images/r_switch_statement.jpg" width="200px" /></p>
 <p>An example of switch statement:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>test=<span class="dv">1</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>test_result=<span class="cf">switch</span> (test,</span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="dt">mean =</span> <span class="kw">mean</span>(x),</span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="dt">med =</span> <span class="kw">median</span>(x),</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="dt">max =</span> <span class="kw">max</span>(x)</span>
-<span id="cb11-7"><a href="#cb11-7"></a>)</span>
-<span id="cb11-8"><a href="#cb11-8"></a>test_result</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>test<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>test_result<span class="ot">=</span><span class="cf">switch</span> (test,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="fu">mean</span>(x),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">med =</span> <span class="fu">median</span>(x),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">max =</span> <span class="fu">max</span>(x)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>test_result</span></code></pre></div>
 <pre><code>[1] 5</code></pre>
 <p><br> <br> <br> <br></p>
 <h3>
@@ -638,7 +621,7 @@ Here the switch statement is use to switch between <code>mean</code>, <code>medi
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -656,7 +639,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
