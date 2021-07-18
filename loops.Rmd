@@ -199,3 +199,12 @@ for ( i in v) {
 
 
 *Note: the function `mat.or.vec (row number, column number)` is use to generate an empty matrix or vector.*
+
+
+
+### Try Yourself
+
+<iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=%23%20Enter%20Your%20Codes%20Here' frameborder='0'>
+</iframe>
+
+
